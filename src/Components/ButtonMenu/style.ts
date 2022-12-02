@@ -7,17 +7,16 @@ export const ContainerButtonMenu=styled.a`
     justify-content:center;
     align-items:center;
     border-radius:5px;
-    padding:10px;
-    background-color:#eeee;
+    padding:6px;
     margin: 10px 0;
-
+    background: #e38f4b;
     &:hover{
         cursor:pointer;
-        background: #494d52;
+        background: #e38f4b;
     }
 `
 
 export const ButtonIcon=styled.img`
-    height: 60px;
-    width: 60px;
+    height: 50px;
+    width: 50px;
 `
