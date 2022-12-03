@@ -15,6 +15,7 @@ export const Container=styled.div`
         bottom: 0;
         right:0;
         width: 100vw;
+        height: 100vh;
        flex-direction:column;
        align-items:center;
        overflow-x:none;
@@ -38,9 +39,11 @@ export const ContainerImage=styled.div`
     }
 @media screen and (max-width:600px){
   width: 100%;
+  height: 150px;
+  margin-bottom:20px;
   border-radius:0;
   img{
-    padding-top:20px;
+    margin-top:50px;
   }
    }
 `
