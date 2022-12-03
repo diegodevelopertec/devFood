@@ -21,7 +21,7 @@ export const CardProduct=({data,clikedStartModal}:Props)=>{
             <div className='info-product'>
                 <p className='category--name'>{data?.category}</p>
                 <h4>{data?.name} </h4>
-                <p>
+                <p className='ingredientes-text'>
                   {data?.igredientes}  
                 </p>
                 <p className="price">

@@ -5,6 +5,7 @@ export const Container=styled.div`
     height: 100%;
     opacity: 1;
     font-size:20px;
+    overflow-x:hidden;
 
 `
 
@@ -20,23 +21,33 @@ export const CategorySectionProducts=styled.div`
     color:#5a5b5c;
     font-weight:bold;
     background:#edeceb;
-    div{
+   .cx-btn-icons{
         display: flex;
         margin-left:100px;
     }
     padding: 20px 10px;
 
+@media screen and (max-width:950px){
+    justify-content:center;
+    text-align:center;
+    .cx-btn-icons{
+        justify-content:center;
+        margin: 0;
+    }
+}
 `
 
 
 export const ShowcaseProduct=styled.div`
     display: grid;
     grid-template-columns:repeat(4,1fr);
-    gap:5px;
+    gap:24px;
     padding-bottom:100px;
+    width: 100%;
     background:#edeceb;
-    @media screen and (max-width:950px){
-        grid-template-columns:repeat(2,1fr);
+    @media screen and (max-width:920px){
+      grid-template-columns:repeat(2,1fr);
+        
     }
 `
 

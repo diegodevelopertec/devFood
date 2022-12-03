@@ -7,6 +7,21 @@ export const Container=styled.div`
     box-shadow:0 0 5px #aaa;
    border-radius:6px;
    
+
+   @media screen and (max-width:600px){
+        position: absolute;
+        top:0;
+        left:0;
+        bottom: 0;
+        right:0;
+        width: 100vw;
+       flex-direction:column;
+       align-items:center;
+       overflow-x:none;
+       border-radius:0;
+       margin: 0;
+       
+   }
 `
 
 export const ContainerImage=styled.div`
@@ -17,11 +32,17 @@ export const ContainerImage=styled.div`
     align-items:center;
     border-top-left-radius:6px;
     border-bottom-left-radius:6px;
-img{
-    width: 120px;
-    height: 120px;
-}
-
+    img{
+        width: 180px;
+        height: 180px;
+    }
+@media screen and (max-width:600px){
+  width: 100%;
+  border-radius:0;
+  img{
+    padding-top:20px;
+  }
+   }
 `
 
 export const ContainerData=styled.div`
@@ -145,7 +166,9 @@ export const ContainerData=styled.div`
 
   
 
-
+@media screen and (max-width:950px){
+    padding: 10px;
+}
 
 
 

@@ -28,7 +28,7 @@ const closeModal=()=>{
     </S.ContainerBanner>
     <S.CategorySectionProducts>
         <p>Selecione uma categoria :</p>
-        <div>
+        <div className="cx-btn-icons">
             <ButtonMenu bg='#f06c0e' src={BebidasIcon} marginhorizontal='10' marginvertical='10' />
             <ButtonMenu bg='#f06c0e' src={PizzaIcon} marginhorizontal='10' marginvertical='10' />
             <ButtonMenu  bg='#f06c0e' src={LanchesIcon} marginhorizontal='10' marginvertical='10' />
@@ -37,7 +37,7 @@ const closeModal=()=>{
     </S.CategorySectionProducts>
   
     <S.ShowcaseProduct>
-     {listProduct && listProduct.map((item,index)=><CardProduct clikedStartModal={clikedOnModal} data={item} />)}
+     {listProduct && listProduct.map((item,index)=>< CardProduct  key={index} clikedStartModal={clikedOnModal} data={item} />)}
      {onModal && <S.ContainerModal>
         <CardCliked  funcOffModal={closeModal}/>
      </S.ContainerModal>}

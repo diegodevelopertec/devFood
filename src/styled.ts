@@ -11,28 +11,30 @@ export const Body=styled.div`
     overflow:hidden;
     background-color: #dadce0;
 
+
 `
 
 export const LeftContent=styled.div`
-background: #f06c0e;
-width: 10%;
-display: flex;
-justify-content:center;
-align-items:center;
-height: 100vh;
-@media screen and (max-width:950px){
-    position:absolute;
-    width: 100%;
-    bottom:0;
-    left:0;
-    right:0;
+    background: #f06c0e;
+    width: 10%;
+    display: flex;
+    justify-content:center;
+    align-items:center;
    
-}
+    @media screen  and (max-width:950px){
+     position: absolute;
+     bottom:0;
+     top: auto;
+     height: 100px;
+     width: 100%;
+   }
+ 
 `
 
 export const HeaderApp=styled.header`
 display: flex;
 justify-content:center;
+
 
 
 `
@@ -43,7 +45,7 @@ export const CardLoja=styled.div`
     background-color: #f06c0e;
     width: 95%;
     margin:30px 15px;
-    height: 100px;
+    min-height: 100px;
     border-radius:10px;
     box-shadow: 0 0 5px #000;
 .logo{
@@ -66,7 +68,10 @@ export const CardLoja=styled.div`
     }
 }
 
-
+@media screen and (max-width:950px){
+    flex-direction:column;
+    padding: 10px 0;
+}
 
 `
 export const Menu=styled.div`
@@ -85,6 +90,8 @@ export const RightContent=styled.div`
     background-size: contains ;
     background-color: #625B5B54A;
     overflow-y:auto;
-  
+    @media screen  and (max-width:950px){
+     flex-direction:column;
+   }
     
 `

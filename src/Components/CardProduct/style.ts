@@ -8,22 +8,35 @@ export const Container=styled.div`
     box-shadow: 0 0 7px #aaa;
     margin:12px 5px;
     border-radius:5px;
-    width: 320px;
+   
+    @media screen and (max-width:600px){
+    
+        margin: 5px;
+      
+       
+        
+    }
+   
 `
 
 export const  ContainerImage=styled.div`
     background: #f06c0e;
-    width: 100%;
     height: 100px;
     display: flex;
     padding: 12px 0;
     justify-content:center;
     border-top-left-radius:5px;
     border-top-right-radius:5px;
+    
+    width:100%;
     img{
-        width:120px;
+        max-width:120px;
         height:120px;
         margin-top:20px;
+        @media screen and (max-width:600px){
+        width: 60px;
+        height: 60px;
+    }
     }
 
 
@@ -34,6 +47,7 @@ export const DataProduct=styled.div`
     display:flex;
     padding: 18px 10px;
     margin-top:12px;
+  
         .info-product{
             margin: 15px 0;
             
@@ -56,13 +70,21 @@ export const DataProduct=styled.div`
                     font-family:Arial;
                     font-weight:bold;
                 }
+
+
+                @media screen and (max-width:600px){
+                        font-size:1rem;
+                        flex-wrap:wrap;
+
         }
+    }
 
     .cx-btn-product{
         display:flex;
         justify-content:center;
         align-items:center;
         padding: 15px 5px;
+        width: 100%;
       
         button{
             font-family:Arial;
@@ -79,6 +101,14 @@ export const DataProduct=styled.div`
                 color: #f06c0e;
                 border: 2px solid  #f06c0e;
             }
-        }
+         }
+         @media screen and (max-width:600px){
+              padding:0;
+         }
+    }
+
+    @media screen and (max-width:600px){
+      padding: 0 5px;
+      width: 100%;
     }
 `
