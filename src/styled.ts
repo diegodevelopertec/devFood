@@ -22,11 +22,14 @@ export const LeftContent=styled.div`
     align-items:center;
    
     @media screen  and (max-width:950px){
-     position: absolute;
+     position:fixed;
      bottom:0;
-     top: auto;
+     top: 90;
+     left:0;
+     right:0;
      height: 100px;
      width: 100%;
+     
    }
  
 `

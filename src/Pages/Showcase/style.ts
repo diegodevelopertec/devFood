@@ -6,7 +6,10 @@ export const Container=styled.div`
     opacity: 1;
     font-size:20px;
     overflow-x:hidden;
-
+   
+   @media screen and (max-width:950px){
+    padding-bottom:50px;
+   }
 `
 
 
@@ -47,7 +50,7 @@ export const ShowcaseProduct=styled.div`
     background:#edeceb;
     @media screen and (max-width:920px){
       grid-template-columns:repeat(2,1fr);
-        
+      
     }
 `
 
