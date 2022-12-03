@@ -113,7 +113,9 @@ export const ContainerData=styled.div`
             color: white;
             border:0;
             font-size:14px;
-            
+            &:hover{
+                cursor: pointer;
+            }
         }
         .btn-minus{
             border-top-left-radius:5px;
@@ -127,9 +129,10 @@ export const ContainerData=styled.div`
 
     .cx-buttons{
         margin: 20px 0;
-        display: flex;
-        justify-content:center;
-        align-items:center;
+      display: flex;
+      justify-content:center;
+      align-items:center;
+       
         button{
             padding: 17px 5px;
             display: flex;

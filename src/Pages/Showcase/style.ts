@@ -46,7 +46,6 @@ export const ShowcaseProduct=styled.div`
     grid-template-columns:repeat(4,1fr);
     gap:24px;
     padding-bottom:100px;
-    width: 100%;
     background:#edeceb;
     @media screen and (max-width:920px){
       grid-template-columns:repeat(2,1fr);

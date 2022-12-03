@@ -47,6 +47,7 @@ export const DataProduct=styled.div`
     display:flex;
     padding: 18px 10px;
     margin-top:12px;
+    flex-direction:column;
   
         .info-product{
             margin: 15px 0;
@@ -75,6 +76,9 @@ export const DataProduct=styled.div`
                 @media screen and (max-width:600px){
                         font-size:1rem;
                         flex-wrap:wrap;
+                        .ingredientes-text{
+                            display:none;
+                        }
 
         }
     }
@@ -85,6 +89,7 @@ export const DataProduct=styled.div`
         align-items:center;
         padding: 15px 5px;
         width: 100%;
+        margin: 13px 0;
       
         button{
             font-family:Arial;

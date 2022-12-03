@@ -27,9 +27,9 @@ export const CardProduct=({data,clikedStartModal}:Props)=>{
                 <p className="price">
                     R$ {data?.price}
                 </p>
+            </div>
             <div className="cx-btn-product">
                <button onClick={clikedStartModal}>fazer pedido</button>
-            </div>
             </div>
         </S.DataProduct>
     </S.Container>
