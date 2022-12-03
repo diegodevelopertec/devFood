@@ -3,27 +3,32 @@ import * as S from './style'
 
 
 type Props={
-    imageProduct:string,
-    data?:Product
+    data?:Product,
+    clikedStartModal:()=>void
+   
 }
-export const CardProduct=({imageProduct}:Props)=>{
-    return <S.Container>
+export const CardProduct=({data,clikedStartModal}:Props)=>{
+
+    
+
+
+
+    return <S.Container >
         <S.ContainerImage>
-            <img src={imageProduct}/>
+            <img src={data?.imageProduct}/>
         </S.ContainerImage>
         <S.DataProduct>
             <div className='info-product'>
-                <small className='category-name'>categoria</small>
-                <h4>Name Product</h4>
+                <p className='category--name'>{data?.category}</p>
+                <h4>{data?.name} </h4>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Repellendus ab tenetur laudantium deleniti a quia eveniet, suscipit nulla  
+                  {data?.igredientes}  
                 </p>
                 <p className="price">
-                    R$23,50
+                    R$ {data?.price}
                 </p>
             <div className="cx-btn-product">
-               <button>fazer pedido</button>
+               <button onClick={clikedStartModal}>fazer pedido</button>
             </div>
             </div>
         </S.DataProduct>

@@ -12,9 +12,9 @@ const App=()=>{
   return <S.Body>
         <S.LeftContent>
             <S.Menu>
-              <ButtonMenu src={LojaIcon} />
-              <ButtonMenu src={MotoIcon}/>
-              <ButtonMenu src={UserIcon}/>
+              <ButtonMenu src={LojaIcon}  marginhorizontal='10' marginvertical='10' />
+              <ButtonMenu src={MotoIcon} marginhorizontal='10' marginvertical='10' />
+              <ButtonMenu src={UserIcon} marginhorizontal='10' marginvertical='10' />
             </S.Menu>
         </S.LeftContent>
 
@@ -30,6 +30,7 @@ const App=()=>{
             </S.CardLoja>
           </S.HeaderApp>
           <Routes/>
+  
         </S.RightContent>
   </S.Body>
 }

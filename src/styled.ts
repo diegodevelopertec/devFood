@@ -4,12 +4,12 @@ import BgImage from '.././src/assets/imgs/bg.jpg'
 
 
 export const Body=styled.div`
-background-color: #eee;
-display:flex;
-height:100vh;
-width: 100vw;
-overflow:hidden;
-background: #dadce0;
+    background-color: #eee;
+    display:flex;
+    height:100vh;
+    width: 100vw;
+    overflow:hidden;
+    background-color: #dadce0;
 
 `
 
@@ -85,5 +85,6 @@ export const RightContent=styled.div`
     background-size: contains ;
     background-color: #625B5B54A;
     overflow-y:auto;
+  
     
 `

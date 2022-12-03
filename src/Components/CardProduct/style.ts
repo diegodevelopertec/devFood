@@ -21,9 +21,9 @@ export const  ContainerImage=styled.div`
     border-top-left-radius:5px;
     border-top-right-radius:5px;
     img{
-        width:90px;
-        height:90px;
-        margin-top:30px;
+        width:120px;
+        height:120px;
+        margin-top:20px;
     }
 
 
@@ -37,10 +37,10 @@ export const DataProduct=styled.div`
         .info-product{
             margin: 15px 0;
             
-            .category-name:{
-                opacity:0.5;
+            .category--name:{
                     color: #aaa;
                     padding: 5px 0;
+                    text-transform: capitalize;
                 }
                 h3{
                     font-size:1rem;
@@ -54,6 +54,7 @@ export const DataProduct=styled.div`
                 .price{
                     color: #f06c0e;
                     font-family:Arial;
+                    font-weight:bold;
                 }
         }
 
@@ -64,6 +65,9 @@ export const DataProduct=styled.div`
         padding: 15px 5px;
       
         button{
+            font-family:Arial;
+            font-weight:bold;
+            text-transform:uppercase;
             padding: 12px 20px;
             background: #f06c0e;
             color: white;
