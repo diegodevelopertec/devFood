@@ -6,7 +6,7 @@ export const Container=styled.div`
     background-color:#e6e5e3;
     box-shadow:0 0 5px #aaa;
    border-radius:6px;
-   
+  
 
    @media screen and (max-width:600px){
         position: absolute;
@@ -141,6 +141,7 @@ export const ContainerData=styled.div`
             border: 2px solid transparent;
             color: #e6e5e3;
             border-radius:6px;
+            font-size:13px;
             &:hover{
                 cursor:pointer;
             }
@@ -172,16 +173,17 @@ export const ContainerData=styled.div`
 
   
 
-@media screen and (max-width:950px){
+@media screen and (max-width:600px){
     padding: 10px;
    
     .price-modal{
         text-align:center;
-        margin: 30px 0;
+        margin: 20px 0;
+        background: #eee;
+        padding: 12px 5px;
+        border-radius:5px
     }
-    .cx-buttons{
-        margin: 35px 0;
-    }
+    
 }
 
 

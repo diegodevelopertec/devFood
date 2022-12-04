@@ -44,12 +44,13 @@ export const CategorySectionProducts=styled.div`
 export const ShowcaseProduct=styled.div`
     display: grid;
     grid-template-columns:repeat(4,1fr);
-    gap:24px;
-    padding-bottom:100px;
+    gap:10px;
+   
+  padding: 30px 10px;
     background:#edeceb;
     @media screen and (max-width:920px){
       grid-template-columns:repeat(2,1fr);
-      
+      padding-bottom:100px;
     }
 `
 

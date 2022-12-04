@@ -38,10 +38,11 @@ const closeModal=()=>{
   
     <S.ShowcaseProduct>
      {listProduct && listProduct.map((item,index)=>< CardProduct  key={index} clikedStartModal={clikedOnModal} data={item} />)}
-     {onModal && <S.ContainerModal>
+    
+    </S.ShowcaseProduct>
+    {onModal && <S.ContainerModal>
         <CardCliked  funcOffModal={closeModal}/>
      </S.ContainerModal>}
-    </S.ShowcaseProduct>
      
     
    
