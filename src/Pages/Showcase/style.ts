@@ -30,13 +30,13 @@ export const CategorySectionProducts=styled.div`
     }
     padding: 20px 10px;
 
-@media screen and (max-width:950px){
-    justify-content:center;
-    text-align:center;
-    .cx-btn-icons{
+    @media screen and (max-width:950px){
         justify-content:center;
-        margin: 0;
-    }
+        text-align:center;
+        .cx-btn-icons{
+            justify-content:center;
+            margin: 0;
+        }
 }
 `
 
@@ -63,5 +63,6 @@ export const ContainerModal=styled.div`
     display: flex;
     justify-content:center;
     align-items:center;
+ 
 
 `

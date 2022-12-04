@@ -174,6 +174,14 @@ export const ContainerData=styled.div`
 
 @media screen and (max-width:950px){
     padding: 10px;
+   
+    .price-modal{
+        text-align:center;
+        margin: 30px 0;
+    }
+    .cx-buttons{
+        margin: 35px 0;
+    }
 }
 
 

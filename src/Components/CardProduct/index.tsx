@@ -9,10 +9,6 @@ type Props={
 }
 export const CardProduct=({data,clikedStartModal}:Props)=>{
 
-    
-
-
-
     return <S.Container >
         <S.ContainerImage>
             <img src={data?.imageProduct}/>

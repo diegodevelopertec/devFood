@@ -16,13 +16,13 @@ export const CardCliked=({funcOffModal}:Props)=>{
 const actionsModal={
     addQdtProduct:()=>{
         setQdtProduct(prev=>prev+1) 
-        setPriceModal(priceActual=>priceActual+priceModal)  
+        setPriceModal(priceActual=>priceActual + priceModal)  
     }
     ,
     minusQdtProduct:()=>{
         if(qdtProduct > 1){
             setQdtProduct(prev=>prev-1)  
-           setPriceModal(priceActual=>priceActual-priceModal) 
+           setPriceModal(price=>priceModal-price) 
         }
     }
 }

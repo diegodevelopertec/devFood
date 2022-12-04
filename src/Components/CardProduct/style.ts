@@ -27,8 +27,8 @@ export const  ContainerImage=styled.div`
     justify-content:center;
     border-top-left-radius:5px;
     border-top-right-radius:5px;
-    
     width:100%;
+  
     img{
         max-width:120px;
         height:120px;
@@ -37,6 +37,10 @@ export const  ContainerImage=styled.div`
         width: 60px;
         height: 60px;
     }
+    }
+
+    @media screen and (max-width:600px){
+        height: 70px;
     }
 
 
@@ -79,6 +83,7 @@ export const DataProduct=styled.div`
                         .ingredientes-text{
                             display:none;
                         }
+                       
 
         }
     }
