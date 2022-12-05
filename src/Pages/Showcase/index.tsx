@@ -58,9 +58,9 @@ const returnDataClikedProduct=(data:Product)=>{
     <S.CategorySectionProducts>
         <p>Selecione uma categoria :</p>
         <div className="cx-btn-icons">
-            <ButtonMenu bg='#f06c0e' src={BebidasIcon} marginhorizontal='10' marginvertical='10'  onClick={actionDisplayDrinks} />
-            <ButtonMenu bg='#f06c0e' src={PizzaIcon} marginhorizontal='10' marginvertical='10' onClick={actionDisplayPizzas} />
-            <ButtonMenu  bg='#f06c0e' src={LanchesIcon} marginhorizontal='10' marginvertical='10'  onClick={actionDisplayBurguers}/>
+            <ButtonMenu bg='#f06c0e' iconActive={displayDrinks ? true : false} src={BebidasIcon} marginhorizontal='10' marginvertical='10'  onClick={actionDisplayDrinks} />
+            <ButtonMenu bg='#f06c0e' iconActive={displayPizzas ? true : false} src={PizzaIcon} marginhorizontal='10' marginvertical='10' onClick={actionDisplayPizzas} />
+            <ButtonMenu  bg='#f06c0e' iconActive={displayBurguer ? true : false} src={LanchesIcon} marginhorizontal='10' marginvertical='10'  onClick={actionDisplayBurguers}/>
         </div>
         <p>Produtos:</p>
     </S.CategorySectionProducts>

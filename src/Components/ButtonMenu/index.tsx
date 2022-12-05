@@ -6,12 +6,13 @@ type Prop={
     bg?:string,
     marginvertical:string,
     marginhorizontal:string,
+    iconActive:boolean;
     onClick?:()=>void
 }
 
 
-export const ButtonMenu=({src,bg,marginhorizontal,marginvertical,onClick}:Prop)=>{
-    return <S.ContainerButtonMenu bgColor={bg} mh={marginhorizontal} mv={marginvertical} onClick={onClick} >
+export const ButtonMenu=({src,bg,marginhorizontal,marginvertical,onClick,iconActive}:Prop)=>{
+    return <S.ContainerButtonMenu bgColor={bg} mh={marginhorizontal} mv={marginvertical} bgColorActive={iconActive} onClick={onClick} >
         <S.ButtonIcon src={src}/>
     </S.ContainerButtonMenu>
 }
