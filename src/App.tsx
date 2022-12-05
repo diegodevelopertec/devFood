@@ -7,7 +7,7 @@ import UserIcon from '.././src/assets/imgs/user.png'
 import LojaIcon from '.././src/assets/imgs/lojaicon.png'
 import MotoIcon from '.././src/assets/imgs/moto.png'
 import LogoIcon from '.././src/assets/imgs/logo.png'
-import { useHref} from 'react-router-dom'
+import {useHref} from 'react-router-dom'
 
 const App=()=>{
   
@@ -17,18 +17,20 @@ const App=()=>{
   
 
   const ClickViewHome=()=>{
-   
+  
     setViewHome(true)
     setViewAccount(false)
     setViewDelivery(false)
+   
   
    
   }
   const ClickViewDelivery=()=>{
-    
+  
     setViewHome(false)
     setViewAccount(false)
     setViewDelivery(true)
+    
    
   }
   
@@ -36,8 +38,7 @@ const App=()=>{
 
     setViewHome(false)
     setViewAccount(true)
-    setViewDelivery(false)
-  
+   
   }
 
   return <S.Body>

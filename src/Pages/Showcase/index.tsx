@@ -43,17 +43,29 @@ export const Showcase=()=>{
         setDisplayDrinks(true)
     }
 
-const returnDataClikedProduct=(data:Product)=>{
-   setDataProductCliked(data)
-   clikedOnModal()
-}
+    const returnDataClikedProduct=(data:Product)=>{
+    setDataProductCliked(data)
+    clikedOnModal()
+    }
+
+    const conditionCategoryTitle=()=>{
+        if(displayBurguer){
+            return 'Hamburguers'
+        }else if(displayDrinks){
+            return 'Bebidas'
+        }else if(displayPizzas){
+            return 'Pizzas'
+        }
+    }
+
 
     return <S.Container>
     <S.ContainerBanner>
-    <BannerPromotion  widthBanner="900" heightBanner="350" imageBanner={bannerImage} />
+      <BannerPromotion  widthBanner="900" heightBanner="350" imageBanner={bannerImage} />
     </S.ContainerBanner>
     <S.CategorySectionProducts>
-        <p>Selecione uma categoria :</p>
+      <>
+      <p>Selecione uma categoria :</p>
         <div className="cx-btn-icons">
             <ButtonMenu  bg='#f06c0e' 
                   iconActive={displayBurguer ? true : false} src={LanchesIcon} 
@@ -72,7 +84,8 @@ const returnDataClikedProduct=(data:Product)=>{
                 onClick={actionDisplayPizzas} />
            
         </div>
-        <p>Produtos:</p>
+        <p className="category-title">Produtos: <span>{conditionCategoryTitle()}</span> </p>
+      </>
     </S.CategorySectionProducts>
   
     <S.ShowcaseProduct> 

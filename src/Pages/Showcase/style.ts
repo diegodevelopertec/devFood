@@ -19,13 +19,26 @@ export const ContainerBanner=styled.div`
   
 `
 export const CategorySectionProducts=styled.div`
-    margin: 30px 0 0;
+    margin: 20px 0 0 ;
     color:#5a5b5c;
     font-weight:bold;
     background:#edeceb;
+    flex-direction:columns;
+
+
+    .category-title{
+       padding-top:15px;
+        display: flex;
+        span{
+            margin-left:10px;
+            text-decoration:underline;
+            color: #aaa;
+        }
+    }
    .cx-btn-icons{
         display: flex;
-        margin-left:100px;
+        margin: 20px 0 0px 80px;
+       
     }
     padding: 20px 10px;
 
@@ -36,6 +49,10 @@ export const CategorySectionProducts=styled.div`
             justify-content:center;
             margin: 0;
         }
+        .category-title{
+       
+        justify-content:center;
+    }
 }
 `
 
