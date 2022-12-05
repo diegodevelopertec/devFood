@@ -5,7 +5,7 @@ import * as S from './style'
 type Props={
     data?:Product,
     clikedStartModal?:()=>void
-   onClick:(dataCard:any)=>void
+    onClick:(dataCard:any)=>void
 }
 export const CardProduct=({data,clikedStartModal,onClick}:Props)=>{
 

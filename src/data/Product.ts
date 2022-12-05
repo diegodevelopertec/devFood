@@ -3,30 +3,30 @@
 export const dataBurguer=[
     {
         id:1,
-        category:'lanche',
-        name:'Burguer de carne',
-        price:34.00,
+        category:'Hamburguers',
+        name:'X-Burguer',
+        price:6,
         imageProduct: '../../src/assets/imgs/bg3.png',
-        igredientes:'bacon,ovo,tomate,alface,queijo'
+        igredientes:'Hamburguer,Queijo,Presunto e Maionese'
     },
     {
         id:2,
-        category:'lanche',
-        name:'Burguer de carne',
-        price:34.00,
+        category:'Hamburguers',
+        name:'X-Salada',
+        price:7,
         imageProduct: '../../src/assets/imgs/bg3.png',
-        igredientes:'bacon,ovo,tomate,alface,queijo'
+        igredientes:'Milho,Hamburguer,Maionese,Tomate,Alface,Queijo'
     },
     {
         id:3,
-        category:'lanche',
-        name:'Burguer de carne',
-        price:34.00,
+        category:'Hamburguers',
+        name:'X-Batata',
+        price:9,
         imageProduct:'../../src/assets/imgs/bg3.png',
-        igredientes:'bacon,ovo,tomate,alface,queijo'
+        igredientes:'Milho,Hamburguer,Maionese,Tomate,Alface,Queijo,Batata Palha'
     },{
         id:4,
-        category:'lanche',
+        category:'Hamburguers',
         name:'Burguer de carne',
         price:34.00,
         imageProduct: '../../src/assets/imgs/bg3.png',
@@ -34,7 +34,7 @@ export const dataBurguer=[
     },
     {
         id:5,
-        category:'lanche',
+        category:'Hamburguers',
         name:'Burguer de carne',
         price:34.00,
         imageProduct: '../../src/assets/imgs/bg2.png',
@@ -42,14 +42,14 @@ export const dataBurguer=[
     },
     {
         id:6,
-        category:'lanche',
+        category:'Hamburguers',
         name:'Burguer de carne',
         price:34.00,
         imageProduct:'../../src/assets/imgs/bg2.png',
         igredientes:'bacon,ovo,tomate,alface,queijo'
     },{
         id:7,
-        category:'lanche',
+        category:'Hamburguers',
         name:'Burguer de carne',
         price:34.00,
         imageProduct: '../../src/assets/imgs/bg2.png',
@@ -57,7 +57,7 @@ export const dataBurguer=[
     },
     {
         id:8,
-        category:'lanche',
+        category:'Hamburguers',
         name:'Burguer de carne',
         price:34.00,
         imageProduct: '../../src/assets/imgs/bg1.png',
@@ -65,7 +65,7 @@ export const dataBurguer=[
     },
     {
         id:9,
-        category:'lanche',
+        category:'Hamburguers',
         name:'Burguer de carne',
         price:34.00,
         imageProduct:'../../src/assets/imgs/bg1.png',
@@ -73,7 +73,7 @@ export const dataBurguer=[
     },
     {
         id:10,
-        category:'lanche',
+        category:'Hamburguers',
         name:'Burguer de carne',
         price:34.00,
         imageProduct: '../../src/assets/imgs/bg2.png',
@@ -81,7 +81,7 @@ export const dataBurguer=[
     },
     {
         id:11,
-        category:'lanche',
+        category:'Hamburguers',
         name:'Burguer de carne',
         price:34.00,
         imageProduct: '../../src/assets/imgs/bg2.png',
@@ -89,7 +89,7 @@ export const dataBurguer=[
     },
     {
         id:12,
-        category:'lanche',
+        category:'Hamburguers',
         name:'Burguer de carne',
         price:34.00,
         imageProduct:'../../src/assets/imgs/bg2.png',
@@ -199,7 +199,7 @@ export const dataDrinks=[
         id:1,
         category:'Bebidas',
         name:'Coca Cola 2L',
-        price:34.00,
+        price:3.50,
         imageProduct: '../../src/assets/imgs/coca2l.png',
         
     },
@@ -259,7 +259,7 @@ export const dataDrinks=[
     },
     {
         id:9,
-        category:'Bebidas',
+        category:'Bebida',
         name:'Coca Cola',
         price:34.00,
         imageProduct:'../../src/assets/imgs/cocap.png',

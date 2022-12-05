@@ -76,6 +76,9 @@ export const ContainerData=styled.div`
    
 .ingredientes{
    font-size:1rem;
+   color:#c4c3c2;
+  word-break:break-all;
+  text-align:justify;
 }
     .cx-price{
         padding: 12px 0;

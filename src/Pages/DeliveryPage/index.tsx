@@ -1,6 +1,6 @@
 
 
-export const Requests=()=>{
+export const DeliveryPage=()=>{
     return <>
     pedidos
     

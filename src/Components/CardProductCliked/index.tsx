@@ -18,13 +18,13 @@ export const CardCliked=({funcOffModal,data}:Props)=>{
 const actionsModal={
     addQdtProduct:()=>{
         setQdtProduct(prev=>prev+1) 
-        setPriceModal(priceActual=>priceActual + priceModal)  
+        setPriceModal(priceActual=>priceActual + data.price)  
     }
     ,
     minusQdtProduct:()=>{
         if(qdtProduct > 1){
             setQdtProduct(prev=>prev-1)  
-           setPriceModal(price=>priceModal-price) 
+           setPriceModal(priceActual=>priceActual - data.price) 
         }
     }
 }
@@ -63,11 +63,11 @@ const actionsModal={
                             <button className='btn-add' onClick={actionsModal.addQdtProduct}> + </button>
                         </div>
                     </div>
-                    <p>Você está adicionando {qdtProduct} produtos</p>
+                    <p>Você está adicionando {qdtProduct} {qdtProduct === 1 ? data.category.replace('s','') : data.category}</p>
                </div>
                <div className="cx-buttons">
                     <button className='btn-cancel' onClick={funcOffModal}>cancelar</button>
-                    <button className='btn-save'>adicionar ao carrinho</button>
+                    <button className='btn-save'>adicionar á sacola</button>
                </div>
             </div>
         </S.ContainerData>

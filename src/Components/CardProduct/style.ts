@@ -53,7 +53,7 @@ export const DataProduct=styled.div`
     padding: 18px 10px;
     margin-top:12px;
     flex-direction:column;
-  
+
         .info-product{
             margin: 15px 0;
             
@@ -76,7 +76,10 @@ export const DataProduct=styled.div`
                     font-family:Arial;
                     font-weight:bold;
                 }
-
+                .ingredientes-text{
+                    word-break:break-all;
+                    font-size:13px;
+                }
 
                 @media screen and (max-width:600px){
                         font-size:1rem;
