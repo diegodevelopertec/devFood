@@ -23,6 +23,7 @@ export const Container=styled.div`
        margin: 0;
        
    }
+ 
 `
 
 export const ContainerImage=styled.div`
@@ -186,7 +187,14 @@ export const ContainerData=styled.div`
     
 }
 
+@media screen and (max-width:300px){
+    padding: 12px;
+    p{
+        text-align:center;
+      font-size:12px;
+    }
 
+   }
 
 
 

@@ -34,13 +34,14 @@ export const  ContainerImage=styled.div`
         height:120px;
         margin-top:20px;
         @media screen and (max-width:600px){
-        width: 60px;
-        height: 60px;
+        width: 70px;
+        height: 70px;
     }
     }
 
     @media screen and (max-width:600px){
-        height: 70px;
+      height: 70px;
+     
     }
 
 
