@@ -29,7 +29,7 @@ export const LeftContent=styled.div`
      right:0;
      height: 100px;
      width: 100%;
-     
+     box-shadow:0 0 5px #aaa;
    }
  
 `

@@ -3,7 +3,7 @@ export type Product={
     id:number,
     name:string,
     category:string,
-    price:string,
+    price: number,
     imageProduct:string,
-    igredientes:string
+    igredientes?:string
 }

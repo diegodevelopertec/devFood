@@ -4,11 +4,13 @@ import * as S from './style'
 
 type Props={
     data?:Product,
-    clikedStartModal:()=>void
-   
+    clikedStartModal?:()=>void
+   onClick:(dataCard:any)=>void
 }
-export const CardProduct=({data,clikedStartModal}:Props)=>{
+export const CardProduct=({data,clikedStartModal,onClick}:Props)=>{
 
+const ClikeData=()=>onClick(data)
+   
     return <S.Container >
         <S.ContainerImage>
             <img src={data?.imageProduct}/>
@@ -21,11 +23,11 @@ export const CardProduct=({data,clikedStartModal}:Props)=>{
                   {data?.igredientes}  
                 </p>
                 <p className="price">
-                    R$ {data?.price}
+                    R$ {data?.price.toFixed(2)}
                 </p>
             </div>
             <div className="cx-btn-product">
-               <button onClick={clikedStartModal}>fazer pedido</button>
+               <button onClick={ClikeData}>fazer pedido</button>
             </div>
         </S.DataProduct>
     </S.Container>

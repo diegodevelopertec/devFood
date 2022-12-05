@@ -17,6 +17,7 @@ export const Showcase=()=>{
     const [burguerProductList,setBurguerProductList]=useState<Product[]>(dataBurguer)
     const [pizzaProductList,setPizzaProductList]=useState<Product[]>(dataPizza)
     const [drinksProductList,setDrinksProductList]=useState<Product[]>(dataDrinks)
+    const [dataProductCliked,setDataProductCliked]=useState<Product | any>()
     const [displayBurguer,setDisplayBurguer]=useState<boolean>(true)
     const [displayPizzas,setDisplayPizzas]=useState<boolean>(false)
     const [displayDrinks,setDisplayDrinks]=useState<boolean>(false)
@@ -45,6 +46,10 @@ const actionDisplayDrinks=()=>{
     setDisplayDrinks(true)
 }
 
+const returnDataClikedProduct=(data:Product)=>{
+   setDataProductCliked(data)
+    clikedOnModal()
+}
 
     return <S.Container>
     <S.ContainerBanner>
@@ -61,12 +66,12 @@ const actionDisplayDrinks=()=>{
     </S.CategorySectionProducts>
   
     <S.ShowcaseProduct> 
-        {displayBurguer ? burguerProductList && burguerProductList.map((item,index)=>< CardProduct  key={index} clikedStartModal={clikedOnModal} data={item} />) : null}
-        { displayPizzas ? pizzaProductList && pizzaProductList.map((item,index)=>< CardProduct  key={index} clikedStartModal={clikedOnModal} data={item} />) : null}
-        { displayDrinks ? drinksProductList && drinksProductList.map((item,index)=>< CardProduct  key={index} clikedStartModal={clikedOnModal} data={item} />) : null}
+        {displayBurguer ? burguerProductList && burguerProductList.map((item,index)=>< CardProduct  key={index} onClick={returnDataClikedProduct} data={item} />) : null}
+        { displayPizzas ? pizzaProductList && pizzaProductList.map((item,index)=>< CardProduct  key={index} onClick={returnDataClikedProduct}  data={item} />) : null}
+        { displayDrinks ? drinksProductList && drinksProductList.map((item,index)=>< CardProduct  key={index} onClick={returnDataClikedProduct}  data={item} />) : null}
     </S.ShowcaseProduct>
     {onModal && <S.ContainerModal>
-        <CardCliked  funcOffModal={closeModal}/>
+        <CardCliked data={dataProductCliked} funcOffModal={closeModal}/>
      </S.ContainerModal>}
      
     

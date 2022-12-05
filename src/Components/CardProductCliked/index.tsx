@@ -1,16 +1,18 @@
 import * as S from './style'
 import Bg from '../../assets/imgs/bg1.png'
 import { useState } from 'react'
+import { Product } from '../../Types/Products';
 
 
 type Props={
     funcOffModal:()=>void;
+    data:Product 
 }
 
-export const CardCliked=({funcOffModal}:Props)=>{
+export const CardCliked=({funcOffModal,data}:Props)=>{
 
     const [qdtProduct,setQdtProduct]=useState( 1 )
-    const [priceModal,setPriceModal]=useState(23)
+    const [priceModal,setPriceModal]=useState(data.price)
 
 
 const actionsModal={
@@ -35,15 +37,15 @@ const actionsModal={
 
     return <S.Container>
         <S.ContainerImage>
-           <img src={Bg} alt="" />
+           <img src={data.imageProduct} alt="" />
         </S.ContainerImage>
         <S.ContainerData>
             <div className="data-top">
                 <div className="cx-name">
-                   <span className='name'> Burguer X </span><small className="category">lanches</small>
+                   <span className='name'> {data.name} </span><small className="category">{data.category}</small>
                 </div>
                 <div className="ingredientes">
-                   <p> ovo,tomate,bacon,alface,queijo,mostarda</p>
+                   <p> {data.igredientes}</p>
                 </div>
                 <div className="cx-price">
                     <div className="price-modal">
