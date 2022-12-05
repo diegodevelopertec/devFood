@@ -23,44 +23,54 @@ export const Showcase=()=>{
     const [displayDrinks,setDisplayDrinks]=useState<boolean>(false)
     const [onModal,setOnModal]=useState(false)
 
-const clikedOnModal=()=>{
-    setOnModal(true)
-}
-const closeModal=()=>{
-    setOnModal(false)
-}
+    const clikedOnModal=()=>setOnModal(true)
+    const closeModal=()=>setOnModal(false)
 
-const actionDisplayBurguers=()=>{
-    setDisplayBurguer(true)
-    setDisplayPizzas(false)
-    setDisplayDrinks(false)
-}
-const actionDisplayPizzas=()=>{
-    setDisplayBurguer(false)
-    setDisplayPizzas(true)
-    setDisplayDrinks(false)
-}
-const actionDisplayDrinks=()=>{
-    setDisplayBurguer(false)
-    setDisplayPizzas(false)
-    setDisplayDrinks(true)
-}
+
+    const actionDisplayBurguers=()=>{
+        setDisplayBurguer(true)
+        setDisplayPizzas(false)
+        setDisplayDrinks(false)
+    }
+    const actionDisplayPizzas=()=>{
+        setDisplayBurguer(false)
+        setDisplayPizzas(true)
+        setDisplayDrinks(false)
+    }
+    const actionDisplayDrinks=()=>{
+        setDisplayBurguer(false)
+        setDisplayPizzas(false)
+        setDisplayDrinks(true)
+    }
 
 const returnDataClikedProduct=(data:Product)=>{
    setDataProductCliked(data)
-    clikedOnModal()
+   clikedOnModal()
 }
 
     return <S.Container>
     <S.ContainerBanner>
-       <BannerPromotion unity="%" widthBanner="100" heightBanner="400" imageBanner={bannerImage} />
+    <BannerPromotion  widthBanner="900" heightBanner="350" imageBanner={bannerImage} />
     </S.ContainerBanner>
     <S.CategorySectionProducts>
         <p>Selecione uma categoria :</p>
         <div className="cx-btn-icons">
-            <ButtonMenu bg='#f06c0e' iconActive={displayDrinks ? true : false} src={BebidasIcon} marginhorizontal='10' marginvertical='10'  onClick={actionDisplayDrinks} />
-            <ButtonMenu bg='#f06c0e' iconActive={displayPizzas ? true : false} src={PizzaIcon} marginhorizontal='10' marginvertical='10' onClick={actionDisplayPizzas} />
-            <ButtonMenu  bg='#f06c0e' iconActive={displayBurguer ? true : false} src={LanchesIcon} marginhorizontal='10' marginvertical='10'  onClick={actionDisplayBurguers}/>
+            <ButtonMenu  bg='#f06c0e' 
+                  iconActive={displayBurguer ? true : false} src={LanchesIcon} 
+                 marginhorizontal='10' marginvertical='10'  
+                 onClick={actionDisplayBurguers}
+                 />
+            <ButtonMenu bg='#f06c0e' 
+                iconActive={displayDrinks ? true : false} src={BebidasIcon} 
+                marginhorizontal='10' 
+                marginvertical='10'  
+                onClick={actionDisplayDrinks} />
+            <ButtonMenu bg='#f06c0e' 
+                iconActive={displayPizzas ? true : false} src={PizzaIcon} 
+                marginhorizontal='10' 
+                marginvertical='10' 
+                onClick={actionDisplayPizzas} />
+           
         </div>
         <p>Produtos:</p>
     </S.CategorySectionProducts>

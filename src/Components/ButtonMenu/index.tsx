@@ -1,5 +1,5 @@
 import * as S from './style'
-
+import { Link } from 'react-router-dom'
 
 type Prop={
     src:string,
@@ -7,12 +7,13 @@ type Prop={
     marginvertical:string,
     marginhorizontal:string,
     iconActive:boolean;
-    onClick?:()=>void
+    onClick?:(e:any)=>void;
+    link?:string
 }
 
 
-export const ButtonMenu=({src,bg,marginhorizontal,marginvertical,onClick,iconActive}:Prop)=>{
-    return <S.ContainerButtonMenu bgColor={bg} mh={marginhorizontal} mv={marginvertical} bgColorActive={iconActive} onClick={onClick} >
-        <S.ButtonIcon src={src}/>
+export const ButtonMenu=({src,bg,marginhorizontal,marginvertical,onClick,iconActive,link}:Prop)=>{
+    return <S.ContainerButtonMenu href={link} bgColor={bg} mh={marginhorizontal} mv={marginvertical} bgColorActive={iconActive} onClick={onClick} >
+      <S.ButtonIcon src={src}/>
     </S.ContainerButtonMenu>
-}
+}  

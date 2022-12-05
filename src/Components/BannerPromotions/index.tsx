@@ -4,8 +4,8 @@ type Props={
     imageBanner:string,
     widthBanner:string,
     heightBanner:string,
-    unity:'px' | '%'
+    
 }
-export const BannerPromotion=({imageBanner,widthBanner,heightBanner,unity}:Props)=>{
-    return <S.bannercontainer unity={unity} image={imageBanner} height={heightBanner} width={widthBanner} ></S.bannercontainer>
+export const BannerPromotion=({imageBanner,widthBanner,heightBanner}:Props)=>{
+    return <S.bannercontainer  image={imageBanner} height={heightBanner} width={widthBanner} ></S.bannercontainer>
 }

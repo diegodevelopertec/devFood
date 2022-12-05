@@ -16,8 +16,7 @@ export const Container=styled.div`
 export const ContainerBanner=styled.div`
     display:flex;
     justify-content:center;
-
-
+  
 `
 export const CategorySectionProducts=styled.div`
     margin: 30px 0 0;
@@ -46,7 +45,7 @@ export const ShowcaseProduct=styled.div`
     grid-template-columns:repeat(4,1fr);
     gap:10px;
    
-  padding: 30px 10px;
+   padding: 30px 10px;
     background:#edeceb;
     @media screen and (max-width:920px){
       grid-template-columns:repeat(2,1fr);
@@ -64,6 +63,7 @@ export const ContainerModal=styled.div`
     display: flex;
     justify-content:center;
     align-items:center;
+    transition:ease all 0.5s;
  
 
 `

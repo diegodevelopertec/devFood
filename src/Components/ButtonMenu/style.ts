@@ -14,7 +14,7 @@ export const ContainerButtonMenu=styled.a<Props>`
     border-radius:5px;
     padding:6px;
     margin: ${props=>props.mv && props.mh ? `${props.mv}px ${props.mh}px` : '10px 20'};
-    background: ${props=>props.bgColor ? props.bgColor : '#e38f4b'};
+    //background: ${props=>props.bgColor ? props.bgColor : '#e38f4b'};
     background:${props=>props.bgColorActive === true ? '#e6b72c' :  props.bgColor };
     &:hover{
         cursor:pointer;
@@ -25,4 +25,8 @@ export const ContainerButtonMenu=styled.a<Props>`
 export const ButtonIcon=styled.img`
     height: 50px;
     width: 50px;
+    @media screen and (max-width:600px){
+     height: 33px;
+     width: 33px;
+    }
 `
