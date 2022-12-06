@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container=styled.div`
  background: #f06c0e;
  //background:#c98e0e;
- //background: #2f302f;
+background: #2f302f;
 position: absolute;
 color:white;
 bottom: 0;
@@ -18,14 +18,14 @@ margin-top:12px;
   position: absolute;
   border-radius:100%;
   right: 3px;
-  top: 80vh;
+  top: 70vh;
   bottom:auto;
   width: 60px;
   height: 60px;
   display: flex;
   justify-content:center;
   align-items:center;
-
+bottom:20px;
 }
 `
 
@@ -46,8 +46,6 @@ img{
 }
 
 @media screen and (max-width:920px){
- 
-
  .header--text span{
     display: none;
 
