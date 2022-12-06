@@ -5,5 +5,6 @@ export type Product={
     category:string,
     price: number,
     imageProduct:string,
-    igredientes?:string
+    igredientes?:string,
+    qdt?:number
 }

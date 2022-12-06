@@ -1,5 +1,5 @@
 import * as S from './styled'
-import { useState } from 'react'
+import { EventHandler, useState } from 'react'
 import { Routes } from './Routes'
 import { ButtonMenu } from './Components/ButtonMenu'
 import BurguerImage from '.././src/assets/imgs/burguer.png'
@@ -20,16 +20,18 @@ const App=()=>{
     setViewHome(true)
     setViewAccount(false)
     setViewDelivery(false)
+  
   }
   const ClickViewDelivery=()=>{
+    setViewDelivery(true)
     setViewHome(false)
     setViewAccount(false)
-    setViewDelivery(true)
+   
   }
   
   const ClickViewAccount=()=>{
-    setViewHome(false)
     setViewAccount(true)
+    setViewHome(false)
     setViewDelivery(false)
   }
 
@@ -37,19 +39,19 @@ const App=()=>{
         <S.LeftContent>
             <S.Menu>
               <ButtonMenu link='/'
-                  onClick={ClickViewHome} 
+                  onClick={()=>ClickViewHome} 
                   iconActive={viewHome} 
                   src={LojaIcon}  
                   marginhorizontal='10' 
                   marginvertical='10' />
               <ButtonMenu link='/pedidos' 
-                  onClick={ClickViewDelivery}  
+                  onClick={()=>ClickViewDelivery}  
                   iconActive={viewDelivery} 
                   src={MotoIcon} 
                   marginhorizontal='10' 
                   marginvertical='10' />
               <ButtonMenu  
-                 onClick={ClickViewAccount} 
+                 onClick={()=>ClickViewAccount} 
                  iconActive={viewAccount} 
                  src={UserIcon} 
                  link='/user'

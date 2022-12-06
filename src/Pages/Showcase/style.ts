@@ -1,5 +1,8 @@
 import styled from "styled-components";
 
+type Props={
+    stateDisplay:boolean;
+}
 export const Container=styled.div`
     width: 100%;
     height: 100%;
@@ -57,10 +60,11 @@ export const CategorySectionProducts=styled.div`
 `
 
 
-export const ShowcaseProduct=styled.div`
-    display: grid;
+export const ShowcaseProduct=styled.div<Props>`
+    display: ${props=>props.stateDisplay === false ? 'grid' : 'block'};
     grid-template-columns:repeat(4,1fr);
     gap:10px;
+    transition: all ease 0.2;
    
    padding: 30px 10px;
     background:#edeceb;
@@ -84,3 +88,4 @@ export const ContainerModal=styled.div`
  
 
 `
+
