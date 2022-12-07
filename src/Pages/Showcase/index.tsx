@@ -15,7 +15,7 @@ import { dataPizza } from "../../data/Product"
 import { dataDrinks } from "../../data/Product"
 import { RestaurantePage } from "./../RestaurantePage"
 import { Bad } from "../../Components/Bad"
-
+import { ProductBad } from "../../Components/ProductBad"
 
 export const Showcase=()=>{
     const [burguerProductList,setBurguerProductList]=useState<Product[]>(dataBurguer)
@@ -27,6 +27,9 @@ export const Showcase=()=>{
     const [displayRestaurant,setDisplayRestaurant]=useState<boolean>(false)
     const [displayDrinks,setDisplayDrinks]=useState<boolean>(false)
     const [onModal,setOnModal]=useState(false)
+    const [productbad,setProductBad]=useState([17])
+
+
 
     const clikedOnModal=()=>setOnModal(true)
     const closeModal=()=>setOnModal(false)
@@ -58,8 +61,12 @@ export const Showcase=()=>{
     }
 
     const returnDataClikedProduct=(data:Product)=>{
-    setDataProductCliked(data)
-    clikedOnModal()
+        setDataProductCliked(data)
+        clikedOnModal()
+    }
+
+    const setDataBad=()=>{
+        closeModal()
     }
 
     const conditionCategoryTitle=()=>{
@@ -74,6 +81,7 @@ export const Showcase=()=>{
         }
     }
 
+  
 
     return <S.Container>
     <S.ContainerBanner>
@@ -117,10 +125,15 @@ export const Showcase=()=>{
         { displayPizzas ? pizzaProductList && pizzaProductList.map((item,index)=>< CardProduct  key={index} onClick={returnDataClikedProduct}  data={item} />) : null}
         { displayDrinks ? drinksProductList && drinksProductList.map((item,index)=>< CardProduct  key={index} onClick={returnDataClikedProduct}  data={item} />) : null}
         { displayRestaurant  && <RestaurantePage/>}
-        <Bad />
+        <Bad >
+          {productbad.map((item,index)=>(
+            <ProductBad key={index} />
+           
+          ))}
+        </Bad>
     </S.ShowcaseProduct>
     {onModal && <S.ContainerModal>
-        <CardCliked data={dataProductCliked} funcOffModal={closeModal}/>
+        <CardCliked onClick={setDataBad} data={dataProductCliked} funcOffModal={closeModal}/>
      </S.ContainerModal>}
      
     

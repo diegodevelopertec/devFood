@@ -5,11 +5,9 @@ type Props={
 }
 export const Container=styled.div`
     width: 100%;
-    height: 100%;
     opacity: 1;
     font-size:20px;
     overflow-x:hidden;
-   
    @media screen and (max-width:950px){
     padding-bottom:50px;
    }
@@ -65,9 +63,11 @@ export const ShowcaseProduct=styled.div<Props>`
     grid-template-columns:repeat(4,1fr);
     gap:10px;
     transition: all ease 0.2;
-   
+   padding-bottom:150px;
    padding: 30px 10px;
+   padding-bottom:90px;
     background:#edeceb;
+    background:  ${props=>props.stateDisplay === false ? '#474745' : '#edeceb'};
     @media screen and (max-width:920px){
       grid-template-columns:repeat(2,1fr);
       padding-bottom:100px;

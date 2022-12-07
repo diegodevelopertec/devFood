@@ -6,7 +6,7 @@ export const Container=styled.div`
     background-color:#e6e5e3;
     box-shadow:0 0 5px #aaa;
    border-radius:6px;
-  
+   background: #2f302f;
 
    @media screen and (max-width:600px){
         position: absolute;

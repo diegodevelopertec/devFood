@@ -6,10 +6,11 @@ import { Product } from '../../Types/Products';
 
 type Props={
     funcOffModal:()=>void;
-    data:Product 
+    data:Product,
+    onClick:()=>void
 }
 
-export const CardCliked=({funcOffModal,data}:Props)=>{
+export const CardCliked=({funcOffModal,data,onClick}:Props)=>{
 
     const [qdtProduct,setQdtProduct]=useState( 1 )
     const [priceModal,setPriceModal]=useState(data.price)
@@ -67,7 +68,7 @@ const actionsModal={
                </div>
                <div className="cx-buttons">
                     <button className='btn-cancel' onClick={funcOffModal}>cancelar</button>
-                    <button className='btn-save'>adicionar á sacola</button>
+                    <button className='btn-save' onClick={onClick}>adicionar á sacola</button>
                </div>
             </div>
         </S.ContainerData>

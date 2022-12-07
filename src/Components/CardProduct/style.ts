@@ -8,11 +8,11 @@ export const Container=styled.div`
     box-shadow: 0 0 7px #aaa;
     margin:12px 5px;
     border-radius:5px;
-   
+    background: #2f302f;
     @media screen and (max-width:600px){
     
         margin: 5px;
-      
+        font-size:10px;
        
         
     }
@@ -79,6 +79,7 @@ export const DataProduct=styled.div`
                 .ingredientes-text{
                     word-break:break-all;
                     font-size:13px;
+                    height: 30px;
                 }
 
                 @media screen and (max-width:600px){
