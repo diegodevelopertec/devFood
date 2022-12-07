@@ -6,8 +6,3 @@ type Props={
     children:ReactNode
 }
 
-export const ContextProvider=({children}:Props)=>{
-
-
-
-}
