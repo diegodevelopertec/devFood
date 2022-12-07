@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const Container=styled.div`
-    min-height:600px;
+  
     background-color: #edeceb;
     width: 100%;
 `
@@ -98,23 +98,24 @@ flex-direction:column;
         width: 100%;
         align-items:center;
         flex-direction:column;
-    .left-top{
-     width: auto;
-    }
-    .right-bottom{
-        
-        width: auto;
-        margin:30px 0;
-        flex-direction:column;
-        textarea{
-            resize:none;
-            width:50vw;
-            height: 230px;
-            margin: 25px 0;
+        .left-top{
+             width: auto;
+        }
+        .right-bottom{
             
+            width: auto;
+            margin:30px 0;
+            flex-direction:column;
+            textarea{
+                resize:none;
+                min-width:50vw;
+                max-width:80vw;
+                height: 230px;
+                margin: 25px 0;
+                
+            }
         }
     }
-}
 }
 `
 

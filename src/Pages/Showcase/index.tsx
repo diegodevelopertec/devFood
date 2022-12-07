@@ -95,6 +95,7 @@ export const Showcase=()=>{
                  iconActive={displayBurguer ? true : false} src={LanchesIcon} 
                  marginhorizontal='10' marginvertical='10'  
                  onClick={actionDisplayBurguers}
+                
             />
             <ButtonMenu bg='#f06c0e' 
                 iconActive={displayDrinks ? true : false} src={BebidasIcon} 

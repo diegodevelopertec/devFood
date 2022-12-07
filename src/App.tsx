@@ -43,20 +43,23 @@ const App=()=>{
                   iconActive={viewHome} 
                   src={LojaIcon}  
                   marginhorizontal='10' 
+                  text='inicio'
                   marginvertical='10' />
               <ButtonMenu link='/pedidos' 
                   onClick={()=>ClickViewDelivery}  
                   iconActive={viewDelivery} 
                   src={MotoIcon} 
                   marginhorizontal='10' 
-                  marginvertical='10' />
+                  marginvertical='10' 
+                  text='pedidos'/>
               <ButtonMenu  
                  onClick={()=>ClickViewAccount} 
                  iconActive={viewAccount} 
                  src={UserIcon} 
                  link='/user'
                  marginhorizontal='10' 
-                 marginvertical='10' />
+                 marginvertical='10' 
+                 text='conta'/>
             </S.Menu>
         </S.LeftContent>
 
