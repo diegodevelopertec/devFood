@@ -9,7 +9,7 @@ export const RestaurantePage=()=>{
             <div className='cx-img'>
                 <img src={RestauranteImage} height='300' width="800" alt="" />
             </div>
-            <p className='cardapio-text'>
+            <span className='cardapio-text'>
                 <h3>CARDÀPIO</h3>
                 <p>Marque o tipo de marmita e monte sua marmita no campo ao lado :</p>
                 <div className="check">
@@ -39,7 +39,7 @@ export const RestaurantePage=()=>{
                      </div>
 
                </span>
-            </p>
+            </span>
         
         
         </S.Containercardápio>

@@ -23,7 +23,7 @@ export const Bad=({children}:Props)=>{
     
 
 
-    return <S.Container >
+    return <S.Container displayBad={displayBad}>
         <S.BadHeader displayBad={displayBad} onClick={ !displayBad  ? clickDisplayBad : ()=> null}>
             <div className="header--text">
                 <img src={BadIcon} alt="" /><span>Sacola[0]</span>
