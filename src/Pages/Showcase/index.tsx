@@ -22,7 +22,7 @@ import { ApiProduct } from "../../Api/ApiProducts"
 export const Showcase=()=>{
     const [burguerProductList,setBurguerProductList]=useState<Product[] >(dataBurguer)
     const [pizzaProductList,setPizzaProductList]=useState<Product[]>(dataPizza)
-    const [drinksProductList,setDrinksProductList]=useState<Product[]>(dataDrinks)
+    const [drinksProductList,setDrinksProductList]=useState<Product[] >(dataDrinks)
     const [dataProductCliked,setDataProductCliked]=useState<Product | any>()
     const [displayBurguer,setDisplayBurguer]=useState<boolean>(true)
     const [displayPizzas,setDisplayPizzas]=useState<boolean>(false)

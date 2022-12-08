@@ -177,14 +177,6 @@ export const dataDrinks=[
         imageProduct: '../../src/assets/imgs/coca2l.png',
         qdt:1
         
-    },   {
-        id:1,
-        category:'Bebidas',
-        name:'Coca Cola 2L',
-        price:3.50,
-        imageProduct: '../../src/assets/imgs/coca2l.png',
-        qdt:1
-        
     },
     {
         id:1,
@@ -194,67 +186,6 @@ export const dataDrinks=[
         imageProduct: '../../src/assets/imgs/coca2l.png',
         qdt:1
         
-    },
-    {
-        id:1,
-        category:'Bebidas',
-        name:'Coca Cola 2L',
-        price:3.50,
-        imageProduct: '../../src/assets/imgs/coca2l.png',
-        qdt:1
-        
-    },{
-        id:7,
-        category:'Bebidas',
-        name:'Coca Cola',
-        price:34.00,
-        imageProduct: '../../src/assets/imgs/cocap.png',
-       
-    },
-    {
-        id:1,
-        category:'Bebidas',
-        name:'Coca Cola 2L',
-        price:3.50,
-        imageProduct: '../../src/assets/imgs/coca2l.png',
-        qdt:1
-        
-    },
-    {
-        id:1,
-        category:'Bebidas',
-        name:'Coca Cola 2L',
-        price:3.50,
-        imageProduct: '../../src/assets/imgs/coca2l.png',
-        qdt:1
-        
-    },
-    {
-        id:1,
-        category:'Bebidas',
-        name:'Coca Cola 2L',
-        price:3.50,
-        imageProduct: '../../src/assets/imgs/coca2l.png',
-        qdt:1
-        
-    },
+    }
     
-        {
-            id:1,
-            category:'Bebidas',
-            name:'Coca Cola 2L',
-            price:3.50,
-            imageProduct: '../../src/assets/imgs/coca2l.png',
-            qdt:1
-            
-        },
-        {
-            id:1,
-            category:'Bebidas',
-            name:'Coca Cola 2L',
-            price:3.50,
-            imageProduct: '../../src/assets/imgs/coca2l.png',
-            qdt:1
-            
-        }
 ]
