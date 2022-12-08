@@ -28,8 +28,8 @@ export const Container=styled.div<Props>`
          width:${props=>props.displayBad === true ? '100vw' : '60px'};
          margin:${props=>props.displayBad === true ? '0' : '0px'};
          margin-bottom:${props=>props.displayBad === true ? '0' : '130px'};
-         top:${props=>props.displayBad === true ? '0' : '80vh'};
-         bottom:${props=>props.displayBad === true ? '0' : '10px'};
+         top:${props=>props.displayBad === true ? '0' : '76vh'};
+         bottom:${props=>props.displayBad === true ? '0' : '150px'};
          right:${props=>props.displayBad === true ? '0' : '8px'};
          border-radius:${props=>props.displayBad === true ? 'noneh' : '60px'};
 
