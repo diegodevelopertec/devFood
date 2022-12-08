@@ -8,7 +8,7 @@ type Props={
 }
 
 export const bannercontainer=styled.div<Props>`
-    background-image: url(${props=>props.image ? props.image : null});
+    background-image: url(${props=>props.image ? `${props.image}`: null});
     background-repeat:none;
     background-size:cover;
     height:${props=>props.height ? `${props.height}px` : '300px'};
