@@ -71,7 +71,7 @@ export const ShowcaseProduct=styled.div<Props>`
    padding: 30px 10px;
    padding-bottom:90px;
     background:#edeceb;
-    background:  ${props=>props.stateDisplay === false ? '#474745' : '#edeceb'};
+   // background:  ${props=>props.stateDisplay === false ? '#474745' : '#edeceb'};
     @media screen and (max-width:920px){
       grid-template-columns:repeat(2,1fr);
       padding-bottom:100px;

@@ -5,8 +5,8 @@ export const Container=styled.div`
     width:640px;
     background-color:#e6e5e3;
     box-shadow:0 0 5px #aaa;
-   border-radius:6px;
-   background: #2f302f;
+    border-radius:6px;
+    background: #2f302f;
 
    @media screen and (max-width:600px){
         position: absolute;
@@ -16,11 +16,11 @@ export const Container=styled.div`
         right:0;
         width: 100vw;
         height: 100vh;
-       flex-direction:column;
-       align-items:center;
-       overflow-x:none;
-       border-radius:0;
-       margin: 0;
+        flex-direction:column;
+        align-items:center;
+        overflow-x:none;
+        border-radius:0;
+        margin: 0;
        
    }
  
@@ -37,16 +37,18 @@ export const ContainerImage=styled.div`
     img{
         width: 180px;
         height: 180px;
+       
     }
-@media screen and (max-width:600px){
-  width: 100%;
-  height: 150px;
-  margin-bottom:20px;
-  border-radius:0;
-  img{
-    margin-top:50px;
-  }
-   }
+        @media screen and (max-width:600px){
+            width: 100%;
+            height: 150px;
+            margin-bottom:25px;
+            border-radius:0;
+            img{
+                margin-top:70px;
+              
+            }
+        }
 `
 
 export const ContainerData=styled.div`
@@ -80,7 +82,7 @@ p{
    font-size:1rem;
    color:#c4c3c2;
   word-break:break-all;
-  text-align:justify;
+   text-align:justify;
 }
     .cx-price{
         padding: 12px 0;
@@ -185,9 +187,9 @@ p{
 @media screen and (max-width:600px){
     padding: 10px;
    .cx-qdt{
-    align-items:center;
-    text-align:center;
-    p{color: white;}
+        align-items:center;
+        text-align:center;
+        p{color: white;}
    }
     .cx-price{
         display: family;
