@@ -36,7 +36,7 @@ export const Bad=({children}:Props)=>{
                 <img src={BadIcon} alt="" /><span>Sacola[0]</span>
             </div>
             <div  onClick={clickDisplayBad}  className='close--bad'>
-             {displayBad ? <img src={CloseBadIcon}  alt="" /> : <img src={openBadIcon}  alt="" />} 
+             {displayBad ? <img src={CloseBadIcon}  alt="" /> : <img className='open-icon' src={openBadIcon}  alt="" />} 
              
             </div>
             <S.NotificationBad displayBad={notification}>  2 </S.NotificationBad >
