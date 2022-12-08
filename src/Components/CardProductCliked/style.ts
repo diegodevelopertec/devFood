@@ -55,7 +55,9 @@ export const ContainerData=styled.div`
     flex:1;
     padding: 0 5px;
    
-
+p{
+    margin: 12px 0;
+}
  .data-top{
     margin: 15px 0;
     padding: 0 5px;
@@ -84,6 +86,9 @@ export const ContainerData=styled.div`
         padding: 12px 0;
         color: #f06c0e;
         font-size:2rem;
+     
+        
+            
     }
  }
 
@@ -179,13 +184,24 @@ export const ContainerData=styled.div`
 
 @media screen and (max-width:600px){
     padding: 10px;
-   
+   .cx-qdt{
+    align-items:center;
+    text-align:center;
+    p{color: white;}
+   }
+    .cx-price{
+        display: family;
+        justify-content:center;
+        
+    }
     .price-modal{
         text-align:center;
         margin: 20px 0;
         background: #eee;
         padding: 12px 5px;
-        border-radius:5px
+        border-radius:5px;
+        width:70vw;
+        
     }
     
 }

@@ -75,6 +75,7 @@ export const DataProduct=styled.div`
                     color: #f06c0e;
                     font-family:Arial;
                     font-weight:bold;
+                    width: 100px;
                 }
                 .ingredientes-text{
                     word-break:break-all;
@@ -88,6 +89,7 @@ export const DataProduct=styled.div`
                         .ingredientes-text{
                             display:none;
                         }
+                       
                        
 
         }

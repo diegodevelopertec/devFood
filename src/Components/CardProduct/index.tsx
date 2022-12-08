@@ -1,7 +1,6 @@
 import { Product } from '../../Types/Products'
 import * as S from './style'
 
-
 type Props={
     data?:Product,
     clikedStartModal?:()=>void
@@ -13,7 +12,7 @@ const ClikeData=()=>onClick(data)
    
     return <S.Container >
         <S.ContainerImage>
-            <img src={data?.imageProduct}/>
+            <img src={`./../../assets/imgs/${data?.imageProduct}`}/>
         </S.ContainerImage>
         <S.DataProduct>
             <div className='info-product'>

@@ -1,6 +1,9 @@
 import * as S from './style'
 import BadIcon from '../../assets/imgs/sacola.png'
-import CloseBadIcon from '../../assets/imgs/setbaixo.png'
+import  openBadIcon from '../../assets/imgs/setbaixo.png'
+import CloseBadIcon from '../../assets/imgs/close.png'
+
+
 import { Children, ReactNode, useState } from 'react'
 
 type Props={
@@ -9,16 +12,20 @@ type Props={
 
 export const Bad=({children}:Props)=>{
     const [displayBad,setDisplayBad]=useState(false)
-    const clickDisplayBad=()=>{
-    if(!displayBad){
-        setDisplayBad(true)
-        setNotification(false)
-    }else{
-       setDisplayBad(false)
-    }
-}
     const [notification,setNotification]=useState(true)
 
+
+    const clickDisplayBad=()=>{
+       if(!displayBad){
+           setDisplayBad(true)
+           setNotification(false)
+       }else{
+         setDisplayBad(false)
+      }
+}
+
+
+    
         
     
 
@@ -29,7 +36,8 @@ export const Bad=({children}:Props)=>{
                 <img src={BadIcon} alt="" /><span>Sacola[0]</span>
             </div>
             <div  onClick={clickDisplayBad}  className='close--bad'>
-              <img src={CloseBadIcon}  alt="" /> 
+             {displayBad ? <img src={CloseBadIcon}  alt="" /> : <img src={openBadIcon}  alt="" />} 
+             
             </div>
             <S.NotificationBad displayBad={notification}>  2 </S.NotificationBad >
         </S.BadHeader>

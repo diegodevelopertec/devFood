@@ -7,7 +7,9 @@ export const dataBurguer=[
         name:'X-Burguer',
         price:6,
         imageProduct: '../../src/assets/imgs/bg3.png',
-        igredientes:'Hamburguer,Queijo,Presunto e Maionese'
+        igredientes:'Hamburguer,Queijo,Presunto e Maionese',
+        qdt:1,
+    
     },
     {
         id:2,
@@ -15,7 +17,10 @@ export const dataBurguer=[
         name:'X-Salada',
         price:7,
         imageProduct: '../../src/assets/imgs/bg3.png',
-        igredientes:'Milho,Hamburguer,Maionese,Tomate,Alface,Queijo'
+        igredientes:'Milho,Hamburguer,Maionese,Tomate,Alface,Queijo',
+        qdt:1,
+        
+
     },
     {
         id:3,
@@ -23,78 +28,56 @@ export const dataBurguer=[
         name:'X-Batata',
         price:9,
         imageProduct:'../../src/assets/imgs/bg3.png',
-        igredientes:'Milho,Hamburguer,Maionese,Tomate,Alface,Queijo,Batata Palha'
+        igredientes:'Milho,Hamburguer,Maionese,Tomate,Alface,Queijo,Batata Palha',
+        qdt:1,
     },{
         id:4,
         category:'Hamburguers',
         name:'Burguer de carne',
         price:34.00,
         imageProduct: '../../src/assets/imgs/bg3.png',
-        igredientes:'bacon,ovo,tomate,alface,queijo'
+        igredientes:'bacon,ovo,tomate,alface,queijo',
+        qdt:1
     },
     {
-        id:5,
+        id:1,
         category:'Hamburguers',
-        name:'Burguer de carne',
-        price:34.00,
-        imageProduct: '../../src/assets/imgs/bg2.png',
-        igredientes:'bacon,ovo,tomate,alface,queijo'
+        name:'X-Burguer',
+        price:6,
+        imageProduct: '../../src/assets/imgs/bg3.png',
+        igredientes:'Hamburguer,Queijo,Presunto e Maionese',
+        qdt:1,
+    
     },
     {
-        id:6,
+        id:2,
         category:'Hamburguers',
-        name:'Burguer de carne',
-        price:34.00,
-        imageProduct:'../../src/assets/imgs/bg2.png',
-        igredientes:'bacon,ovo,tomate,alface,queijo'
+        name:'X-Salada',
+        price:7,
+        imageProduct: '../../src/assets/imgs/bg3.png',
+        igredientes:'Milho,Hamburguer,Maionese,Tomate,Alface,Queijo',
+        qdt:1,
+        
+
+    },
+    {
+        id:3,
+        category:'Hamburguers',
+        name:'X-Batata',
+        price:9,
+        imageProduct:'../../src/assets/imgs/bg3.png',
+        igredientes:'Milho,Hamburguer,Maionese,Tomate,Alface,Queijo,Batata Palha',
+        qdt:1,
     },{
-        id:7,
+        id:4,
         category:'Hamburguers',
         name:'Burguer de carne',
         price:34.00,
-        imageProduct: '../../src/assets/imgs/bg2.png',
-        igredientes:'bacon,ovo,tomate,alface,queijo'
+        imageProduct: '../../src/assets/imgs/bg3.png',
+        igredientes:'bacon,ovo,tomate,alface,queijo',
+        qdt:1
     },
-    {
-        id:8,
-        category:'Hamburguers',
-        name:'Burguer de carne',
-        price:34.00,
-        imageProduct: '../../src/assets/imgs/bg1.png',
-        igredientes:'bacon,ovo,tomate,alface,queijo'
-    },
-    {
-        id:9,
-        category:'Hamburguers',
-        name:'Burguer de carne',
-        price:34.00,
-        imageProduct:'../../src/assets/imgs/bg1.png',
-        igredientes:'bacon,ovo,tomate,alface,queijo'
-    },
-    {
-        id:10,
-        category:'Hamburguers',
-        name:'Burguer de carne',
-        price:34.00,
-        imageProduct: '../../src/assets/imgs/bg2.png',
-        igredientes:'bacon,ovo,tomate,alface,queijo'
-    },
-    {
-        id:11,
-        category:'Hamburguers',
-        name:'Burguer de carne',
-        price:34.00,
-        imageProduct: '../../src/assets/imgs/bg2.png',
-        igredientes:'bacon,ovo,tomate,alface,queijo'
-    },
-    {
-        id:12,
-        category:'Hamburguers',
-        name:'Burguer de carne',
-        price:34.00,
-        imageProduct:'../../src/assets/imgs/bg2.png',
-        igredientes:'bacon,ovo,tomate,alface,queijo'
-    }
+  
 ]
 
 export const dataPizza=[
@@ -104,94 +87,67 @@ export const dataPizza=[
         name:'Pizza de carne',
         price:34.00,
         imageProduct: '../../src/assets/imgs/pz1.png',
-        igredientes:'bacon,ovo,tomate,alface,queijo'
+        igredientes:'bacon,ovo,tomate,alface,queijo',
+        qdt:1
     },
     {
-        id:2,
+        id:1,
         category:'Pizzas',
         name:'Pizza de carne',
         price:34.00,
         imageProduct: '../../src/assets/imgs/pz1.png',
-        igredientes:'bacon,ovo,tomate,alface,queijo'
-    },
-    {
-        id:3,
-        category:'Pizzas',
-        name:'Pizza de carne',
-        price:34.00,
-        imageProduct:'../../src/assets/imgs/pz3.png',
-        igredientes:'bacon,ovo,tomate,alface,queijo'
-    },{
-        id:4,
-        category:'Pizzas',
-        name:'Pizza de carne',
-        price:34.00,
-        imageProduct: '../../src/assets/imgs/pz3.png',
-        igredientes:'bacon,ovo,tomate,alface,queijo'
-    },
-    {
-        id:5,
-        category:'Pizzas',
-        name:'Pizza de carne',
-        price:34.00,
-        imageProduct: '../../src/assets/imgs/pz2.png',
-        igredientes:'bacon,ovo,tomate,alface,queijo'
-    },
-    {
-        id:6,
-        category:'Pizzas',
-        name:'Pizza de carne',
-        price:34.00,
-        imageProduct:'../../src/assets/imgs/pz2.png',
-        igredientes:'bacon,ovo,tomate,alface,queijo'
-    },{
-        id:7,
+        igredientes:'bacon,ovo,tomate,alface,queijo',
+        qdt:1
+    },  {
+        id:1,
         category:'Pizzas',
         name:'Pizza de carne',
         price:34.00,
         imageProduct: '../../src/assets/imgs/pz1.png',
-        igredientes:'bacon,ovo,tomate,alface,queijo'
-    },
-    {
-        id:8,
+        igredientes:'bacon,ovo,tomate,alface,queijo',
+        qdt:1
+    },  {
+        id:1,
         category:'Pizzas',
         name:'Pizza de carne',
         price:34.00,
         imageProduct: '../../src/assets/imgs/pz1.png',
-        igredientes:'bacon,ovo,tomate,alface,queijo'
-    },
-    {
-        id:9,
+        igredientes:'bacon,ovo,tomate,alface,queijo',
+        qdt:1
+    }, {
+        id:1,
         category:'Pizzas',
         name:'Pizza de carne',
         price:34.00,
-        imageProduct:'../../src/assets/imgs/pz1.png',
-        igredientes:'bacon,ovo,tomate,alface,queijo'
+        imageProduct: '../../src/assets/imgs/pz1.png',
+        igredientes:'bacon,ovo,tomate,alface,queijo',
+        qdt:1
     },
     {
-        id:10,
+        id:1,
         category:'Pizzas',
         name:'Pizza de carne',
         price:34.00,
-        imageProduct: '../../src/assets/imgs/pz2.png',
-        igredientes:'bacon,ovo,tomate,alface,queijo'
-    },
-    {
-        id:11,
-        category:'lanche',
-        name:'Burguer de carne',
-        price:34.00,
-        imageProduct: '../../src/assets/imgs/pz3.png',
-        igredientes:'bacon,ovo,tomate,alface,queijo'
-    },
-    {
-        id:12,
+        imageProduct: '../../src/assets/imgs/pz1.png',
+        igredientes:'bacon,ovo,tomate,alface,queijo',
+        qdt:1
+    },  {
+        id:1,
         category:'Pizzas',
         name:'Pizza de carne',
         price:34.00,
-        imageProduct:'../../src/assets/imgs/pz3.png',
-        igredientes:'bacon,ovo,tomate,alface,queijo'
-    }
+        imageProduct: '../../src/assets/imgs/pz1.png',
+        igredientes:'bacon,ovo,tomate,alface,queijo',
+        qdt:1
+    },  {
+        id:1,
+        category:'Pizzas',
+        name:'Pizza de carne',
+        price:34.00,
+        imageProduct: '../../src/assets/imgs/pz1.png',
+        igredientes:'bacon,ovo,tomate,alface,queijo',
+        qdt:1
+    },
 ]
 
 export const dataDrinks=[
@@ -201,45 +157,51 @@ export const dataDrinks=[
         name:'Coca Cola 2L',
         price:3.50,
         imageProduct: '../../src/assets/imgs/coca2l.png',
+        qdt:1
         
     },
     {
-        id:2,
+        id:1,
         category:'Bebidas',
         name:'Coca Cola 2L',
-        price:34.00,
+        price:3.50,
         imageProduct: '../../src/assets/imgs/coca2l.png',
+        qdt:1
         
     },
     {
-        id:3,
+        id:1,
         category:'Bebidas',
         name:'Coca Cola 2L',
-        price:34.00,
+        price:3.50,
         imageProduct: '../../src/assets/imgs/coca2l.png',
+        qdt:1
         
-    },{
-        id:4,
+    },   {
+        id:1,
         category:'Bebidas',
         name:'Coca Cola 2L',
-        price:34.00,
+        price:3.50,
         imageProduct: '../../src/assets/imgs/coca2l.png',
-       
+        qdt:1
+        
     },
     {
-        id:5,
+        id:1,
         category:'Bebidas',
-        name:'Coca Cola ',
-        price:34.00,
-        imageProduct: '../../src/assets/imgs/cocap.png',
-       
+        name:'Coca Cola 2L',
+        price:3.50,
+        imageProduct: '../../src/assets/imgs/coca2l.png',
+        qdt:1
+        
     },
     {
-        id:6,
+        id:1,
         category:'Bebidas',
-        name:'Coca Cola ',
-        price:34.00,
-        imageProduct: '../../src/assets/imgs/cocap.png',
+        name:'Coca Cola 2L',
+        price:3.50,
+        imageProduct: '../../src/assets/imgs/coca2l.png',
+        qdt:1
         
     },{
         id:7,
@@ -250,43 +212,49 @@ export const dataDrinks=[
        
     },
     {
-        id:8,
+        id:1,
         category:'Bebidas',
-        name:'Coca Cola',
-        imageProduct: '../../src/assets/imgs/cocap.png',
-        price:34.00,
-       
-    },
-    {
-        id:9,
-        category:'Bebida',
-        name:'Coca Cola',
-        price:34.00,
-        imageProduct:'../../src/assets/imgs/cocap.png',
-       
-    },
-    {
-        id:10,
-        category:'Bebidas',
-        name:'Pepsi',
-        price:34.00,
-        imageProduct: '../../src/assets/imgs/pepsi1.png',
+        name:'Coca Cola 2L',
+        price:3.50,
+        imageProduct: '../../src/assets/imgs/coca2l.png',
+        qdt:1
         
     },
     {
-        id:11,
+        id:1,
         category:'Bebidas',
-        name:'Burguer de carne',
-        price:34.00,
-        imageProduct: '../../src/assets/imgs/pepsi1.png',
-      
+        name:'Coca Cola 2L',
+        price:3.50,
+        imageProduct: '../../src/assets/imgs/coca2l.png',
+        qdt:1
+        
     },
     {
-        id:12,
+        id:1,
         category:'Bebidas',
-        name:'Pepsi',
-        price:34.00,
-        imageProduct:'../../src/assets/imgs/pepsi1.png',
-       
-    }
+        name:'Coca Cola 2L',
+        price:3.50,
+        imageProduct: '../../src/assets/imgs/coca2l.png',
+        qdt:1
+        
+    },
+    
+        {
+            id:1,
+            category:'Bebidas',
+            name:'Coca Cola 2L',
+            price:3.50,
+            imageProduct: '../../src/assets/imgs/coca2l.png',
+            qdt:1
+            
+        },
+        {
+            id:1,
+            category:'Bebidas',
+            name:'Coca Cola 2L',
+            price:3.50,
+            imageProduct: '../../src/assets/imgs/coca2l.png',
+            qdt:1
+            
+        }
 ]

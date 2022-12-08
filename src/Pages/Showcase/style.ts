@@ -18,6 +18,10 @@ export const ContainerBanner=styled.div`
     display:flex;
     justify-content:center;
   
+  @media screen and (max-width:950px){
+    width: 100vw;
+    height: 400px;
+  }
 `
 export const CategorySectionProducts=styled.div`
     margin: 20px 0 0 ;

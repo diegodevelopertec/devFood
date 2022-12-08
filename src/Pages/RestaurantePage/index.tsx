@@ -13,8 +13,8 @@ export const RestaurantePage=()=>{
                 <h3>CARDÀPIO</h3>
                 <p>Marque o tipo de marmita e monte sua marmita no campo ao lado :</p>
                 <div className="check">
-                    <input type="radio" name="" id="" /> P - R$24.00
-                    <input type="radio" name="" id="" /> M - R$25.00
+                    <input type="radio" name="type" id="" value={'p'}/> P - R$24.00
+                    <input type="radio" name="type" id="" value={'m'} /> M - R$25.00
                 </div>
                <span className="area-cardapio" >
                      <div className='left-top' >

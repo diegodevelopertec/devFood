@@ -15,4 +15,10 @@ export const bannercontainer=styled.div<Props>`
     width:${props=>props.width ? `${props.width}px` : '300px'};
     border-radius:5px;
   
+
+
+  @media screen and (max-width:920px){
+   width:100%;
+   height:100%;
+  }
 `

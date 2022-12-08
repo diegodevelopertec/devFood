@@ -19,7 +19,7 @@ padding:10px;
 box-shadow: 0 0 5px #aaa;
 border-top-left-radius:5px;
 margin-top:12px;
-
+transition:ease all 0.2s;
     @media screen and (max-width:920px){
    
          position:absolute;
@@ -46,17 +46,18 @@ display: flex;
 justify-content:space-between;
 align-items:center;
 font-size:14px;
+padding: 10px 0;
   .header--text{
       display: flex;
       justify-content:center;
       align-items:center;
   }
 .close--bad{
-    display:${props=>props.displayBad === false ? 'none' : 'flex'};
+    display:${props=>props.displayBad === false ? 'flex' : 'flex'};
 }
 img{
-    height: 30px;
-    width:30px;
+    height: 20px;
+    width:20px;
     margin-right:5px;
 }
 

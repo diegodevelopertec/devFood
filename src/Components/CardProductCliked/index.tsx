@@ -7,12 +7,13 @@ import { Product } from '../../Types/Products';
 type Props={
     funcOffModal:()=>void;
     data:Product,
-    onClick:()=>void
+    onClick:()=>void,
+    
 }
 
 export const CardCliked=({funcOffModal,data,onClick}:Props)=>{
 
-    const [qdtProduct,setQdtProduct]=useState( 1 )
+    const [qdtProduct,setQdtProduct]=useState(data.qdt)
     const [priceModal,setPriceModal]=useState(data.price)
 
 
@@ -67,7 +68,7 @@ const actionsModal={
                     <p>Você está adicionando {qdtProduct} {qdtProduct === 1 ? data.category.replace('s','') : data.category}</p>
                </div>
                <div className="cx-buttons">
-                    <button className='btn-cancel' onClick={funcOffModal}>cancelar</button>
+                    <button className='btn-cancel' onClick={funcOffModal}>voltar</button>
                     <button className='btn-save' onClick={onClick}>adicionar á sacola</button>
                </div>
             </div>

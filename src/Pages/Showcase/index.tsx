@@ -16,9 +16,11 @@ import { dataDrinks } from "../../data/Product"
 import { RestaurantePage } from "./../RestaurantePage"
 import { Bad } from "../../Components/Bad"
 import { ProductBad } from "../../Components/ProductBad"
+import { ApiProduct } from "../../Api/ApiProducts"
+
 
 export const Showcase=()=>{
-    const [burguerProductList,setBurguerProductList]=useState<Product[]>(dataBurguer)
+    const [burguerProductList,setBurguerProductList]=useState<Product[] >(dataBurguer)
     const [pizzaProductList,setPizzaProductList]=useState<Product[]>(dataPizza)
     const [drinksProductList,setDrinksProductList]=useState<Product[]>(dataDrinks)
     const [dataProductCliked,setDataProductCliked]=useState<Product | any>()
@@ -28,6 +30,14 @@ export const Showcase=()=>{
     const [displayDrinks,setDisplayDrinks]=useState<boolean>(false)
     const [onModal,setOnModal]=useState(false)
     const [productbad,setProductBad]=useState([17])
+
+   /* useEffect(()=>{
+    const loadBurguers=async()=>{
+        let dataBurguer=await ApiProduct.getProducts()
+        await  setBurguerProductList(dataBurguer)
+    }
+        setTimeout(()=>loadBurguers(),1000)
+    },[burguerProductList])*/
 
 
 
@@ -85,7 +95,7 @@ export const Showcase=()=>{
 
     return <S.Container>
     <S.ContainerBanner>
-      <BannerPromotion  widthBanner="900" heightBanner="350" imageBanner={bannerImage} />
+     
     </S.ContainerBanner>
     <S.CategorySectionProducts>
       <>
@@ -134,7 +144,7 @@ export const Showcase=()=>{
         </Bad>
     </S.ShowcaseProduct>
     {onModal && <S.ContainerModal>
-        <CardCliked onClick={setDataBad} data={dataProductCliked} funcOffModal={closeModal}/>
+        <CardCliked  onClick={setDataBad} data={dataProductCliked} funcOffModal={closeModal}/>
      </S.ContainerModal>}
      
     

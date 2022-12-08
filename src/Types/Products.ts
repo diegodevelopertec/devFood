@@ -6,5 +6,5 @@ export type Product={
     price: number,
     imageProduct:string,
     igredientes?:string,
-    qdt?:number
+    qdt:number
 }
