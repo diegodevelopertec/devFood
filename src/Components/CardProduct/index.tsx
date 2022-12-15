@@ -19,7 +19,7 @@ const ClikeData=()=>onClick(data)
                 <p className='category--name'>{data?.category}</p>
                 <h4>{data?.name} </h4>
                 <p className='ingredientes-text'>
-                  {data?.igredientes}  
+                  {data?.ingredientes}  
                 </p>
                 <p className="price">
                     R$ {data?.price.toFixed(2)}

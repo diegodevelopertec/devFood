@@ -1,14 +1,14 @@
 import styled from "styled-components";
-
+import {ThemeStyle} from './../../styled'
 
 
 export const Container=styled.div`
   
-    background-color: #e3e8e4;
     box-shadow: 0 0 7px #aaa;
     margin:12px 5px;
     border-radius:5px;
-    background: #2f302f;
+    background: ${ThemeStyle.bgCardProductBottom};
+  
     @media screen and (max-width:600px){
     
         margin: 5px;
@@ -20,7 +20,7 @@ export const Container=styled.div`
 `
 
 export const  ContainerImage=styled.div`
-    background: #f06c0e;
+    background: ${ThemeStyle.bgTheme};
     height: 100px;
     display: flex;
     padding: 12px 0;
@@ -58,21 +58,23 @@ export const DataProduct=styled.div`
             margin: 15px 0;
             
             .category--name:{
-                    color: #aaa;
+                    color: ${ThemeStyle.colorIngredientsCategory};
                     padding: 5px 0;
+                    font-size:12px;
                     text-transform: capitalize;
                 }
-                h3{
+                h4{
                     font-size:1rem;
-                    color: black;
+                    color: ${ThemeStyle.colorTitleCard};
+                   
                 }
                 p{
-                    color: #aaa;
+                    color: ${ThemeStyle.colorIngredientsCategory};
                     margin: 10px 0;
                     font-size:1rem;
                 }
                 .price{
-                    color: #f06c0e;
+                    color: ${ThemeStyle.bgTheme};
                     font-family:Arial;
                     font-weight:bold;
                     width: 100px;
@@ -81,6 +83,7 @@ export const DataProduct=styled.div`
                     word-break:break-all;
                     font-size:13px;
                     height: 30px;
+                    color: ${ThemeStyle.colorIngredientsCategory};
                 }
 
                 @media screen and (max-width:600px){
@@ -108,15 +111,15 @@ export const DataProduct=styled.div`
             font-weight:bold;
             text-transform:uppercase;
             padding: 12px 20px;
-            background: #f06c0e;
+            background:  ${ThemeStyle.bgTheme};
             color: white;
-            border: 2px solid #e3e8e4;
+            border: 2px solid    ${ThemeStyle.bgAppSystem};
             border-radius:5px;
             &:hover{
                 cursor:pointer;
                 background:transparent;
-                color: #f06c0e;
-                border: 2px solid  #f06c0e;
+                color:  ${ThemeStyle.bgTheme};
+                border: 2px solid ${ThemeStyle.bgTheme};
             }
          }
          @media screen and (max-width:600px){

@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { ThemeStyle } from "../../styled";
+
 
 export const Container=styled.div`
 display: flex;
@@ -6,7 +8,7 @@ justify-content:space-between;
 padding:10px 5px;
 font-size:13px;
 width: 100%;
-border: 1px solid #f06c0e;;
+border: 1px solid ${ThemeStyle.bgTheme};
 border-radius:5px;
     .area--image{
         margin-right:10px;
@@ -19,10 +21,9 @@ border-radius:5px;
       img{
         height:30px;
         width:30px;
-
       }
       .price{
-        color: #f06c0e;
+        color: ${ThemeStyle.bgTheme};
       }
       .area-text{
         display: flex;
@@ -31,6 +32,13 @@ border-radius:5px;
             .name{
                 font-weight:bold;
             }
+      }
+
+      @media screen and (max-width:950px){
+        img{
+            height: 60px;
+            width:60px;
+        }
       }
   }
 
@@ -61,11 +69,20 @@ border-radius:5px;
             border: none;
             padding:10px;
             background: white;
-            color: orange;
+            color: ${ThemeStyle.bgTheme};
             width: 30px;
         }
     }
   }
+
+  @media screen and (max-width:950px){
+    align-items:center;
+        button{
+           height: 50px;
+            width:180px;
+           align-items:center;
+        }
+      }
 
 
 `

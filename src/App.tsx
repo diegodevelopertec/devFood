@@ -1,5 +1,8 @@
+import React from 'react';
+import { useState } from 'react'
 import * as S from './styled'
-import { EventHandler, useState } from 'react'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { Routes } from './Routes'
 import { ButtonMenu } from './Components/ButtonMenu'
 import BurguerImage from '.././src/assets/imgs/burguer.png'
@@ -7,32 +10,41 @@ import UserIcon from '.././src/assets/imgs/user.png'
 import LojaIcon from '.././src/assets/imgs/lojaicon.png'
 import MotoIcon from '.././src/assets/imgs/moto.png'
 import LogoIcon from '.././src/assets/imgs/logo.png'
-
+import {Navigate } from 'react-router-dom';
 
 const App=()=>{
   
   const [viewHome,setViewHome]=useState(true)
   const [viewAccount,setViewAccount]=useState(false)
   const [viewDelivery,setViewDelivery]=useState(false)
-  
 
-  const ClickViewHome=()=>{
+
+
+  const ClickViewHome=(e:any)=>{
+
+   
+  
+   
     setViewHome(true)
     setViewAccount(false)
     setViewDelivery(false)
+    e.preventDefault()
   
   }
-  const ClickViewDelivery=()=>{
+  const ClickViewDelivery=(e:any)=>{
+  
     setViewDelivery(true)
     setViewHome(false)
     setViewAccount(false)
+    e.preventDefault()
    
   }
   
-  const ClickViewAccount=()=>{
+  const ClickViewAccount=(e:any)=>{
     setViewAccount(true)
     setViewHome(false)
     setViewDelivery(false)
+    e.preventDefault()
   }
 
   return <S.Body>
@@ -45,7 +57,8 @@ const App=()=>{
                   marginhorizontal='10' 
                   text='inicio'
                   marginvertical='10' />
-              <ButtonMenu link='/pedidos' 
+              <ButtonMenu 
+                  link='/pedidos' 
                   onClick={()=>ClickViewDelivery}  
                   iconActive={viewDelivery} 
                   src={MotoIcon} 
@@ -75,7 +88,7 @@ const App=()=>{
             </S.CardLoja>
           </S.HeaderApp>
           <Routes/>
-  
+         <ToastContainer />
         </S.RightContent>
   </S.Body>
 }

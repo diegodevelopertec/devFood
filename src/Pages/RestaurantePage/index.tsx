@@ -4,7 +4,7 @@ export const RestaurantePage=()=>{
     return <S.Container>
        <S.Containercardápio>
             <h3>
-                Bem vindo á area de Resturante
+                Bem vindo á area de Restaurante
             </h3>
             <div className='cx-img'>
                 <img src={RestauranteImage} height='300' width="800" alt="" />

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { ThemeStyle } from "../../styled";
 
 type Props={
     bgColor?:string,
@@ -16,11 +17,11 @@ export const ContainerButtonMenu=styled.a<Props>`
     padding:6px;
     text-decoration:none;
     margin: ${props=>props.mv && props.mh ? `${props.mv}px ${props.mh}px` : '10px 20'};
-    //background: ${props=>props.bgColor ? props.bgColor : '#e38f4b'};
-    background:${props=>props.bgColorActive === true ? '#e6b72c' :  props.bgColor };
+    background:${props=>props.bgColorActive === true ? `${ThemeStyle.bgActiveIconMenu}` :  props.bgColor };
     &:hover{
         cursor:pointer;
         background:${props=>props.bgColorActive === true ? '#d4ae3bc' :  '#e8b376' };
+        background:${props=>props.bgColorActive === true ? `${props.bgColorActive}` :  `${ThemeStyle.bgHoverIcon}` };
     }
 `
 

@@ -47,7 +47,7 @@ const actionsModal={
                    <span className='name'> {data.name} </span><small className="category">{data.category}</small>
                 </div>
                 <div className="ingredientes">
-                   <p> {data.igredientes}</p>
+                   <p> {data.ingredientes}</p>
                 </div>
                 <div className="cx-price">
                     <div className="price-modal">

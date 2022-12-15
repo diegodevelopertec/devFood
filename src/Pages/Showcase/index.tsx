@@ -1,6 +1,5 @@
 import { useState,useEffect } from "react"
 import { BannerPromotion } from "../../Components/BannerPromotions"
-import bannerImage from '../../assets/imgs/banner.jpg'
 import * as S from './style'
 import { CardProduct } from "../../Components/CardProduct"
 import { Product } from "../../Types/Products"
@@ -16,7 +15,8 @@ import { dataDrinks } from "../../data/Product"
 import { RestaurantePage } from "./../RestaurantePage"
 import { Bad } from "../../Components/Bad"
 import { ProductBad } from "../../Components/ProductBad"
-import { ApiProduct } from "../../Api/ApiProducts"
+import { toast } from "react-toastify"
+import { ThemeStyle } from "../../styled"
 
 
 export const Showcase=()=>{
@@ -76,6 +76,7 @@ export const Showcase=()=>{
     }
 
     const setDataBad=()=>{
+        toast.success(`você adicionou novo produto na sacola`)
         closeModal()
     }
 
@@ -94,32 +95,32 @@ export const Showcase=()=>{
   
 
     return <S.Container>
-    <S.ContainerBanner>
-     
-    </S.ContainerBanner>
+    
+  
+   
     <S.CategorySectionProducts>
       <>
       <p>Selecione uma categoria :</p>
         <div className="cx-btn-icons">
-            <ButtonMenu  bg='#f06c0e' 
+            <ButtonMenu  bg={ThemeStyle.bgTheme} 
                  iconActive={displayBurguer ? true : false} src={LanchesIcon} 
                  marginhorizontal='10' marginvertical='10'  
                  onClick={actionDisplayBurguers}
                 
             />
-            <ButtonMenu bg='#f06c0e' 
+            <ButtonMenu bg={ThemeStyle.bgTheme} 
                 iconActive={displayDrinks ? true : false} src={BebidasIcon} 
                 marginhorizontal='10' 
                 marginvertical='10'  
                 onClick={actionDisplayDrinks} 
             />
-            <ButtonMenu bg='#f06c0e' 
+            <ButtonMenu bg={ThemeStyle.bgTheme} 
                 iconActive={displayPizzas ? true : false} src={PizzaIcon} 
                 marginhorizontal='10' 
                 marginvertical='10' 
                 onClick={actionDisplayPizzas} 
             />
-              <ButtonMenu bg='#f06c0e' 
+              <ButtonMenu bg={ThemeStyle.bgTheme} 
                 iconActive={displayRestaurant} src={ResturantIcon} 
                 marginhorizontal='10' 
                 marginvertical='10' 

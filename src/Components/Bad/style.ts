@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import {ThemeStyle} from './../../styled'
+
 
 type Props={
   displayBad:boolean,
@@ -6,8 +8,8 @@ type Props={
 }
 export const Container=styled.div<Props>`
     background: #f06c0e;
-    //background:#c98e0e;
     background: #2f302f;
+    background: ${ThemeStyle.bgCardProductBottom};
     position: absolute;
     color:white;
     bottom: 0;
@@ -16,6 +18,7 @@ export const Container=styled.div<Props>`
     padding:10px;
     box-shadow: 0 0 5px #aaa;
     border-top-left-radius:5px;
+    border-top-right-radius:5px;
     margin-top:12px;
     transition:ease all 0.2s;
     @media screen and (max-width:920px){
@@ -72,10 +75,10 @@ export const BadBody=styled.div<Props>`
   display:${props=>props.displayBad ? 'flex' : 'none'};
   flex-direction:column;
   margin: 20px 0;
-  height:300px;
+  height:400px;
 
   @media screen and (max-width:950px){
- 
+   
   }
 `
 export const NotificationBad=styled.div<Props>`

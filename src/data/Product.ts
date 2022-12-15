@@ -7,7 +7,7 @@ export const dataBurguer=[
         name:'X-Burguer',
         price:6,
         imageProduct: '../../src/assets/imgs/bg3.png',
-        igredientes:'Hamburguer,Queijo,Presunto e Maionese',
+        ingredientes:'Hamburguer,Queijo,Presunto e Maionese',
         qdt:1,
     
     },
@@ -17,7 +17,7 @@ export const dataBurguer=[
         name:'X-Salada',
         price:7,
         imageProduct: '../../src/assets/imgs/bg3.png',
-        igredientes:'Milho,Hamburguer,Maionese,Tomate,Alface,Queijo',
+        ingredientes:'Milho,Hamburguer,Maionese,Tomate,Alface,Queijo',
         qdt:1,
         
 
@@ -28,7 +28,7 @@ export const dataBurguer=[
         name:'X-Batata',
         price:9,
         imageProduct:'../../src/assets/imgs/bg3.png',
-        igredientes:'Milho,Hamburguer,Maionese,Tomate,Alface,Queijo,Batata Palha',
+        ingredientes:'Milho,Hamburguer,Maionese,Tomate,Alface,Queijo,Batata Palha',
         qdt:1,
     },{
         id:4,
@@ -36,7 +36,7 @@ export const dataBurguer=[
         name:'Burguer de carne',
         price:34.00,
         imageProduct: '../../src/assets/imgs/bg3.png',
-        igredientes:'bacon,ovo,tomate,alface,queijo',
+        ingredientes:'bacon,ovo,tomate,alface,queijo',
         qdt:1
     },
     {
@@ -45,7 +45,7 @@ export const dataBurguer=[
         name:'X-Burguer',
         price:6,
         imageProduct: '../../src/assets/imgs/bg3.png',
-        igredientes:'Hamburguer,Queijo,Presunto e Maionese',
+        ingredientes:'Hamburguer,Queijo,Presunto e Maionese',
         qdt:1,
     
     },
@@ -55,7 +55,7 @@ export const dataBurguer=[
         name:'X-Salada',
         price:7,
         imageProduct: '../../src/assets/imgs/bg3.png',
-        igredientes:'Milho,Hamburguer,Maionese,Tomate,Alface,Queijo',
+        ingredientes:'Milho,Hamburguer,Maionese,Tomate,Alface,Queijo',
         qdt:1,
         
 
@@ -66,7 +66,7 @@ export const dataBurguer=[
         name:'X-Batata',
         price:9,
         imageProduct:'../../src/assets/imgs/bg3.png',
-        igredientes:'Milho,Hamburguer,Maionese,Tomate,Alface,Queijo,Batata Palha',
+        ingredientes:'Milho,Hamburguer,Maionese,Tomate,Alface,Queijo,Batata Palha',
         qdt:1,
     },{
         id:4,
@@ -74,7 +74,7 @@ export const dataBurguer=[
         name:'Burguer de carne',
         price:34.00,
         imageProduct: '../../src/assets/imgs/bg3.png',
-        igredientes:'bacon,ovo,tomate,alface,queijo',
+        ingredientes:'bacon,ovo,tomate,alface,queijo',
         qdt:1
     },
   
@@ -87,7 +87,7 @@ export const dataPizza=[
         name:'Pizza de carne',
         price:34.00,
         imageProduct: '../../src/assets/imgs/pz1.png',
-        igredientes:'bacon,ovo,tomate,alface,queijo',
+        ingredientes:'bacon,ovo,tomate,alface,queijo',
         qdt:1
     },
     {
@@ -96,7 +96,7 @@ export const dataPizza=[
         name:'Pizza de carne',
         price:34.00,
         imageProduct: '../../src/assets/imgs/pz1.png',
-        igredientes:'bacon,ovo,tomate,alface,queijo',
+        ingredientes:'bacon,ovo,tomate,alface,queijo',
         qdt:1
     },  {
         id:1,
@@ -104,7 +104,7 @@ export const dataPizza=[
         name:'Pizza de carne',
         price:34.00,
         imageProduct: '../../src/assets/imgs/pz1.png',
-        igredientes:'bacon,ovo,tomate,alface,queijo',
+        ingredientes:'bacon,ovo,tomate,alface,queijo',
         qdt:1
     },  {
         id:1,
@@ -112,7 +112,7 @@ export const dataPizza=[
         name:'Pizza de carne',
         price:34.00,
         imageProduct: '../../src/assets/imgs/pz1.png',
-        igredientes:'bacon,ovo,tomate,alface,queijo',
+        ingredientes:'bacon,ovo,tomate,alface,queijo',
         qdt:1
     }, {
         id:1,
@@ -120,7 +120,7 @@ export const dataPizza=[
         name:'Pizza de carne',
         price:34.00,
         imageProduct: '../../src/assets/imgs/pz1.png',
-        igredientes:'bacon,ovo,tomate,alface,queijo',
+        ingredientes:'bacon,ovo,tomate,alface,queijo',
         qdt:1
     },
     {
@@ -129,7 +129,7 @@ export const dataPizza=[
         name:'Pizza de carne',
         price:34.00,
         imageProduct: '../../src/assets/imgs/pz1.png',
-        igredientes:'bacon,ovo,tomate,alface,queijo',
+        ingredientes:'bacon,ovo,tomate,alface,queijo',
         qdt:1
     },  {
         id:1,
@@ -137,7 +137,7 @@ export const dataPizza=[
         name:'Pizza de carne',
         price:34.00,
         imageProduct: '../../src/assets/imgs/pz1.png',
-        igredientes:'bacon,ovo,tomate,alface,queijo',
+        ingredientes:'bacon,ovo,tomate,alface,queijo',
         qdt:1
     },  {
         id:1,
@@ -145,7 +145,7 @@ export const dataPizza=[
         name:'Pizza de carne',
         price:34.00,
         imageProduct: '../../src/assets/imgs/pz1.png',
-        igredientes:'bacon,ovo,tomate,alface,queijo',
+        ingredientes:'bacon,ovo,tomate,alface,queijo',
         qdt:1
     },
 ]

@@ -1,12 +1,12 @@
 import styled from "styled-components";
+import {ThemeStyle} from './../../styled'
 
 export const Container=styled.div`
     display: flex;
     width:640px;
-    background-color:#e6e5e3;
     box-shadow:0 0 5px #aaa;
     border-radius:6px;
-    background: #2f302f;
+    background: ${ThemeStyle.bgCardProductBottom};
 
    @media screen and (max-width:600px){
         position: absolute;
@@ -28,7 +28,7 @@ export const Container=styled.div`
 
 export const ContainerImage=styled.div`
     width:35%;
-    background: #f06c0e;
+    background: ${ThemeStyle.bgTheme};
     display: flex;
     justify-content:center;
     align-items:center;
@@ -52,7 +52,7 @@ export const ContainerImage=styled.div`
 `
 
 export const ContainerData=styled.div`
-    display:flex.
+    display:flex;
     flex-direction:column;
     flex:1;
     padding: 0 5px;

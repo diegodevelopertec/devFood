@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { ThemeStyle } from "../../styled";
 
 type Props={
     stateDisplay:boolean;
@@ -25,10 +26,11 @@ export const ContainerBanner=styled.div`
 `
 export const CategorySectionProducts=styled.div`
     margin: 20px 0 0 ;
-    color:#5a5b5c;
+    color:${ThemeStyle.colorTitleCard};
     font-weight:bold;
     background:#edeceb;
     flex-direction:columns;
+    font-size:15px;
 
 
     .category-title{
@@ -37,7 +39,7 @@ export const CategorySectionProducts=styled.div`
         span{
             margin-left:10px;
             text-decoration:underline;
-            color: #aaa;
+            color: ${ThemeStyle.colorTitleCard};
         }
     }
    .cx-btn-icons{
