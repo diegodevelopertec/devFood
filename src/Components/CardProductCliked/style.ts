@@ -70,7 +70,8 @@ p{
             font-weight:bold;
         }
         .category{
-            color:#c4c3c2;
+            color:${ThemeStyle.colorIngredientsCategory};
+           
         }
         padding: 20px 0;
         display: flex;
@@ -79,14 +80,14 @@ p{
     }
    
 .ingredientes{
-   font-size:1rem;
-   color:#c4c3c2;
+   font-size:13px;
+   color:${ThemeStyle.colorIngredientsCategory};
   word-break:break-all;
    text-align:justify;
 }
     .cx-price{
         padding: 12px 0;
-        color: #f06c0e;
+        color: ${ThemeStyle.bgTheme};
         font-size:2rem;
      
         
@@ -96,12 +97,12 @@ p{
 
  .data-bottom{
     font-size:14px;
-
-
-
-
-
-
+    p{
+            color: ${ThemeStyle.colorTitleCard};
+    }
+    .qdt-modal{
+        color: ${ThemeStyle.bgTheme};
+    }
 
     .container-btn-add{
         display: flex;
@@ -120,7 +121,7 @@ p{
         button{
             height: 50px;
             width: 50px;
-            background: #f06c0e;
+            background: ${ThemeStyle.bgTheme};
             color: white;
             border:0;
             font-size:14px;
@@ -143,6 +144,7 @@ p{
       display: flex;
       justify-content:center;
       align-items:center;
+   
        
         button{
             padding: 17px 5px;
@@ -159,10 +161,10 @@ p{
         }
         .btn-save{
             height: 50px;
-            background: #f06c0e;
+            background: ${ThemeStyle.bgTheme};
             &:hover{
-               color:  #f06c0e;
-               border: 2px solid  #f06c0e;
+               color: ${ThemeStyle.bgTheme};
+               border: 2px solid  ${ThemeStyle.bgTheme};
                background: transparent;
             }
         }
@@ -189,7 +191,7 @@ p{
    .cx-qdt{
         align-items:center;
         text-align:center;
-        p{color: white;}
+      
    }
     .cx-price{
         display: family;

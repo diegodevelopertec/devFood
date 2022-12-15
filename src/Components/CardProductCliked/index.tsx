@@ -65,7 +65,7 @@ const actionsModal={
                             <button className='btn-add' onClick={actionsModal.addQdtProduct}> + </button>
                         </div>
                     </div>
-                    <p>Você está adicionando {qdtProduct} {qdtProduct === 1 ? data.category.replace('s','') : data.category}</p>
+                    <p>Você está adicionando <span className='qdt-modal'>{qdtProduct} {qdtProduct === 1 ? data.category.replace('s','') : data.category}</span></p>
                </div>
                <div className="cx-buttons">
                     <button className='btn-cancel' onClick={funcOffModal}>voltar</button>
