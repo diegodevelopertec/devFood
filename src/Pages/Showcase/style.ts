@@ -9,8 +9,11 @@ export const Container=styled.div`
     opacity: 1;
     font-size:20px;
     overflow-x:hidden;
-   @media screen and (max-width:950px){
-    padding-bottom:50px;
+  
+  
+  
+  @media screen and   (max-width:950px){
+ padding-bottom:50px;
    }
 `
 

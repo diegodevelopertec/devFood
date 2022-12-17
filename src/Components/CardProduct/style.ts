@@ -10,11 +10,8 @@ export const Container=styled.div`
     background: ${ThemeStyle.bgCardProductBottom};
   
     @media screen and (max-width:600px){
-    
-        margin: 5px;
-        font-size:10px;
-       
-        
+      font-size:10px;
+     
     }
    
 `
@@ -92,10 +89,13 @@ export const DataProduct=styled.div`
                         .ingredientes-text{
                             display:none;
                         }
-                       
-                       
-
-        }
+                    
+                }
+                
+                @media screen and (max-width:280px){
+                      height: 80px;
+                    
+                }
     }
 
     .cx-btn-product{

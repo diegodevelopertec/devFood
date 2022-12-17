@@ -28,7 +28,8 @@ const App=()=>{
     setViewHome(true)
     setViewAccount(false)
     setViewDelivery(false)
-    e.preventDefault()
+    e.PreventDefault()
+  
   
   }
   const ClickViewDelivery=(e:any)=>{
@@ -36,15 +37,16 @@ const App=()=>{
     setViewDelivery(true)
     setViewHome(false)
     setViewAccount(false)
-    e.preventDefault()
+   
+  
    
   }
   
-  const ClickViewAccount=(e:any)=>{
+  const ClickViewAccount=()=>{
     setViewAccount(true)
     setViewHome(false)
     setViewDelivery(false)
-    e.preventDefault()
+   
   }
 
   return <S.Body>
