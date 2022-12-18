@@ -17,6 +17,8 @@ import { Bad } from "../../Components/Bad"
 import { ProductBad } from "../../Components/ProductBad"
 import { toast } from "react-toastify"
 import { ThemeStyle } from "../../styled"
+import { ApiProduct } from "../../Services/ProductActions"
+import { useBurguerData } from "../../hooks/useBurguerList"
 
 
 export const Showcase=()=>{
@@ -31,15 +33,18 @@ export const Showcase=()=>{
     const [onModal,setOnModal]=useState(false)
     const [productbad,setProductBad]=useState([17])
 
-   /* useEffect(()=>{
-    const loadBurguers=async()=>{
-        let dataBurguer=await ApiProduct.getProducts()
-        await  setBurguerProductList(dataBurguer)
+    
+    /*const loadBurguers=async()=>{
+        let dataApiBurguer=await ApiProduct.getProducts()
+       setBurguerProductList(dataApiBurguer)
     }
+
+    useEffect(()=>{
+        
         setTimeout(()=>loadBurguers(),1000)
-    },[burguerProductList])*/
+    },[])
 
-
+*/
 
     const clikedOnModal=()=>setOnModal(true)
     const closeModal=()=>setOnModal(false)

@@ -6,8 +6,7 @@ export const ApiProduct={
 
     getProducts:async():Promise<Product[]>=>{
         let res=await Api.get('products')
-       let data=res.data
-       return data
+        return res.data
     },
     getOneProduct:async(id:string):Promise<Product>=>{
         let res=await Api.get(`products/${id}`)
