@@ -73,16 +73,25 @@ border-radius:5px;
             width: 30px;
         }
     }
+
+  
   }
 
   @media screen and (max-width:950px){
     align-items:center;
-        button{
-           height: 50px;
-            width:180px;
-           align-items:center;
-        }
+    *{
+      button{
+        width: 60px;
+        height: 50px;
+        display: flex;
+        justify-content:center;
+        align-items:center;
       }
+    }
+   
+  }
+
+ 
 
 
 `
