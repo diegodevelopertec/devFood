@@ -19,6 +19,7 @@ import { toast } from "react-toastify"
 import { ThemeStyle } from "../../styled"
 import { ApiProduct } from "../../Services/ProductActions"
 import { useBurguerData } from "../../hooks/useBurguerList"
+import { LoginModal } from "../LoginModal"
 
 
 export const Showcase=()=>{
@@ -32,19 +33,11 @@ export const Showcase=()=>{
     const [displayDrinks,setDisplayDrinks]=useState<boolean>(false)
     const [onModal,setOnModal]=useState(false)
     const [productbad,setProductBad]=useState([17])
-
+    const [isLogged,setisLogged]=useState(false)
     
-    /*const loadBurguers=async()=>{
-        let dataApiBurguer=await ApiProduct.getProducts()
-       setBurguerProductList(dataApiBurguer)
-    }
 
-    useEffect(()=>{
-        
-        setTimeout(()=>loadBurguers(),1000)
-    },[])
 
-*/
+
 
     const clikedOnModal=()=>setOnModal(true)
     const closeModal=()=>setOnModal(false)
@@ -98,8 +91,7 @@ export const Showcase=()=>{
     }
 
   
-
-    return <S.Container>
+return <S.Container>
     
   
    
@@ -151,6 +143,9 @@ export const Showcase=()=>{
     </S.ShowcaseProduct>
     {onModal && <S.ContainerModal>
         <CardCliked  onClick={setDataBad} data={dataProductCliked} funcOffModal={closeModal}/>
+     </S.ContainerModal>}
+     {isLogged && <S.ContainerModal>
+        <LoginModal />
      </S.ContainerModal>}
      
     
