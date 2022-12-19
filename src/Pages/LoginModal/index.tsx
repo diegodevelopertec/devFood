@@ -38,7 +38,7 @@ export const LoginModal=({closeModal}:Props)=>{
                 <button onClick={closeModal}>voltar</button>
            </div>
            <div className="cx-login">
-               <h3>Login</h3>
+              
                <span className='cx-logo'><img src={LojaIcon} alt="" /> <h2>Rangoo</h2></span>
            </div>
             <p>Faça login na sua conta para continuar o pedido :</p>

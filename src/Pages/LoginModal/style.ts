@@ -32,12 +32,13 @@ export const Container=styled.div`
    .cx-logo{
         margin:20px 0;
         display: flex;
+        flex-direction:column;
         justify-content:space-around;
         align-items:center;
         h2{
             color:  ${ThemeStyle.bgHoverIcon};
-            font-size:14px;
-            margin-left:10px;
+            font-size:18px;
+            
         }
 
         img{
@@ -48,14 +49,12 @@ export const Container=styled.div`
             border-radius:100%;
         }
    }
-        h3{
-            margin: 15px 0;
-            color: ${ThemeStyle.bgTheme};
-        }
+      
    }
     p{
         font-size:15px;
         margin: 0 0 20px 0;
+        text-align:center;
     }
 }
     .form{
@@ -99,18 +98,19 @@ export const Container=styled.div`
 
 
 @media screen and (max-width:600px){
-    width: 100vw;
     position: absolute;
-    top: 0;
-    left: 0;
-    bottom:0;
-    right: 0;
-    height:100%;
-    display:flex;
-    flex-direction:column;
-    border-radius:0;
-    align-items:center;
-    justify-content:center;
+        top:0;
+        left:0;
+        bottom: 0;
+        right:0;
+        width: 100vw;
+        height: 100vh;
+        flex-direction:column;
+        align-items:center;
+        overflow-x:none;
+        border-radius:0;
+        margin: 0;
+        justify-content:center;
     *{
         text-align:center;
     }
@@ -135,11 +135,9 @@ export const Container=styled.div`
         justify-content:space-around;
         align-items:center;
         margin:20px 0;
-    
+        height: 200px;
         img{
-           order:1;
-           height:290px;
-           width: 290px;
+          
         }
         h3{
             order:2;
