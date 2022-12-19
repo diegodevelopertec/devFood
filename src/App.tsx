@@ -70,6 +70,7 @@ const App=()=>{
                   marginhorizontal='10' 
                   marginvertical='10' 
                   text='pedidos'/>
+                    
               <ButtonMenu  
                  onClick={ClickViewAccount} 
                  iconActive={viewAccount} 

@@ -13,11 +13,13 @@ type Prop={
     onClick?:(e:any)=>void,
     link?:string,
     text?:string,
+    width?:string,
+   
     
 }
 
 
-export const ButtonMenu=({src,bg,marginhorizontal,marginvertical,onClick,iconActive,link,text}:Prop)=>{
+export const ButtonMenu=({src,bg,marginhorizontal,marginvertical,onClick,iconActive,link,text,width}:Prop)=>{
  
 
 

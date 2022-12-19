@@ -6,6 +6,8 @@ type Props={
     bgColorActive:boolean,
     mv:string,
     mh:string,
+    
+   
 }
 
 export const ContainerButtonMenu=styled.a<Props>`
@@ -23,14 +25,28 @@ export const ContainerButtonMenu=styled.a<Props>`
         background:${props=>props.bgColorActive === true ? '#d4ae3bc' :  '#e8b376' };
         background:${props=>props.bgColorActive === true ? `${props.bgColorActive}` :  `${ThemeStyle.bgHoverIcon}` };
     }
+
+    @media screen and (max-width:950px){
+        padding:14px;
+       
+    }
+    @media screen and (max-width:280px){
+        padding:26px;
+        height:50px;
+        width: 50px;
+        font-size:1rem;
+    }
 `
 
 export const ButtonIcon=styled.img`
     height: 50px;
     width: 50px;
     @media screen and (max-width:600px){
-     height: 33px;
-     width: 33px;
+     min-height: 15px;
+     height:25px;
+     width:23px;
+     min-width: 23px;
+   
     }
 `
 

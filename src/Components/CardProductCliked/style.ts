@@ -70,9 +70,7 @@ export const ContainerData=styled.div`
     flex:1;
     padding: 0 5px;
    
-p{
-    margin: 12px 0;
-}
+
  .data-top{
     margin: 15px 0;
     padding: 0 5px;
@@ -83,7 +81,7 @@ p{
             font-weight:bold;
         }
         .category{
-            color:${ThemeStyle.colorIngredientsCategory};
+            color:${ThemeStyle.bgAppSystem};
            
         }
         padding: 20px 0;
@@ -93,6 +91,7 @@ p{
     }
    
 .ingredientes{
+    font-style:italic;
    font-size:13px;
    color:${ThemeStyle.colorIngredientsCategory};
   word-break:break-all;
@@ -111,7 +110,8 @@ p{
  .data-bottom{
     font-size:14px;
     p{
-            color: ${ThemeStyle.colorTitleCard};
+            color: ${ThemeStyle.colorIngredientsCategory};
+            font-size:15px;
     }
     .qdt-modal{
         color: ${ThemeStyle.bgTheme};
