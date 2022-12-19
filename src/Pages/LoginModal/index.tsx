@@ -57,7 +57,7 @@ export const LoginModal=({closeModal}:Props)=>{
                     <input type="submit" value={'Entrar'}/>
                 </div>
                 <div className='create-account'>
-                    <p>Não tenho uma conta?<Link to='/register'>clique aqui</Link></p>
+                    <p>Não tem uma conta?<Link to='/register'>clique aqui</Link></p>
                 </div>
             </form>
         </div>

@@ -1,7 +1,7 @@
 import * as S from './style'
-import { Link } from 'react-router-dom'
+import { Link, Navigate } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
-
+import  useHistory  from 'react-router'
 
 
 type Prop={
@@ -19,7 +19,9 @@ type Prop={
 
 export const ButtonMenu=({src,bg,marginhorizontal,marginvertical,onClick,iconActive,link,text}:Prop)=>{
  
-   
+
+
+    
    
 
     return  <S.ContainerButtonMenu  href={link}   bgColor={bg} mh={marginhorizontal} mv={marginvertical} bgColorActive={iconActive} onClick={onClick} >

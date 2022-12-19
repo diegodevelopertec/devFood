@@ -2,13 +2,15 @@ import styled from 'styled-components'
 import BgImage from '.././src/assets/imgs/bg.jpg'
 
 export const ThemeStyle={
-    bgTheme:'#f06c0e',
+    //bgTheme:'#f06c0e',
+   bgTheme:'#991d08',
     bgAppSystem:'#eee',
     bgCardProductBottom:'#2f302f' ,
     colorTitleCard: 'black',
     colorIngredientsCategory:' #aaa',
     colorTextCard: '',
-    bgHoverIcon:'#eb8c2d',
+    //bgHoverIcon:'#eb8c2d',
+    bgHoverIcon:'#941c07',
     bgActiveIconMenu:'#e6b72c'
 
 }
@@ -44,8 +46,8 @@ export const LeftContent=styled.div`
 `
 
 export const HeaderApp=styled.header`
-display: flex;
-justify-content:center;
+    display: flex;
+    justify-content:center;
 
 
 
@@ -56,6 +58,7 @@ export const CardLoja=styled.div`
     align-items:center;
     background-color: ${ThemeStyle.bgTheme};
     width: 95%;
+    height: 80px;
     margin:30px 15px;
     min-height: 100px;
     border-radius:10px;
@@ -73,12 +76,7 @@ export const CardLoja=styled.div`
     }
 }
 
-.search-loja{
-    input{
-        width: 180px;
-        padding:5px  20px;
-    }
-}
+
 
 @media screen and (max-width:950px){
     flex-direction:column;

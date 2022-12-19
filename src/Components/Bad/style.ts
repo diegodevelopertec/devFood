@@ -75,7 +75,8 @@ export const BadBody=styled.div<Props>`
   display:${props=>props.displayBad ? 'flex' : 'none'};
   flex-direction:column;
   margin: 20px 0;
-  height:400px;
+  transition: all ease 0.3s;
+  height:500px;
 
   @media screen and (max-width:950px){
    

@@ -10,30 +10,31 @@ import UserIcon from '.././src/assets/imgs/user.png'
 import LojaIcon from '.././src/assets/imgs/lojaicon.png'
 import MotoIcon from '.././src/assets/imgs/moto.png'
 import LogoIcon from '.././src/assets/imgs/logo.png'
-import {Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const App=()=>{
   
   const [viewHome,setViewHome]=useState(true)
   const [viewAccount,setViewAccount]=useState(false)
   const [viewDelivery,setViewDelivery]=useState(false)
-
+  const navigate=useNavigate()
 
 
   const ClickViewHome=(e:any)=>{
-
-   
+  e.preventDefault()
+  navigate('/')
+ 
   
    
     setViewHome(true)
     setViewAccount(false)
     setViewDelivery(false)
-    e.PreventDefault()
-  
+   
   
   }
   const ClickViewDelivery=(e:any)=>{
-  
+    e.preventDefault()
+    navigate('/pedidos')
     setViewDelivery(true)
     setViewHome(false)
     setViewAccount(false)
@@ -42,7 +43,9 @@ const App=()=>{
    
   }
   
-  const ClickViewAccount=()=>{
+  const ClickViewAccount=(e:any)=>{
+    e.preventDefault()
+    navigate('/user')
     setViewAccount(true)
     setViewHome(false)
     setViewDelivery(false)
@@ -53,25 +56,25 @@ const App=()=>{
         <S.LeftContent>
             <S.Menu>
               <ButtonMenu link='/'
-                  onClick={()=>ClickViewHome} 
+                  onClick={ClickViewHome} 
                   iconActive={viewHome} 
                   src={LojaIcon}  
                   marginhorizontal='10' 
                   text='inicio'
                   marginvertical='10' />
               <ButtonMenu 
-                  link='/pedidos' 
-                  onClick={()=>ClickViewDelivery}  
+                  link='pedidos' 
+                  onClick={ClickViewDelivery}  
                   iconActive={viewDelivery} 
                   src={MotoIcon} 
                   marginhorizontal='10' 
                   marginvertical='10' 
                   text='pedidos'/>
               <ButtonMenu  
-                 onClick={()=>ClickViewAccount} 
+                 onClick={ClickViewAccount} 
                  iconActive={viewAccount} 
                  src={UserIcon} 
-                 link='/user'
+                 link='user'
                  marginhorizontal='10' 
                  marginvertical='10' 
                  text='conta'/>
@@ -82,11 +85,9 @@ const App=()=>{
           <S.HeaderApp>
             <S.CardLoja>
               <div className="logo">
-              <img src={LogoIcon} alt="" /> <span>Rangoo</span>
+                   <img src={LogoIcon} alt="" /> <span>Rangoo</span>
               </div>
-              <div className="search-loja">
-                  <input type="search" name="" id="" />
-              </div>
+             
             </S.CardLoja>
           </S.HeaderApp>
           <Routes/>

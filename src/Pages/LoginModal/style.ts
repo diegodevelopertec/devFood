@@ -36,13 +36,14 @@ export const Container=styled.div`
         justify-content:space-around;
         align-items:center;
         h2{
-            color:  ${ThemeStyle.bgHoverIcon};
+            color:  ${ThemeStyle.bgTheme};
             font-size:18px;
             
         }
 
         img{
-            background: ${ThemeStyle.bgHoverIcon};
+
+        background-color:  ${ThemeStyle.bgTheme};;
             height: 80px;
             width: 80px;
             padding: 10px;
@@ -98,7 +99,7 @@ export const Container=styled.div`
 
 
 @media screen and (max-width:600px){
-    position: absolute;
+       position: absolute;
         top:0;
         left:0;
         bottom: 0;
@@ -107,7 +108,7 @@ export const Container=styled.div`
         height: 100vh;
         flex-direction:column;
         align-items:center;
-        overflow-x:none;
+        overflow:none;
         border-radius:0;
         margin: 0;
         justify-content:center;
@@ -145,7 +146,7 @@ export const Container=styled.div`
         
         
 }
-
+}
 
 
 `

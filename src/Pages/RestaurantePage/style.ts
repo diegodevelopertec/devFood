@@ -1,8 +1,11 @@
 import styled from "styled-components"
+import { ThemeStyle } from "../../styled"
+
+
 
 export const Container=styled.div`
   
-    background-color: #edeceb;
+    background-color:${ThemeStyle.bgAppSystem};
     width: 100%;
 `
 
@@ -33,7 +36,7 @@ flex-direction:column;
     display: flex;
     width: 100%;
     padding: 25px 5px;
-    border: 2px solid  orange;
+    border: 2px solid  ${ThemeStyle.bgTheme};
     margin: 12px 0;
     border-radius:15px;
 
@@ -51,11 +54,17 @@ flex-direction:column;
         max-width: 620px;
         margin-left:130px;
         padding: 20px 0;
+       
         textarea{
             resize:none;
+            border: none;
+            border-radius:5px;
             width:320px;
             height: 230px;
             padding: 12px ;
+            &:focus{
+                outline:2px solid ${ThemeStyle.bgTheme};
+            }
         }
 
         button{
@@ -63,9 +72,12 @@ flex-direction:column;
             height: 55px;
             width: 110px;
             border-radius:12px;
-            background: #f27522;
-            color: #edeceb;
+            background: ${ThemeStyle.bgTheme};
+            color:${ThemeStyle.bgAppSystem};
             border: none;
+            &:hover{
+                cursor:pointer;
+            }
         }
     }
 }
