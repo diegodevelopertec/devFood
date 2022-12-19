@@ -10,9 +10,10 @@ type InputTypes={
     password:string
 }
 
-
-
-export const LoginModal=()=>{
+type Props={
+    closeModal:()=>void
+}
+export const LoginModal=({closeModal}:Props)=>{
 
     const schema=yup.object({
         email:yup.string().email().required(),
@@ -34,7 +35,7 @@ export const LoginModal=()=>{
     return <S.Container>
         <div className="text">
            <div className='header-container'>
-                <button>voltar</button>
+                <button onClick={closeModal}>voltar</button>
            </div>
            <div className="cx-login">
                <h3>Login</h3>

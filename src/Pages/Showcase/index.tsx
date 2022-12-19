@@ -33,14 +33,17 @@ export const Showcase=()=>{
     const [displayDrinks,setDisplayDrinks]=useState<boolean>(false)
     const [onModal,setOnModal]=useState(false)
     const [productbad,setProductBad]=useState([17])
-    const [isLogged,setisLogged]=useState(false)
+    const [isLogged,setisLogged]=useState(true)
     
 
 
 
 
     const clikedOnModal=()=>setOnModal(true)
-    const closeModal=()=>setOnModal(false)
+    const closeModal=()=>{
+        isLogged ? setisLogged(false) : null
+        setOnModal(false)
+    }
 
 
     const actionDisplayBurguers=()=>{
@@ -145,7 +148,7 @@ return <S.Container>
         <CardCliked  onClick={setDataBad} data={dataProductCliked} funcOffModal={closeModal}/>
      </S.ContainerModal>}
      {isLogged && <S.ContainerModal>
-        <LoginModal />
+        <LoginModal closeModal={closeModal} />
      </S.ContainerModal>}
      
     
