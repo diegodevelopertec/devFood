@@ -100,7 +100,7 @@ export const Container=styled.div`
 
 @media screen and (max-width:600px){
     width: 100vw;
-    height:100vh;
+    height:100%;
     display:flex;
     flex-direction:column;
     border-radius:0;
