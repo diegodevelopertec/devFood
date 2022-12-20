@@ -2,15 +2,17 @@ import * as S from './style'
 import BadIcon from '../../assets/imgs/sacola.png'
 import  openBadIcon from '../../assets/imgs/setbaixo.png'
 import CloseBadIcon from '../../assets/imgs/close.png'
-
-
+import { useContext } from 'react'
+import { Context } from '../../Context/Context'
 import { Children, ReactNode, useState } from 'react'
+import { ProductBad } from '../ProductBad'
 
-type Props={
-   children:ReactNode
-}
 
-export const Bad=({children}:Props)=>{
+
+
+
+export const Bad=()=>{
+    const {state,dispatch}=useContext(Context)
     const [displayBad,setDisplayBad]=useState(false)
     const [notification,setNotification]=useState(true)
 
@@ -43,7 +45,34 @@ export const Bad=({children}:Props)=>{
         </S.BadHeader>
         <S.BadBody displayBad={displayBad}>
              <>
-             {children}
+            <div className="area-listproduct">
+               {
+                state.products.map((item,index)=>(
+                    <ProductBad key={index} data={item} />
+                ))
+            }
+            </div>
+            <div className='area-address'>
+              
+            </div>
+            <div className="area-final-cupom">
+                <input type="text" />
+                <div className="data-compra">
+                    <div className="data-item">
+                        <span>Desconto</span>
+                        <span>$ 00</span>
+                    </div>
+                    <div className="data-item">
+                        <span>Taxa de Entrega</span>
+                        <span>$ 00</span>
+                    </div>
+                    <div className="data-item">
+                        <span>Total</span>
+                        <span>$ 00</span>
+                    </div>
+                </div>
+                <button>finalizar compra</button>
+            </div>
              </>
         </S.BadBody>
         

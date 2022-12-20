@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import {ThemeStyle} from './../../styled'
-
+import { Context } from "../../Context/Context"
+import { useContext } from "react";
 
 type Props={
   displayBad:boolean,
@@ -21,7 +22,7 @@ export const Container=styled.div<Props>`
     border-top-right-radius:5px;
     margin-top:12px;
     transition:ease all 0.2s;
-    @media screen and (max-width:920px){
+    @media screen and (max-width:912px){
    
          position:${props=>props.displayBad === true ? 'absolute' : 'fixed'};
          height:${props=>props.displayBad === true ? '100vh' : '60px'};
@@ -35,7 +36,7 @@ export const Container=styled.div<Props>`
          bottom:${props=>props.displayBad === true ? '0' : '150px'};
          right:${props=>props.displayBad === true ? '0' : '8px'};
          border-radius:${props=>props.displayBad === true ? 'noneh' : '60px'};
-
+       
          
         
       
@@ -77,10 +78,70 @@ export const BadBody=styled.div<Props>`
   margin: 20px 0;
   transition: all ease 0.3s;
   height:500px;
-
-  @media screen and (max-width:950px){
-   
+    .area-listproduct{
+      height: 280px;
+      padding: 10px 5px;
+      overflow-y:auto;
+      margin-bottom:12px;
+      ::-webkit-scrollbar{
+        width: 2px;
+      }
+    
+    }
+    .area-address{
+      font-size:13px;
+      height: 80px;
+      background: red;
+      padding: 10px 5px;
+    }
+  .area-final-cupom{
+        flex:1;
+        display: flex;
+        flex-direction:column;
+        padding: 12px 20px;
+          input,button{
+            padding: 12px;
+            border-radius:5px;
+          }
+              button{
+                margin: 12px 0;
+                background: ${ThemeStyle.bgTheme};
+                border: none;
+                color: ${ThemeStyle.bgAppSystem};
+                font-size:14px;
+                text-transform:uppercase;
+                  &:hover{
+                    cursor:pointer;
+                    background: green;
+                    
+                  }
+              }
+              .data-item{
+                  font-size:13px;
+                  margin: 5px 0;
+                  display: flex;
+                  justify-content:space-between;
+                }
   }
+  .area-listproduct{
+      min-height: 280px;
+      height: 300px;
+      padding: 10px 5px;
+      overflow-y:auto;
+      margin-bottom:12px;
+      ::-webkit-scrollbar{
+        width: 2px;
+      }
+    
+    }
+    .data-item{
+                  font-size:16px;
+                  margin: 5px 0;
+                  display: flex;
+                  justify-content:space-between;
+                }
+
+  
 `
 export const NotificationBad=styled.div<Props>`
     position: absolute;

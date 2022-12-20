@@ -14,19 +14,20 @@ type Prop={
     link?:string,
     text?:string,
     width?:string,
+    id?:string
    
     
 }
 
 
-export const ButtonMenu=({src,bg,marginhorizontal,marginvertical,onClick,iconActive,link,text,width}:Prop)=>{
+export const ButtonMenu=({src,bg,marginhorizontal,marginvertical,onClick,iconActive,link,text,width,id}:Prop)=>{
  
 
 
     
    
 
-    return  <S.ContainerButtonMenu  href={link}   bgColor={bg} mh={marginhorizontal} mv={marginvertical} bgColorActive={iconActive} onClick={onClick} >
+    return  <S.ContainerButtonMenu  href={link}  id={id} bgColor={bg} mh={marginhorizontal} mv={marginvertical} bgColorActive={iconActive} onClick={onClick} >
         <S.ButtonIcon src={src} />   
         <S.TextButton>
         {text}

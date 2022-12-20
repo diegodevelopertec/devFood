@@ -1,4 +1,4 @@
-import { useState,useEffect } from "react"
+import { useState,useEffect, useContext } from "react" 
 import { BannerPromotion } from "../../Components/BannerPromotions"
 import * as S from './style'
 import { CardProduct } from "../../Components/CardProduct"
@@ -18,11 +18,12 @@ import { ProductBad } from "../../Components/ProductBad"
 import { toast } from "react-toastify"
 import { ThemeStyle } from "../../styled"
 import { ApiProduct } from "../../Services/ProductActions"
-import { useBurguerData } from "../../hooks/useBurguerList"
 import { LoginModal } from "../LoginModal"
 
 
+
 export const Showcase=()=>{
+   
     const [burguerProductList,setBurguerProductList]=useState<Product[] >(dataBurguer)
     const [pizzaProductList,setPizzaProductList]=useState<Product[]>(dataPizza)
     const [drinksProductList,setDrinksProductList]=useState<Product[] >(dataDrinks)
@@ -32,9 +33,8 @@ export const Showcase=()=>{
     const [displayRestaurant,setDisplayRestaurant]=useState<boolean>(false)
     const [displayDrinks,setDisplayDrinks]=useState<boolean>(false)
     const [onModal,setOnModal]=useState(false)
-    const [productbad,setProductBad]=useState([17])
     const [isLogged,setisLogged]=useState(true)
-    
+ 
 
 
 
@@ -106,6 +106,7 @@ return <S.Container>
                  iconActive={displayBurguer ? true : false} src={LanchesIcon} 
                  marginhorizontal='10' marginvertical='10'  
                  onClick={actionDisplayBurguers}
+                 id='btnHome'
                 
             />
             <ButtonMenu bg={ThemeStyle.bgTheme} 
@@ -113,18 +114,21 @@ return <S.Container>
                 marginhorizontal='10' 
                 marginvertical='10'  
                 onClick={actionDisplayDrinks} 
+                id='btnHome'
             />
             <ButtonMenu bg={ThemeStyle.bgTheme} 
                 iconActive={displayPizzas ? true : false} src={PizzaIcon} 
                 marginhorizontal='10' 
                 marginvertical='10' 
                 onClick={actionDisplayPizzas} 
+                id='btnHome'
             />
               <ButtonMenu bg={ThemeStyle.bgTheme} 
                 iconActive={displayRestaurant} src={ResturantIcon} 
                 marginhorizontal='10' 
                 marginvertical='10' 
                 onClick={actionDisplayRestaurante} 
+                id='btnHome'
             />
            
         </div>
@@ -137,12 +141,7 @@ return <S.Container>
         { displayPizzas ? pizzaProductList && pizzaProductList.map((item,index)=>< CardProduct  key={index} onClick={returnDataClikedProduct}  data={item} />) : null}
         { displayDrinks ? drinksProductList && drinksProductList.map((item,index)=>< CardProduct  key={index} onClick={returnDataClikedProduct}  data={item} />) : null}
         { displayRestaurant  && <RestaurantePage/>}
-        <Bad >
-          {productbad.map((item,index)=>(
-            <ProductBad key={index} />
-           
-          ))}
-        </Bad>
+        <Bad />
     </S.ShowcaseProduct>
     {onModal && <S.ContainerModal>
         <CardCliked  onClick={setDataBad} data={dataProductCliked} funcOffModal={closeModal}/>

@@ -93,7 +93,7 @@ export const ContainerModal=styled.div`
     display: flex;
     justify-content:center;
     align-items:center;
-    transition:all ease 0.7;
+    transition:all ease 0.8s;
  
 
 `

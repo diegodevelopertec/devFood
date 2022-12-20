@@ -7,6 +7,7 @@ export const Container=styled.div`
     box-shadow:0 0 5px #aaa;
     border-radius:6px;
     background: ${ThemeStyle.bgCardProductBottom};
+ 
 
    @media screen and (max-width:600px){
         position: absolute;

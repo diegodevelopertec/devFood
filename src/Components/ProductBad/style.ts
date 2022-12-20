@@ -8,7 +8,8 @@ justify-content:space-between;
 padding:10px 5px;
 font-size:13px;
 width: 100%;
-border: 1px solid ${ThemeStyle.bgTheme};
+margin: 5px 0px;
+border: 2px solid ${ThemeStyle.bgTheme};
 border-radius:5px;
     .area--image{
         margin-right:10px;

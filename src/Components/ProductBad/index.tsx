@@ -1,17 +1,20 @@
 import * as S from './style'
 import { dataBurguer } from '../../data/Product'
 import { Product } from '../../Types/Products'
-import { useState } from 'react'
-
+import { useContext, useState } from 'react'
+import { Context } from '../../Context/Context'
 type Props={
     data:Product
 }
 
 
 
-export const ProductBad=()=>{
-    const [qdtProduct,setQdtProduct]=useState(dataBurguer[0].qdt)
-    const [priceProduct,setPriceProduct]=useState(dataBurguer[0].price)
+export const ProductBad=(
+    {data}:Props
+)=>{
+    const {state,dispatch}=useContext(Context)
+    const [qdtProduct,setQdtProduct]=useState(data.qdt)
+    const [priceProduct,setPriceProduct]=useState(data.price)
 
 
    const  actionsBadCard={
@@ -32,11 +35,11 @@ export const ProductBad=()=>{
     return <S.Container>
         <div className="area-left">
             <div className='area--image'>
-                <img src={dataBurguer[0].imageProduct} alt="" />
+                <img src={data.imageProduct} alt="" />
             </div>
             <div className="area-text">
                 <span className='name'>
-                    {dataBurguer[0].name}
+                    {data.name}
                 </span>
                 <span className='price'>
                     R$ {priceProduct.toFixed(2)}

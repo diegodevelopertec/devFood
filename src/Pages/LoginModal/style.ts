@@ -7,6 +7,7 @@ export const Container=styled.div`
     padding:30px 20px;
     box-shadow:0 0 10px #aaa;
     border-radius:15px;
+  
 
     .header-container{
         button{
