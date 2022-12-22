@@ -3,15 +3,15 @@ import { dataBurguer } from '../../data/Product'
 import { Product } from '../../Types/Products'
 import { useContext, useState } from 'react'
 import { Context } from '../../Context/Context'
+
+
 type Props={
     data:Product
 }
 
 
 
-export const ProductBad=(
-    {data}:Props
-)=>{
+export const ProductBad=({data}:Props)=>{
     const {state,dispatch}=useContext(Context)
     const [qdtProduct,setQdtProduct]=useState(data.qdt)
     const [priceProduct,setPriceProduct]=useState(data.price)
@@ -19,11 +19,11 @@ export const ProductBad=(
 
    const  actionsBadCard={
         add:()=>{
-           setPriceProduct(prev=>prev + dataBurguer[0].price)
+           setPriceProduct(prev=>prev + data.price)
            setQdtProduct(qdtProduct +1)
         },
         minus:()=>{
-            setPriceProduct(prev=>prev - dataBurguer[0].price)
+            setPriceProduct(prev=>prev - data.price)
             setQdtProduct(qdtProduct -1)
         }
     }

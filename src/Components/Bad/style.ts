@@ -8,14 +8,13 @@ type Props={
  
 }
 export const Container=styled.div<Props>`
-    background: #f06c0e;
-    background: #2f302f;
+   
     background: ${ThemeStyle.bgCardProductBottom};
     position: absolute;
     color:white;
     bottom: 0;
     right:10px;
-    width: 360px;
+    width: 390px;
     padding:10px;
     box-shadow: 0 0 5px #aaa;
     border-top-left-radius:5px;
@@ -35,8 +34,8 @@ export const Container=styled.div<Props>`
          top:${props=>props.displayBad === true ? '0' : '76vh'};
          bottom:${props=>props.displayBad === true ? '0' : '150px'};
          right:${props=>props.displayBad === true ? '0' : '8px'};
-         border-radius:${props=>props.displayBad === true ? 'noneh' : '60px'};
-       
+         border-radius:${props=>props.displayBad === true ? 'none' : '60px'};
+        overflow:hidden;
          
         
       
@@ -53,6 +52,11 @@ export const BadHeader=styled.div<Props>`
       display: flex;
       justify-content:center;
       align-items:center;
+
+      .qdt-sacola{
+        color: ${ThemeStyle.bgTheme};
+        font-weight:bold;
+      }
   }
   .close--bad{
       display:${props=>props.displayBad === false ? 'flex' : 'flex'};
@@ -79,7 +83,7 @@ export const BadBody=styled.div<Props>`
   transition: all ease 0.3s;
   height:500px;
     .area-listproduct{
-      height: 280px;
+      height: 250px;
       padding: 10px 5px;
       overflow-y:auto;
       margin-bottom:12px;
@@ -123,25 +127,23 @@ export const BadBody=styled.div<Props>`
                   justify-content:space-between;
                 }
   }
-  .area-listproduct{
-      min-height: 280px;
-      height: 300px;
-      padding: 10px 5px;
-      overflow-y:auto;
-      margin-bottom:12px;
-      ::-webkit-scrollbar{
-        width: 2px;
-      }
-    
-    }
-    .data-item{
-                  font-size:16px;
-                  margin: 5px 0;
-                  display: flex;
-                  justify-content:space-between;
-                }
+ 
 
+  @media screen and (max-width:600px){
+    height:100vh;
+    overflow: none;
+    .area-listproduct{
+      height: 460px;
+    
+      min-height:200px
+    }
   
+  }
+ 
+ //375,360,540,
+
+
+
 `
 export const NotificationBad=styled.div<Props>`
     position: absolute;

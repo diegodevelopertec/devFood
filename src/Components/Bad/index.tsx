@@ -4,7 +4,7 @@ import  openBadIcon from '../../assets/imgs/setbaixo.png'
 import CloseBadIcon from '../../assets/imgs/close.png'
 import { useContext } from 'react'
 import { Context } from '../../Context/Context'
-import { Children, ReactNode, useState } from 'react'
+import {  ReactNode, useState } from 'react'
 import { ProductBad } from '../ProductBad'
 
 
@@ -35,7 +35,7 @@ export const Bad=()=>{
     return <S.Container displayBad={displayBad}>
         <S.BadHeader displayBad={displayBad} onClick={ !displayBad  ? clickDisplayBad : ()=> null}>
             <div className="header--text">
-                <img src={BadIcon} alt="" /><span>Sacola[0]</span>
+                <img src={BadIcon} alt="" /><span>Sacola[<span className='qdt-sacola'>{state.products.length}</span>]</span>
             </div>
             <div  onClick={clickDisplayBad}  className='close--bad'>
              {displayBad ? <img src={CloseBadIcon}  alt="" /> : <img className='open-icon' src={openBadIcon}  alt="" />} 
@@ -44,36 +44,39 @@ export const Bad=()=>{
             <S.NotificationBad displayBad={notification}>  2 </S.NotificationBad >
         </S.BadHeader>
         <S.BadBody displayBad={displayBad}>
-             <>
-            <div className="area-listproduct">
-               {
-                state.products.map((item,index)=>(
-                    <ProductBad key={index} data={item} />
-                ))
-            }
-            </div>
-            <div className='area-address'>
-              
-            </div>
-            <div className="area-final-cupom">
-                <input type="text" />
-                <div className="data-compra">
-                    <div className="data-item">
-                        <span>Desconto</span>
-                        <span>$ 00</span>
-                    </div>
-                    <div className="data-item">
-                        <span>Taxa de Entrega</span>
-                        <span>$ 00</span>
-                    </div>
-                    <div className="data-item">
-                        <span>Total</span>
-                        <span>$ 00</span>
-                    </div>
+             
+           {state.products.length > 0 && <> 
+           <div className="area-listproduct">
+                    {
+                    state.products.map((item,index)=>(
+                        <ProductBad key={index} data={item} />
+                    )) }
                 </div>
+                <div className='area-address'>
+                    
+                </div>
+                <div className="area-final-cupom">
+                    <input type="text" />
+                    <div className="data-compra">
+                        <div className="data-item">
+                            <span>Desconto</span>
+                            <span>$ 00</span>
+                        </div>
+                        <div className="data-item">
+                            <span>Taxa de Entrega</span>
+                            <span>$ 00</span>
+                        </div>
+                        <div className="data-item">
+                            <span>Total</span>
+                            <span>$ 00</span>
+                        </div>
+                    </div>
                 <button>finalizar compra</button>
-            </div>
-             </>
+                </div>
+           
+           </> 
+}
+            
         </S.BadBody>
         
     </S.Container>

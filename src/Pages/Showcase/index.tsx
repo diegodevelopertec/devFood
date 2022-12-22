@@ -19,11 +19,11 @@ import { toast } from "react-toastify"
 import { ThemeStyle } from "../../styled"
 import { ApiProduct } from "../../Services/ProductActions"
 import { LoginModal } from "../LoginModal"
-
+import { Context } from "../../Context/Context"
 
 
 export const Showcase=()=>{
-   
+   const {state,dispatch}=useContext(Context)
     const [burguerProductList,setBurguerProductList]=useState<Product[] >(dataBurguer)
     const [pizzaProductList,setPizzaProductList]=useState<Product[]>(dataPizza)
     const [drinksProductList,setDrinksProductList]=useState<Product[] >(dataDrinks)
@@ -33,7 +33,7 @@ export const Showcase=()=>{
     const [displayRestaurant,setDisplayRestaurant]=useState<boolean>(false)
     const [displayDrinks,setDisplayDrinks]=useState<boolean>(false)
     const [onModal,setOnModal]=useState(false)
-    const [isLogged,setisLogged]=useState(true)
+    const [isLogged,setisLogged]=useState(false)
  
 
 
@@ -76,9 +76,16 @@ export const Showcase=()=>{
         clikedOnModal()
     }
 
-    const setDataBad=()=>{
-        toast.success(`você adicionou novo produto na sacola`)
+    const setDataBad=(data:Product)=>{
+     
+        dispatch({
+            type:'addProduct',
+            payload:{data:data}
+         })
         closeModal()
+        toast.success(`você adicionou novo produto na sacola`)
+        console.log(data);
+        console.log(state.products);
     }
 
     const conditionCategoryTitle=()=>{
@@ -95,8 +102,6 @@ export const Showcase=()=>{
 
   
 return <S.Container>
-    
-  
    
     <S.CategorySectionProducts>
       <>
@@ -144,7 +149,7 @@ return <S.Container>
         <Bad />
     </S.ShowcaseProduct>
     {onModal && <S.ContainerModal>
-        <CardCliked  onClick={setDataBad} data={dataProductCliked} funcOffModal={closeModal}/>
+        <CardCliked   onClick={setDataBad} data={dataProductCliked} funcOffModal={closeModal}/>
      </S.ContainerModal>}
      {isLogged && <S.ContainerModal>
         <LoginModal closeModal={closeModal} />
