@@ -33,7 +33,7 @@ export const  ContainerImage=styled.div`
         @media screen and (max-width:600px){
         width: 70px;
         height: 70px;
-    }
+        }
     }
 
     @media screen and (max-width:600px){

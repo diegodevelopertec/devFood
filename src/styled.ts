@@ -3,9 +3,9 @@ import BgImage from '.././src/assets/imgs/bg.jpg'
 
 export const ThemeStyle={
     //bgTheme:'#f06c0e',
-   bgTheme:'#991d08',
+     bgTheme:'#991d08',
     bgAppSystem:'#eee',
-    bgCardProductBottom:'#2f302f' ,
+   bgCardProductBottom:'#2f302f' ,
     colorTitleCard: 'black',
     colorIngredientsCategory:' #aaa',
     colorTextCard: '',
@@ -98,7 +98,7 @@ export const RightContent=styled.div`
     flex: 1;
     //background-image:url(${BgImage}) ;
     background-size: contains ;
-   background-color:${ThemeStyle.bgAppSystem};
+    background-color:${ThemeStyle.bgAppSystem};
     overflow-y:auto;
     @media screen  and (max-width:950px){
      flex-direction:column;

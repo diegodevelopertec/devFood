@@ -19,7 +19,7 @@ export const useProductAdressReducer=(state:AdressType[],action:ActionTypeGeral)
             let id=action.payload?.id
             let index=products.findIndex(item=>item.id === id)
                 if(index > -1){
-                products[index]
+                   products[index]
                 }else{
 
                     

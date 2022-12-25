@@ -35,7 +35,7 @@ export const LoginModal=({closeModal}:Props)=>{
     return <S.Container>
         <div className="text">
            <div className='header-container'>
-                <button onClick={closeModal}>voltar</button>
+                <button onClick={()=>closeModal}>voltar</button>
            </div>
            <div className="cx-login">
               

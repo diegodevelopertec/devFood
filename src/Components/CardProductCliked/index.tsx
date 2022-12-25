@@ -1,6 +1,6 @@
 import * as S from './style'
 import Bg from '../../assets/imgs/bg1.png'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Product } from '../../Types/Products';
 import { Context } from '../../Context/Context';
 import { useContext } from 'react';
@@ -23,23 +23,30 @@ export const CardCliked=({funcOffModal,data,onClick}:Props)=>{
 
 const actionsModal={
     addQdtProduct:()=>{
-        setQdtProduct(prev=>prev+1) 
-        setPriceModal(priceActual=>priceActual + data.price)  
-      
+        setQdtProduct(prev=>prev += 1) 
+        setPriceModal(data.price+priceModal)  
+       
+ 
+        
     }
    
     ,
     minusQdtProduct:()=>{
         if(qdtProduct > 1){
-            setQdtProduct(prev=>prev-1)  
+           setQdtProduct(prev=>prev-1)  
            setPriceModal(priceActual=>priceActual - data.price) 
+          
            
         }
     }
+    
 }
 
 
-
+useEffect(()=>{
+    data.qdt=qdtProduct
+    data.price=priceModal
+},[])
 
 
 

@@ -15,6 +15,7 @@ border-radius:5px;
         margin-right:10px;
         img{
             width: 100%;
+            
         }
     }
     .area-left{
@@ -53,6 +54,7 @@ border-radius:5px;
             display:flex;
             justify-content:center;
             width: 30px;
+            cursor:pointer;
         }
         .btn-minus{
             border-top-left-radius: 5px;

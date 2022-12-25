@@ -23,7 +23,7 @@ import { Context } from "../../Context/Context"
 
 
 export const Showcase=()=>{
-   const {state,dispatch}=useContext(Context)
+     const {state,dispatch}=useContext(Context)
     const [burguerProductList,setBurguerProductList]=useState<Product[] >(dataBurguer)
     const [pizzaProductList,setPizzaProductList]=useState<Product[]>(dataPizza)
     const [drinksProductList,setDrinksProductList]=useState<Product[] >(dataDrinks)
@@ -33,7 +33,7 @@ export const Showcase=()=>{
     const [displayRestaurant,setDisplayRestaurant]=useState<boolean>(false)
     const [displayDrinks,setDisplayDrinks]=useState<boolean>(false)
     const [onModal,setOnModal]=useState(false)
-    const [isLogged,setisLogged]=useState(false)
+    const [isLogged,setisLogged]=useState(true)
  
 
 
@@ -41,7 +41,6 @@ export const Showcase=()=>{
 
     const clikedOnModal=()=>setOnModal(true)
     const closeModal=()=>{
-        isLogged ? setisLogged(false) : null
         setOnModal(false)
     }
 
@@ -80,7 +79,7 @@ export const Showcase=()=>{
      
         dispatch({
             type:'addProduct',
-            payload:{data:data}
+            payload:{data,qdt:data.qdt}
          })
         closeModal()
         toast.success(`você adicionou novo produto na sacola`)
@@ -151,7 +150,7 @@ return <S.Container>
     {onModal && <S.ContainerModal>
         <CardCliked   onClick={setDataBad} data={dataProductCliked} funcOffModal={closeModal}/>
      </S.ContainerModal>}
-     {isLogged && <S.ContainerModal>
+     {!isLogged && <S.ContainerModal>
         <LoginModal closeModal={closeModal} />
      </S.ContainerModal>}
      

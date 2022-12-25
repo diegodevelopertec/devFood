@@ -9,7 +9,9 @@ import BurguerImage from '.././src/assets/imgs/burguer.png'
 import UserIcon from '.././src/assets/imgs/user.png'
 import LojaIcon from '.././src/assets/imgs/lojaicon.png'
 import MotoIcon from '.././src/assets/imgs/moto.png'
-import LogoIcon from '.././src/assets/imgs/logo.png'
+import LogoIcon from '../src/assets/imgs/logo.png'
+
+
 import { useNavigate } from 'react-router-dom';
 
 const App=()=>{

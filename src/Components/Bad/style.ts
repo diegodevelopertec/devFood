@@ -13,7 +13,7 @@ export const Container=styled.div<Props>`
     position: absolute;
     color:white;
     bottom: 0;
-    right:10px;
+    right:25px;
     width: 390px;
     padding:10px;
     box-shadow: 0 0 5px #aaa;
@@ -30,7 +30,7 @@ export const Container=styled.div<Props>`
          align-items:center;
          width:${props=>props.displayBad === true ? '100vw' : '60px'};
          margin:${props=>props.displayBad === true ? '0' : '0px'};
-         margin-bottom:${props=>props.displayBad === true ? '0' : '130px'};
+         margin-bottom:${props=>props.displayBad === true ? '0' : '30vh'};
          top:${props=>props.displayBad === true ? '0' : '76vh'};
          bottom:${props=>props.displayBad === true ? '0' : '150px'};
          right:${props=>props.displayBad === true ? '0' : '8px'};
@@ -60,6 +60,7 @@ export const BadHeader=styled.div<Props>`
   }
   .close--bad{
       display:${props=>props.displayBad === false ? 'flex' : 'flex'};
+      cursor: pointer;
   }
   img{
       height: 20px;
@@ -73,6 +74,7 @@ export const BadHeader=styled.div<Props>`
       }
       .open-icon{
         display: none;
+        
       }
     }
 `

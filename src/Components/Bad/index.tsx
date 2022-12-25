@@ -11,10 +11,11 @@ import { ProductBad } from '../ProductBad'
 
 
 
+
 export const Bad=()=>{
     const {state,dispatch}=useContext(Context)
     const [displayBad,setDisplayBad]=useState(false)
-    const [notification,setNotification]=useState(true)
+    const [notification,setNotification]=useState(false)
 
 
     const clickDisplayBad=()=>{
@@ -27,7 +28,6 @@ export const Bad=()=>{
 }
 
 
-    
         
     
 
@@ -46,11 +46,11 @@ export const Bad=()=>{
         <S.BadBody displayBad={displayBad}>
              
            {state.products.length > 0 && <> 
-           <div className="area-listproduct">
+               <div className="area-listproduct">
                     {
-                    state.products.map((item,index)=>(
-                        <ProductBad key={index} data={item} />
-                    )) }
+                       state.products.map((item,index)=>(
+                         <ProductBad key={index} data={item} />)) 
+                    }
                 </div>
                 <div className='area-address'>
                     
@@ -64,11 +64,11 @@ export const Bad=()=>{
                         </div>
                         <div className="data-item">
                             <span>Taxa de Entrega</span>
-                            <span>$ 00</span>
+                            <span>R$ 00</span>
                         </div>
                         <div className="data-item">
                             <span>Total</span>
-                            <span>$ 00</span>
+                            <span>R${}</span>
                         </div>
                     </div>
                 <button>finalizar compra</button>
