@@ -4,6 +4,8 @@ import * as yup from 'yup'
 import {yupResolver} from '@hookform/resolvers/yup'
 import { useState } from 'react';
 
+
+
 type InputTypes={
     name:string,
     rua:string,

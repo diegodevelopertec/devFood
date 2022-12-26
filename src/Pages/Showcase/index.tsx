@@ -33,7 +33,7 @@ export const Showcase=()=>{
     const [displayRestaurant,setDisplayRestaurant]=useState<boolean>(false)
     const [displayDrinks,setDisplayDrinks]=useState<boolean>(false)
     const [onModal,setOnModal]=useState(false)
-    const [isLogged,setisLogged]=useState(true)
+    const [isLogged,setisLogged]=useState(false)
  
 
 
