@@ -4,6 +4,8 @@ import LojaIcon from '../../assets/imgs/logo.png'
 import { useForm, SubmitHandler } from "react-hook-form";
 import * as yup from 'yup'
 import {yupResolver} from '@hookform/resolvers/yup'
+import './../../helpers/msgsYup'
+
 
 type InputTypes={
     email:string,
@@ -57,7 +59,7 @@ export const LoginModal=({closeModal}:Props)=>{
                     <input type="submit" value={'Entrar'}/>
                 </div>
                 <div className='create-account'>
-                    <p>Não tem uma conta?<Link to='/register'>clique aqui</Link></p>
+                    <p>Não tem uma conta?<Link to='/user'>clique aqui</Link></p>
                 </div>
             </form>
         </div>
