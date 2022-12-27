@@ -100,6 +100,9 @@ export const RightContent=styled.div`
     background-size: contains ;
     background-color:${ThemeStyle.bgAppSystem};
     overflow-y:auto;
+    ::-webkit-scrollbar{
+        width: 8px;
+      }
     @media screen  and (max-width:950px){
      flex-direction:column;
    }

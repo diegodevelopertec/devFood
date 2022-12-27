@@ -5,8 +5,15 @@ import { useContext } from 'react'
 import { ProductBad } from '../ProductBad'
 import { ProductRequest } from '../ProductRequest'
 
+
 export const Requests=()=>{
     const {state,dispatch}=useContext(Context)
+    const [openBody,setOnBody]=useState(false)
+
+
+const setBodyRequest=()=>{
+    !openBody  ? setOnBody(true) : setOnBody(false)
+}
 
     return <S.Container>
         <S.RequestHeader>
@@ -17,10 +24,11 @@ export const Requests=()=>{
                 estado:entregue
            </div>
            <div className="cx-btns">
-                <span className="abrir">ver detalhes</span>
+                <button className="abrir">apagar</button>
+                <button className="abrir" onClick={setBodyRequest}>{!openBody ? 'detalhes' : 'fechar'}</button>
            </div>
         </S.RequestHeader>
-        <S.RequestBody>
+        <S.RequestBody openBody={openBody}>
            <div className="cx-produtos">
             {
                 state.products.map((item,key)=>(

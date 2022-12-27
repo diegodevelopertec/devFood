@@ -38,8 +38,10 @@ border-radius:5px;
 
       @media screen and (max-width:950px){
         img{
-            height: 60px;
-            width:60px;
+          img{
+        weight:25px;
+        height: 25px;
+      }
         }
       }
   }
@@ -90,6 +92,7 @@ border-radius:5px;
         justify-content:center;
         align-items:center;
       }
+     
     }
    
   }

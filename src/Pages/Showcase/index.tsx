@@ -33,7 +33,7 @@ export const Showcase=()=>{
     const [displayRestaurant,setDisplayRestaurant]=useState<boolean>(false)
     const [displayDrinks,setDisplayDrinks]=useState<boolean>(false)
     const [onModal,setOnModal]=useState(false)
-    const [isLogged,setisLogged]=useState(false)
+    const [isLogged,setisLogged]=useState(true)
  
 
 
@@ -41,6 +41,7 @@ export const Showcase=()=>{
 
     const clikedOnModal=()=>setOnModal(true)
     const closeModal=()=>{
+        setisLogged(true)
         setOnModal(false)
     }
 
@@ -79,7 +80,9 @@ export const Showcase=()=>{
      
         dispatch({
             type:'addProduct',
-            payload:{data,qdt:data.qdt}
+            payload:{
+                data:data,qdt:data.qdt,id:data.id
+            }
          })
         closeModal()
         toast.success(`você adicionou novo produto na sacola`)

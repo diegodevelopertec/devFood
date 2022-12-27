@@ -27,8 +27,7 @@ export const Bad=()=>{
       }
 }
 
-
-        
+    
     
 
 
@@ -45,13 +44,13 @@ export const Bad=()=>{
         </S.BadHeader>
         <S.BadBody displayBad={displayBad}>
              
-           {state.products.length > 0 && <> 
+           {state.products.length > 0  ? <> 
                <div className="area-listproduct">
-                    {
-                       state.products.map((item,index)=>(
+                  {state.products.length  &&  state.products.map((item,index)=>(
                          <ProductBad key={index} data={item} />)) 
-                    }
-                </div>
+                         
+                 }
+             </div>
                 <div className='area-address'>
                     
                 </div>
@@ -74,7 +73,7 @@ export const Bad=()=>{
                 <button>finalizar compra</button>
                 </div>
            
-           </> 
+           </>  : <div className='error-bad'>Nenhum pedido adicionado ainda </div>
 }
             
         </S.BadBody>

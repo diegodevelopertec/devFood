@@ -3,8 +3,9 @@ import { ThemeStyle } from "../../styled";
 
 export const  Container=styled.div`
     width:100%;
-    margin-bottom:30px;
+    margin-bottom:70px;
     overflow:auto;
+    height:max-content;
     background:${ThemeStyle.bgAppSystem};
     padding:0px 12px;
     .intro{
@@ -14,6 +15,10 @@ export const  Container=styled.div`
         }
     }
 
+
+    @media screen and (max-width:950px){
+        margin-bottom:130px;
+    }
 
 
 `

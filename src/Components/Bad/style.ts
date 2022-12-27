@@ -84,8 +84,15 @@ export const BadBody=styled.div<Props>`
   margin: 20px 0;
   transition: all ease 0.3s;
   height:500px;
+  .error-bad{
+    height: 100%;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    font-size:13px;
+  }
     .area-listproduct{
-      height: 250px;
+      min-height: 250px;
       padding: 10px 5px;
       overflow-y:auto;
       margin-bottom:12px;
@@ -134,6 +141,13 @@ export const BadBody=styled.div<Props>`
   @media screen and (max-width:600px){
     height:100vh;
     overflow: none;
+    .error-bad{
+   
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    font-size:19px;
+  }
     .area-listproduct{
       height: 460px;
     

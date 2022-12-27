@@ -5,10 +5,11 @@ import { Product } from '../../Types/Products';
 import { Context } from '../../Context/Context';
 import { useContext } from 'react';
 
+
 type Props={
     funcOffModal:()=>void;
     data:Product,
-    onClick:(data:Product)=>void,
+    onClick:(data:Product)=>any
  
 }
 
@@ -18,15 +19,12 @@ export const CardCliked=({funcOffModal,data,onClick}:Props)=>{
     const [priceModal,setPriceModal]=useState(data.price)
     const {state,dispatch}=useContext(Context)
 
-  const  setData=()=>onClick(data)
-
-
+const setData=()=>onClick(data)
 const actionsModal={
     addQdtProduct:()=>{
         setQdtProduct(prev=>prev += 1) 
         setPriceModal(data.price+priceModal)  
-       
- 
+         
         
     }
    
@@ -35,7 +33,7 @@ const actionsModal={
         if(qdtProduct > 1){
            setQdtProduct(prev=>prev-1)  
            setPriceModal(priceActual=>priceActual - data.price) 
-          
+       
            
         }
     }
@@ -43,10 +41,8 @@ const actionsModal={
 }
 
 
-useEffect(()=>{
-    data.qdt=qdtProduct
-    data.price=priceModal
-},[])
+
+
 
 
 
@@ -84,8 +80,8 @@ useEffect(()=>{
                </div>
                <div className="cx-buttons">
                     <button className='btn-cancel' onClick={funcOffModal}>voltar</button>
-                    <button className='btn-save' onClick={setData}>adicionar á sacola</button>
-               </div>
+                    <button className='btn-save' onClick={setData}>adicionar á sacola</button> 
+            </div>
             </div>
         </S.ContainerData>
     </S.Container>
