@@ -28,9 +28,7 @@ export const initialStateRequest={
 export const useRequestReducer=(state:RequestType, action:ActionTypeGeral)=>{
     switch(action.type){
         case 'setDataRequest':{
-            let productsRequest=[...state.products]
-            let addressRequest=state.address.filter(item=>item.state === true)
-            return {productsRequest,addressRequest}
+           
         }
     }
 

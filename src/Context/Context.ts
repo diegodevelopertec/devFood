@@ -32,7 +32,7 @@ export const initialStateContext={
 export const mainReducer=(state:ContextTypeState,action:ActionTypeGeral)=>({
      products : useProductBadReducer(state.products,action),
      address : useProductAdressReducer(state.address,action),
-     requestDelivery:useRequestReducer(state.requestDelivery,action)
+    requestDelivery:useRequestReducer(state.requestDelivery,action)
     
 })
 
