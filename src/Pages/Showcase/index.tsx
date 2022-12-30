@@ -1,4 +1,4 @@
-import { useState,useEffect, useContext } from "react" 
+import { useState,useEffect } from "react" 
 import { BannerPromotion } from "../../Components/BannerPromotions"
 import * as S from './style'
 import { CardProduct } from "../../Components/CardProduct"
@@ -19,11 +19,11 @@ import { toast } from "react-toastify"
 import { ThemeStyle } from "../../styled"
 import { ApiProduct } from "../../Services/ProductActions"
 import { LoginModal } from "../LoginModal"
-import { Context } from "../../Context/Context"
+import { useContextApp } from "../../hooks/useContextAp.p"
 
 
 export const Showcase=()=>{
-     const {state,dispatch}=useContext(Context)
+     const {state,dispatch}=useContextApp()
     const [burguerProductList,setBurguerProductList]=useState<Product[] >(dataBurguer)
     const [pizzaProductList,setPizzaProductList]=useState<Product[]>(dataPizza)
     const [drinksProductList,setDrinksProductList]=useState<Product[] >(dataDrinks)
@@ -81,7 +81,7 @@ export const Showcase=()=>{
         dispatch({
             type:'addProduct',
             payload:{
-                data:data,qdt:data.qdt,id:data.id
+                data:data,qdt:data.qdt
             }
          })
         closeModal()

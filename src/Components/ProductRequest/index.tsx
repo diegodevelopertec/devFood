@@ -16,22 +16,6 @@ export const ProductRequest=({data}:Props)=>{
     const [qdtProduct,setQdtProduct]=useState(data.qdt)
     const [priceProduct,setPriceProduct]=useState(data.price)
 
-
-   const  actionsBadCard={
-        add:()=>{
-           setPriceProduct(prev=>prev + data.price)
-           setQdtProduct(qdtProduct+1)
-        },
-        minus:()=>{
-            setPriceProduct(prev=>prev - data.price)
-            setQdtProduct(qdtProduct -1)
-        }
-    }
-
-  
-  
-
-
     return <S.Container>
         <div className="area-left">
             <div className='area--image'>
@@ -40,7 +24,7 @@ export const ProductRequest=({data}:Props)=>{
             <div className="area-text">
                 <span className='name'>
                     {data.name}
-                </span>
+                </span>  
                 <span className='price'>
                     R$ {priceProduct.toFixed(2)}
                 </span>

@@ -8,17 +8,17 @@ type Props={
 export const CardProduct=({data,onClick}:Props)=>{
 
 const ClikeData=()=>onClick(data)
-   
+   //./../../assets/imgs/
     return <S.Container >
         <S.ContainerImage>
-            <img src={`./../../assets/imgs/${data?.imageProduct}`}/>
+            <img src={`${data?.imageProduct}`}/>
         </S.ContainerImage>
         <S.DataProduct>
             <div className='info-product'>
                 <p className='category--name'>{data?.category}</p>
                 <h4>{data?.name} </h4>
                 <p className='ingredientes-text'>
-                  {data?.ingredientes}  
+                  {data?.ingredientes ? data?.ingredientes : null }  
                 </p>
                 <p className="price">
                     R$ {data?.price.toFixed(2)}

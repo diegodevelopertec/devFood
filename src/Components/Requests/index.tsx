@@ -4,16 +4,19 @@ import { Context } from '../../Context/Context'
 import { useContext } from 'react'
 import { ProductBad } from '../ProductBad'
 import { ProductRequest } from '../ProductRequest'
+import { Product } from '../../Types/Products'
 
-
-export const Requests=()=>{
+type Props={
+    data:Product
+}
+export const Requests=({data}:Props)=>{
     const {state,dispatch}=useContext(Context)
     const [openBody,setOnBody]=useState(false)
 
 
-const setBodyRequest=()=>{
-    !openBody  ? setOnBody(true) : setOnBody(false)
-}
+    const setBodyRequest=()=>{
+        !openBody  ? setOnBody(true) : setOnBody(false)
+    }
 
     return <S.Container>
         <S.RequestHeader>
@@ -29,17 +32,12 @@ const setBodyRequest=()=>{
            </div>
         </S.RequestHeader>
         <S.RequestBody openBody={openBody}>
-           <div className="cx-produtos">
-            {
-                state.products.map((item,key)=>(
-                    <>
-                        <ProductRequest data={item} />
-                      
-                    </>
-                ))
-            }
-             <div className='total'><span>Total</span> <span>R${}</span></div>
-           </div>
+             <div className="cx-produtos">
+                 { state.requestDelivery.products  &&   state.requestDelivery.products.map((item,index)=>(
+                     <ProductRequest data={item} key={index} />)) 
+                 }
+           </div>  
+           
         </S.RequestBody>
     
     

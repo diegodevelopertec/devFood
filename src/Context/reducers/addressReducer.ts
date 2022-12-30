@@ -3,13 +3,7 @@ import { AdressType } from "../../Types/AdressType";
 
 
 
-export const initialStateAddress:AdressType[]=[{
-    id: 1,
-    rua: 'generoso Pinto',
-    numero:'335',
-    bairro: 'conceição do Itaguá',
-    complemento: 'em frnente ao campo'
-}]
+export const initialStateAddress:AdressType[]=[]
 
 export const useProductAdressReducer=(state:AdressType[],action:ActionTypeGeral)=>{
 

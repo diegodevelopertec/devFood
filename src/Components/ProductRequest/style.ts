@@ -57,6 +57,7 @@ border-radius:5px;
             justify-content:center;
             width: 30px;
             cursor:pointer;
+            
         }
         .btn-minus{
             border-top-left-radius: 5px;

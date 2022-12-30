@@ -47,10 +47,12 @@ export const AccountPage=()=>{
     
  
     const submitForm=(data:InputTypes)=>{
+       
         console.log(data); 
     }
 
 
+   
     
     return <S.Container  onSubmit={handleSubmit(submitForm)}>
        <div className="cx-title">
@@ -98,7 +100,7 @@ export const AccountPage=()=>{
                     onClick={handleTypeForm}>Editar
                     </button>
                  }
-                  {!disabledState && <input type={'submit'} />}
+                  {!disabledState && <button  type={'submit'}> salvar</button> }
                </div>
             </form>
        </S.dataUser>
