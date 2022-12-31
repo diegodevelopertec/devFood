@@ -34,8 +34,8 @@ export const Container=styled.div<Props>`
          top:${props=>props.displayBad === true ? '0' : '76vh'};
          bottom:${props=>props.displayBad === true ? '0' : '150px'};
          right:${props=>props.displayBad === true ? '0' : '8px'};
-         border-radius:${props=>props.displayBad === true ? 'none' : '60px'};
-        overflow:hidden;
+         border-radius:${props=>props.displayBad === true ? '0' : '60px'};
+         overflow:hidden;
          
         
       
@@ -83,7 +83,7 @@ export const BadBody=styled.div<Props>`
   flex-direction:column;
   margin: 20px 0;
   transition: all ease 0.3s;
-  height:500px;
+  max-height:500px;
   .error-bad{
     height: 100%;
     display: flex;
@@ -148,16 +148,18 @@ export const BadBody=styled.div<Props>`
     align-items:center;
     font-size:19px;
   }
-    .area-listproduct{
-      height: 460px;
     
-      min-height:200px
-    }
   
   }
  
  //375,360,540,
-
+ @media screen and (min-width:800px){
+  .area-listproduct{
+    height:70vh;
+    
+    
+    }
+ }
 
 
 `

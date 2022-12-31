@@ -1,5 +1,4 @@
 import { useState,useEffect } from "react" 
-import { BannerPromotion } from "../../Components/BannerPromotions"
 import * as S from './style'
 import { CardProduct } from "../../Components/CardProduct"
 import { Product } from "../../Types/Products"
@@ -20,6 +19,7 @@ import { ThemeStyle } from "../../styled"
 import { ApiProduct } from "../../Services/ProductActions"
 import { LoginModal } from "../LoginModal"
 import { useContextApp } from "../../hooks/useContextAp.p"
+import { BannerPromotions } from "../../Components/BannerPromotions"
 
 
 export const Showcase=()=>{
@@ -104,7 +104,9 @@ export const Showcase=()=>{
 
   
 return <S.Container>
-   
+     
+            <BannerPromotions />
+        
     <S.CategorySectionProducts>
       <>
       <p>Selecione uma categoria :</p>

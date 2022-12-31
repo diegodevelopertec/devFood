@@ -1,0 +1,32 @@
+
+.container-slide{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px; 
+}
+
+
+.container-image{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100%;
+   padding: 12px;
+}
+
+img{
+    height:380px;
+    width: 40%;
+    border-radius: 12px;
+}
+
+@media screen and (max-width:950px){
+    .container-slide{
+        max-height: 480px;
+    }
+    .container-image img{
+        width: 100%;
+    }
+}
