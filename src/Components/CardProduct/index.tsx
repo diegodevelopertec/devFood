@@ -11,7 +11,7 @@ const ClikeData=()=>onClick(data)
    //./../../assets/imgs/
     return <S.Container >
         <S.ContainerImage>
-            <img src={`/src/assets/${data?.imageProduct}`}/>
+            <img src={`${data?.imageProduct}`}/>
         </S.ContainerImage>
         <S.DataProduct>
             <div className='info-product'>

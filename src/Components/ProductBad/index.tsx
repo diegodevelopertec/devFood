@@ -35,7 +35,7 @@ export const ProductBad=({data}:Props)=>{
     return <S.Container>
         <div className="area-left">
             <div className='area--image'>
-                <img src={`/src/assets/${data?.imageProduct}`} alt="" />
+                <img src={`/${data?.imageProduct}`} alt="" />
             </div>
             <div className="area-text">
                 <span className='name'>
