@@ -12,8 +12,8 @@ import { BannerImgs } from '../../data/bannerData';
      <Carousel className='container-slide' autoplay>
         {BannerImgs.map((item,key)=>(
              <div key={key}   >
-               <div className='container-image' >
-                  <img  src={item.img} />
+               <div className='container-image-banner' >
+                  <img  className='img-banner' src={item.img} />
                 
               </div>
              </div>

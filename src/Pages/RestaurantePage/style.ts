@@ -29,6 +29,9 @@ flex-direction:column;
         img{
         border-radius:5px;
         background: #475fa1;
+        img{
+            width: 100%;
+        }
     }
 }
 
