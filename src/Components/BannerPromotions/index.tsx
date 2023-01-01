@@ -9,7 +9,7 @@ import { BannerImgs } from '../../data/bannerData';
   
  
    return (
-     <Carousel className='container-slide' autoplay>
+     <Carousel dots={false} className='container-slide' autoplay>
         {BannerImgs.map((item,key)=>(
              <div key={key}   >
                <div className='container-image-banner' >

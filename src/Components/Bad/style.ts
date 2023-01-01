@@ -9,9 +9,10 @@ type Props={
 }
 export const Container=styled.div<Props>`
    
-    background: ${ThemeStyle.bgCardProductBottom};
+    background-color: ${ThemeStyle.bgCardProductBottom};
     position: absolute;
     color:white;
+    opacity:1;
     bottom: 0;
     right:25px;
     width: 390px;
@@ -80,6 +81,7 @@ export const BadHeader=styled.div<Props>`
 `
 export const BadBody=styled.div<Props>`
   display:${props=>props.displayBad ? 'flex' : 'none'};
+  background-color: ${ThemeStyle.bgCardProductBottom};
   flex-direction:column;
   margin: 20px 0;
   transition: all ease 0.3s;

@@ -34,12 +34,14 @@ export const Showcase=()=>{
     const [displayDrinks,setDisplayDrinks]=useState<boolean>(false)
     const [onModal,setOnModal]=useState(false)
     const [isLogged,setisLogged]=useState(true)
- 
+    const [isSlide,setIsSlide]=useState(true)
 
 
 
 
-    const clikedOnModal=()=>setOnModal(true)
+    const clikedOnModal=()=>{
+       setOnModal(true)
+    }
     const closeModal=()=>{
         setisLogged(true)
         setOnModal(false)
@@ -105,7 +107,7 @@ export const Showcase=()=>{
   
 return <S.Container>
      
-            <BannerPromotions />
+           {isSlide &&  <BannerPromotions />}
         
     <S.CategorySectionProducts>
       <>
