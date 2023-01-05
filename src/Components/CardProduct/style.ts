@@ -113,7 +113,7 @@ export const DataProduct=styled.div`
             padding: 12px 20px;
             background:  ${ThemeStyle.bgTheme};
             color: white;
-            border: 2px solid  ${ThemeStyle.bgAppSystem};
+            border: 2px solid #d6d4d4;
             border-radius:5px;
             &:hover{
                 cursor:pointer;

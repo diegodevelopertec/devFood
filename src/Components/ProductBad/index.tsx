@@ -20,16 +20,14 @@ export const ProductBad=({data}:Props)=>{
    const  actionsBadCard={
         add:()=>{
            setPriceProduct(prev=>prev + data.price)
-           setQdtProduct(qdtProduct+1)
+           setQdtProduct(qdtProduct + 1)
         },
         minus:()=>{
             setPriceProduct(prev=>prev - data.price)
-            setQdtProduct(qdtProduct -1)
+            setQdtProduct(qdtProduct - 1)
         }
     }
 
-  
-  
 
 
     return <S.Container>

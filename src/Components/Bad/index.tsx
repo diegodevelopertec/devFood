@@ -6,18 +6,23 @@ import { useContext } from 'react'
 import { Context } from '../../Context/Context'
 import {  ReactNode, useState } from 'react'
 import { ProductBad } from '../ProductBad'
+import { useContextApp } from '../../hooks/useContextApp'
 
 
 
+type Props={
+    onClick:()=>void
+}
+
+export const Bad=({onClick}:Props)=>{
+    const {state,dispatch}=useContextApp()
+    
 
 
-
-export const Bad=()=>{
-    const {state,dispatch}=useContext(Context)
     const [displayBad,setDisplayBad]=useState(false)
     const [notification,setNotification]=useState(false)
 
-
+ 
     const clickDisplayBad=()=>{
        if(!displayBad){
            setDisplayBad(true)
@@ -26,6 +31,7 @@ export const Bad=()=>{
          setDisplayBad(false)
       }
 }
+
 
     
     
@@ -70,7 +76,7 @@ export const Bad=()=>{
                             <span>R${}</span>
                         </div>
                     </div>
-                <button>finalizar compra</button>
+                <button onClick={onClick}>finalizar compra</button>
                 </div>
            
            </>  : <div className='error-bad'>Nenhum pedido adicionado ainda </div>

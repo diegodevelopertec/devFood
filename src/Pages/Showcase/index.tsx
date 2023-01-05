@@ -18,12 +18,14 @@ import { toast } from "react-toastify"
 import { ThemeStyle } from "../../styled"
 import { ApiProduct } from "../../Services/ProductActions"
 import { LoginModal } from "../LoginModal"
-import { useContextApp } from "../../hooks/useContextAp.p"
+import { useContextApp } from "../../hooks/useContextApp"
 import { BannerPromotions } from "../../Components/BannerPromotions"
+import { useNavigate } from "react-router-dom"
 
 
 export const Showcase=()=>{
-     const {state,dispatch}=useContextApp()
+   
+    const {state,dispatch}=useContextApp()
     const [burguerProductList,setBurguerProductList]=useState<Product[] >(dataBurguer)
     const [pizzaProductList,setPizzaProductList]=useState<Product[]>(dataPizza)
     const [drinksProductList,setDrinksProductList]=useState<Product[] >(dataDrinks)
@@ -34,8 +36,7 @@ export const Showcase=()=>{
     const [displayDrinks,setDisplayDrinks]=useState<boolean>(false)
     const [onModal,setOnModal]=useState(false)
     const [isLogged,setisLogged]=useState(true)
-    const [isSlide,setIsSlide]=useState(true)
-
+    const navigate=useNavigate()
 
 
 
@@ -73,23 +74,23 @@ export const Showcase=()=>{
         setDisplayDrinks(false)
     }
 
+    //função de setar dados de cada car para o card modal
     const returnDataClikedProduct=(data:Product)=>{
         setDataProductCliked(data)
         clikedOnModal()
     }
 
-    const setDataBad=(data:Product)=>{
-     
-        dispatch({
-            type:'addProduct',
-            payload:{
-                data:data,qdt:data.qdt
-            }
-         })
-        closeModal()
-        toast.success(`você adicionou novo produto na sacola`)
-        console.log(data);
-        console.log(state.products);
+
+  //função de verificar se o usuário está logado ou não antes de adicionar dados da sacola no stet de delivery
+
+    const setDataBadToDeliveryPage=()=>{
+        const userState=state.user
+        if(userState.user === null){
+            setisLogged(false)
+        }else{
+            navigate('pedidos')
+        }
+
     }
 
     const conditionCategoryTitle=()=>{
@@ -107,8 +108,7 @@ export const Showcase=()=>{
   
 return <S.Container>
      
-           {isSlide &&  <BannerPromotions />}
-        
+     <BannerPromotions  />
     <S.CategorySectionProducts>
       <>
       <p>Selecione uma categoria :</p>
@@ -152,10 +152,10 @@ return <S.Container>
         { displayPizzas ? pizzaProductList && pizzaProductList.map((item,index)=>< CardProduct  key={index} onClick={returnDataClikedProduct}  data={item} />) : null}
         { displayDrinks ? drinksProductList && drinksProductList.map((item,index)=>< CardProduct  key={index} onClick={returnDataClikedProduct}  data={item} />) : null}
         { displayRestaurant  && <RestaurantePage/>}
-        <Bad />
+        <Bad onClick={setDataBadToDeliveryPage} />
     </S.ShowcaseProduct>
     {onModal && <S.ContainerModal>
-        <CardCliked   onClick={setDataBad} data={dataProductCliked} funcOffModal={closeModal}/>
+        <CardCliked   data={dataProductCliked} funcOffModal={closeModal}/>
      </S.ContainerModal>}
      {!isLogged && <S.ContainerModal>
         <LoginModal closeModal={closeModal} />

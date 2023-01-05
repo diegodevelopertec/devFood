@@ -8,7 +8,7 @@ type Props={
 export const CardProduct=({data,onClick}:Props)=>{
 
 const ClikeData=()=>onClick(data)
-   //./../../assets/imgs/
+
     return <S.Container >
         <S.ContainerImage>
             <img src={`${data?.imageProduct}`}/>

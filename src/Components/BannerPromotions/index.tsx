@@ -5,6 +5,7 @@ import { BannerImgs } from '../../data/bannerData';
 
 
 
+
  export const BannerPromotions=() => {
   
  

@@ -4,8 +4,8 @@ import { Product } from "../Types/Products"
 
 export const ApiProduct={
 
-    getProducts:async():Promise<Product[]>=>{
-        let res=await Api.get('products')
+    getProducts:async(category:string):Promise<Product[]>=>{
+        let res=await Api.get(`products/${category}`)
         return res.data
     },
     getOneProduct:async(id:string):Promise<Product>=>{

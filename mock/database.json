@@ -1,0 +1,31 @@
+{
+
+   "products":{
+    "burguers":[
+        {
+            "id":1,
+            "category":"Hamburguers",
+            "name":"X-Burguer",
+            "price":6,
+            "imageProduct": "/imgs/bg3.png",
+            "ingredientes":"Hamburguer,Queijo,Presunto e Maionese",
+            "qdt":1
+        
+        }
+
+
+
+    ],
+    "pizzas":[
+
+
+    ],
+    "bebidas":[
+
+    ]
+    
+}
+
+
+
+}

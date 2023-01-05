@@ -108,12 +108,17 @@ export const BadBody=styled.div<Props>`
       height: 80px;
       background: red;
       padding: 10px 5px;
+      border: 0;
     }
   .area-final-cupom{
         flex:1;
         display: flex;
         flex-direction:column;
         padding: 12px 20px;
+        input{
+          border: 0;
+          outline:0;
+        }
           input,button{
             padding: 12px;
             border-radius:5px;

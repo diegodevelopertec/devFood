@@ -15,6 +15,7 @@ type InputTypes={
 type Props={
     closeModal:()=>void
 }
+
 export const LoginModal=({closeModal}:Props)=>{
 
     const schema=yup.object({

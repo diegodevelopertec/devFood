@@ -23,11 +23,8 @@ const App=()=>{
 
 
   const ClickViewHome=(e:any)=>{
-  e.preventDefault()
-  navigate('/')
- 
-  
-   
+    e.preventDefault()
+    navigate('/')
     setViewHome(true)
     setViewAccount(false)
     setViewDelivery(false)

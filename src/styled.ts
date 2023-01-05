@@ -5,11 +5,12 @@ export const ThemeStyle={
      bgTheme:'#991d08',
      bgAppSystem:'#eee',
     bgCardProductBottom:'#2f302f' ,
+    
     colorTitleCard: 'black',
     colorIngredientsCategory:' #aaa',
     colorTextCard: '',
     bgHoverIcon:'#941c07',
-    bgActiveIconMenu:'#e6b72c'
+    bgActiveIconMenu:'#e88420'
 
 }
 
@@ -39,6 +40,7 @@ export const LeftContent=styled.div`
      right:0;
      width: 100%;
      box-shadow:0 0 5px #aaa;
+     
    }
  
 `

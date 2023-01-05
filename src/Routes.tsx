@@ -1,4 +1,4 @@
-import {BrowserRouter,Routes as Rotas ,Route} from 'react-router-dom'
+import {Routes as Rotas ,Route} from 'react-router-dom'
 import {DeliveryPage } from './Pages/DeliveryPage'
 import { Showcase } from './Pages/Showcase'
 import { AccountPage } from './Pages/AccountPage'

@@ -62,6 +62,8 @@ export const CategorySectionProducts=styled.div`
         justify-content:center;
     }
 }
+
+
 `
 
 

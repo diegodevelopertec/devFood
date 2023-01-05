@@ -2,47 +2,52 @@ import * as S from './style'
 import Bg from '../../assets/imgs/bg1.png'
 import { useEffect, useState } from 'react'
 import { Product } from '../../Types/Products';
-import { useContextApp } from '../../hooks/useContextAp.p';
+import { useContextApp } from '../../hooks/useContextApp';
 import { useSetData } from '../../hooks/useSetdata';
+import { toast } from "react-toastify"
 
 type Props={
     funcOffModal:()=>void;
-    data:Product,
-   onClick:(data:Product)=>any
+     data:Product ,
  
 }
 
-export const CardCliked=({funcOffModal,data,onClick}:Props)=>{
+export const CardCliked=({funcOffModal,data}:Props)=>{
 
-    const [qdtProduct,setQdtProduct]=useState(data.qdt)
+
+    
+    const [qdtProduct,setQdtProduct]=useState(1)
     const [priceModal,setPriceModal]=useState(data.price)
     const {state,dispatch}=useContextApp()
-   
-const setData=()=>onClick(data)
+
+ 
+ 
+
 const actionsModal={
     addQdtProduct:()=>{
-        setQdtProduct(prev=>prev += 1) 
-        setPriceModal(data.price+priceModal)  
-         
-        
-    }
-   
-    ,
+        setQdtProduct(prev=>prev + 1) 
+        setPriceModal(data.price + priceModal) 
+    } ,
     minusQdtProduct:()=>{
         if(qdtProduct > 1){
            setQdtProduct(prev=>prev-1)  
            setPriceModal(priceActual=>priceActual - data.price) 
-       
-           
         }
     }
     
 }
+const setData=()=>{
+    
+    dispatch({
+        type:'addProduct',
+        payload:{
+          data,qdt:qdtProduct,price:priceModal
+        }
+    })
+     funcOffModal()
+     toast.success(`você adicionou novo produto na sacola`)
 
-
-
-
-
+}
 
 
 
@@ -82,7 +87,7 @@ const actionsModal={
                </div>
                <div className="cx-buttons">
                     <button className='btn-cancel' onClick={funcOffModal}>voltar</button>
-                    <button className='btn-save' onClick={setData}>adicionar á sacola</button> 
+                    <button className='btn-save' onClick={()=>setData()}>adicionar á sacola</button> 
             </div>
             </div>
         </S.ContainerData>
