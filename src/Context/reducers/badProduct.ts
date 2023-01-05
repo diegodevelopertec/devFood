@@ -8,28 +8,18 @@ import axios from "axios";
 
 
 
-
-
 export const initialStateProductBad=[]
 export const useProductBadReducer=(state:Product[] ,action:ActionTypeGeral)=>{
 
     switch(action.type){
         case 'addProduct':{
-            let listproducts=[...state]
-            let idCart=action.payload?.data.id
-            let index=listproducts.findIndex(item=>item.id === idCart)
-            if(index > -1 ){
-                
-                listproducts[index].qdt +=action.payload?.qdt
-                listproducts[index].qdt +=action.payload?.qdt
-           
-
-            }else{
-                listproducts.push({
-                    ...action.payload?.data
-                })
-            }
-                return listproducts
+            let listProducts = [...state]
+            
+            listProducts.push({
+                ...action.payload?.data
+            })
+            
+            return listProducts
         }
        
 

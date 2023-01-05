@@ -7,7 +7,7 @@ type Props={
 }
 export const CardProduct=({data,onClick}:Props)=>{
 
-const ClikeData=()=>onClick(data)
+const ClickData=()=>onClick(data)
 
     return <S.Container >
         <S.ContainerImage>
@@ -25,7 +25,7 @@ const ClikeData=()=>onClick(data)
                 </p>
             </div>
             <div className="cx-btn-product">
-               <button onClick={ClikeData}>fazer pedido</button>
+               <button onClick={ClickData}>fazer pedido</button>
             </div>
         </S.DataProduct>
     </S.Container>

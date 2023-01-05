@@ -24,7 +24,6 @@ import { useNavigate } from "react-router-dom"
 
 
 export const Showcase=()=>{
-   
     const {state,dispatch}=useContextApp()
     const [burguerProductList,setBurguerProductList]=useState<Product[] >(dataBurguer)
     const [pizzaProductList,setPizzaProductList]=useState<Product[]>(dataPizza)
@@ -37,7 +36,6 @@ export const Showcase=()=>{
     const [onModal,setOnModal]=useState(false)
     const [isLogged,setisLogged]=useState(true)
     const navigate=useNavigate()
-
 
 
     const clikedOnModal=()=>{

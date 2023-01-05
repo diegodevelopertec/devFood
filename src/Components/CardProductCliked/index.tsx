@@ -1,9 +1,7 @@
 import * as S from './style'
-import Bg from '../../assets/imgs/bg1.png'
-import { useEffect, useState } from 'react'
+import {useState } from 'react'
 import { Product } from '../../Types/Products';
 import { useContextApp } from '../../hooks/useContextApp';
-import { useSetData } from '../../hooks/useSetdata';
 import { toast } from "react-toastify"
 
 type Props={
@@ -13,8 +11,6 @@ type Props={
 }
 
 export const CardCliked=({funcOffModal,data}:Props)=>{
-
-
     
     const [qdtProduct,setQdtProduct]=useState(1)
     const [priceModal,setPriceModal]=useState(data.price)
@@ -37,22 +33,27 @@ const actionsModal={
     
 }
 const setData=()=>{
+
+    const newProduct = {
+        id: data.id,
+        category: data.category,
+        name: data.name,
+        imageProduct: data.imageProduct,
+        ingredientes: data.ingredientes,
+        qdt:qdtProduct, 
+        price: priceModal
+    }
     
     dispatch({
         type:'addProduct',
         payload:{
-          data,qdt:qdtProduct,price:priceModal
+           data: newProduct
         }
     })
      funcOffModal()
      toast.success(`você adicionou novo produto na sacola`)
 
 }
-
-
-
-
-
 
 
     return <S.Container>
