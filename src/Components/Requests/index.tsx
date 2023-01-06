@@ -5,12 +5,15 @@ import { useContext } from 'react'
 import { ProductBad } from '../ProductBad'
 import { ProductRequest } from '../ProductRequest'
 import { Product } from '../../Types/Products'
+import { RequestType } from '../../Types/RequestType'
+import { useContextApp } from '../../hooks/useContextApp'
 
 type Props={
-    data:Product
+    dataRequests:RequestType
 }
-export const Requests=({data}:Props)=>{
-    const {state,dispatch}=useContext(Context)
+
+export const Requests=({dataRequests}:Props)=>{
+    const {state,dispatch}=useContextApp()
     const [openBody,setOnBody]=useState(false)
 
 
@@ -33,10 +36,11 @@ export const Requests=({data}:Props)=>{
         </S.RequestHeader>
         <S.RequestBody openBody={openBody}>
              <div className="cx-produtos">
-                 { state.requestDelivery.products  &&   state.requestDelivery.products.map((item,index)=>(
-                     <ProductRequest data={item} key={index} />)) 
-                 }
-           </div>  
+               
+              </div>
+              <div className="cx-address">
+
+              </div>
            
         </S.RequestBody>
     

@@ -29,7 +29,7 @@ export const CategorySectionProducts=styled.div`
     margin: 20px 0 0 ;
     color:${ThemeStyle.colorTitleCard};
     font-weight:bold;
-    background:#edeceb;
+    background-color:${ThemeStyle.bgAppSystem};
     flex-direction:columns;
     font-size:15px;
 
@@ -75,7 +75,7 @@ export const ShowcaseProduct=styled.div<Props>`
     padding-bottom:50px;
     padding: 30px 10px;
     margin-bottom:90px;
-    background:#edeceb;
+    background-color:${ThemeStyle.bgAppSystem};
     @media screen and (max-width:920px){
       grid-template-columns:repeat(2,1fr);
       padding-bottom:50px;

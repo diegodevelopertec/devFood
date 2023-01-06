@@ -3,9 +3,8 @@ import BgImage from '.././src/assets/imgs/bg.jpg'
 
 export const ThemeStyle={
      bgTheme:'#991d08',
-     bgAppSystem:'#eee',
+     bgAppSystem:'orange',
     bgCardProductBottom:'#2f302f' ,
-    
     colorTitleCard: 'black',
     colorIngredientsCategory:' #aaa',
     colorTextCard: '',
@@ -15,12 +14,11 @@ export const ThemeStyle={
 }
 
 export const Body=styled.div`
-    background-color: #eee;
     display:flex;
     height:100vh;
     width: 100vw;
     overflow:hidden;
-    background-color: #dadce0;
+    background-color:${ThemeStyle.bgAppSystem};
 
 
 `

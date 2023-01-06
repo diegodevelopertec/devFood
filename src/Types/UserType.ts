@@ -1,4 +1,4 @@
-import { AdressType } from "./AdressType"
+import { AdressType } from "./AddressType"
 
 export type UserType={
     name:string,

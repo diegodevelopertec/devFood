@@ -2,17 +2,17 @@ import React, { createContext, useState } from "react";
 import {initialStateProductBad, useProductBadReducer} from './reducers/badProduct'
 import { Product } from "../Types/Products";
 import { ActionTypeGeral } from "../Types/TypeAction";
-import {initialStateAddress,useProductAdressReducer} from './reducers/addressReducer'
-import { AdressType } from "../Types/AdressType";
+import {initialStateAddress,useProductAddressReducer} from './reducers/addressReducer'
+import { AddressType } from "../Types/AddressType";
 import {UserTypeReducer,userInitialState,userReducer} from './reducers/userReducer'
-import { RequestType,useRequestReducer,initialStateRequest} from "./reducers/requestReducer";
-
+import {useRequestReducer,initialStateRequest} from "./reducers/requestReducer";
+import { RequestType } from "../Types/RequestType";
 
 
 type ContextTypeState={
     products:Product[],
-    address:AdressType[],
-    requestDelivery:RequestType,
+    address:AddressType[],
+     //requestDelivery:RequestType  ,
     user:UserTypeReducer 
    
 }
@@ -24,8 +24,8 @@ type ContextType={
 
 export const initialStateContext={
     products:initialStateProductBad,
-    address:initialStateAddress,
-    requestDelivery:initialStateRequest,
+     address:initialStateAddress,
+    //requestDelivery:initialStateRequest,
     user:userInitialState
  
    
@@ -33,9 +33,9 @@ export const initialStateContext={
 
 export const mainReducer=(state:ContextTypeState,action:ActionTypeGeral)=>({
      products : useProductBadReducer(state.products,action),
-     address : useProductAdressReducer(state.address,action),
-    requestDelivery:useRequestReducer(state.requestDelivery,action),
-    user:userReducer(state.user,action)
+     address : useProductAddressReducer(state.address,action),
+    // requestDelivery:useRequestReducer(state.requestDelivery,action),
+     user:userReducer(state.user,action)
     
 })
 

@@ -1,34 +1,37 @@
-import { AdressType } from "../../Types/AdressType"
+import { AddressType as AddressType } from "../../Types/AddressType"
 import { Product } from "../../Types/Products"
-import { ActionTypeGeral } from "../../Types/TypeAction"
-
-
-
-export type RequestType={
-    products:Product[] ,
-    address:AdressType[] 
-}
+import { ActionTypeGeral} from "../../Types/TypeAction"
+import { RequestType } from "../../Types/RequestType"
+import {v4 as uuid} from 'uuid'
 
 export const initialStateRequest={
     products:[
         {
-            id:3,
+            id:uuid(),
             category:'Hamburguers',
-            name:'X-Salada',
-            price:7,
-            imageProduct:'../../../src/assets/imgs/bg3.png',
-            ingredientes:'Milho,Hamburguer,Maionese,Tomate,Alface,Queijo',
-            qdt:1},
-            
-     
+            name:'X-Burguer',
+            price:6,
+           
+            imageProduct: `/imgs/bg3.png`,
+            ingredientes:'Hamburguer,Queijo,Presunto e Maionese',
+            qdt:1,
+        
+        }
     ],
-    address:[]
+    address:[{
+        id: uuid,
+        rua: 'generoso pinto',
+        state: true,
+        numero: '156',
+        bairro: 'conceição do itaguá',
+        complemento: 'casa'
+    }]
 }
 
-export const useRequestReducer=(state:RequestType, action:ActionTypeGeral)=>{
+export const useRequestReducer=(state:RequestType , action:ActionTypeGeral)=>{
     switch(action.type){
         case 'setDataRequest':{
-           
+        
         }
     }
 

@@ -11,7 +11,7 @@ type Props={
 
 export const ContextProvider=({children}:Props)=>{
 
-    const [state,dispatch]= useReducer(mainReducer,initialStateContext)
+    const [state,dispatch]=useReducer(mainReducer,initialStateContext)
 
     return <Context.Provider value={{state,dispatch}}>
         {children}

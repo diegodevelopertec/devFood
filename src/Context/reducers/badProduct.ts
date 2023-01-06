@@ -1,19 +1,16 @@
-
-import { useEffect } from "react";
-import { ProductBad } from "../../Components/ProductBad";
 import { Product } from "../../Types/Products";
 import { ActionTypeGeral } from "../../Types/TypeAction";
-import axios from "axios";
-import staticMethods from "antd/es/message";
+
+
 
 
 
 export const initialStateProductBad=[]
 export const useProductBadReducer=(state:Product[] ,action:ActionTypeGeral)=>{
-
+    
+    let listProducts = [...state]
     switch(action.type){
         case 'addProduct':{
-            let listProducts = [...state]
             let dataPay=action.payload?.data
             let index=listProducts.findIndex(item=>item.id === dataPay.id)
             if(index > - 1){
@@ -30,9 +27,40 @@ export const useProductBadReducer=(state:Product[] ,action:ActionTypeGeral)=>{
             return [...listProducts]
             
         }
+        case 'changeProducts':{
+            
+            let indexItem=listProducts.findIndex(item=>item.id === action.payload?.key)
+            if(indexItem){
+                switch(action.payload?.typeAction){
+                    case '-':
+                        listProducts[indexItem].qdt--
+                        listProducts[indexItem].price-=listProducts[indexItem].priceDefault
+                        if(listProducts[indexItem].qdt <= 0){
+                            listProducts=listProducts.filter((item,index)=>index !== indexItem)
+                           }
+                        return listProducts
+
+                        break;
+                    case '+':
+                      
+                           listProducts[indexItem].qdt++
+                           listProducts[indexItem].price +=listProducts[indexItem].priceDefault
+                        break;
+                       
+
+
+
+
+
+                }
+               
+            }
+
+            return [...listProducts]
+        }
        
 
-}
+    }
 
 return state 
 

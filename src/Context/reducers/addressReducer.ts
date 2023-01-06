@@ -1,14 +1,14 @@
 import { ActionTypeGeral } from "../../Types/TypeAction";
-import { AdressType } from "../../Types/AdressType";
+import { AddressType } from "../../Types/AddressType";
 
 
 
-export const initialStateAddress:AdressType[]=[]
+export const initialStateAddress=[]
 
-export const useProductAdressReducer=(state:AdressType[],action:ActionTypeGeral)=>{
+export const useProductAddressReducer=(state:AddressType[],action:ActionTypeGeral)=>{
 
     switch(action.type){
-        case 'addAdress':{
+        case 'addAddress':{
             let products=[...state]
 
             let id=action.payload?.id

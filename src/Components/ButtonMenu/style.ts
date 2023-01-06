@@ -20,6 +20,7 @@ export const ContainerButtonMenu=styled.a<Props>`
     text-decoration:none;
     margin: ${props=>props.mv && props.mh ? `${props.mv}px ${props.mh}px` : '10px 20'};
     background:${props=>props.bgColorActive === true ? `${ThemeStyle.bgActiveIconMenu}` :  props.bgColor };
+    transiton:all ease 0.5s;
     &:hover{
         cursor:pointer;
         background:${props=>props.bgColorActive === true ? '#d4ae3bc' :  '#e8b376' };

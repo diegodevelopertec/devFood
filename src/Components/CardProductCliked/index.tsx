@@ -41,7 +41,8 @@ const setData=()=>{
         imageProduct: data.imageProduct,
         ingredientes: data.ingredientes,
         qdt:qdtProduct, 
-        price: priceModal
+        price: priceModal,
+        priceDefault:data.price
     }
     
     dispatch({
