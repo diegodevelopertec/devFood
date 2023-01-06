@@ -16,6 +16,10 @@ export const ProductBad=({data}:Props)=>{
     const [qdtProduct,setQdtProduct]=useState(data.qdt)
     const [priceProduct,setPriceProduct]=useState(data.price)
 
+    useEffect(()=>{
+        setQdtProduct(data.qdt)
+        setPriceProduct(data.price)
+},[state.products])
 
    const  actionsBadCard={
         add:()=>{

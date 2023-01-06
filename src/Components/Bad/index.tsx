@@ -2,7 +2,7 @@ import * as S from './style'
 import BadIcon from '../../assets/imgs/sacola.png'
 import  openBadIcon from '../../assets/imgs/setbaixo.png'
 import CloseBadIcon from '../../assets/imgs/close.png'
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { Context } from '../../Context/Context'
 import {  ReactNode, useState } from 'react'
 import { ProductBad } from '../ProductBad'
@@ -16,8 +16,13 @@ type Props={
 
 export const Bad=({onClick}:Props)=>{
     const {state,dispatch}=useContextApp()
+    let [products,setProducts]=useState(state.products)
     
-
+    
+    
+    useEffect(()=>{
+        setProducts(state.products)
+    },[state.products])
 
     const [displayBad,setDisplayBad]=useState(false)
     const [notification,setNotification]=useState(false)
@@ -50,7 +55,7 @@ export const Bad=({onClick}:Props)=>{
         </S.BadHeader>
         <S.BadBody displayBad={displayBad}>
              
-           {state.products.length > 0  ? <> 
+           {products.length > 0  ? <> 
                <div className="area-listproduct">
                   {state.products.length  &&  state.products.map((item,index)=>(
                          <ProductBad key={index} data={item} />)) 
