@@ -16,10 +16,14 @@ export const  RequestHeader=styled.div`
     border-radius:5px; 
     color:${ThemeStyle.bgTheme};
     padding: 20px 12px;
-    font-size:12px;
     display:flex;
     justify-content:space-between;
     align-items:center;
+    .info{
+        display: flex;
+        justify-content:space-between;
+        width: 50%;
+    }
     button{
         text-transform:uppercase;
         padding: 12px ;
@@ -35,23 +39,61 @@ export const  RequestHeader=styled.div`
         }
     }
 
+
+@media screen and (max-width:700px){
+    display: flex;
+    flex-direction:column;
+    .info{
+        margin: 16px 0;
+        flex-direction:column;
+        align-items:center;
+    }
+}
 `
 export const  RequestBody=styled.div<Props>`
     background:#cccfc6;
     color:${ThemeStyle.colorTextCard};
     padding: 20px 12px;
-    height:200px;
-    flex-direction:column;
+    height:auto;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
     transition:all ease 0.5s;
     border-bottom-left-radius:5px;
     border-bottom-right-radius:5px;
-    display: ${props=>props.openBody === false ? 'none' : 'flex'};
+    display: ${props=>props.openBody === false ? 'none' : 'grid'};
     overflow: auto;
-    ::-webkit-scrollbar{
-        width: 2px;
-      }
     
+
+    @media screen and (max-width:700px){
+        display: ${props=>props.openBody === false ? 'none' : 'flex'};
+        flex-direction:column;
+        width: 100%;
+
+    }
+
+ `
+
+export const AreaProduct=styled.div`
+   .cx-products{
+       height: 200px;
+       overflow: auto;
+        ::-webkit-scrollbar{
+            width: 2px;
+        }
+     }
+`
+
+export const AreaAdress=styled.div`
+    display: flex;
+    flex-direction:column;
     
+    h4{  margin-bottom:20px; }
     
-    
-    `
+`
+export const AreaDetails=styled.div`
+    .linha{
+        display: flex;
+        justify-content:space-between;
+        padding: 12px ;
+    }
+`

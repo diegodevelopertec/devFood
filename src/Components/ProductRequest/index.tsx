@@ -19,24 +19,22 @@ export const ProductRequest=({data}:Props)=>{
 
     return <S.Container>
             <>
-              <div className="area-left">
-         <div className='area--image'>
-             <img src={`${data.imageProduct}`} alt="" />
-         </div>
-         <div className="area-text">
-             <span className='name'>
-                 {data.name}
-             </span>  
-             <span className='price'>
-                 R$ {data.price.toFixed(2)}
-             </span>
+            <div className="area-left">
+                <div className='area--image'>
+                    <img src={`${data.imageProduct}`} alt="" />
+                </div>
+                <div className="area-text">
+                    <span className='name'>
+                        {data.name}
+                    </span>  
+                    <span className='price'>
+                        R$ {data.price.toFixed(2)}
+                    </span>
          </div>
      </div>
      <div className="area-right">
          <div className="counter">
-            
-             <div className="cx-qdt"> {data.qdt} </div>
-             
+            <div className="cx-qdt"> {data.qdt} </div>
          </div>
      </div>
             

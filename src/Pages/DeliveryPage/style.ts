@@ -7,7 +7,7 @@ export const  Container=styled.div`
     overflow:auto;
     height:max-content;
     background:${ThemeStyle.bgAppSystem};
-    padding:0px 12px;
+    padding:0px 10px;
     .intro{
         margin:20px 0;
         h3{

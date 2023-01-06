@@ -32,6 +32,7 @@ const actionsModal={
     }
     
 }
+
 const setData=()=>{
 
     const newProduct = {

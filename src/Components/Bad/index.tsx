@@ -22,7 +22,7 @@ export const Bad=({onClick}:Props)=>{
     
     useEffect(()=>{
         setProducts(state.products)
-    },[state.products])
+    },[state.products,products])
 
     const [displayBad,setDisplayBad]=useState(false)
     const [notification,setNotification]=useState(false)

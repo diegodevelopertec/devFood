@@ -3,7 +3,7 @@ import BgImage from '.././src/assets/imgs/bg.jpg'
 
 export const ThemeStyle={
      bgTheme:'#991d08',
-     bgAppSystem:'orange',
+     bgAppSystem:'#f7a623',
     bgCardProductBottom:'#2f302f' ,
     colorTitleCard: 'black',
     colorIngredientsCategory:' #aaa',

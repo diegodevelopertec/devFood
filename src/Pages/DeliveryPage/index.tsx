@@ -14,6 +14,9 @@ export const DeliveryPage=()=>{
              <p>Bem vindo {user?.name},Confira aqui os estado dos seus pedidos</p> 
           </div>
           <div className="requests-container">
+            {
+                  <Requests dataRequests={state.requests} />
+            }
            
             
           </div>

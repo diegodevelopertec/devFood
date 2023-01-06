@@ -4,7 +4,7 @@ export type Product={
     name:string,
     category:string,
     price: number,
-    priceDefault:number,
+    priceDefault:number ,
     imageProduct:string,
     ingredientes?:string,
     qdt:number

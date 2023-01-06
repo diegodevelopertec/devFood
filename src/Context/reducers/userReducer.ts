@@ -6,8 +6,7 @@ import { ActionFunction } from "react-router-dom";
 
 export type UserTypeReducer={
     user:UserType | null,
-    login:(email:string,password:string)=>boolean
-    register: (email:string,password:string)=>void,
+  
   
 }
 
@@ -20,12 +19,7 @@ export  const userInitialState={
        token: 'string',
        adress:[]
     },
-    login:(email:string,password:string)=>{
-        return true
-    },
-    register:(email:string,password:string)=>{
-
-    }
+  
 }
 
 export const userReducer=(state:UserTypeReducer ,action:ActionTypeGeral)=>{
@@ -40,7 +34,7 @@ export const userReducer=(state:UserTypeReducer ,action:ActionTypeGeral)=>{
                 user=dataPayload
             }
 
-
+            return state
             break;
         }
         case 'login':{
@@ -53,7 +47,7 @@ export const userReducer=(state:UserTypeReducer ,action:ActionTypeGeral)=>{
                 return true
             }
 
-
+            return state
             break;
         }
 
