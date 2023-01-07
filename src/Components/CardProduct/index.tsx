@@ -1,11 +1,14 @@
 import { Product } from '../../Types/Products'
 import * as S from './style'
 
+
 type Props={
     data?:Product,
     onClick:(dataCard:any)=>void
 }
 export const CardProduct=({data,onClick}:Props)=>{
+
+ 
 
 const ClickData=()=>onClick(data)
 

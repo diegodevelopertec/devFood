@@ -64,7 +64,7 @@ export const Requests=({dataRequests}:Props)=>{
                        <span>taxa de Entrega</span> <span> 00 </span>
                     </div>
                     <div className="linha">
-                       <span>Total</span> <span> 00 </span>
+                       <span>Total</span> <span> R$ {state.requests.totatValueProduct.toFixed(2)}</span>
                     </div>
                   
               

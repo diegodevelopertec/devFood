@@ -13,13 +13,14 @@ type ContextTypeState={
     products:Product[],
     requests:RequestType,
     address:AddressType[],
-   user:UserTypeReducer 
+     user:UserTypeReducer 
    
 }
 type ContextType={
     state:ContextTypeState,
     dispatch:React.Dispatch<any>
 }
+
 
 
 export const initialStateContext={
@@ -36,6 +37,7 @@ export const mainReducer=(state:ContextTypeState,action:ActionTypeGeral)=>({
      address : useProductAddressReducer(state.address,action),
      requests:useRequestReducer(state.requests,action),
      user:userReducer(state.user,action)
+    
     
 })
 

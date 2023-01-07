@@ -7,6 +7,9 @@ import { Context } from '../../Context/Context'
 import {  ReactNode, useState } from 'react'
 import { ProductBad } from '../ProductBad'
 import { useContextApp } from '../../hooks/useContextApp'
+import { Product } from '../../Types/Products'
+import { NavigationContext } from 'react-router/dist/lib/context'
+import { useNavigate } from 'react-router-dom'
 
 
 
@@ -17,8 +20,8 @@ type Props={
 export const Bad=({onClick}:Props)=>{
     const {state,dispatch}=useContextApp()
     let [products,setProducts]=useState(state.products)
-    
-    
+   const [total,setTotalValues]=useState(0)
+   
     
     useEffect(()=>{
         setProducts(state.products)
@@ -26,7 +29,7 @@ export const Bad=({onClick}:Props)=>{
 
     const [displayBad,setDisplayBad]=useState(false)
     const [notification,setNotification]=useState(false)
-
+    const navigate=useNavigate()
  
     const clickDisplayBad=()=>{
        if(!displayBad){
@@ -38,7 +41,27 @@ export const Bad=({onClick}:Props)=>{
 }
 
 
+
+useEffect(()=>{
+    let total=state.products.reduce((prevPrice:any,nextPrice:Product)=>prevPrice + nextPrice.price , 0 )  
+    setTotalValues(total)
+   // state.requests.totatValueProduct=total
+},[state.products])
     
+
+const setDataToRequests=()=>{
+
+    dispatch({
+        type:'setDataRequest',
+        payload:{
+            products:state.products,
+            totalPrice:total
+        }
+    })
+
+    navigate('/pedidos')
+    state.products=[]
+}
     
 
 
@@ -53,6 +76,7 @@ export const Bad=({onClick}:Props)=>{
             </div>
             <S.NotificationBad displayBad={notification}>  2 </S.NotificationBad >
         </S.BadHeader>
+
         <S.BadBody displayBad={displayBad}>
              
            {products.length > 0  ? <> 
@@ -61,7 +85,7 @@ export const Bad=({onClick}:Props)=>{
                          <ProductBad key={index} data={item} />)) 
                          
                  }
-             </div>
+               </div>
                 <div className='area-address'>
                     
                 </div>
@@ -70,7 +94,7 @@ export const Bad=({onClick}:Props)=>{
                     <div className="data-compra">
                         <div className="data-item">
                             <span>Desconto</span>
-                            <span>$ 00</span>
+                            <span>R$ 00</span>
                         </div>
                         <div className="data-item">
                             <span>Taxa de Entrega</span>
@@ -78,14 +102,13 @@ export const Bad=({onClick}:Props)=>{
                         </div>
                         <div className="data-item">
                             <span>Total</span>
-                            <span>R${}</span>
+                            <span>R$ {total.toFixed(2)}</span>
                         </div>
                     </div>
-                <button onClick={onClick}>finalizar compra</button>
+                <button onClick={setDataToRequests}>finalizar compra</button>
                 </div>
-           
-           </>  : <div className='error-bad'>Nenhum pedido adicionado ainda </div>
-}
+              </>  : <div className='error-bad'>Nenhum pedido adicionado ainda </div>
+           }
             
         </S.BadBody>
         

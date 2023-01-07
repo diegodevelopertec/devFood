@@ -3,91 +3,30 @@ import { Product } from "../../Types/Products"
 import { ActionTypeGeral} from "../../Types/TypeAction"
 import { RequestType } from "../../Types/RequestType"
 import {v4 as uuid} from 'uuid'
+import staticMethods from "antd/es/message"
 
 export const initialStateRequest={
-    products:[
-        {
-            id:uuid(),
-            category:'Hamburguers',
-            name:'X-Burguer',
-            price:6,
-            priceDefault:2,
-            imageProduct: `/imgs/bg3.png`,
-            ingredientes:'Hamburguer,Queijo,Presunto e Maionese',
-            qdt:1,
-        
-        },
-        {
-            id:uuid(),
-            category:'Hamburguers',
-            name:'X-Burguer',
-            price:6,
-            priceDefault:2,
-            imageProduct: `/imgs/bg3.png`,
-            ingredientes:'Hamburguer,Queijo,Presunto e Maionese',
-            qdt:1,
-        
-        },
-        {
-            id:uuid(),
-            category:'Hamburguers',
-            name:'X-Burguer',
-            price:6,
-            priceDefault:2,
-            imageProduct: `/imgs/bg3.png`,
-            ingredientes:'Hamburguer,Queijo,Presunto e Maionese',
-            qdt:1,
-        
-        },
-        {
-            id:uuid(),
-            category:'Hamburguers',
-            name:'X-Burguer',
-            price:6,
-            priceDefault:2,
-            imageProduct: `/imgs/bg3.png`,
-            ingredientes:'Hamburguer,Queijo,Presunto e Maionese',
-            qdt:1,
-        
-        },
-        {
-            id:uuid(),
-            category:'Hamburguers',
-            name:'X-Burguer',
-            price:6,
-            priceDefault:2,
-            imageProduct: `/imgs/bg3.png`,
-            ingredientes:'Hamburguer,Queijo,Presunto e Maionese',
-            qdt:1,
-        
-        },
-        {
-            id:uuid(),
-            category:'Hamburguers',
-            name:'X-Burguer',
-            price:6,
-            priceDefault:2,
-            imageProduct: `/imgs/bg3.png`,
-            ingredientes:'Hamburguer,Queijo,Presunto e Maionese',
-            qdt:1,
-        
-        }
-    ],
-    address:[{
-        id: uuid,
-        rua: 'generoso pinto',
-        state: true,
-        numero: '156',
-        bairro: 'conceição do itaguá',
-        complemento: 'casa'
-    }]
+    products:[],
+    address:[],
+    totatValueProduct:0
 }
 
 export const useRequestReducer=(state:RequestType , action:ActionTypeGeral)=>{
     
 
+        switch(action.type){
+            case 'setDataRequest':{
+                let productsPayload=action.payload?.products
+                let addressPayload=action.payload?.address
+                let totalPricePayload=action.payload?.totalPrice
+                state.products=productsPayload
+                state.address=addressPayload
+                state.totatValueProduct=totalPricePayload
 
 
 
+
+            }
+        }
     return state
 }

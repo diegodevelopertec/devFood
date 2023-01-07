@@ -14,8 +14,10 @@ export const DeliveryPage=()=>{
              <p>Bem vindo {user?.name},Confira aqui os estado dos seus pedidos</p> 
           </div>
           <div className="requests-container">
-            {
+            {state.requests.products.length > 0 &&
                   <Requests dataRequests={state.requests} />
+            
+
             }
            
             

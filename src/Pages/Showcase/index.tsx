@@ -22,6 +22,7 @@ import { useNavigate } from "react-router-dom"
 
 
 export const Showcase=()=>{
+
     const {state,dispatch}=useContextApp()
     const [burguerProductList,setBurguerProductList]=useState<Product[] >(dataBurguer)
     const [pizzaProductList,setPizzaProductList]=useState<Product[]>(dataPizza)
@@ -31,17 +32,17 @@ export const Showcase=()=>{
     const [displayPizzas,setDisplayPizzas]=useState<boolean>(false)
     const [displayRestaurant,setDisplayRestaurant]=useState<boolean>(false)
     const [displayDrinks,setDisplayDrinks]=useState<boolean>(false)
-    const [onModal,setOnModal]=useState(false)
+    const [stateModal,setModal]=useState(false)
     const [isLogged,setisLogged]=useState(true)
     const navigate=useNavigate()
 
 
     const clikedOnModal=()=>{
-       setOnModal(true)
+       setModal(true)
     }
     const closeModal=()=>{
         setisLogged(true)
-        setOnModal(false)
+        setModal(false)
     }
 
 
@@ -150,7 +151,7 @@ return <S.Container>
         { displayRestaurant  && <RestaurantePage/>}
         <Bad onClick={setDataBadToDeliveryPage} />
     </S.ShowcaseProduct>
-    {onModal && <S.ContainerModal>
+    {stateModal && <S.ContainerModal>
         <CardCliked   data={dataProductCliked} funcOffModal={closeModal}/>
      </S.ContainerModal>}
      {!isLogged && <S.ContainerModal>

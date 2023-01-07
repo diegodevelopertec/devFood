@@ -4,5 +4,6 @@ import { AddressType } from "./AddressType"
 
 export type RequestType={
     products:Product[]  ,
-    address:AddressType
+    address:AddressType,
+    totatValueProduct:number
 }
