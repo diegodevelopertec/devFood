@@ -3,7 +3,7 @@ import { Product } from "../../Types/Products"
 import { ActionTypeGeral} from "../../Types/TypeAction"
 import { RequestType } from "../../Types/RequestType"
 import {v4 as uuid} from 'uuid'
-import staticMethods from "antd/es/message"
+
 
 export const initialStateRequest=[]
 
@@ -16,10 +16,12 @@ export const useRequestReducer=(state:RequestType , action:ActionTypeGeral)=>{
                 let addressPayload=action.payload?.address
                 let totalPricePayload=action.payload?.totalPrice
                 let idPayload=action.payload?.id
+                let statePayload=action.payload?.state
                 let stateProducts=[...state]
 
                 let newData={
                     id:idPayload,
+                    state:statePayload,
                     products:productsPayload,
                     address:addressPayload,
                     totatValueProduct:totalPricePayload

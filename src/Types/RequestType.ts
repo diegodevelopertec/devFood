@@ -5,8 +5,9 @@ import { AddressType } from "./AddressType"
 
  export type RequestDataType={
     id:string,
+    state:'pendende' | 'entregue',
     products:Product[]  ,
-    address:string,
+    address:AddressType,
     totatValueProduct:number
 }
 export type RequestType=RequestDataType[]

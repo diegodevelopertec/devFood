@@ -80,6 +80,7 @@ export const CardLoja=styled.div`
     @media screen and (max-width:950px){
         flex-direction:column;
         padding: 10px 0;
+      
     }
 
 `

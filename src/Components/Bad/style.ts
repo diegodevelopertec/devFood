@@ -106,10 +106,15 @@ export const BadBody=styled.div<Props>`
     }
     .area-address{
       font-size:13px;
+      em{
+        display: block;
+      }
       height: 80px;
-      background: red;
+      background-color: #c9c4c3;
+      border-radius:2px;
       padding: 10px 5px;
       border: 0;
+    
     }
   .area-final-cupom{
         flex:1;

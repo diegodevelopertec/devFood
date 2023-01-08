@@ -86,7 +86,6 @@ export const AreaProduct=styled.div`
 export const AreaAdress=styled.div`
     display: flex;
     flex-direction:column;
-    
     h4{  margin-bottom:20px; }
     
 `

@@ -7,3 +7,4 @@ export type AddressType={
    bairro:string,
    complemento:string
 }
+

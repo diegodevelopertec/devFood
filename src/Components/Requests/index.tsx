@@ -49,10 +49,10 @@ export const Requests=({dataRequests}:Props)=>{
                
               <S.AreaAdress>
                     <h4>Endereço</h4>
-                   <span> Rua :{address?.rua}</span>
-                   <span>Bairro:{address?.bairro}</span>
-                   <span>numero:{address?.numero}</span>
-                   <span>complemento:{address?.complemento}</span>
+                   <p><strong>Rua</strong>{address?.rua}</p>
+                   <p><strong>Bairro</strong>:{address?.bairro}</p>
+                   <p><strong>numero</strong>:{address?.numero}</p>
+                   <p><strong>complemento</strong>:{address?.complemento}</p>
               </S.AreaAdress>
               <S.AreaDetails>
                 <h4>Detalhes</h4>

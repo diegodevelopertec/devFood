@@ -21,12 +21,13 @@ type Props={
 
 export const Bad=({onClick}:Props)=>{
     const {state,dispatch}=useContextApp()
+    const addressDefault=state.address.find(item=>item.state === true)
     let [products,setProducts]=useState(state.products)
     const [total,setTotalValues]=useState(0)
     const [displayBad,setDisplayBad]=useState(false)
     const [notification,setNotification]=useState(false)
     const navigate=useNavigate()
-    
+
 
  
    
@@ -54,8 +55,9 @@ export const Bad=({onClick}:Props)=>{
 
     let data={
         id: uuid(),
+        state:'entregue',
         products: state.products,
-        address: '',
+        address: addressDefault,
         totatValueProduct: total,
     }
 
@@ -65,7 +67,7 @@ export const Bad=({onClick}:Props)=>{
             id:data?.id,
             products:data?.products,
             totalPrice:data?.totatValueProduct,
-            address:data?.address       
+            address:data.address    
         }
     })
    
@@ -100,7 +102,9 @@ export const Bad=({onClick}:Props)=>{
                  }
                </div>
                 <div className='area-address'>
-                    
+                   <em>Rua {addressDefault?.rua} </em> 
+                   <em>Bairro  {addressDefault?.bairro} </em>  
+                   <em>numero {addressDefault?.numero} </em>                     
                 </div>
                 <div className="area-final-cupom">
                     <input type="text" />

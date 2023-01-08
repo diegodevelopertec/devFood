@@ -1,24 +1,41 @@
 import { ActionTypeGeral } from "../../Types/TypeAction";
 import { AddressType } from "../../Types/AddressType";
+import Item from "antd/es/list/Item";
 
 
 
-export const initialStateAddress=[]
+export const initialStateAddress=[
+    {
+        id: 1,
+        rua: 'generoso pinto',
+        state: true,
+        numero: '124',
+        bairro: 'curitiba',
+        complemento: 'casa',
+       
+    },
+    {
+        id: 2,
+        rua: 'alameda',
+        state: false,
+        numero: '144',
+        bairro: 'alterosa',
+        complemento: 'casa',
+       
+    }
+
+
+
+
+]
 
 export const useProductAddressReducer=(state:AddressType[],action:ActionTypeGeral)=>{
 
     switch(action.type){
-        case 'addAddress':{
-            let products=[...state]
-
-            let id=action.payload?.id
-            let index=products.findIndex(item=>item.id === id)
-                if(index > -1){
-                   products[index]
-                }else{
-
-                    
-                }
+        case 'setAddress':{
+            let addressList=[...state]
+            let addressDefault=addressList.find(item=>item.state === true)
+            return state
         }
     }
 
