@@ -5,17 +5,17 @@ import { useContext } from 'react'
 import { ProductBad } from '../ProductBad'
 import { ProductRequest } from '../ProductRequest'
 import { Product } from '../../Types/Products'
-import { RequestType } from '../../Types/RequestType'
+import { RequestDataType, RequestType } from '../../Types/RequestType'
 import { useContextApp } from '../../hooks/useContextApp'
 
 type Props={
-    dataRequests:RequestType
+    dataRequests:RequestDataType
 }
 
 export const Requests=({dataRequests}:Props)=>{
     const {state,dispatch}=useContextApp()
     const [openBody,setOnBody]=useState(false)
-
+    let [requests]=state.requests
     let address=state.address.find(item=>item.state === true)
 
     const setBodyRequest=()=>{
@@ -41,8 +41,8 @@ export const Requests=({dataRequests}:Props)=>{
              <S.AreaProduct>
                 <h4>Produtos</h4>
                 <div className='cx-products'>
-                    {state.requests.products.map((item,index)=>(
-                            <ProductRequest data={item} key={index} />
+                    {requests.products.map((item,index)=>(
+                           <ProductRequest data={item} key={index} />
                     ))}
                 </div>
               </S.AreaProduct>
@@ -64,7 +64,7 @@ export const Requests=({dataRequests}:Props)=>{
                        <span>taxa de Entrega</span> <span> 00 </span>
                     </div>
                     <div className="linha">
-                       <span>Total</span> <span> R$ {state.requests.totatValueProduct.toFixed(2)}</span>
+                       <span>Total</span> <span> R$ {requests.totatValueProduct.toFixed(2)}</span>
                     </div>
                   
               

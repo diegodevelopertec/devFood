@@ -5,11 +5,7 @@ import { RequestType } from "../../Types/RequestType"
 import {v4 as uuid} from 'uuid'
 import staticMethods from "antd/es/message"
 
-export const initialStateRequest={
-    products:[],
-    address:[],
-    totatValueProduct:0
-}
+export const initialStateRequest=[]
 
 export const useRequestReducer=(state:RequestType , action:ActionTypeGeral)=>{
     
@@ -19,9 +15,25 @@ export const useRequestReducer=(state:RequestType , action:ActionTypeGeral)=>{
                 let productsPayload=action.payload?.products
                 let addressPayload=action.payload?.address
                 let totalPricePayload=action.payload?.totalPrice
-                state.products=productsPayload
-                state.address=addressPayload
-                state.totatValueProduct=totalPricePayload
+                let idPayload=action.payload?.id
+                let stateProducts=[...state]
+
+                let newData={
+                    id:idPayload,
+                    products:productsPayload,
+                    address:addressPayload,
+                    totatValueProduct:totalPricePayload
+                }
+
+                let id=newData.id
+                let index=stateProducts.findIndex(item=>item.id === id)
+                if(index >  -1){
+                    return [...stateProducts]
+                }else{
+                     stateProducts.unshift(newData)
+                     return stateProducts
+                }
+        
 
 
 

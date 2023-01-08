@@ -5,7 +5,7 @@ import { ProductRequest } from '../../Components/ProductRequest'
 
 export const DeliveryPage=()=>{
   const {state,dispatch}=useContextApp()
-   const {user}=state.user
+ const {user}=state.user
 
 
     return <S.Container>
@@ -14,8 +14,11 @@ export const DeliveryPage=()=>{
              <p>Bem vindo {user?.name},Confira aqui os estado dos seus pedidos</p> 
           </div>
           <div className="requests-container">
-            {state.requests.products.length > 0 &&
-                  <Requests dataRequests={state.requests} />
+            {state.requests.length > 0 &&
+                       state.requests.map((item,index)=>(
+                        <Requests dataRequests={item} key={index} />
+                       ))
+                       
             
 
             }

@@ -1,4 +1,5 @@
 import * as S from './style'
+import  {v4 as uuid} from 'uuid'
 import BadIcon from '../../assets/imgs/sacola.png'
 import  openBadIcon from '../../assets/imgs/setbaixo.png'
 import CloseBadIcon from '../../assets/imgs/close.png'
@@ -10,7 +11,8 @@ import { useContextApp } from '../../hooks/useContextApp'
 import { Product } from '../../Types/Products'
 import { NavigationContext } from 'react-router/dist/lib/context'
 import { useNavigate } from 'react-router-dom'
-
+import { RequestDataType } from '../../Types/RequestType'
+import { useMenuMobile } from '../../hooks/useMenuMobile'
 
 
 type Props={
@@ -20,49 +22,60 @@ type Props={
 export const Bad=({onClick}:Props)=>{
     const {state,dispatch}=useContextApp()
     let [products,setProducts]=useState(state.products)
-   const [total,setTotalValues]=useState(0)
-   
-    
-    useEffect(()=>{
-        setProducts(state.products)
-    },[state.products,products])
-
+    const [total,setTotalValues]=useState(0)
     const [displayBad,setDisplayBad]=useState(false)
     const [notification,setNotification]=useState(false)
     const navigate=useNavigate()
+    
+
  
-    const clickDisplayBad=()=>{
+   
+    // Effects 
+
+    useEffect(()=>{
+        setProducts(state.products)
+        let total=state.products.reduce((prevPrice:any,nextPrice:Product)=>prevPrice + nextPrice.price , 0 )  
+        setTotalValues(total)
+    
+    },[state.products,state.requests])
+
+ 
+ const clickDisplayBad=()=>{
        if(!displayBad){
            setDisplayBad(true)
            setNotification(false)
        }else{
          setDisplayBad(false)
       }
-}
+   }
 
 
+ const setDataToRequests=()=>{
 
-useEffect(()=>{
-    let total=state.products.reduce((prevPrice:any,nextPrice:Product)=>prevPrice + nextPrice.price , 0 )  
-    setTotalValues(total)
-   // state.requests.totatValueProduct=total
-},[state.products])
-    
-
-const setDataToRequests=()=>{
+    let data={
+        id: uuid(),
+        products: state.products,
+        address: '',
+        totatValueProduct: total,
+    }
 
     dispatch({
         type:'setDataRequest',
         payload:{
-            products:state.products,
-            totalPrice:total
+            id:data?.id,
+            products:data?.products,
+            totalPrice:data?.totatValueProduct,
+            address:data?.address       
         }
     })
-
+   
+   
     navigate('/pedidos')
     state.products=[]
-}
+ }
     
+
+
 
 
     return <S.Container displayBad={displayBad}>

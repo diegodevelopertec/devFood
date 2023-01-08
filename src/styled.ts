@@ -32,6 +32,7 @@ export const LeftContent=styled.div`
    
     @media screen  and (max-width:950px){
      position:fixed;
+     z-index:1;
      bottom:0;
      top: 90;
      left:0;
@@ -102,6 +103,7 @@ export const RightContent=styled.div`
       }
     @media screen  and (max-width:950px){
      flex-direction:column;
+     width: 100%;
    }
     
 `

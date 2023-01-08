@@ -47,7 +47,6 @@ export const AccountPage=()=>{
     
  
     const submitForm=(data:InputTypes)=>{
-       
         console.log(data); 
     }
 

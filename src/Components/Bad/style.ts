@@ -13,6 +13,7 @@ export const Container=styled.div<Props>`
     position: absolute;
     color:white;
     opacity:1;
+    z-index:2;
     bottom: 0;
     right:25px;
     width: 390px;

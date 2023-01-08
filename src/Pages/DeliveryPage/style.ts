@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { ThemeStyle } from "../../styled";
 
 export const  Container=styled.div`
-    width:100%;
+   //width
     margin-bottom:70px;
     overflow:auto;
     height:max-content;
