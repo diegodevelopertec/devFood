@@ -1,4 +1,4 @@
-import { AdressType } from "./AddressType"
+import { AddressType } from "./AddressType"
 
 export type UserType={
     name:string,
@@ -6,7 +6,7 @@ export type UserType={
     email:string,
     password:string,
     token:string
-    adress?:AdressType[],
+    adress?:AddressType[],
 
 
 }

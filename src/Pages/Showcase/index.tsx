@@ -81,8 +81,8 @@ export const Showcase=()=>{
   //função de verificar se o usuário está logado ou não antes de adicionar dados da sacola no stet de delivery
 
     const setDataBadToDeliveryPage=()=>{
-        const userState=state.user
-        if(userState.user === null){
+        const userState=state
+        if(userState === null){
             setisLogged(false)
         }else{
             navigate('pedidos')
