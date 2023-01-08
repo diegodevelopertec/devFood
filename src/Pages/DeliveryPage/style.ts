@@ -2,15 +2,13 @@ import styled from "styled-components";
 import { ThemeStyle } from "../../styled";
 
 export const  Container=styled.div`
-   //width
+    width: 100%;
     margin-bottom:70px;
     overflow:auto;
     height:max-content;
     background:${ThemeStyle.bgAppSystem};
     padding:0px 10px;
-    ::-webkit-scrollbar{
-        width: 2px;
-      }
+ 
     .intro{
         margin:20px 0;
         h3{

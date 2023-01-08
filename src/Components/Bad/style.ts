@@ -13,7 +13,7 @@ export const Container=styled.div<Props>`
     position: absolute;
     color:white;
     opacity:1;
-    z-index:2;
+    z-index:1;
     bottom: 0;
     right:25px;
     width: 390px;
@@ -31,7 +31,7 @@ export const Container=styled.div<Props>`
          justify-content:center;
          align-items:center;
          width:${props=>props.displayBad === true ? '100vw' : '60px'};
-         margin:${props=>props.displayBad === true ? '0' : '0px'};
+         margin:${props=>props.displayBad === true ? '0' : '0'};
          margin-bottom:${props=>props.displayBad === true ? '0' : '30vh'};
          top:${props=>props.displayBad === true ? '0' : '76vh'};
          bottom:${props=>props.displayBad === true ? '0' : '150px'};
@@ -106,11 +106,11 @@ export const BadBody=styled.div<Props>`
     }
     .area-address{
       font-size:13px;
+      background-color: ${ThemeStyle.bgAppSystem};
       em{
         display: block;
       }
       height: 80px;
-      background-color: #c9c4c3;
       border-radius:2px;
       padding: 10px 5px;
       border: 0;

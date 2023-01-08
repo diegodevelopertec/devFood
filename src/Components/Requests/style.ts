@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { ThemeStyle } from "../../styled";
+import { theme } from "antd";
 
 type Props={
     openBody:boolean
@@ -24,30 +25,53 @@ export const  RequestHeader=styled.div`
         justify-content:space-between;
         width: 50%;
     }
+    .cx-btns{
+        display: flex;
+    }
     button{
         text-transform:uppercase;
         padding: 12px ;
+        display: flex;
+        background-color:${ThemeStyle.bgTheme};
+        justify-content:center;
+        align-items:center;
+        color: white;
         font-size:13px;
         border-radius:5px;
         margin:0 5px;
         border: none;
         width: 100px;
+        img{
+                height: 20px;
+                width: 20px;
+                margin: 0 3px;
+             }
         &:hover{
-            background-color:${ThemeStyle.bgTheme};
              cursor: pointer;
-             color: white;
+             background: #3cbd4b;
+            
         }
     }
 
 
 @media screen and (max-width:700px){
     display: flex;
-    flex-direction:column;
+    padding: 12px ;
     .info{
+        width: 50%;
         margin: 16px 0;
-        flex-direction:column;
         align-items:center;
+        flex-direction:row;
     }
+
+   .cx-btns{ button{
+        width: 35px;
+        padding: 12px;
+        span{
+            display: none;
+        }
+    }
+}
 }
 `
 export const  RequestBody=styled.div<Props>`
@@ -75,7 +99,7 @@ export const  RequestBody=styled.div<Props>`
 
 export const AreaProduct=styled.div`
    .cx-products{
-       height: 200px;
+       max-height: 200px;
        overflow: auto;
         ::-webkit-scrollbar{
             width: 2px;
@@ -86,7 +110,12 @@ export const AreaProduct=styled.div`
 export const AreaAdress=styled.div`
     display: flex;
     flex-direction:column;
-    h4{  margin-bottom:20px; }
+    font-style:italic;
+    background: ${ThemeStyle.bgAppSystem};
+    padding:  10px;
+     h4{
+        padding: 10px ;
+     }
     
 `
 export const AreaDetails=styled.div`

@@ -7,6 +7,10 @@ import { ProductRequest } from '../ProductRequest'
 import { Product } from '../../Types/Products'
 import { RequestDataType, RequestType } from '../../Types/RequestType'
 import { useContextApp } from '../../hooks/useContextApp'
+import openIcon from './../../assets/imgs/setbaixo.png'
+import closeIcon from './../../assets/imgs/close.png'
+import lixeiraIcon from './../../assets/imgs/lixeira.png'
+
 
 type Props={
     dataRequests:RequestDataType
@@ -31,16 +35,18 @@ export const Requests=({dataRequests}:Props)=>{
     return <S.Container>
         <S.RequestHeader>
            <div className="info">
-            <div>
-                Pedido feito em :data
-            </div>
-            <div>
-                    estado:entregue
-            </div>
+                <span> data</span>
+                <span>entregue</span>
            </div>
            <div className="cx-btns">
-                <button className="abrir" onClick={removeRequestData}>apagar</button>
-                <button className="abrir" onClick={setBodyRequest}>{!openBody ? 'detalhes' : 'fechar'}</button>
+                <button className="apagar" onClick={removeRequestData}>
+                    <img src={lixeiraIcon} />
+                    <span>apagar</span>
+                </button>
+                <button className="abrir" onClick={setBodyRequest}>
+                     <img src={!openBody ? openIcon : closeIcon}/>
+                     <span>{!openBody ? 'Detalhes' : 'fechar'}</span>
+                </button>
            </div>
         </S.RequestHeader>
         <S.RequestBody openBody={openBody}>

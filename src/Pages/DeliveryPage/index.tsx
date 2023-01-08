@@ -14,7 +14,7 @@ export const DeliveryPage=()=>{
     return <S.Container>
           <div className="intro">
              <h3>Histórico de Pedidos</h3>
-             <p>Bem vindo {},Confira aqui os estado dos seus pedidos</p> 
+             <p>Bem vindo {}<br/>Confira aqui os estado dos seus pedidos:</p> 
           </div>
           <div className="requests-container">
               <div>
