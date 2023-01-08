@@ -20,35 +20,32 @@ export const useProductBadReducer=(state:Product[] ,action:ActionTypeGeral)=>{
                     dataItem.price+=dataPay.price
                 
                 }else{
-                        listProducts.unshift({
-                            ...action.payload?.data
-                        })
+                        listProducts.unshift(dataPay)
                     }
            
            
             
         }
         case 'changeProducts':{
-            
             let indexItem=listProducts.findIndex(item=>item.id === action.payload?.key)
-            let data=listProducts[indexItem]
+           let data=listProducts[indexItem]
             if(indexItem){
                 switch(action.payload?.typeAction){
                   
                     case '-':
-                           data.qdt--
-                           data.price-=listProducts[indexItem].priceDefault
-                        if(listProducts[indexItem].qdt == 0){
-                            listProducts=listProducts.filter((item,index)=>index !== indexItem)
-                           
-                           }
-                       
-
+                            data.qdt--
+                            data.price-=listProducts[indexItem].priceDefault
+                         if(listProducts[indexItem].qdt == 0){
+                             listProducts=listProducts.filter((item,index)=>index !== indexItem)
+                            
+                            }
+                            
                         break;
                     case '+':
                       
                            data.qdt++
                            data.price +=listProducts[indexItem].priceDefault
+                        
                        break;
                 }
                
@@ -58,6 +55,6 @@ export const useProductBadReducer=(state:Product[] ,action:ActionTypeGeral)=>{
         }
      }
 
-  return state 
+  return state
 
 }

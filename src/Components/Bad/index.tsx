@@ -22,14 +22,14 @@ type Props={
 export const Bad=({onClick}:Props)=>{
     const {state,dispatch}=useContextApp()
     const addressDefault=state.address.find(item=>item.state === true)
-    let [products,setProducts]=useState(state.products)
+    let  [products,setProducts]=useState(state.products)
     const [total,setTotalValues]=useState(0)
     const [displayBad,setDisplayBad]=useState(false)
     const [notification,setNotification]=useState(false)
     const navigate=useNavigate()
+       
 
 
- 
    
     // Effects 
 
@@ -37,7 +37,8 @@ export const Bad=({onClick}:Props)=>{
         setProducts(state.products)
         let total=state.products.reduce((prevPrice:any,nextPrice:Product)=>prevPrice + nextPrice.price , 0 )  
         setTotalValues(total)
-    
+      
+      
     },[state.products,state.requests])
 
  
@@ -53,18 +54,17 @@ export const Bad=({onClick}:Props)=>{
 
  const setDataToRequests=()=>{
 
-    let data={
-        id: uuid(),
+    const  data={id: uuid(),
         state:'entregue',
         products: state.products,
         address: addressDefault,
-        totatValueProduct: total,
-    }
+        totatValueProduct: total}
+
 
     dispatch({
         type:'setDataRequest',
         payload:{
-            id:data?.id,
+            id:data.id,
             products:data?.products,
             totalPrice:data?.totatValueProduct,
             address:data.address    
@@ -72,6 +72,7 @@ export const Bad=({onClick}:Props)=>{
     })
    
    
+     
     navigate('/pedidos')
     state.products=[]
  }

@@ -35,12 +35,14 @@ export const useRequestReducer=(state:RequestType , action:ActionTypeGeral)=>{
                      stateProducts.unshift(newData)
                      return stateProducts
                 }
-        
-
-
-
-
             }
-        }
+
+            case 'removeRequest':{
+                let data=action.payload?.data
+                let stateProducts=[...state]
+                stateProducts=stateProducts.filter(item=>item.id !== data.id)
+                return stateProducts
+            }        
+    }
     return state
 }

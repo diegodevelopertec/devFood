@@ -21,6 +21,12 @@ export const Requests=({dataRequests}:Props)=>{
     const setBodyRequest=()=>{
         !openBody  ? setOnBody(true) : setOnBody(false)
     }
+    const removeRequestData=()=>{
+        dispatch({
+            type:'removeRequest',
+            payload:{data:dataRequests}
+        })
+    }
 
     return <S.Container>
         <S.RequestHeader>
@@ -33,7 +39,7 @@ export const Requests=({dataRequests}:Props)=>{
             </div>
            </div>
            <div className="cx-btns">
-                <button className="abrir">apagar</button>
+                <button className="abrir" onClick={removeRequestData}>apagar</button>
                 <button className="abrir" onClick={setBodyRequest}>{!openBody ? 'detalhes' : 'fechar'}</button>
            </div>
         </S.RequestHeader>

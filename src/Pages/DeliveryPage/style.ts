@@ -8,6 +8,9 @@ export const  Container=styled.div`
     height:max-content;
     background:${ThemeStyle.bgAppSystem};
     padding:0px 10px;
+    ::-webkit-scrollbar{
+        width: 2px;
+      }
     .intro{
         margin:20px 0;
         h3{
@@ -18,6 +21,7 @@ export const  Container=styled.div`
 
     @media screen and (max-width:950px){
         margin-bottom:130px;
+        width: 100vw;
     }
 
 
