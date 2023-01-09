@@ -27,7 +27,7 @@ export const Bad=({onClick}:Props)=>{
     const [displayBad,setDisplayBad]=useState(false)
     const [notification,setNotification]=useState(false)
     const navigate=useNavigate()
-    let newData
+   
        
 
 
@@ -39,7 +39,7 @@ export const Bad=({onClick}:Props)=>{
         let total=state.products.reduce((prevPrice:any,nextPrice:Product)=>prevPrice + nextPrice.price , 0 )  
         setTotalValues
         setTotalValues(total)
-     
+       
 
     },[state.products,state.requests])
 
@@ -55,28 +55,22 @@ export const Bad=({onClick}:Props)=>{
 
 
  const setDataToRequests=()=>{
-
-
-        newData={
-     
-            id: uuid(),
+    let   data={
+            id: Math.floor(Math.random() * 1000),
             state: 'entregue',
             products: state.products,
             address:addressDefault,
-            totatValueProduct: total
+            totalValueProduct: total
       }
 
 
     dispatch({
         type:'setDataRequest',
-        payload:{
-           data:newData  
-        }
+        payload:{data}
     })
    
-   
-   
-     
+    console.log(data);
+  
     navigate('/pedidos')
     state.products=[]
  }

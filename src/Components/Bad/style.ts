@@ -95,12 +95,16 @@ export const BadBody=styled.div<Props>`
     font-size:13px;
   }
     .area-listproduct{
-      min-height: 250px;
-      padding: 10px 5px;
+      height: 290px;
+      box-shadow: 0 0 1px #eee;
+      padding: 10px 9px;
       overflow-y:auto;
       margin-bottom:12px;
       ::-webkit-scrollbar{
+        border-radius:3px;
+        margin: 5px;
         width: 2px;
+        background: ${ThemeStyle.bgTheme};
       }
     
     }
@@ -151,27 +155,24 @@ export const BadBody=styled.div<Props>`
   }
  
 
-  @media screen and (max-width:600px){
-    height:100vh;
-    overflow: none;
-    .error-bad{
-   
-    display: flex;
-    justify-content:center;
-    align-items:center;
-    font-size:19px;
-  }
-    
   
-  }
- 
  //375,360,540,
- @media screen and (min-width:800px){
+ @media screen and (max-width:920px){
   .area-listproduct{
-    height:70vh;
+      height:80vh;
+      padding: 30px 5px;
+     }
+
+     height:100vh;
+     overflow: none;
+     
+    .error-bad{
+      display: flex;
+      justify-content:center;
+      align-items:center;
+      font-size:19px;
+  }
     
-    
-    }
  }
 
 

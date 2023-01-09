@@ -13,11 +13,11 @@ export type UserTypeReducer={
 export  const userInitialState={
     user:{
         name: 'Diego',
-       photoUser: '',
-       email:'diegodev@gmail.com',
-       password: 'senha123',
-       token: 'string',
-       adress:[]
+        photoUser: '',
+        email:'diegodev@gmail.com',
+        password: 'senha123',
+        token: 'string',
+      
     },
   
 }

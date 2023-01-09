@@ -8,6 +8,6 @@ import { AddressType } from "./AddressType"
     state:'pendente' | 'entregue',
     products:Product[]  ,
     address:AddressType,
-    totatValueProduct:number
+    totalValueProduct:number
 }
 export type RequestType=RequestDataType[]

@@ -101,9 +101,11 @@ export const AreaProduct=styled.div`
    .cx-products{
        max-height: 200px;
        overflow: auto;
-        ::-webkit-scrollbar{
+       padding: 5px;
+       ::-webkit-scrollbar{
             width: 2px;
-        }
+            
+      }
      }
 `
 
