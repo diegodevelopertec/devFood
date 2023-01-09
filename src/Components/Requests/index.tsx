@@ -36,7 +36,7 @@ export const Requests=({dataRequests}:Props)=>{
         <S.RequestHeader>
            <div className="info">
                 <span> data</span>
-                <span>entregue</span>
+                <span>{dataRequests.state}</span>
            </div>
            <div className="cx-btns">
                 <button className="apagar" onClick={removeRequestData}>

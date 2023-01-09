@@ -12,29 +12,26 @@ export const useRequestReducer=(state:RequestType , action:ActionTypeGeral)=>{
 
         switch(action.type){
             case 'setDataRequest':{
-                let productsPayload=action.payload?.products
-                let addressPayload=action.payload?.address
-                let totalPricePayload=action.payload?.totalPrice
-                let idPayload=action.payload?.id
-                let statePayload=action.payload?.state
+                const data=action.payload?.data
                 let stateProducts=[...state]
 
-                let newData={
-                    id:idPayload,
-                    state:statePayload,
-                    products:productsPayload,
-                    address:addressPayload,
-                    totatValueProduct:totalPricePayload
-                }
+                
+              
 
-                let id=newData.id
-                let index=stateProducts.findIndex(item=>item.id === id)
-                if(index >  -1){
+                let index=stateProducts.findIndex(item=>item === data)
+
+                if(index > -1){
                     return [...stateProducts]
                 }else{
-                     stateProducts.unshift(newData)
-                     return stateProducts
+                    return [data,...stateProducts]
                 }
+
+
+
+               
+
+               
+             
             }
 
             case 'removeRequest':{

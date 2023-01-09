@@ -5,7 +5,7 @@ import {ThemeStyle} from './../../styled'
 export const Container=styled.div`
   
     box-shadow: 0 0 7px #aaa;
-    margin:12px 5px;
+    margin:12px 0;
     border-radius:5px;
     background: ${ThemeStyle.bgCardProductBottom};
   
