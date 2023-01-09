@@ -19,8 +19,8 @@ type Props={
 export const Requests=({dataRequests}:Props)=>{
     const {state,dispatch}=useContextApp()
     const [openBody,setOnBody]=useState(false)
-    let [requests]=state.requests
-    let address=state.address.find(item=>item.state === true)
+     let [requests]=state.requests
+     let address=state.address.find(item=>item.state === true)
 
     const setBodyRequest=()=>{
         !openBody  ? setOnBody(true) : setOnBody(false)

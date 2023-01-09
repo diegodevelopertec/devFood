@@ -21,7 +21,7 @@ export const ProductBad=({data}:Props)=>{
         setQdtProduct(data.qdt)
         setPriceProduct(data.price)
         
-},[state.products])
+     },[state.products])
 
    const  HandleQdtBadCard=(key:string | number,typeAction:string)=>{
           dispatch({

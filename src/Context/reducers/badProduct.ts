@@ -20,7 +20,8 @@ export const useProductBadReducer=(state:Product[] ,action:ActionTypeGeral)=>{
                     dataItem.price+=dataPay.price
                 
                 }else{
-                        listProducts.unshift(dataPay)
+                       // listProducts.unshift(dataPay)
+                       return [dataPay,...listProducts]
                     }
            
            
@@ -29,7 +30,7 @@ export const useProductBadReducer=(state:Product[] ,action:ActionTypeGeral)=>{
         case 'changeProducts':{
             let indexItem=listProducts.findIndex(item=>item.id === action.payload?.key)
            let data=listProducts[indexItem]
-            if(indexItem){
+            if(indexItem > -1){
                 switch(action.payload?.typeAction){
                   
                     case '-':

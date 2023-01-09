@@ -22,7 +22,7 @@ type Props={
 export const Bad=({onClick}:Props)=>{
     const {state,dispatch}=useContextApp()
     const addressDefault=state.address.find(item=>item.state === true)
-    let  [products,setProducts]=useState(state.products)
+    let   [products,setProducts]=useState(state.products)
     const [total,setTotalValues]=useState(0)
     const [displayBad,setDisplayBad]=useState(false)
     const [notification,setNotification]=useState(false)
@@ -54,11 +54,13 @@ export const Bad=({onClick}:Props)=>{
 
  const setDataToRequests=()=>{
 
-    const  data={id: uuid(),
+    const  data={
+        id: uuid(),
         state:'entregue',
         products: state.products,
         address: addressDefault,
-        totatValueProduct: total}
+        totatValueProduct: total
+    }
 
 
     dispatch({

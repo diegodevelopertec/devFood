@@ -1,5 +1,5 @@
 import * as S from './style'
-import {useState } from 'react'
+import {useEffect, useState } from 'react'
 import { Product } from '../../Types/Products';
 import { useContextApp } from '../../hooks/useContextApp';
 import { toast } from "react-toastify"
@@ -16,7 +16,7 @@ export const CardCliked=({funcOffModal,data}:Props)=>{
     const [priceModal,setPriceModal]=useState(data.price)
     const {state,dispatch}=useContextApp()
 
- 
+   
  
 
 const actionsModal={
@@ -35,7 +35,7 @@ const actionsModal={
 
 const setData=()=>{
 
-    const newProduct = {
+   let newProduct:Product | null = {
         id: data.id,
         category: data.category,
         name: data.name,
@@ -52,6 +52,7 @@ const setData=()=>{
            data: newProduct
         }
     })
+    newProduct=null
      funcOffModal()
      toast.success(`você adicionou novo produto na sacola`)
 
