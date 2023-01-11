@@ -37,7 +37,7 @@ export const Showcase=()=>{
     const navigate=useNavigate()
 
 
-    const clikedOnModal=()=>{
+    const clikedOnModal=()=>{ 
        setModal(true)
     }
     const closeModal=()=>{

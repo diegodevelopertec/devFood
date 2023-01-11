@@ -22,7 +22,7 @@ export const Container=styled.div<Props>`
     border-top-left-radius:5px;
     border-top-right-radius:5px;
     margin-top:12px;
-    transition:ease all 0.2s;
+    transition:all ease  2;
     @media screen and (max-width:912px){
    
          position:${props=>props.displayBad === true ? 'absolute' : 'fixed'};
@@ -91,8 +91,16 @@ export const BadBody=styled.div<Props>`
     height: 100%;
     display: flex;
     justify-content:center;
+    flex-direction:column;
+    height: 300px;
     align-items:center;
     font-size:13px;
+    opacity:0.5;
+    img{
+      margin: 30px 0;
+      
+    }
+        
   }
     .area-listproduct{
       height: 290px;
@@ -167,10 +175,12 @@ export const BadBody=styled.div<Props>`
      overflow: none;
      
     .error-bad{
+      
       display: flex;
       justify-content:center;
       align-items:center;
       font-size:19px;
+      height:100%;
   }
     
  }

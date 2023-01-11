@@ -13,7 +13,7 @@ import { NavigationContext } from 'react-router/dist/lib/context'
 import { useNavigate } from 'react-router-dom'
 import { RequestDataType } from '../../Types/RequestType'
 import { useMenuMobile } from '../../hooks/useMenuMobile'
-
+import ErrorIcon from '../../assets/imgs/erroricon.png'
 
 type Props={
     onClick:()=>void
@@ -28,7 +28,7 @@ export const Bad=({onClick}:Props)=>{
     const [notification,setNotification]=useState(false)
     const navigate=useNavigate()
    
-       
+    
 
 
    
@@ -123,7 +123,10 @@ export const Bad=({onClick}:Props)=>{
                     </div>
                 <button onClick={setDataToRequests}>finalizar compra</button>
                 </div>
-              </>  : <div className='error-bad'>Nenhum pedido adicionado ainda </div>
+              </>  : <div className='error-bad'>
+                        <h3>Nenhum pedido adicionado ainda </h3>
+                        <img  src={ErrorIcon} />
+              </div>
            }
             
         </S.BadBody>
