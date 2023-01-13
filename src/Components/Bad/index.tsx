@@ -15,14 +15,16 @@ import { RequestDataType } from '../../Types/RequestType'
 import { useMenuMobile } from '../../hooks/useMenuMobile'
 import ErrorIcon from '../../assets/imgs/erroricon.png'
 
+
 type Props={
     onClick:()=>void
 }
+let date=new Date()
 
 export const Bad=({onClick}:Props)=>{
     const {state,dispatch}=useContextApp()
     const addressDefault=state.address.find(item=>item.state === true)
-    let   [products,setProducts]=useState(state.products)
+    let   [products,setProducts]=useState<Product[]>(state.products)
     const [total,setTotalValues]=useState(0)
     const [displayBad,setDisplayBad]=useState(false)
     const [notification,setNotification]=useState(false)
@@ -35,13 +37,9 @@ export const Bad=({onClick}:Props)=>{
     // Effects 
 
     useEffect(()=>{
-        setProducts(state.products)
-        let total=state.products.reduce((prevPrice:any,nextPrice:Product)=>prevPrice + nextPrice.price , 0 )  
-        setTotalValues
-        setTotalValues(total)
-       
-
-    },[state.products,state.requests])
+      setProducts(state.products) 
+      setTotalValues(state.products.reduce((prevPrice:any,nextPrice:Product)=>prevPrice + nextPrice.price , 0 ) )
+    },[state.products])
 
  
  const clickDisplayBad=()=>{
@@ -55,22 +53,21 @@ export const Bad=({onClick}:Props)=>{
 
 
  const setDataToRequests=()=>{
-    let   data={
-            id: Math.floor(Math.random() * 1000),
-            state: 'entregue',
-            products: state.products,
-            address:addressDefault,
-            totalValueProduct: total
-      }
-
-
+ 
+   
+  let data={
+     id: uuid(),
+     dateRequest:date.toLocaleDateString(),
+    state: 'entregue',
+    products: products,
+    address: addressDefault,
+    totalValueProduct:total
+}
+  
     dispatch({
-        type:'setDataRequest',
+        type:'setDataToRequest',
         payload:{data}
     })
-   
-    console.log(data);
-  
     navigate('/pedidos')
     state.products=[]
  }

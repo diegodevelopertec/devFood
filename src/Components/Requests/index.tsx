@@ -19,8 +19,7 @@ type Props={
 export const Requests=({dataRequests}:Props)=>{
     const {state,dispatch}=useContextApp()
     const [openBody,setOnBody]=useState(false)
-     let [requests]=state.requests
-     let address=state.address.find(item=>item.state === true)
+    let address=state.address.find(item=>item.state === true)
 
     const setBodyRequest=()=>{
         !openBody  ? setOnBody(true) : setOnBody(false)
@@ -35,7 +34,7 @@ export const Requests=({dataRequests}:Props)=>{
     return <S.Container>
         <S.RequestHeader>
            <div className="info">
-                <span> data</span>
+                <span>{dataRequests.dateRequest}</span>
                 <span>{dataRequests.state}</span>
            </div>
            <div className="cx-btns">
@@ -53,7 +52,7 @@ export const Requests=({dataRequests}:Props)=>{
              <S.AreaProduct>
                 <h4>Produtos</h4>
                 <div className='cx-products'>
-                    {requests.products.map((item,index)=>(
+                    {dataRequests.products.map((item,index)=>(
                            <ProductRequest data={item} key={index} />
                     ))}
                 </div>
@@ -76,7 +75,7 @@ export const Requests=({dataRequests}:Props)=>{
                        <span>taxa de Entrega</span> <span> 00 </span>
                     </div>
                     <div className="linha">
-                       <span>Total</span> <span> R$ {requests.totalValueProduct.toFixed(2)}</span>
+                       <span>Total</span> <span> R$ {dataRequests.totalValueProduct.toFixed(2)}</span>
                     </div>
                   
               

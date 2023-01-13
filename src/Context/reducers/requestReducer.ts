@@ -11,18 +11,10 @@ export const useRequestReducer=(state:RequestType , action:ActionTypeGeral)=>{
     
 
         switch(action.type){
-            case 'setDataRequest':{
-               let stateProducts=[...state]
-               let newData=action.payload?.data
-               let index=stateProducts.findIndex(item=>item.id === newData.id)
-               if(index <= -1){
-                    stateProducts.unshift(newData)
-                    return stateProducts
-               }
-             
-               return stateProducts
-
-
+            case 'setDataToRequest':{
+            let newData=action.payload?.data
+            return [...state,newData]
+               
             }
 
             case 'removeRequest':{
