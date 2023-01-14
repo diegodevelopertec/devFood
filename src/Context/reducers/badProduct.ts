@@ -20,7 +20,7 @@ export const useProductBadReducer=(state:Product[] ,action:ActionTypeGeral)=>{
                     dataItem.price+=dataPay.price
                 
                 }else{
-                       // listProducts.unshift(dataPay)
+                      
                        return [dataPay,...listProducts]
                     }
            

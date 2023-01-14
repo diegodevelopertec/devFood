@@ -39,6 +39,8 @@ export const LeftContent=styled.div`
      right:0;
      width: 100%;
      box-shadow:0 0 5px #aaa;
+     padding: 7px 0;
+   
      
    }
  
@@ -47,6 +49,7 @@ export const LeftContent=styled.div`
 export const HeaderApp=styled.header`
     display: flex;
     justify-content:center;
+    width: 100%;
 
 
 
@@ -56,7 +59,7 @@ export const CardLoja=styled.div`
     justify-content:space-around;
     align-items:center;
     background-color: ${ThemeStyle.bgTheme};
-    width: 95%;
+    width: 80%;
     height: 80px;
     margin:30px 15px;
     min-height: 100px;
@@ -80,6 +83,7 @@ export const CardLoja=styled.div`
     @media screen and (max-width:950px){
         flex-direction:column;
         padding: 10px 0;
+       
       
     }
 

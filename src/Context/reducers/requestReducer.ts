@@ -1,8 +1,6 @@
-import { AddressType as AddressType } from "../../Types/AddressType"
-import { Product } from "../../Types/Products"
 import { ActionTypeGeral} from "../../Types/TypeAction"
 import { RequestType } from "../../Types/RequestType"
-import {v4 as uuid} from 'uuid'
+
 
 
 export const initialStateRequest=[]
@@ -13,7 +11,7 @@ export const useRequestReducer=(state:RequestType , action:ActionTypeGeral)=>{
         switch(action.type){
             case 'setDataToRequest':{
             let newData=action.payload?.data
-            return [...state,newData]
+            return [newData,...state]
                
             }
 

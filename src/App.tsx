@@ -10,8 +10,6 @@ import UserIcon from '.././src/assets/imgs/user.png'
 import LojaIcon from '.././src/assets/imgs/lojaicon.png'
 import MotoIcon from '.././src/assets/imgs/moto.png'
 import LogoIcon from '../src/assets/imgs/logo.png'
-
-
 import { useNavigate } from 'react-router-dom';
 
 const App=()=>{
@@ -20,34 +18,37 @@ const App=()=>{
   const [viewAccount,setViewAccount]=useState(false)
   const [viewDelivery,setViewDelivery]=useState(false)
   const navigate=useNavigate()
-
+ 
 
   const ClickViewHome=(e:any)=>{
     e.preventDefault()
-    navigate('/')
-    setViewHome(true)
-    setViewAccount(false)
-    setViewDelivery(false)
-   
+      navigate('/')
+      setViewHome(true)
+      setViewAccount(false)
+      setViewDelivery(false)
   
   }
   const ClickViewDelivery=(e:any)=>{
     e.preventDefault()
-    navigate('/pedidos')
-    setViewDelivery(true)
-    setViewHome(false)
-    setViewAccount(false)
    
+      navigate('/pedidos')
+      setViewHome(false)
+      setViewAccount(false)
+      setViewDelivery(true)
+    
   
    
   }
   
   const ClickViewAccount=(e:any)=>{
     e.preventDefault()
-    navigate('/user')
-    setViewAccount(true)
-    setViewHome(false)
-    setViewDelivery(false)
+    
+      navigate('/user')
+      setViewAccount(true)
+      setViewHome(false)
+      setViewDelivery(false)
+    
+  
    
   }
 

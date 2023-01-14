@@ -1,4 +1,4 @@
-import { useState,useEffect } from "react" 
+import { useState } from "react" 
 import * as S from './style'
 import { CardProduct } from "../../Components/CardProduct"
 import { Product } from "../../Types/Products"
@@ -14,7 +14,6 @@ import { dataDrinks } from "../../data/Product"
 import { RestaurantePage } from "./../RestaurantePage"
 import { Bad } from "../../Components/Bad"
 import { ThemeStyle } from "../../styled"
-import { ApiProduct } from "../../Services/ProductActions"
 import { LoginModal } from "../LoginModal"
 import { useContextApp } from "../../hooks/useContextApp"
 import { BannerPromotions } from "../../Components/BannerPromotions"
@@ -33,7 +32,7 @@ export const Showcase=()=>{
     const [displayRestaurant,setDisplayRestaurant]=useState<boolean>(false)
     const [displayDrinks,setDisplayDrinks]=useState<boolean>(false)
     const [stateModal,setModal]=useState(false)
-    const [isLogged,setisLogged]=useState(true)
+    const [isLogged,setisLogged]=useState(false)
     const navigate=useNavigate()
 
 
@@ -145,19 +144,23 @@ return <S.Container>
     </S.CategorySectionProducts>
   
     <S.ShowcaseProduct stateDisplay={displayRestaurant}> 
+       <>
         { displayBurguer ? burguerProductList && burguerProductList.map((item,index)=>< CardProduct  key={index} onClick={returnDataClikedProduct} data={item} />) : null}
         { displayPizzas ? pizzaProductList && pizzaProductList.map((item,index)=>< CardProduct  key={index} onClick={returnDataClikedProduct}  data={item} />) : null}
         { displayDrinks ? drinksProductList && drinksProductList.map((item,index)=>< CardProduct  key={index} onClick={returnDataClikedProduct}  data={item} />) : null}
         { displayRestaurant  && <RestaurantePage/>}
         <Bad onClick={setDataBadToDeliveryPage} />
+       </>
+     
     </S.ShowcaseProduct>
+   
     {stateModal && <S.ContainerModal>
         <CardCliked   data={dataProductCliked} funcOffModal={closeModal}/>
      </S.ContainerModal>}
      {!isLogged && <S.ContainerModal>
         <LoginModal closeModal={closeModal} />
      </S.ContainerModal>}
-     
+   
     
    
     </S.Container>

@@ -24,9 +24,7 @@ export const LoginModal=({closeModal}:Props)=>{
     }).required()
     
     
-    const {register,handleSubmit,formState:{errors}}=useForm<InputTypes>({
-        resolver:yupResolver(schema)
-    })
+    const {register,handleSubmit,formState:{errors}}=useForm<InputTypes>({ resolver:yupResolver(schema) })
     
     
     

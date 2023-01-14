@@ -7,8 +7,7 @@ type Props={
 }
 
 export const Container=styled.div`
-    width: 100%;
-    min-height: 100%;
+   width: auto;
     margin: 19px 0;
 
 `
@@ -79,8 +78,10 @@ export const  RequestBody=styled.div<Props>`
     color:${ThemeStyle.colorTextCard};
     padding: 20px 12px;
     height:auto;
+    width: 100%;
     grid-template-columns:repeat(3,1fr);
     gap:10px;
+    margin: 0;
     transition:all ease 0.5s;
     border-bottom-left-radius:5px;
     border-bottom-right-radius:5px;
@@ -115,6 +116,7 @@ export const AreaAdress=styled.div`
     font-style:italic;
     background: ${ThemeStyle.bgAppSystem};
     padding:  10px;
+    border-radius:9px;
      h4{
         padding: 10px ;
      }

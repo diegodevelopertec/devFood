@@ -115,8 +115,10 @@ export const DataProduct=styled.div`
             color: white;
             border: 2px solid #d6d4d4;
             border-radius:5px;
+           
             &:hover{
                 cursor:pointer;
+                transition:all ease 0.2s;
                 background:transparent;
                 color:  ${ThemeStyle.bgTheme};
                 border: 2px solid ${ThemeStyle.bgTheme};

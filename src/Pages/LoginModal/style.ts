@@ -5,10 +5,10 @@ export const Container=styled.div`
     width:680px;
     background-color:${ThemeStyle.bgAppSystem};
     padding:30px 20px;
-    box-shadow:0 0 10px #aaa;
+    box-shadow:0 0 8px #424447;
     border-radius:15px;
     transition:all ease 0.5;
-  
+ 
 
     .header-container{
         button{
@@ -16,10 +16,9 @@ export const Container=styled.div`
             padding: 7px 20px;
             border-radius:5px;
             border: none;
-            background: ${ThemeStyle.colorTitleCard};
+            background: ${ThemeStyle.bgTheme};
+            color: ${ThemeStyle.bgAppSystem};
             &:hover{
-                background: ${ThemeStyle.bgTheme};
-                color: ${ThemeStyle.bgAppSystem};
                 border: none;
                 cursor: pointer;
             }
@@ -113,6 +112,7 @@ export const Container=styled.div`
         overflow:none;
         border-radius:0;
         margin: 0;
+        z-index:1;
         justify-content:center;
     *{
         text-align:center;
