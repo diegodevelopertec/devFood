@@ -54,14 +54,14 @@ export const DataProduct=styled.div`
         .info-product{
             margin: 15px 0;
             
-            .category--name:{
+            .category--name{
                     color: ${ThemeStyle.colorIngredientsCategory};
                     padding: 5px 0;
-                    font-size:12px;
+                    font-size:11px;
                     text-transform: capitalize;
                 }
                 h4{
-                    font-size:1rem;
+                    font-size:17px;
                     color: ${ThemeStyle.colorTitleCard};
                    
                 }
@@ -75,10 +75,12 @@ export const DataProduct=styled.div`
                     font-family:Arial;
                     font-weight:bold;
                     width: 100px;
+                    font-size:17px;
                 }
                 .ingredientes-text{
                     word-break:break-all;
-                    font-size:13px;
+                    font-size:12px;
+                    margin: 6px 0;
                     height: 20px;
                     color: ${ThemeStyle.colorIngredientsCategory};
                 }

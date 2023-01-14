@@ -81,9 +81,12 @@ export const ContainerData=styled.div`
         .name{
             margin-right:5px;
             font-weight:bold;
+            font-size:23px;
+           
         }
         .category{
             color:${ThemeStyle.bgAppSystem};
+            font-size:13px;
            
         }
         padding: 20px 0;

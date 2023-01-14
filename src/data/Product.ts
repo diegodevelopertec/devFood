@@ -5,9 +5,9 @@ export const dataBurguer=[
     {
         id:uuid(),
         category:'Hamburguers',
-        name:'X-Burguer',
-        price:6,
-        priceDefault:6,
+        name:'X-Egg',
+        price:9,
+        priceDefault:9,
         imageProduct: `/imgs/bg3.png`,
         ingredientes:'Hamburguer,Queijo,Presunto e Maionese',
         qdt:1,
@@ -28,18 +28,18 @@ export const dataBurguer=[
     {
         id:uuid(),
         category:'Hamburguers',
-        name:'X-Batata',
-        price:9,
-        priceDefault:9,
+        name:'X-Dog',
+        price:10,
+        priceDefault:10,
         imageProduct:`/imgs/bg3.png`,
         ingredientes:'Milho,Hamburguer,Maionese,Tomate,Alface,Queijo,Batata Palha',
         qdt:1,
     },{
         id:uuid(),
         category:'Hamburguers',
-        name:'Burguer de carne',
-        price:34,
-        priceDefault:34,
+        name:'X-Frango',
+        price:10,
+        priceDefault:10,
         imageProduct: `/imgs/bg3.png`,
         ingredientes:'bacon,ovo,tomate,alface,queijo',
         qdt:1
@@ -47,9 +47,9 @@ export const dataBurguer=[
     {
         id:uuid(),
         category:'Hamburguers',
-        name:'X-Burguer',
-        price:6,
-        priceDefault:6,
+        name:'X-Burguer Big',
+        price:10,
+        priceDefault:10,
         imageProduct: `/imgs/bg3.png`,
         ingredientes:'Hamburguer,Queijo,Presunto e Maionese',
         qdt:1,
@@ -79,7 +79,7 @@ export const dataBurguer=[
     },{
         id:uuid(),
         category:'Hamburguers',
-        name:'Burguer de carne',
+        name:'X-Bacon',
         price:23,
         priceDefault:23,
         imageProduct: `/imgs/bg3.png`,
@@ -93,9 +93,9 @@ export const dataPizza=[
     {
         id:uuid(),
         category:'Pizzas',
-        name:'Pizza de carne',
-        price:20,
-        priceDefault:20,
+        name:'Pizza de Mussarela',
+        price:27,
+        priceDefault:27,
         imageProduct: `/imgs/pz1.png`,
         ingredientes:'bacon,ovo,tomate,alface,queijo',
         qdt:1
@@ -103,7 +103,7 @@ export const dataPizza=[
     {
         id:uuid(),
         category:'Pizzas',
-        name:'Pizza de carne',
+        name:'Pizza Cinco queijos',
         price:12,
         priceDefault:12,
         imageProduct: `/imgs/pz1.png`,
@@ -112,7 +112,7 @@ export const dataPizza=[
     },  {
         id:uuid(),
         category:'Pizzas',
-        name:'Pizza de carne',
+        name:'Frango á Bolonesa',
         price:35,
         priceDefault:35,
         imageProduct: `/imgs/pz1.png`,
@@ -121,7 +121,7 @@ export const dataPizza=[
     },  {
         id:uuid(),
         category:'Pizzas',
-        name:'Pizza de carne',
+        name:'Pizza Paulista',
         price:13,
         priceDefault:13,
         imageProduct: `/imgs/pz1.png`,
@@ -140,7 +140,7 @@ export const dataPizza=[
     {
         id:uuid(),
         category:'Pizzas',
-        name:'Pizza de carne',
+        name:'Pizza Portuguesa',
         price:14,
         priceDefault:14,
         imageProduct: `/imgs/pz1.png`,
@@ -149,7 +149,7 @@ export const dataPizza=[
     },  {
         id:uuid(),
         category:'Pizzas',
-        name:'Pizza de carne',
+        name:'Pizza Bacon Cheddar',
         price:17,
         priceDefault:17,
         imageProduct: `/imgs/pz1.png`,
@@ -158,7 +158,7 @@ export const dataPizza=[
     },  {
         id:uuid(),
         category:'Pizzas',
-        name:'Pizza de carne',
+        name:'Pizza Peru c/Cheddar',
         price:25,
         priceDefault:25,
         imageProduct: `/imgs/pz1.png`,
