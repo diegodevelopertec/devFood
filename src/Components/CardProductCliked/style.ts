@@ -4,7 +4,7 @@ import {ThemeStyle} from './../../styled'
 export const Container=styled.div`
     display: flex;
     width:700px;
-    box-shadow:0 0 5px #aaa;
+    box-shadow:0 0 5px #141413;
     border-radius:6px;
     background: ${ThemeStyle.bgCardProductBottom};
  

@@ -54,7 +54,7 @@ const setData=()=>{
     })
     newProduct=null
      funcOffModal()
-     toast.success(`você adicionou novo produto na sacola`)
+  
 
 }
 

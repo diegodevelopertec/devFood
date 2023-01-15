@@ -5,7 +5,7 @@ export const Container=styled.div`
     width:680px;
     background-color:${ThemeStyle.bgAppSystem};
     padding:30px 20px;
-    box-shadow:0 0 8px #424447;
+    box-shadow:0 0 6px #141413;
     border-radius:15px;
     transition:all ease 0.5;
  

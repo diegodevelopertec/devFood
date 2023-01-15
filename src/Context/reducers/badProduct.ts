@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 import { Product } from "../../Types/Products";
 import { ActionTypeGeral } from "../../Types/TypeAction";
 
@@ -20,8 +21,9 @@ export const useProductBadReducer=(state:Product[] ,action:ActionTypeGeral)=>{
                     dataItem.price+=dataPay.price
                 
                 }else{
-                      
+                    toast.success('novo produto adicionado')
                        return [dataPay,...listProducts]
+                     
                     }
            
            
@@ -38,6 +40,7 @@ export const useProductBadReducer=(state:Product[] ,action:ActionTypeGeral)=>{
                             data.price-=listProducts[indexItem].priceDefault
                          if(listProducts[indexItem].qdt == 0){
                              listProducts=listProducts.filter((item,index)=>index !== indexItem)
+                             toast.success('removido da sacola')
                             
                             }
                             

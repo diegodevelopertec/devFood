@@ -4,9 +4,9 @@ import {ThemeStyle} from './../../styled'
 
 export const Container=styled.div`
   
-    box-shadow: 0 0 7px #aaa;
+  box-shadow:0 0 6px #141413;
     margin:12px 0;
-    border-radius:5px;
+    border-radius:8px;
     background: ${ThemeStyle.bgCardProductBottom};
   
     @media screen and (max-width:600px){

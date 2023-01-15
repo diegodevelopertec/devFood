@@ -1,5 +1,6 @@
 import { ActionTypeGeral} from "../../Types/TypeAction"
 import { RequestType } from "../../Types/RequestType"
+import { toast } from "react-toastify"
 
 
 
@@ -19,6 +20,7 @@ export const useRequestReducer=(state:RequestType , action:ActionTypeGeral)=>{
                 let data=action.payload?.data
                 let stateProducts=[...state]
                 stateProducts=stateProducts.filter(item=>item.id !== data.id)
+                toast.success('removido do historico')
                 return stateProducts
             }        
     }
