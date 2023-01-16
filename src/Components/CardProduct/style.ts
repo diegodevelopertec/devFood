@@ -6,7 +6,7 @@ export const Container=styled.div`
   
   box-shadow:0 0 6px #141413;
     margin:12px 0;
-    border-radius:8px;
+    border-radius:6px;
     background: ${ThemeStyle.bgCardProductBottom};
   
     @media screen and (max-width:600px){
@@ -22,8 +22,8 @@ export const  ContainerImage=styled.div`
     display: flex;
     padding: 12px 0;
     justify-content:center;
-    border-top-left-radius:5px;
-    border-top-right-radius:5px;
+    border-top-left-radius:6px;
+    border-top-right-radius:6px;
     width:100%;
   
     img{

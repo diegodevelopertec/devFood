@@ -17,9 +17,9 @@ import { ThemeStyle } from "../../styled"
 import { LoginModal } from "../LoginModal"
 import { useContextApp } from "../../hooks/useContextApp"
 import { BannerPromotions } from "../../Components/BannerPromotions"
-import { useNavigate } from "react-router-dom"
+import { useLocation, useNavigate } from "react-router-dom"
 import { useModalLogin } from "../../hooks/useModeLogin"
-
+import { useSearchParams } from "react-router-dom"
 
 export const Showcase=()=>{
    
@@ -35,8 +35,10 @@ export const Showcase=()=>{
     const [displayDrinks,setDisplayDrinks]=useState<boolean>(false)
     const [stateModalToCard,setModalToCard]=useState(false)
     const isLogged=stateModal
+    
+   
 
-  
+
     const clikedOnModal=()=>{ 
        setModalToCard(true)
     }
@@ -46,6 +48,7 @@ export const Showcase=()=>{
 
 
     const actionDisplayBurguers=()=>{
+     
         setDisplayBurguer(true)
         setDisplayPizzas(false)
         setDisplayDrinks(false)
@@ -77,6 +80,8 @@ export const Showcase=()=>{
    
     }
 
+
+ 
 
  
 
@@ -121,13 +126,15 @@ return <S.Container>
                 onClick={actionDisplayPizzas} 
                 id='btnHome'
             />
-              <ButtonMenu bg={ThemeStyle.bgTheme} 
+             { /* 
+             seção de restaurante á ser implemenetada futuramentee
+             <ButtonMenu bg={ThemeStyle.bgTheme} 
                 iconActive={displayRestaurant} src={ResturantIcon} 
                 marginhorizontal='10' 
                 marginvertical='10' 
                 onClick={actionDisplayRestaurante} 
                 id='btnHome'
-            />
+/> */}
            
         </div>
         <p className="category-title">Produtos: <span>{conditionCategoryTitle()}</span> </p>
@@ -139,7 +146,7 @@ return <S.Container>
         { displayBurguer ? burguerProductList && burguerProductList.map((item,index)=>< CardProduct  key={index} onClick={returnDataClikedProduct} data={item} />) : null}
         { displayPizzas ? pizzaProductList && pizzaProductList.map((item,index)=>< CardProduct  key={index} onClick={returnDataClikedProduct}  data={item} />) : null}
         { displayDrinks ? drinksProductList && drinksProductList.map((item,index)=>< CardProduct  key={index} onClick={returnDataClikedProduct}  data={item} />) : null}
-        { displayRestaurant  && <RestaurantePage/>}
+        {/* displayRestaurant  && <RestaurantePage/> */}
         <Bad />
        </>
      

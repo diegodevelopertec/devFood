@@ -15,12 +15,12 @@ export const Container=styled.div`
         left:0;
         bottom: 0;
         right:0;
-        z-index:2;
+        z-index:1;
         width: 100vw;
         height: 100vh;
         flex-direction:column;
         align-items:center;
-        overflow-x:none;
+        overflow:hidden;
         border-radius:0;
         margin: 0;
        
@@ -54,14 +54,16 @@ export const ContainerImage=styled.div`
     }
         @media screen and (max-width:600px){
             width: 100%;
-            height: 150px;
-            margin-bottom:25px;
+            height: 170px;
+            margin-bottom:35px;
             border-radius:0;
             img{
-                margin-top:70px;
-              
+                margin-top:100px;
+                margin-bottom:20px;
             }
         }
+        
+       
         
       
 `
@@ -89,7 +91,7 @@ export const ContainerData=styled.div`
             font-size:13px;
            
         }
-        padding: 20px 0;
+        padding: 10px 0;
         display: flex;
         justify-content:center;
        

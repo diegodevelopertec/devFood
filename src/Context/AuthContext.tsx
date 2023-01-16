@@ -18,8 +18,6 @@ export const AuthContext=createContext<AuthType >(null!)
 
 export const AuthProvider=({children}:Props)=>{
 
-
-
     const [user,setUser]=useState<UserType | null>(null)
 
     const LoginAuth=(email:string,password:string)=>{

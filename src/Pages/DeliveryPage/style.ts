@@ -26,7 +26,7 @@ export const  Container=styled.div`
        opacity:0.7;
        color:#6d6d6e;
         flex:  1;
-        height:80vh;
+        height: 100%;
         display: flex;
         justify-content:center;
         align-items:center;
@@ -36,6 +36,7 @@ export const  Container=styled.div`
     @media screen and (max-width:950px){
         margin-bottom:130px;
         width: 100vw;
+        height: 100vh;
     }
 
 

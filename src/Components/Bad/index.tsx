@@ -63,7 +63,7 @@ export const Bad=()=>{
 }
     if(user === null){
         handleStateModal(true)
-       
+        setDisplayBad(false)
         
     }else{
   

@@ -86,6 +86,47 @@ export const dataBurguer=[
         ingredientes:'bacon,ovo,tomate,alface,queijo',
         qdt:1
     },
+    {
+        id:uuid(),
+        category:'Hamburguers',
+        name:'X-Salada',
+        price:7,
+        priceDefault:7,
+        imageProduct: `/imgs/bg3.png`,
+        ingredientes:'Milho,Hamburguer,Maionese,Tomate,Alface,Queijo',
+        qdt:1,
+        
+
+    },
+    {
+        id:uuid(),
+        category:'Hamburguers',
+        name:'X-Batata',
+        price:9,
+        priceDefault:9,
+        imageProduct:`/imgs/bg3.png`,
+        ingredientes:'Milho,Hamburguer,Maionese,Tomate,Alface,Queijo,Batata Palha',
+        qdt:1,
+    },{
+        id:uuid(),
+        category:'Hamburguers',
+        name:'X-Bacon',
+        price:23,
+        priceDefault:23,
+        imageProduct: `/imgs/bg3.png`,
+        ingredientes:'bacon,ovo,tomate,alface,queijo',
+        qdt:1
+    },
+    {
+        id:uuid(),
+        category:'Hamburguers',
+        name:'X-Bacon',
+        price:23,
+        priceDefault:23,
+        imageProduct: `/imgs/bg3.png`,
+        ingredientes:'bacon,ovo,tomate,alface,queijo',
+        qdt:1
+    }
   
 ]
 
@@ -161,6 +202,44 @@ export const dataPizza=[
         name:'Pizza Peru c/Cheddar',
         price:25,
         priceDefault:25,
+        imageProduct: `/imgs/pz1.png`,
+        ingredientes:'bacon,ovo,tomate,alface,queijo',
+        qdt:1
+    },
+    {
+        id:uuid(),
+        category:'Pizzas',
+        name:'Pizza Portuguesa',
+        price:14,
+        priceDefault:14,
+        imageProduct: `/imgs/pz1.png`,
+        ingredientes:'bacon,ovo,tomate,alface,queijo',
+        qdt:1
+    },  {
+        id:uuid(),
+        category:'Pizzas',
+        name:'Pizza Bacon Cheddar',
+        price:17,
+        priceDefault:17,
+        imageProduct: `/imgs/pz1.png`,
+        ingredientes:'bacon,ovo,tomate,alface,queijo',
+        qdt:1
+    },  {
+        id:uuid(),
+        category:'Pizzas',
+        name:'Pizza Peru c/Cheddar',
+        price:25,
+        priceDefault:25,
+        imageProduct: `/imgs/pz1.png`,
+        ingredientes:'bacon,ovo,tomate,alface,queijo',
+        qdt:1
+    },
+    {
+        id:uuid(),
+        category:'Pizzas',
+        name:'Pizza de Mussarela',
+        price:27,
+        priceDefault:27,
         imageProduct: `/imgs/pz1.png`,
         ingredientes:'bacon,ovo,tomate,alface,queijo',
         qdt:1
@@ -243,6 +322,26 @@ export const dataDrinks=[
         name:'Coca Cola 2L',
         price:2.30,
         priceDefault:2.30,
+        imageProduct: `/imgs/coca2l.png`,
+        qdt:1
+        
+    },
+    {
+        id:uuid(),
+        category:'Bebidas',
+        name:'Coca Cola 2L',
+        price:3.50,
+        priceDefault:3.50,
+        imageProduct: `/imgs/coca2l.png`,
+        qdt:1
+        
+    },
+    {
+        id:uuid(),
+        category:'Bebidas',
+        name:'Coca Cola 2L',
+        price:3.50,
+        priceDefault:3.50,
         imageProduct: `/imgs/coca2l.png`,
         qdt:1
         
