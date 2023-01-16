@@ -18,10 +18,12 @@ import { LoginModal } from "../LoginModal"
 import { useContextApp } from "../../hooks/useContextApp"
 import { BannerPromotions } from "../../Components/BannerPromotions"
 import { useNavigate } from "react-router-dom"
+import { useModalLogin } from "../../hooks/useModeLogin"
 
 
 export const Showcase=()=>{
-
+   
+    const {stateModal,handleStateModal}=useModalLogin()
     const {state,dispatch}=useContextApp()
     const [burguerProductList,setBurguerProductList]=useState<Product[] >(dataBurguer)
     const [pizzaProductList,setPizzaProductList]=useState<Product[]>(dataPizza)
@@ -31,17 +33,15 @@ export const Showcase=()=>{
     const [displayPizzas,setDisplayPizzas]=useState<boolean>(false)
     const [displayRestaurant,setDisplayRestaurant]=useState<boolean>(false)
     const [displayDrinks,setDisplayDrinks]=useState<boolean>(false)
-    const [stateModal,setModal]=useState(false)
-    const [isLogged,setisLogged]=useState(false)
-    const navigate=useNavigate()
+    const [stateModalToCard,setModalToCard]=useState(false)
+    const isLogged=stateModal
 
-
+  
     const clikedOnModal=()=>{ 
-       setModal(true)
+       setModalToCard(true)
     }
     const closeModal=()=>{
-        setisLogged(true)
-        setModal(false)
+        setModalToCard(false)
     }
 
 
@@ -74,20 +74,11 @@ export const Showcase=()=>{
     const returnDataClikedProduct=(data:Product)=>{
         setDataProductCliked(data)
         clikedOnModal()
+   
     }
 
 
-  //função de verificar se o usuário está logado ou não antes de adicionar dados da sacola no stet de delivery
-
-    const setDataBadToDeliveryPage=()=>{
-        const userState=state
-        if(userState === null){
-            setisLogged(false)
-        }else{
-            navigate('pedidos')
-        }
-
-    }
+ 
 
     const conditionCategoryTitle=()=>{
         if(displayBurguer){
@@ -149,19 +140,23 @@ return <S.Container>
         { displayPizzas ? pizzaProductList && pizzaProductList.map((item,index)=>< CardProduct  key={index} onClick={returnDataClikedProduct}  data={item} />) : null}
         { displayDrinks ? drinksProductList && drinksProductList.map((item,index)=>< CardProduct  key={index} onClick={returnDataClikedProduct}  data={item} />) : null}
         { displayRestaurant  && <RestaurantePage/>}
-        <Bad onClick={setDataBadToDeliveryPage} />
+        <Bad />
        </>
      
     </S.ShowcaseProduct>
    
-    {stateModal && <S.ContainerModal>
+    {stateModalToCard && <S.ContainerModal>
         <CardCliked   data={dataProductCliked} funcOffModal={closeModal}/>
-     </S.ContainerModal>}
-     {!isLogged && <S.ContainerModal>
-        <LoginModal closeModal={closeModal} />
-     </S.ContainerModal>}
+     </S.ContainerModal>
+     }
+ {  isLogged ? <S.ContainerModal>
+          <LoginModal closeModal={()=>handleStateModal(false)} />
+     </S.ContainerModal> :null
+}
    
     
    
     </S.Container>
+     
+ 
 }
