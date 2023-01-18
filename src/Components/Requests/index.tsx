@@ -10,6 +10,7 @@ import { useContextApp } from '../../hooks/useContextApp'
 import openIcon from './../../assets/imgs/setbaixo.png'
 import closeIcon from './../../assets/imgs/close.png'
 import lixeiraIcon from './../../assets/imgs/lixeira.png'
+import { useAuthContext } from '../../hooks/useContextAuth'
 
 
 type Props={
@@ -19,7 +20,7 @@ type Props={
 export const Requests=({dataRequests}:Props)=>{
     const {state,dispatch}=useContextApp()
     const [openBody,setOnBody]=useState(false)
-    let address=state.address.find(item=>item.state === true)
+    const {address}=useAuthContext()
 
     const setBodyRequest=()=>{
         !openBody  ? setOnBody(true) : setOnBody(false)

@@ -27,10 +27,9 @@ export const Bad=()=>{
     const [notification,setNotification]=useState(false)
     const navigate=useNavigate()
     let {stateModal,handleStateModal}=useModalLogin()
-    const {user}=useAuthContext()
+    const {user,address}=useAuthContext()
 
-    
-
+ 
    
     // Effects 
 
@@ -58,7 +57,7 @@ export const Bad=()=>{
      dateRequest:date.toLocaleDateString(),
     state: 'entregue',
     products: products,
-    address: addressDefault,
+    address: address,
     totalValueProduct:total
 }
     if(user === null){
@@ -102,9 +101,9 @@ export const Bad=()=>{
                  }
                </div>
                 <div className='area-address'>
-                   <em>Rua {addressDefault?.rua} </em> 
-                   <em>Bairro  {addressDefault?.bairro} </em>  
-                   <em>numero {addressDefault?.numero} </em>                     
+                   <em>Rua {address?.rua} </em> 
+                   <em>Bairro  {address?.bairro} </em>  
+                   <em>numero {address?.numero} </em>                     
                 </div>
                 <div className="area-final-cupom">
                     <input type="text" />

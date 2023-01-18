@@ -1,16 +1,27 @@
 ()Bugs
-        [X]ultimo item adicionado ao carrinho não altera a quantidade
-        []novos historicos de compra não estão sendo acrescidos e sim subsitiuindo os dados do ue já existem
-        []modalLogin aparceendo na home
-        []erro no envio de endereço
+        ()envio de endereco pro contexto
+        ()salvar historico no storage
+        {}salvar endereco no storage
 
-()funcionalidsdes a implementar
-        []autenticação 
-        []divisão de historicos pendentes e historicos entregues
-        []eviat recuo ao abrir o modal no historcio
+{}latout
+        ()melhorar carrinho no mobile
 
 
--receber a informacao
--verificar sua informcao ja existe no meu vetor?
-        -SIM : trago a infomração e altero as informacoes
-        -NAO : crio um novo item e passo para  o vetor
+-Tenho um contexto global que monitora os dados do carrinho, os dados dos pedidos e  um array de enderecos cadastrados
+-quando o usuario se cadastrada ele automaticamente está logado,isso significa que tenho que ter também os dados de seus pedidos no storage 
+-tenho que no provider sempre setar o storage de usuario e o historico de pedidos
+
+
+-pegar dados do modla clicado e adicionar ao carrinho
+-finalizar compra  : -ta logado ?
+                - sim : vá para a página de historico com o rsgirto da compra
+                -nao : abra  a pagina de login : tem resgistro?
+                                                sim-faca o login e vara a pagina de resgistro
+                                                nao-va apara a pagina de registro
+
+fez cadastro? sim- salva os dados do usuario no storage e persista os valores no formulario
+                retorna para a pagina inicial
+             
+
+             
+

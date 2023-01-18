@@ -36,7 +36,8 @@ export const Showcase=()=>{
     const [displayDrinks,setDisplayDrinks]=useState<boolean>(false)
     const [stateModalToCard,setModalToCard]=useState(false)
     const isLogged=stateModal
-   let {user}=useAuthContext()
+    let {user}=useAuthContext()
+  
    
 
   
@@ -85,7 +86,7 @@ export const Showcase=()=>{
 
 
  
-
+   
  
 
     const conditionCategoryTitle=()=>{
@@ -103,9 +104,10 @@ export const Showcase=()=>{
   
 return <S.Container>
      
+     
      <BannerPromotions  />
     {user?.name &&  <div className="cx-logado">
-        <h4>Bem vindo {user?.name}</h4>
+        <h4>Bem vindo {user.name}</h4>
      </div>
      }
     <S.CategorySectionProducts>

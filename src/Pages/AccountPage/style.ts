@@ -53,7 +53,7 @@ form{
                 }
                 input{
                   
-                    padding: 15px;
+                    padding: 12px ;
                     margin:10px 0;
                     border-radius:5px;
                     border: none;
@@ -69,7 +69,7 @@ form{
             align-items:center;
             button,input{
                 width: 30%;
-                padding: 20px 0;
+                padding: 15px 0;
                 margin: 10px;
                 border-radius:12px;
                 background: #23c25b;

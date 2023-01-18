@@ -118,6 +118,7 @@ export const BadBody=styled.div<Props>`
     }
     .area-address{
       font-size:13px;
+      color:${ThemeStyle.bgTheme};
       background-color: ${ThemeStyle.bgAppSystem};
       em{
         display: block;

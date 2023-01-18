@@ -3,8 +3,8 @@ import BgImage from '.././src/assets/imgs/bg.jpg'
 
 export const ThemeStyle={
      bgTheme:'#f04911',
-     bgAppSystem:'#c2c2c2',
-    // bgTheme:'#991d08',
+     bgAppSystem:'#e4eaf5',
+     //bgTheme:'#991d08',
     bgCardProductBottom:'#2f302f' ,
     colorTitleCard: 'black',
     colorIngredientsCategory:' #aaa',

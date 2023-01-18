@@ -31,24 +31,27 @@ type InputTypes={
 
 
 export const AccountPage=()=>{
-    const {user,registerUser,Logout}=useAuthContext()
+    const {user,registerUser,Logout,address}=useAuthContext()
     const {handleStateModal}=useModalLogin()
     const [disabledState,setDisabledState]=useState(true)
     const {state,dispatch}=useContextApp()
-    const addressState=state.address
-    let addressDefault=addressState.find(item=>item.state === true)
     const navigate=useNavigate()
-
-
+   const adressState=state.address
 
     const [nameIn,setNameIn]=useState(user ? user?.name : '')
     const [emailIn,setEmailIn]=useState(user ? user?.email :'')
     const [passwordIn,setPasswordIn]=useState(user ? user?.password : '')
-    const [telephoneIn,setTelephoneIn]=useState(user ? user?.telefone : '')
-    const [ruaIn,setRuaIn]=useState(addressDefault?.rua)
-    const [bairroIn,setBairroIn]=useState(addressDefault?.bairro)
-    const [numeroIn,setNumeroIn]=useState(addressDefault?.numero)
-    const [complementoIn,setComeplementoIn]=useState(addressDefault?.complemento)
+    const [telephoneIn,setTelephoneIn]=useState(user ? user?.password: '')
+
+
+  // let  addressDefault =address?.find(item=>item.state=== true)
+    const [ruaIn,setRuaIn]=useState(address ? address.rua : '')
+    const [bairroIn,setBairrodIn]=useState(address ? address.bairro: '')
+    const [numeroIn,setNumeroIn]=useState(address ? address.numero: '')
+    const [complementoIn,setComplementoIn]=useState(address ? address.complemento: '')
+
+console.log( typeof address);
+   
 
     const schema=yup.object({
        name:yup.string().required(),
@@ -67,12 +70,13 @@ export const AccountPage=()=>{
         defaultValues: {
             name:nameIn,
             email:emailIn,
+            telefone:telephoneIn,
+            password:passwordIn,
             rua:ruaIn,
             numeroCasa:numeroIn,
             complemento:complementoIn,
             bairro:bairroIn,
-            telefone:telephoneIn,
-            password:passwordIn,
+         
             
           }
     })
@@ -88,30 +92,33 @@ export const AccountPage=()=>{
    
 
         let {name,email,password,telefone}=data
-        let dataUser={name,email,password,telefone}
+        let {bairro,complemento,numeroCasa,rua}=data
         registerUser(name,email,password,telefone)
-        localStorage.setItem('user',JSON.stringify(dataUser))
+       
       
        
+        let newAddress={
+            id:uuid(),
+            rua:rua,
+            state:true,
+            numero:numeroCasa,
+            bairro: bairro,
+            complemento:complemento
+        }
 
-
-        if(user !== null ){
+        if(user && address){
             setDisabledState(true)
+
              dispatch({
                 type: 'setAddress',
                 payload:{
-                    address:{
-                        id:uuid(),
-                        rua:ruaIn,
-                        state:true,
-                        numero:numeroIn,
-                        bairro: bairroIn,
-                        complemento:complementoIn
-                    }
+                    address:address
                 }
              })
         }
        handleStateModal(false)
+       console.log(newAddress);
+       localStorage.setItem('historyRequests',JSON.stringify(newAddress))
        toast.success('registrado e logado com sucesso 🙂')
        navigate('/')
        
@@ -135,7 +142,7 @@ export const AccountPage=()=>{
        <S.dataUser>
             <form action="" >
                 <h3>Seus dados :</h3>
-              <div className="cx-input">
+              <div className="cx-input"> 
                  <input  
                        placeholder='seu Nome' 
                          {...register('name')} 
@@ -177,6 +184,7 @@ export const AccountPage=()=>{
                         <div className="cx-input">
                             <input  
                               
+                              
                                 placeholder='Digite  o nome da sua rua'  
                                 {...register('rua')}   
                                 disabled={disabledState}
@@ -185,6 +193,7 @@ export const AccountPage=()=>{
                         </div>
                         <div className="cx-input">
                             <input 
+                             
                                 placeholder='Digite o número' 
                                 {...register('numeroCasa')}    
                                 disabled={disabledState} 
@@ -193,6 +202,7 @@ export const AccountPage=()=>{
                         </div>
                         <div className="cx-input">
                             <input 
+                               
                                   placeholder='Digite  o nome do seu bairro' 
                                   {...register('bairro')}  
                                   disabled={disabledState}
@@ -201,6 +211,7 @@ export const AccountPage=()=>{
                         </div>
                         <div className="cx-input">
                             <input  
+                               
                                    placeholder='complemento' 
                                    {...register('complemento')}   
                                    disabled={disabledState} 
