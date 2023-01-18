@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { ThemeStyle } from "../../styled";
 
 
+
 export const Container=styled.div`
     width:100%;
     padding:20px;
@@ -29,6 +30,7 @@ form{
                 .cx-input{
                     input{
                         width: 100%;
+                        background-color: props.inputDisable =>props.inpuDisable ? 'red' : 'auto';
                     }
                 }
                 @media screen and (max-width:950px){
@@ -50,7 +52,7 @@ form{
                         font-size:12px;
                 }
                 input{
-                   
+                  
                     padding: 15px;
                     margin:10px 0;
                     border-radius:5px;
@@ -68,6 +70,7 @@ form{
             button,input{
                 width: 30%;
                 padding: 20px 0;
+                margin: 10px;
                 border-radius:12px;
                 background: #23c25b;
                 color: #eee;

@@ -66,7 +66,7 @@ export const Bad=()=>{
         setDisplayBad(false)
         
     }else{
-  
+       
         dispatch({
             type:'setDataToRequest',
             payload:{data}

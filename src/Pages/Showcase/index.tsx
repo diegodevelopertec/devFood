@@ -1,4 +1,4 @@
-import { useState } from "react" 
+import { useEffect, useState } from "react" 
 import * as S from './style'
 import { CardProduct } from "../../Components/CardProduct"
 import { Product } from "../../Types/Products"
@@ -20,6 +20,7 @@ import { BannerPromotions } from "../../Components/BannerPromotions"
 import { useLocation, useNavigate } from "react-router-dom"
 import { useModalLogin } from "../../hooks/useModeLogin"
 import { useSearchParams } from "react-router-dom"
+import { useAuthContext } from "../../hooks/useContextAuth"
 
 export const Showcase=()=>{
    
@@ -35,8 +36,10 @@ export const Showcase=()=>{
     const [displayDrinks,setDisplayDrinks]=useState<boolean>(false)
     const [stateModalToCard,setModalToCard]=useState(false)
     const isLogged=stateModal
-    
+   let {user}=useAuthContext()
    
+
+  
 
 
     const clikedOnModal=()=>{ 
@@ -101,6 +104,10 @@ export const Showcase=()=>{
 return <S.Container>
      
      <BannerPromotions  />
+    {user?.name &&  <div className="cx-logado">
+        <h4>Bem vindo {user?.name}</h4>
+     </div>
+     }
     <S.CategorySectionProducts>
       <>
       <p>Selecione uma categoria :</p>
@@ -156,7 +163,7 @@ return <S.Container>
         <CardCliked   data={dataProductCliked} funcOffModal={closeModal}/>
      </S.ContainerModal>
      }
- {  isLogged ? <S.ContainerModal>
+ { isLogged ? <S.ContainerModal>
           <LoginModal closeModal={()=>handleStateModal(false)} />
      </S.ContainerModal> :null
 }

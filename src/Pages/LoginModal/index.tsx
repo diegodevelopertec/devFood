@@ -5,7 +5,7 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import * as yup from 'yup'
 import {yupResolver} from '@hookform/resolvers/yup'
 import './../../helpers/msgsYup'
-
+import { useAuthContext } from '../../hooks/useContextAuth';
 
 type InputTypes={
     email:string,
@@ -17,6 +17,7 @@ type Props={
 }
 
 export const LoginModal=({closeModal}:Props)=>{
+    const {LoginAuth}=useAuthContext()
 
     const schema=yup.object({
         email:yup.string().email().required(),
@@ -29,7 +30,7 @@ export const LoginModal=({closeModal}:Props)=>{
     
     
     const submitForm=(data:InputTypes)=>{
-        console.log(data);
+        LoginAuth(data.email,data.password)
         
     }
      

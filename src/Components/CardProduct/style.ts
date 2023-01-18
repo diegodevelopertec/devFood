@@ -9,7 +9,12 @@ export const Container=styled.div`
     border-radius:6px;
     background: ${ThemeStyle.bgCardProductBottom};
   
-    @media screen and (max-width:600px){
+  
+
+ 
+
+    
+        @media screen and (max-width:600px){
       font-size:10px;
      
     }
@@ -124,6 +129,7 @@ export const DataProduct=styled.div`
                 background:transparent;
                 color:  ${ThemeStyle.bgTheme};
                 border: 2px solid ${ThemeStyle.bgTheme};
+                    
             }
          }
          @media screen and (max-width:600px){

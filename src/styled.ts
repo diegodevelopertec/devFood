@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import BgImage from '.././src/assets/imgs/bg.jpg'
 
 export const ThemeStyle={
-   bgTheme:'orange',
+     bgTheme:'#f04911',
      bgAppSystem:'#c2c2c2',
     // bgTheme:'#991d08',
     bgCardProductBottom:'#2f302f' ,
@@ -59,7 +59,7 @@ export const CardLoja=styled.div`
     justify-content:space-around;
     align-items:center;
     background-color: ${ThemeStyle.bgTheme};
-    width: 80%;
+    width: 100%;
     height: 80px;
     margin:30px 15px;
     min-height: 100px;
@@ -93,14 +93,14 @@ export const Menu=styled.div`
   padding: 100px 12px;
   border-radius:12px;
     @media screen and (max-width:950px){
-    display: flex;
-    padding: 0;
-    box-shadow: none;
-     border-radius:0;
-    a{
-        margin:15px;
-        font-size:11px;
-    }
+        display: flex;
+        padding: 0;
+        box-shadow: none;
+        border-radius:0;
+            a{
+                margin:15px;
+                font-size:11px;
+            }
     }
 `
 

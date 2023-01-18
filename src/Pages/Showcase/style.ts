@@ -9,7 +9,10 @@ export const Container=styled.div`
     font-size:20px;
     overflow-x:hidden;
   
-  
+  .cx-logado{
+    padding: 12px 30px;
+    color: #8e9294;
+  }
   
   @media screen and   (max-width:950px){
      padding-bottom:50px;
