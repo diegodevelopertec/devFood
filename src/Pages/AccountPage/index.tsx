@@ -10,7 +10,8 @@ import {v4 as uuid} from 'uuid'
 import { useModalLogin } from '../../hooks/useModeLogin';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-
+import LapisIcon from './../../assets/imgs/lapis.png'
+import LixeiraIcon from './../../assets/imgs/lixeira.png'
 
 
 type InputTypes={
@@ -212,8 +213,8 @@ export const AccountPage=()=>{
                <div className="cx-button">
                  {!user && disabledState &&   <button type='button'  onClick={()=>setDisabledState(false)}>cadastrar </button>}
                   {!disabledState && <button   type={'submit'}> salvar</button> }
-                  {user && disabledState && <button onClick={()=>setDisabledState(false)} type='button'>Editar</button> }
-                  {user && disabledState && <button onClick={isLogout} type='button'>deletar conta</button> }
+                  {user && disabledState && <button onClick={()=>setDisabledState(false)} type='button'>Editar <img height={30} width={30} src={LapisIcon} alt="" /></button> }
+                  {user && disabledState && <button onClick={isLogout} type='button'>deletar conta<img  height={30} width={30} src={LixeiraIcon} alt="" /></button> }
                </div>
             </form>
        </S.dataUser>

@@ -75,6 +75,9 @@ form{
                 background: #23c25b;
                 color: #eee;
                 border: none;
+                display: flex;
+                justify-content:center;
+                align-items:center;
 
                 &:hover{
                     cursor:pointer;
