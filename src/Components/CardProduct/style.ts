@@ -4,18 +4,12 @@ import {ThemeStyle} from './../../styled'
 
 export const Container=styled.div`
   
-  box-shadow:0 0 6px #141413;
+    box-shadow:0 0 6px #141413;
     margin:12px 0;
     border-radius:6px;
     background: ${ThemeStyle.bgCardProductBottom};
-  
-  
-
- 
-
-    
-        @media screen and (max-width:600px){
-      font-size:10px;
+    @media screen and (max-width:600px){
+    font-size:10px;
      
     }
    
@@ -129,6 +123,9 @@ export const DataProduct=styled.div`
                 background:transparent;
                 color:  ${ThemeStyle.bgTheme};
                 border: 2px solid ${ThemeStyle.bgTheme};
+                 
+            }
+        }
                     
             }
          }

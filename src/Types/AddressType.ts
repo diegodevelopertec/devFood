@@ -1,6 +1,6 @@
 
 export type AddressType={
-   id:number,
+   id?:number,
    rua:string,
    state:boolean,
    numero:string,

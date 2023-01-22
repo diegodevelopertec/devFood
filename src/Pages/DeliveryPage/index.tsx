@@ -5,29 +5,39 @@ import ErrorIcon from './../../assets/imgs/erroricon.png'
 import {useAuthContext} from './../../hooks/useContextAuth'
 import { useEffect, useState } from 'react'
 import { RequestType } from '../../Types/RequestType'
+import { UserType } from '../../Types/UserType'
 
 
 export const DeliveryPage=()=>{
  
  
   const {state,dispatch}=useContextApp()
-  const {user,address}=useAuthContext()
-  let userStorage=localStorage.getItem('u')
+  const {address,requestsHistory}=useAuthContext()
+  const userStorage:UserType=JSON.parse(localStorage.getItem('u') as string)
  
 
-
-const FilterRequestsPending=state.requests.filter(item=>item.state === 'pendente')
-const FilterRequestsDelivered=state.requests.filter(item=>item.state === 'entregue')
-
-
-
   
+
+
+const FilterRequestsPending= state.requests.filter(item=>item.state === 'pendente')
+const FilterRequestsDelivered=state.requests.filter(item=>item.state === 'entregue') 
+
+
+
+
+useEffect(()=>{
+  localStorage.setItem('requestsHistory',JSON.stringify(FilterRequestsDelivered))
+  console.log(requestsHistory);
+  
+},[FilterRequestsDelivered])
+
+
 
 
     return <S.Container>
        <div className="intro">
                 <h3>Histórico de Pedidos</h3>
-                <p>Bem vindo {user?.name}<br/>Confira aqui os estado dos seus pedidos:</p> 
+                <p>Bem vindo {userStorage?.name}<br/>Confira aqui os estado dos seus pedidos:</p> 
               </div>
          {userStorage !== null && FilterRequestsDelivered.length > 0 ? <>
              

@@ -21,6 +21,9 @@ import { useLocation, useNavigate } from "react-router-dom"
 import { useModalLogin } from "../../hooks/useModeLogin"
 import { useSearchParams } from "react-router-dom"
 import { useAuthContext } from "../../hooks/useContextAuth"
+import  womanBurguer from './../../assets/imgs/banner_main_rf.png'
+import  womanBurguerMain from './../../assets/imgs/banner_main2.png'
+
 
 export const Showcase=()=>{
    
@@ -52,7 +55,6 @@ export const Showcase=()=>{
 
 
     const actionDisplayBurguers=()=>{
-     
         setDisplayBurguer(true)
         setDisplayPizzas(false)
         setDisplayDrinks(false)
@@ -106,9 +108,25 @@ return <S.Container>
      
      
      <BannerPromotions  />
-    {user?.name &&  <div className="cx-logado">
-        <h4>Bem vindo {user.name}</h4>
-     </div>
+    {  <S.ContainerCaseLogged className="cx-logado">
+                <div className="area-img">
+                    <img src={user?.name ? womanBurguerMain : womanBurguer} alt="" />
+                </div>
+                <div className="area-text">
+                        <div className="txt">
+                            <h4>Bem vindo {user?.name}</h4>
+                            <p>Aqui com a gente é :</p>
+                        </div>
+                    
+                      <div className="cx-spans">
+                                <span>Pediu</span>
+                                <span>Logou</span>
+                                <span>Chegou</span>  
+                        </div>
+                  
+                       
+                </div>
+     </S.ContainerCaseLogged>
      }
     <S.CategorySectionProducts>
       <>

@@ -2,7 +2,7 @@ import * as S from './style'
 import { useForm, SubmitHandler } from "react-hook-form";
 import * as yup from 'yup'
 import {yupResolver} from '@hookform/resolvers/yup'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './../../helpers/msgsYup'
 import { useAuthContext } from '../../hooks/useContextAuth';
 import { useContextApp } from '../../hooks/useContextApp';
@@ -12,7 +12,7 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import LapisIcon from './../../assets/imgs/lapis.png'
 import LixeiraIcon from './../../assets/imgs/lixeira.png'
-
+import SaveIcon from './../../assets/imgs/save.png'
 
 type InputTypes={
     name:string,
@@ -36,21 +36,22 @@ export const AccountPage=()=>{
     const [disabledState,setDisabledState]=useState(true)
     const {state,dispatch}=useContextApp()
     const navigate=useNavigate()
-   const adressState=state.address
+   
+   
+   const [nameIn,setNameIn]=useState(user ? user?.name : '')
+   const [emailIn,setEmailIn]=useState(user ? user?.email :'')
+   const [passwordIn,setPasswordIn]=useState(user ? user?.password : '')
+   const [telephoneIn,setTelephoneIn]=useState(user ? user?.password: '')
 
-    const [nameIn,setNameIn]=useState(user ? user?.name : '')
-    const [emailIn,setEmailIn]=useState(user ? user?.email :'')
-    const [passwordIn,setPasswordIn]=useState(user ? user?.password : '')
-    const [telephoneIn,setTelephoneIn]=useState(user ? user?.password: '')
+
+ // let  addressDefault =address?.find(item=>item.state=== true)
+   const [ruaIn,setRuaIn]=useState(address ? address.rua : '')
+   const [bairroIn,setBairrodIn]=useState(address ? address.bairro: '')
+   const [numeroIn,setNumeroIn]=useState(address ? address.numero: '')
+   const [complementoIn,setComplementoIn]=useState(address ? address.complemento: '')
 
 
-  // let  addressDefault =address?.find(item=>item.state=== true)
-    const [ruaIn,setRuaIn]=useState(address ? address.rua : '')
-    const [bairroIn,setBairrodIn]=useState(address ? address.bairro: '')
-    const [numeroIn,setNumeroIn]=useState(address ? address.numero: '')
-    const [complementoIn,setComplementoIn]=useState(address ? address.complemento: '')
 
-console.log( typeof address);
    
 
     const schema=yup.object({
@@ -117,9 +118,7 @@ console.log( typeof address);
              })
         }
        handleStateModal(false)
-       console.log(newAddress);
-       localStorage.setItem('historyRequests',JSON.stringify(newAddress))
-       toast.success('registrado e logado com sucesso 🙂')
+       localStorage.setItem('addressRequests',JSON.stringify(newAddress))
        navigate('/')
        
     }
@@ -223,9 +222,9 @@ console.log( typeof address);
                
                <div className="cx-button">
                  {!user && disabledState &&   <button type='button'  onClick={()=>setDisabledState(false)}>cadastrar </button>}
-                  {!disabledState && <button   type={'submit'}> salvar</button> }
+                  {!disabledState && <button   type={'submit'}> Salvar<img  height={30} width={30} src={SaveIcon} /></button> }
                   {user && disabledState && <button onClick={()=>setDisabledState(false)} type='button'>Editar <img height={30} width={30} src={LapisIcon} alt="" /></button> }
-                  {user && disabledState && <button onClick={isLogout} type='button'>deletar conta<img  height={30} width={30} src={LixeiraIcon} alt="" /></button> }
+                  {user && disabledState && <button onClick={isLogout} type='button'>Deletar conta<img  height={30} width={30} src={LixeiraIcon} alt="" /></button> }
                </div>
             </form>
        </S.dataUser>

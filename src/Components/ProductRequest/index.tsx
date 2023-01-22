@@ -1,16 +1,14 @@
 import * as S from './style'
 import { Product } from '../../Types/Products'
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useState } from 'react'
 import { Context } from '../../Context/Context'
-import { RequestType } from '../../Types/RequestType'
+
 
 
 
 type Props={
     data:Product
 }
-
-
 
 export const ProductRequest=({data}:Props)=>{
     const {state,dispatch}=useContext(Context)
@@ -34,7 +32,7 @@ export const ProductRequest=({data}:Props)=>{
      </div>
      <div className="area-right">
          <div className="counter">
-            <div className="cx-qdt"> {data.qdt} </div>
+            <div className="cx-qdt"> Qdt {data.qdt} </div>
          </div>
      </div>
             

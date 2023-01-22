@@ -76,7 +76,7 @@ border-radius:5px;
             padding:10px;
             background: white;
             color: ${ThemeStyle.bgTheme};
-            width: 30px;
+          
         }
     }
 

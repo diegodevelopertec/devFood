@@ -3,15 +3,16 @@ import { ThemeStyle } from "../../styled";
 
 export const  Container=styled.div`
     width: 100%;
-    margin-bottom:70px;
+   margin-bottom:170px;
+   min-height: 100vh;
     overflow:auto;
-    min-height:100vh;
     background:${ThemeStyle.bgAppSystem};
     padding:0px 10px;
     overflow: auto;
  
     .intro{
         margin:20px 0;
+        height: 100px;
         h3{
             margin:12px 0;
         }
@@ -26,7 +27,7 @@ export const  Container=styled.div`
        opacity:0.7;
        color:#6d6d6e;
         flex:  1;
-        height: 100%;
+     
         display: flex;
         justify-content:center;
         align-items:center;

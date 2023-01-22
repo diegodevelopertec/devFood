@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState } from 'react'
 import * as S from './styled'
 import { ToastContainer, toast } from 'react-toastify';
@@ -11,43 +11,66 @@ import LojaIcon from '.././src/assets/imgs/lojaicon.png'
 import MotoIcon from '.././src/assets/imgs/moto.png'
 import LogoIcon from '../src/assets/imgs/logo.png'
 import { useNavigate } from 'react-router-dom';
+import  useHistory from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+
 
 const App=()=>{
-  
+  let location=useLocation()
+
   const [viewHome,setViewHome]=useState(true)
   const [viewAccount,setViewAccount]=useState(false)
   const [viewDelivery,setViewDelivery]=useState(false)
   const navigate=useNavigate()
  
 
-  const ClickViewHome=(e:any)=>{
-    e.preventDefault()
-      navigate('/')
+  
+ useEffect(()=>{
+    if(location.pathname  ===''){
       setViewHome(true)
       setViewAccount(false)
       setViewDelivery(false)
+    }else if(  location.pathname ==='/user'){
+      setViewHome(false)
+      setViewAccount(true)
+      setViewDelivery(false)
+    }else if( location.pathname  ==='/pedidos'){
+      setViewHome(false)
+      setViewAccount(false)
+      setViewDelivery(true)
+
+    }
+
+  },[viewHome])
+
+
+
+  const ClickViewHome=(e:any)=>{
+    e.preventDefault()
+    navigate('')
+    setViewHome(true)
+    setViewAccount(false)
+    setViewDelivery(false)
+   
+      
   
   }
   const ClickViewDelivery=(e:any)=>{
     e.preventDefault()
-   
+   setViewDelivery(true)
       navigate('/pedidos')
+      setViewDelivery(true)
       setViewHome(false)
       setViewAccount(false)
-      setViewDelivery(true)
-    
-  
    
   }
   
   const ClickViewAccount=(e:any)=>{
     e.preventDefault()
-    
       navigate('/user')
       setViewAccount(true)
       setViewHome(false)
       setViewDelivery(false)
-    
   
    
   }
@@ -73,7 +96,7 @@ const App=()=>{
                     
               <ButtonMenu  
                  onClick={ClickViewAccount} 
-                 iconActive={viewAccount} 
+                iconActive={viewAccount} 
                  src={UserIcon} 
                  link='user'
                  marginhorizontal='10' 
@@ -86,7 +109,7 @@ const App=()=>{
           <S.HeaderApp>
             <S.CardLoja>
               <div className="logo">
-                   <img src={LogoIcon} alt="" /> <span>Rangoo</span>
+                   <img src={LogoIcon} alt="" /> <span>BãoLanche</span>
               </div>
              
             </S.CardLoja>

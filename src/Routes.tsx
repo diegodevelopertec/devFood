@@ -14,7 +14,7 @@ export const Routes=()=>{
              <Route path='/' element={<Showcase/>} />
              <Route path='/pedidos'  element={<DeliveryPage/>} />
              <Route path='/user'  element={<AccountPage/>} />
-            <Route path='/:slug' element={<Showcase/>} />
+           
           </Rotas>
   
 

@@ -12,7 +12,7 @@ export const Container=styled.div`
 
 `
 export const  RequestHeader=styled.div`
-    background: #aaa;
+    background:#b3b2af;
     border-radius:5px; 
     color:${ThemeStyle.bgTheme};
     padding: 20px 12px;
@@ -104,8 +104,10 @@ export const AreaProduct=styled.div`
        overflow: auto;
        padding: 5px;
        ::-webkit-scrollbar{
-            width: 2px;
-            
+            width: 2px;     
+      }
+      :hover{
+        cursor: grab;
       }
      }
 `

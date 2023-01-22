@@ -3,6 +3,7 @@ import { UserType } from "../Types/UserType";
 import {v4 as uuid} from 'uuid'
 import { useModalLogin } from "../hooks/useModeLogin";
 import { AddressType } from "../Types/AddressType";
+import { RequestType } from "../Types/RequestType";
 
 
 
@@ -18,6 +19,7 @@ type Props={
 type AuthType={
     user:UserType | null,
    address:AddressType | null,
+   requestsHistory:RequestType | [],
     LoginAuth:(email:string,password:string)=>boolean,
     registerUser:(name:string,email:string,password:string,telefone:string)=>boolean
     Logout:()=>void
@@ -31,35 +33,33 @@ export const AuthProvider=({children}:Props)=>{
     const {handleStateModal}=useModalLogin()
     const [user,setUser]=useState<UserType | null>(null)
     const [address,setAddress]=useState<AddressType | null>(null)
-    const  [token,setToken]=useState<string | null>()
+    const [token,setToken]=useState<string | null>()
+    const [requestsHistory,setRequestHistory]=useState<RequestType >([])
 
     useEffect(()=>{
 
         //Pegando token e dados do usuario do localstorage
         let userStorage =JSON.parse(localStorage.getItem('u') as string)
         let tokenStorage=JSON.parse(localStorage.getItem('token') as string)
-        let requestsHistory=JSON.parse(localStorage.getItem('historyRequests') as string)
-    
+        let addressRequests=JSON.parse(localStorage.getItem('addressRequests') as string)
+        let requestsHistory=JSON.parse(localStorage.getItem('requestsHistory') as string)
 
 
 
         //setando dados do localStorage
-        if(userStorage && tokenStorage){
+        if(userStorage && tokenStorage && addressRequests && requestsHistory){
           setUser(userStorage)
-          setAddress(requestsHistory)
+          setAddress(addressRequests)
           setToken(tokenStorage)
           handleStateModal(false)
+          setRequestHistory(requestsHistory)
         }
       
+        
+        console.log(requestsHistory);
         console.log(userStorage);
         console.log(tokenStorage);
-        console.log(requestsHistory)
-        console.log(user);
-   
-        
-        if(userStorage ){
-            setUser(userStorage)
-        }
+       
        
     },[])
 
@@ -75,11 +75,10 @@ export const AuthProvider=({children}:Props)=>{
            
             localStorage.setItem('u',JSON.stringify(userdata))
             localStorage.setItem('token',JSON.stringify(tokenJson))
-            let requestsHistory=JSON.parse(localStorage.getItem('historyRequests') as string)
-            setAddress(requestsHistory)
-          
-          
-            return true
+            let addressRequests=JSON.parse(localStorage.getItem('addressRequests') as string)
+            setAddress(addressRequests)
+            
+             return true
         }
 
         return false
@@ -103,10 +102,9 @@ export const AuthProvider=({children}:Props)=>{
     
 
 
-   
 
 
-return <AuthContext.Provider value={{address,user,Logout,LoginAuth,registerUser}}>
+return <AuthContext.Provider value={{requestsHistory, address,LoginAuth,Logout,registerUser,user}}>
     {children}
 </AuthContext.Provider>
 

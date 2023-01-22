@@ -3,7 +3,7 @@ import {   useState } from 'react'
 import { ProductBad } from '../ProductBad'
 import { useContextApp } from '../../hooks/useContextApp'
 import { Product } from '../../Types/Products'
-import { useNavigate } from 'react-router-dom'
+import { Navigate, useNavigate } from 'react-router-dom'
 import * as S from './style'
 import  {v4 as uuid} from 'uuid'
 import BadIcon from '../../assets/imgs/sacola.png'
@@ -12,15 +12,17 @@ import CloseBadIcon from '../../assets/imgs/close.png'
 import ErrorIcon from '../../assets/imgs/erroricon.png'
 import { useModalLogin } from '../../hooks/useModeLogin'
 import { useAuthContext } from '../../hooks/useContextAuth'
+import { AddressType } from '../../Types/AddressType'
+
 
 type Props={
-    onClick:()=>void
-}
-let date=new Date()
+     onClick:()=>void
+ } 
+
+ let date=new Date()
 
 export const Bad=()=>{
     const {state,dispatch}=useContextApp()
-    const addressDefault=state.address.find(item=>item.state === true)
     let   [products,setProducts]=useState<Product[]>(state.products)
     const [total,setTotalValues]=useState(0)
     const [displayBad,setDisplayBad]=useState(false)
@@ -28,16 +30,19 @@ export const Bad=()=>{
     const navigate=useNavigate()
     let {stateModal,handleStateModal}=useModalLogin()
     const {user,address}=useAuthContext()
-
+    const [addressState,setAddressState]=useState<AddressType | null>(address)
+    
  
-   
-    // Effects 
 
     useEffect(()=>{
       setProducts(state.products) 
       setTotalValues(state.products.reduce((prevPrice:any,nextPrice:Product)=>prevPrice + nextPrice.price , 0 ) )
-    },[state.products])
+     
+    },[state.products,state.requests])
 
+    useEffect(()=>{
+       setAddressState(address)
+    },[address])
  
  const clickDisplayBad=()=>{
        if(!displayBad){
@@ -50,33 +55,34 @@ export const Bad=()=>{
 
 
  const setDataToRequests=()=>{
- 
-   
-  let data={
-     id: uuid(),
-     dateRequest:date.toLocaleDateString(),
-    state: 'entregue',
-    products: products,
-    address: address,
-    totalValueProduct:total
-}
+    let data={
+        id: uuid(),
+        dateRequest:date.toLocaleDateString(),
+        state: 'entregue',
+        products: products,
+        address: address,
+        totalValueProduct:total
+    }
+
     if(user === null){
         handleStateModal(true)
         setDisplayBad(false)
         
     }else{
-       
-        dispatch({
+        dispatch({   
             type:'setDataToRequest',
             payload:{data}
         })
-        navigate('/pedidos')
-        state.products=[]
-}
- }
+       
     
+        
+       state.products=[]
+       navigate('/pedidos')
+    }
+   
 
 
+ }
 
 
     return <S.Container displayBad={displayBad}>
@@ -88,22 +94,26 @@ export const Bad=()=>{
              {displayBad ? <img src={CloseBadIcon}  alt="" /> : <img className='open-icon' src={openBadIcon}  alt="" />} 
              
             </div>
-            <S.NotificationBad displayBad={notification}>  2 </S.NotificationBad >
+            <S.NotificationBad displayBad={notification}> 2 </S.NotificationBad >
         </S.BadHeader>
 
         <S.BadBody displayBad={displayBad}>
-             
-           {products.length > 0  ? <> 
+              {products.length > 0  ? <> 
                <div className="area-listproduct">
                   {state.products.length  &&  state.products.map((item,index)=>(
                          <ProductBad key={index} data={item} />)) 
-                         
-                 }
+                  }
                </div>
                 <div className='area-address'>
-                   <em>Rua {address?.rua} </em> 
-                   <em>Bairro  {address?.bairro} </em>  
-                   <em>numero {address?.numero} </em>                     
+                    {user  &&  addressState !== null ?
+                       <>
+                         <em>Rua {addressState?.rua } </em> 
+                         <em>Bairro  {addressState?.bairro} </em>  
+                         <em>numero {addressState?.numero} </em> 
+                       </>
+                          :'Faça Login/Cadastro para adicionar um endereço'
+                    }
+                                    
                 </div>
                 <div className="area-final-cupom">
                     <input type="text" />

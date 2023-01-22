@@ -53,7 +53,7 @@ form{
                 }
                 input{
                   
-                    padding: 12px ;
+                    padding: 15px ;
                     margin:10px 0;
                     border-radius:5px;
                     border: none;
@@ -67,12 +67,13 @@ form{
             display: flex;
             justify-content:center;
             align-items:center;
-            button,input{
+
+            button,input[type='submit']{
                 width: 30%;
                 padding: 15px 0;
                 margin: 10px;
                 border-radius:12px;
-                background: #23c25b;
+                background:#1f7d3d;
                 color: #eee;
                 border: none;
                 display: flex;
@@ -81,7 +82,7 @@ form{
 
                 &:hover{
                     cursor:pointer;
-                    background: #16d95a;
+                    background:#11632b;
                 }
             }
             @media screen and (max-width:950px){
