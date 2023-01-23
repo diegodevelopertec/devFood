@@ -27,7 +27,6 @@ const FilterRequestsDelivered=state.requests.filter(item=>item.state === 'entreg
 
 useEffect(()=>{
   localStorage.setItem('requestsHistory',JSON.stringify(FilterRequestsDelivered))
-  console.log(requestsHistory);
   
 },[FilterRequestsDelivered])
 

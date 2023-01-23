@@ -8,11 +8,14 @@ import { useAuthContext } from '../../hooks/useContextAuth';
 import { useContextApp } from '../../hooks/useContextApp';
 import {v4 as uuid} from 'uuid'
 import { useModalLogin } from '../../hooks/useModeLogin';
-import { useNavigate } from 'react-router-dom';
+import { Navigate, redirect, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import LapisIcon from './../../assets/imgs/lapis.png'
 import LixeiraIcon from './../../assets/imgs/lixeira.png'
 import SaveIcon from './../../assets/imgs/save.png'
+
+
+
 
 type InputTypes={
     name:string,
@@ -31,27 +34,19 @@ type InputTypes={
 
 
 export const AccountPage=()=>{
+    const Redirect=useNavigate()
     const {user,registerUser,Logout,address}=useAuthContext()
     const {handleStateModal}=useModalLogin()
     const [disabledState,setDisabledState]=useState(true)
     const {state,dispatch}=useContextApp()
-    const navigate=useNavigate()
+    let [userState,setUserState]=useState(user)
+    let [addressState,setAddressState]=useState(address)
    
-   
-   const [nameIn,setNameIn]=useState(user ? user?.name : '')
-   const [emailIn,setEmailIn]=useState(user ? user?.email :'')
-   const [passwordIn,setPasswordIn]=useState(user ? user?.password : '')
-   const [telephoneIn,setTelephoneIn]=useState(user ? user?.password: '')
 
-
- // let  addressDefault =address?.find(item=>item.state=== true)
-   const [ruaIn,setRuaIn]=useState(address ? address.rua : '')
-   const [bairroIn,setBairrodIn]=useState(address ? address.bairro: '')
-   const [numeroIn,setNumeroIn]=useState(address ? address.numero: '')
-   const [complementoIn,setComplementoIn]=useState(address ? address.complemento: '')
-
-
-
+    useEffect(()=>{
+        setUserState(user)
+        setAddressState(address)
+    },[])
    
 
     const schema=yup.object({
@@ -69,14 +64,14 @@ export const AccountPage=()=>{
     const {register,handleSubmit,formState:{errors}}=useForm<InputTypes>({
         resolver:yupResolver(schema),
         defaultValues: {
-            name:nameIn,
-            email:emailIn,
-            telefone:telephoneIn,
-            password:passwordIn,
-            rua:ruaIn,
-            numeroCasa:numeroIn,
-            complemento:complementoIn,
-            bairro:bairroIn,
+            name:userState?.name,
+            email:userState?.email,
+            telefone:userState?.telefone,
+            password:userState?.password,
+            rua:addressState?.rua,
+            numeroCasa:addressState?.numero,
+            complemento:addressState?.complemento,
+            bairro:addressState?.bairro
          
             
           }
@@ -92,8 +87,8 @@ export const AccountPage=()=>{
     const SubmitForm: SubmitHandler<InputTypes>=(data:InputTypes)=>{
    
 
-        let {name,email,password,telefone}=data
-        let {bairro,complemento,numeroCasa,rua}=data
+        let {name,email,password,telefone}=data  //pegando dados de usuario
+        let {bairro,complemento,numeroCasa,rua}=data //pegando dados de endereco
         registerUser(name,email,password,telefone)
        
       
@@ -107,7 +102,7 @@ export const AccountPage=()=>{
             complemento:complemento
         }
 
-        if(user && address){
+      
             setDisabledState(true)
 
              dispatch({
@@ -116,19 +111,19 @@ export const AccountPage=()=>{
                     address:address
                 }
              })
-        }
+        
+        localStorage.setItem('addressRequests',JSON.stringify(newAddress))
        handleStateModal(false)
-       localStorage.setItem('addressRequests',JSON.stringify(newAddress))
-       navigate('/')
-       
+       document.location.href='/'
+
     }
-
-
 
     const isLogout=()=>{
         Logout()
-        navigate('/')
+        localStorage.removeItem('addressRequests')
         toast.success('conta deletada 😪')
+     document.location.href='/'
+    
     }
    
    
@@ -146,6 +141,7 @@ export const AccountPage=()=>{
                        placeholder='seu Nome' 
                          {...register('name')} 
                         disabled={disabledState}
+                        value={userState?.name}
                  />
                  <p className="error-msg">{errors.name?.message}</p>
               </div>
@@ -155,6 +151,7 @@ export const AccountPage=()=>{
                         placeholder='seu email' 
                         {...register('email')} 
                         disabled={disabledState}
+                        value={userState?.email}
                 /> 
                  <p className="error-msg">{errors.email?.message}</p>
               </div>
@@ -164,6 +161,7 @@ export const AccountPage=()=>{
                        placeholder='sua senha' 
                        {...register('password')}  
                        disabled={disabledState}
+                       value={userState?.password}
                 /> 
                  <p className="error-msg">{errors.password?.message}</p>
               </div>
@@ -173,6 +171,7 @@ export const AccountPage=()=>{
                      placeholder='seu telefone' 
                      {...register('telefone')}   
                      disabled={disabledState}
+                     value={userState?.telefone}
                     
                 /> 
                  <p className="error-msg">{errors.telefone?.message}</p>
@@ -187,6 +186,7 @@ export const AccountPage=()=>{
                                 placeholder='Digite  o nome da sua rua'  
                                 {...register('rua')}   
                                 disabled={disabledState}
+                                value={addressState?.rua}
                             /> 
                             <p className="error-msg">{errors.rua?.message}</p>
                         </div>
@@ -196,24 +196,26 @@ export const AccountPage=()=>{
                                 placeholder='Digite o número' 
                                 {...register('numeroCasa')}    
                                 disabled={disabledState} 
+                                value={addressState?.numero}
                             /> 
                             <p className="error-msg">{errors.numeroCasa?.message}</p>
                         </div>
                         <div className="cx-input">
                             <input 
                                
-                                  placeholder='Digite  o nome do seu bairro' 
-                                  {...register('bairro')}  
-                                  disabled={disabledState}
+                                 placeholder='Digite  o nome do seu bairro' 
+                                {...register('bairro')}  
+                                disabled={disabledState}
+                                value={addressState?.bairro}
                             /> 
                             <p className="error-msg">{errors.bairro?.message}</p>
                         </div>
                         <div className="cx-input">
                             <input  
-                               
-                                   placeholder='complemento' 
+                                  placeholder='complemento' 
                                    {...register('complemento')}   
                                    disabled={disabledState} 
+                                   value={addressState?.complemento}
                            /> 
                             <p className="error-msg">{errors.complemento?.message}</p>
                         </div>
@@ -221,7 +223,7 @@ export const AccountPage=()=>{
               </div>
                
                <div className="cx-button">
-                 {!user && disabledState &&   <button type='button'  onClick={()=>setDisabledState(false)}>cadastrar </button>}
+                 {!user && disabledState &&   <button type='button'  onClick={()=>setDisabledState(false)}> cadastrar </button>}
                   {!disabledState && <button   type={'submit'}> Salvar<img  height={30} width={30} src={SaveIcon} /></button> }
                   {user && disabledState && <button onClick={()=>setDisabledState(false)} type='button'>Editar <img height={30} width={30} src={LapisIcon} alt="" /></button> }
                   {user && disabledState && <button onClick={isLogout} type='button'>Deletar conta<img  height={30} width={30} src={LixeiraIcon} alt="" /></button> }

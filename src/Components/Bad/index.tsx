@@ -30,8 +30,7 @@ export const Bad=()=>{
     const navigate=useNavigate()
     let {stateModal,handleStateModal}=useModalLogin()
     const {user,address}=useAuthContext()
-    const [addressState,setAddressState]=useState<AddressType | null>(address)
-    
+ 
  
 
     useEffect(()=>{
@@ -40,9 +39,9 @@ export const Bad=()=>{
      
     },[state.products,state.requests])
 
-    useEffect(()=>{
-       setAddressState(address)
-    },[address])
+
+
+
  
  const clickDisplayBad=()=>{
        if(!displayBad){
@@ -105,11 +104,11 @@ export const Bad=()=>{
                   }
                </div>
                 <div className='area-address'>
-                    {user  &&  addressState !== null ?
+                    {user  &&  address !== null ?
                        <>
-                         <em>Rua {addressState?.rua } </em> 
-                         <em>Bairro  {addressState?.bairro} </em>  
-                         <em>numero {addressState?.numero} </em> 
+                         <em>Rua {address?.rua} </em>  
+                         <em>Bairro {address?.bairro} </em>  
+                         <em>numero {address?.numero} </em> 
                        </>
                           :'Faça Login/Cadastro para adicionar um endereço'
                     }

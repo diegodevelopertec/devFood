@@ -19,7 +19,6 @@ import { useContextApp } from "../../hooks/useContextApp"
 import { BannerPromotions } from "../../Components/BannerPromotions"
 import { useLocation, useNavigate } from "react-router-dom"
 import { useModalLogin } from "../../hooks/useModeLogin"
-import { useSearchParams } from "react-router-dom"
 import { useAuthContext } from "../../hooks/useContextAuth"
 import  womanBurguer from './../../assets/imgs/banner_main_rf.png'
 import  womanBurguerMain from './../../assets/imgs/banner_main2.png'
@@ -43,7 +42,7 @@ export const Showcase=()=>{
   
    
 
-  
+ 
 
 
     const clikedOnModal=()=>{ 
@@ -105,9 +104,9 @@ export const Showcase=()=>{
 
   
 return <S.Container>
+          <BannerPromotions />
      
      
-     <BannerPromotions  />
     {  <S.ContainerCaseLogged className="cx-logado">
                 <div className="area-img">
                     <img src={user?.name ? womanBurguerMain : womanBurguer} alt="" />
@@ -128,6 +127,7 @@ return <S.Container>
                 </div>
      </S.ContainerCaseLogged>
      }
+
     <S.CategorySectionProducts>
       <>
       <p>Selecione uma categoria :</p>

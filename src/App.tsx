@@ -24,24 +24,11 @@ const App=()=>{
   const navigate=useNavigate()
  
 
+  useEffect(()=>{
+
+  },[])
   
- useEffect(()=>{
-    if(location.pathname  ===''){
-      setViewHome(true)
-      setViewAccount(false)
-      setViewDelivery(false)
-    }else if(  location.pathname ==='/user'){
-      setViewHome(false)
-      setViewAccount(true)
-      setViewDelivery(false)
-    }else if( location.pathname  ==='/pedidos'){
-      setViewHome(false)
-      setViewAccount(false)
-      setViewDelivery(true)
 
-    }
-
-  },[viewHome])
 
 
 
@@ -58,7 +45,7 @@ const App=()=>{
   const ClickViewDelivery=(e:any)=>{
     e.preventDefault()
    setViewDelivery(true)
-      navigate('/pedidos')
+      navigate('pedidos')
       setViewDelivery(true)
       setViewHome(false)
       setViewAccount(false)
@@ -67,7 +54,7 @@ const App=()=>{
   
   const ClickViewAccount=(e:any)=>{
     e.preventDefault()
-      navigate('/user')
+      navigate('user')
       setViewAccount(true)
       setViewHome(false)
       setViewDelivery(false)

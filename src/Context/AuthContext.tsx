@@ -18,10 +18,10 @@ type Props={
 
 type AuthType={
     user:UserType | null,
-   address:AddressType | null,
-   requestsHistory:RequestType | [],
+    address:AddressType | null,
+    requestsHistory:RequestType | [],
     LoginAuth:(email:string,password:string)=>boolean,
-    registerUser:(name:string,email:string,password:string,telefone:string)=>boolean
+    registerUser:(name:string,email:string,password:string,telefone:string)=>boolean,
     Logout:()=>void
 }
 
@@ -29,25 +29,21 @@ export const AuthContext=createContext<AuthType >(null!)
 
 
 
+
 export const AuthProvider=({children}:Props)=>{
-    const {handleStateModal}=useModalLogin()
-    const [user,setUser]=useState<UserType | null>(null)
-    const [address,setAddress]=useState<AddressType | null>(null)
-    const [token,setToken]=useState<string | null>()
-    const [requestsHistory,setRequestHistory]=useState<RequestType >([])
 
     useEffect(()=>{
 
         //Pegando token e dados do usuario do localstorage
         let userStorage =JSON.parse(localStorage.getItem('u') as string)
-        let tokenStorage=JSON.parse(localStorage.getItem('token') as string)
+        let tokenStorage=localStorage.getItem('token') as string
         let addressRequests=JSON.parse(localStorage.getItem('addressRequests') as string)
         let requestsHistory=JSON.parse(localStorage.getItem('requestsHistory') as string)
-
-
-
+    
+    
+    
         //setando dados do localStorage
-        if(userStorage && tokenStorage && addressRequests && requestsHistory){
+        if(userStorage ||  tokenStorage || addressRequests || requestsHistory){
           setUser(userStorage)
           setAddress(addressRequests)
           setToken(tokenStorage)
@@ -62,6 +58,14 @@ export const AuthProvider=({children}:Props)=>{
        
        
     },[])
+
+    const {handleStateModal}=useModalLogin()
+    const [user,setUser]=useState<UserType | null>(null)
+    const [address,setAddress]=useState<AddressType | null>(null)
+    const [token,setToken]=useState<string | null>()
+    const [requestsHistory,setRequestHistory]=useState<RequestType >([])
+
+ 
 
 
     const registerUser=(name:string,email:string,password:string,telefone:string)=>{
