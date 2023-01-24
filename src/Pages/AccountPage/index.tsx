@@ -135,13 +135,13 @@ export const AccountPage=()=>{
        </div>
        <S.dataUser>
             <form action="" >
-                <h3>Seus dados :</h3>
+                <h3>Seus Dados :</h3>
               <div className="cx-input"> 
                  <input  
                        placeholder='seu Nome' 
                          {...register('name')} 
                         disabled={disabledState}
-                        value={userState?.name}
+                       
                  />
                  <p className="error-msg">{errors.name?.message}</p>
               </div>
@@ -151,7 +151,7 @@ export const AccountPage=()=>{
                         placeholder='seu email' 
                         {...register('email')} 
                         disabled={disabledState}
-                        value={userState?.email}
+                       
                 /> 
                  <p className="error-msg">{errors.email?.message}</p>
               </div>
@@ -161,7 +161,7 @@ export const AccountPage=()=>{
                        placeholder='sua senha' 
                        {...register('password')}  
                        disabled={disabledState}
-                       value={userState?.password}
+                    
                 /> 
                  <p className="error-msg">{errors.password?.message}</p>
               </div>
@@ -171,7 +171,7 @@ export const AccountPage=()=>{
                      placeholder='seu telefone' 
                      {...register('telefone')}   
                      disabled={disabledState}
-                     value={userState?.telefone}
+                    
                     
                 /> 
                  <p className="error-msg">{errors.telefone?.message}</p>
@@ -186,7 +186,7 @@ export const AccountPage=()=>{
                                 placeholder='Digite  o nome da sua rua'  
                                 {...register('rua')}   
                                 disabled={disabledState}
-                                value={addressState?.rua}
+                              
                             /> 
                             <p className="error-msg">{errors.rua?.message}</p>
                         </div>
@@ -196,7 +196,7 @@ export const AccountPage=()=>{
                                 placeholder='Digite o número' 
                                 {...register('numeroCasa')}    
                                 disabled={disabledState} 
-                                value={addressState?.numero}
+                                
                             /> 
                             <p className="error-msg">{errors.numeroCasa?.message}</p>
                         </div>
@@ -206,7 +206,7 @@ export const AccountPage=()=>{
                                  placeholder='Digite  o nome do seu bairro' 
                                 {...register('bairro')}  
                                 disabled={disabledState}
-                                value={addressState?.bairro}
+                              
                             /> 
                             <p className="error-msg">{errors.bairro?.message}</p>
                         </div>
@@ -215,7 +215,7 @@ export const AccountPage=()=>{
                                   placeholder='complemento' 
                                    {...register('complemento')}   
                                    disabled={disabledState} 
-                                   value={addressState?.complemento}
+                                 
                            /> 
                             <p className="error-msg">{errors.complemento?.message}</p>
                         </div>

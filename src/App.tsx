@@ -13,7 +13,7 @@ import LogoIcon from '../src/assets/imgs/logo.png'
 import { useNavigate } from 'react-router-dom';
 import  useHistory from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
-
+import BurguerIcon from './../src/assets/imgs/iconhamburguer.png'
 
 const App=()=>{
   let location=useLocation()
@@ -24,9 +24,6 @@ const App=()=>{
   const navigate=useNavigate()
  
 
-  useEffect(()=>{
-
-  },[])
   
 
 
@@ -96,7 +93,7 @@ const App=()=>{
           <S.HeaderApp>
             <S.CardLoja>
               <div className="logo">
-                   <img src={LogoIcon} alt="" /> <span>BãoLanche</span>
+                   <img src={BurguerIcon} alt="" /> <span>BãoLanche</span>
               </div>
              
             </S.CardLoja>

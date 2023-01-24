@@ -52,7 +52,6 @@ export const HeaderApp=styled.header`
     width: 100%;
 
 
-
 `
 export const CardLoja=styled.div`
     display:flex;
