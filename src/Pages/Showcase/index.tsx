@@ -7,7 +7,7 @@ import BebidasIcon from '../../assets/imgs/iconBebida.png'
 import ResturantIcon from '../../assets/imgs/restaurante.png'
 import PizzaIcon from '../../assets/imgs/iconspizza.png'
 import LanchesIcon from '../../assets/imgs/iconhamburguer.png'
-import { ButtonMenu } from "../../Components/ButtonMenu"
+import { ButtonMenuCategory } from "../../Components/ButtonMenuCategory"
 import { CardCliked } from "../../Components/CardProductCliked"
 import { dataPizza } from "../../data/Product"
 import { dataDrinks } from "../../data/Product"
@@ -22,7 +22,6 @@ import { useModalLogin } from "../../hooks/useModeLogin"
 import { useAuthContext } from "../../hooks/useContextAuth"
 import  womanBurguer from './../../assets/imgs/banner_main_rf.png'
 import  womanBurguerMain from './../../assets/imgs/banner_main2.png'
-
 
 export const Showcase=()=>{
    
@@ -40,7 +39,7 @@ export const Showcase=()=>{
     const isLogged=stateModal
     let {user}=useAuthContext()
   
-   
+
 
  
 
@@ -132,21 +131,22 @@ return <S.Container>
       <>
       <p>Selecione uma categoria :</p>
         <div className="cx-btn-icons">
-            <ButtonMenu  bg={ThemeStyle.bgTheme} 
-                 iconActive={displayBurguer ? true : false} src={LanchesIcon} 
+            <ButtonMenuCategory  bg={ThemeStyle.bgTheme} 
+                 iconActive={displayBurguer ? true : false} 
+                 src={LanchesIcon} 
                  marginhorizontal='10' marginvertical='10'  
                  onClick={actionDisplayBurguers}
                  id='btnHome'
                 
             />
-            <ButtonMenu bg={ThemeStyle.bgTheme} 
+            <ButtonMenuCategory bg={ThemeStyle.bgTheme} 
                 iconActive={displayDrinks ? true : false} src={BebidasIcon} 
                 marginhorizontal='10' 
                 marginvertical='10'  
                 onClick={actionDisplayDrinks} 
                 id='btnHome'
             />
-            <ButtonMenu bg={ThemeStyle.bgTheme} 
+            <ButtonMenuCategory bg={ThemeStyle.bgTheme} 
                 iconActive={displayPizzas ? true : false} src={PizzaIcon} 
                 marginhorizontal='10' 
                 marginvertical='10' 

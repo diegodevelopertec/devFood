@@ -3,7 +3,7 @@ import { ThemeStyle } from "../../styled";
 
 export const  Container=styled.div`
     width: 100%;
-   margin-bottom:170px;
+   margin:70px 0;
     height: 100%;
     overflow-y:scroll;
     background:${ThemeStyle.bgAppSystem};
@@ -11,8 +11,7 @@ export const  Container=styled.div`
     overflow: auto;
  
     .intro{
-        margin:20px 0;
-        height: 100px;
+      margin: 30px 0;
         h3{
             margin:12px 0;
         }
@@ -20,6 +19,7 @@ export const  Container=styled.div`
 
     .requests-container{
         display:block;
+        flex:1;
     }
 
 

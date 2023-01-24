@@ -26,7 +26,7 @@ export const ContainerBanner=styled.div`
   }
 `
 export const CategorySectionProducts=styled.div`
-    margin: 20px 0 0 ;
+    margin: 60px 0 0 ;
     color:${ThemeStyle.colorTitleCard};
     font-weight:bold;
     background-color:${ThemeStyle.bgAppSystem};
@@ -45,10 +45,12 @@ export const CategorySectionProducts=styled.div`
     }
    .cx-btn-icons{
         display: flex;
-        margin: 20px 0 0px 80px;
+        margin: 20px 0;
+    
        
     }
-    padding: 20px 10px;
+    padding: 15px;
+   
 
     @media screen and (max-width:950px){
         justify-content:center;
@@ -78,6 +80,8 @@ export const ShowcaseProduct=styled.div<Props>`
     background-color:${ThemeStyle.bgAppSystem};
     @media screen and (max-width:920px){
       grid-template-columns:repeat(2,1fr);
+    justify-content:center;
+    align-items:center;
       padding-bottom:50px;
    
     }
@@ -103,7 +107,6 @@ export const ContainerCaseLogged=styled.div`
   display: flex;
   align-items:center;
   margin: 60px 20px;
-  background: red;
   background: ${ThemeStyle.bgTheme};
   height:450px;
   color: #dadfe6;
@@ -145,17 +148,19 @@ export const ContainerCaseLogged=styled.div`
 
 @media screen and (max-width:950px){
 
-  display: none;
+  display:none;
   flex-direction:column;
   justify-content:center;
   align-items:center;
   width: 100%;
-  margin: 0;
+  margin: 90px 0;
+ 
     
     .area-img{
       width: 100%;
       display: flex;
       justify-content:center;
+      align-items:center;
       height: 300px;
       img{
         height: 100%;

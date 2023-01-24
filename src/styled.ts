@@ -4,7 +4,7 @@ import BgImage from '.././src/assets/imgs/bg.jpg'
 export const ThemeStyle={
     bgTheme:'#f04911',
      bgAppSystem:'#f5ad27',
-    // bgTheme:'#991d08',
+   // bgTheme:'#991d08',
     bgCardProductBottom:'#2f302f' ,
     colorTitleCard: 'black',
     colorIngredientsCategory:' #aaa',
@@ -105,7 +105,6 @@ export const Menu=styled.div`
 
 export const RightContent=styled.div`
     flex: 1;
-    background-size: contains ;
     background-color:${ThemeStyle.bgAppSystem};
     overflow-y:auto;
     ::-webkit-scrollbar{

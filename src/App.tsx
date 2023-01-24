@@ -16,73 +16,27 @@ import { useLocation } from 'react-router-dom';
 import BurguerIcon from './../src/assets/imgs/iconhamburguer.png'
 
 const App=()=>{
-  let location=useLocation()
-
-  const [viewHome,setViewHome]=useState(true)
-  const [viewAccount,setViewAccount]=useState(false)
-  const [viewDelivery,setViewDelivery]=useState(false)
-  const navigate=useNavigate()
- 
-
-  
-
-
-
-
-  const ClickViewHome=(e:any)=>{
-    e.preventDefault()
-    navigate('')
-    setViewHome(true)
-    setViewAccount(false)
-    setViewDelivery(false)
-   
-      
-  
-  }
-  const ClickViewDelivery=(e:any)=>{
-    e.preventDefault()
-   setViewDelivery(true)
-      navigate('pedidos')
-      setViewDelivery(true)
-      setViewHome(false)
-      setViewAccount(false)
-   
-  }
-  
-  const ClickViewAccount=(e:any)=>{
-    e.preventDefault()
-      navigate('user')
-      setViewAccount(true)
-      setViewHome(false)
-      setViewDelivery(false)
-  
-   
-  }
 
   return <S.Body>
         <S.LeftContent>
             <S.Menu>
-              <ButtonMenu link='/'
-                  onClick={ClickViewHome} 
-                  iconActive={viewHome} 
-                  src={LojaIcon}  
+              <ButtonMenu 
+                  src={LojaIcon}
+                  link={'/'}  
                   marginhorizontal='10' 
                   text='inicio'
                   marginvertical='10' />
               <ButtonMenu 
-                  link='pedidos' 
-                  onClick={ClickViewDelivery}  
-                  iconActive={viewDelivery} 
+                  link={'/pedidos'}  
                   src={MotoIcon} 
+                
                   marginhorizontal='10' 
                   marginvertical='10' 
                   text='pedidos'/>
                     
               <ButtonMenu  
-                 onClick={ClickViewAccount} 
-                iconActive={viewAccount} 
                  src={UserIcon} 
-                 link='user'
+                 link={'/user' }
                  marginhorizontal='10' 
                  marginvertical='10' 
                  text='conta'/>

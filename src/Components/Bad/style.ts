@@ -33,11 +33,12 @@ export const Container=styled.div<Props>`
          width:${props=>props.displayBad === true ? '100vw' : '60px'};
          margin:${props=>props.displayBad === true ? '0' : '0'};
          margin-bottom:${props=>props.displayBad === true ? '0' : '30vh'};
-         top:${props=>props.displayBad === true ? '0' : '76vh'};
-         bottom:${props=>props.displayBad === true ? '0' : '150px'};
+         top:${props=>props.displayBad === true ? '0' : '70vh'};
+         bottom:${props=>props.displayBad === true ? '0' : '0'};
          right:${props=>props.displayBad === true ? '0' : '8px'};
          border-radius:${props=>props.displayBad === true ? '0' : '60px'};
          overflow:hidden;
+       
          
         
       
@@ -166,9 +167,10 @@ export const BadBody=styled.div<Props>`
 
   
  //375,360,540,
- @media screen and (max-width:920px){
+ @media screen and (max-width:700px){
+  height: 100%;
   .area-listproduct{
-      height:80vh;
+      height: 80%;
       padding: 30px 5px;
      }
 

@@ -9,7 +9,8 @@ type Prop={
     bg?:string,
     marginvertical:string,
     marginhorizontal:string,
- // iconActive:boolean;
+  iconActive:boolean;
+    onClick?:(e:any)=>void,
     link?:string,
     text?:string,
     width?:string,
@@ -19,17 +20,9 @@ type Prop={
 }
 
 
-export const ButtonMenu=({src,bg,marginhorizontal,marginvertical,link,text,width,id}:Prop)=>{
+export const ButtonMenuCategory=({src,bg,marginhorizontal,marginvertical,onClick,iconActive,link,text,width,id}:Prop)=>{
  
-  let navigate=useNavigate()
-  let isActive=location.pathname === link
-  const handleClick=(e:any)=>{
-    e.preventDefault()
-    navigate(`${link}`)
-}
-
-
-    return  <S.ContainerButtonMenu  href={link}  id={id} bgColor={bg} mh={marginhorizontal} mv={marginvertical} bgColorActive={isActive} onClick={handleClick} >
+    return  <S.ContainerButtonMenu  href={link}  id={id} bgColor={bg} mh={marginhorizontal} mv={marginvertical} bgColorActive={iconActive} onClick={onClick} >
         <S.ButtonIcon src={src} />   
         <S.TextButton>
         {text}

@@ -27,9 +27,6 @@ type AuthType={
 
 export const AuthContext=createContext<AuthType >(null!)
 
-
-
-
 export const AuthProvider=({children}:Props)=>{
 
     useEffect(()=>{
@@ -38,17 +35,17 @@ export const AuthProvider=({children}:Props)=>{
         let userStorage =JSON.parse(localStorage.getItem('u') as string)
         let tokenStorage=localStorage.getItem('token') as string
         let addressRequests=JSON.parse(localStorage.getItem('addressRequests') as string)
-        let requestsHistory=JSON.parse(localStorage.getItem('requestsHistory') as string)
+        let requestsHistoryStorage=JSON.parse(localStorage.getItem('requestsHistory') as string)
     
     
     
         //setando dados do localStorage
-        if(userStorage ||  tokenStorage || addressRequests || requestsHistory){
+        if(userStorage ||  tokenStorage || addressRequests || requestsHistoryStorage){
           setUser(userStorage)
           setAddress(addressRequests)
           setToken(tokenStorage)
           handleStateModal(false)
-          setRequestHistory(requestsHistory)
+          setRequestHistory(requestsHistoryStorage)
         }
       
         
@@ -64,7 +61,6 @@ export const AuthProvider=({children}:Props)=>{
     const [address,setAddress]=useState<AddressType | null>(null)
     const [token,setToken]=useState<string | null>()
     const [requestsHistory,setRequestHistory]=useState<RequestType >([])
-
  
 
 
