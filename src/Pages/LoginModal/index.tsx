@@ -6,6 +6,7 @@ import * as yup from 'yup'
 import {yupResolver} from '@hookform/resolvers/yup'
 import './../../helpers/msgsYup'
 import { useAuthContext } from '../../hooks/useContextAuth';
+import iconLogo  from './../../assets/imgs/iconhamburguer.png'
 
 type InputTypes={
     email:string,
@@ -41,7 +42,7 @@ export const LoginModal=({closeModal}:Props)=>{
            </div>
            <div className="cx-login">
               
-               <span className='cx-logo'><img src={LojaIcon} alt="" /> <h2>Rangoo</h2></span>
+               <span className='cx-logo'><img src={iconLogo} alt="" /> <h2>BãoLanche</h2></span>
            </div>
             <p>Faça login na sua conta para continuar o pedido :</p>
         </div>
