@@ -1,9 +1,7 @@
 import styled from "styled-components";
 import { ThemeStyle } from "../../styled";
 
-type PropsForm={
-    inputACtive:boolean
-}
+
 
 export const Container=styled.div`
     width:100%;
@@ -15,7 +13,7 @@ export const Container=styled.div`
     
 `
 
-export const dataUser=styled.div<PropsForm>`
+export const dataUser=styled.div`
 
 form{
     display: flex;
