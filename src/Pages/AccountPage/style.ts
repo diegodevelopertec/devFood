@@ -1,7 +1,9 @@
 import styled from "styled-components";
 import { ThemeStyle } from "../../styled";
 
-
+type PropsForm={
+    inputACtive:boolean
+}
 
 export const Container=styled.div`
     width:100%;
@@ -13,7 +15,7 @@ export const Container=styled.div`
     
 `
 
-export const dataUser=styled.div`
+export const dataUser=styled.div<PropsForm>`
 
 form{
     display: flex;
@@ -30,7 +32,7 @@ form{
                 .cx-input{
                     input{
                         width: 100%;
-                        background-color: props.inputDisable =>props.inpuDisable ? 'red' : 'auto';
+                       
                     }
                 }
                 @media screen and (max-width:950px){

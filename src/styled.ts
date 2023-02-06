@@ -2,9 +2,8 @@ import styled from 'styled-components'
 import BgImage from '.././src/assets/imgs/bg.jpg'
 
 export const ThemeStyle={
-    bgTheme:'#f04911',
-     bgAppSystem:'#f5ad27',
-   // bgTheme:'#991d08',
+    bgTheme:'orange',
+     bgAppSystem:'#092036',
     bgCardProductBottom:'#2f302f' ,
     colorTitleCard: 'black',
     colorIngredientsCategory:' #aaa',

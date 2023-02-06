@@ -14,7 +14,8 @@ export const Container=styled.div`
 export const  RequestHeader=styled.div`
     background:#b3b2af;
     border-radius:5px; 
-    color:${ThemeStyle.bgTheme};
+    color:black;
+    text-transform: uppercase;
     padding: 20px 12px;
     display:flex;
     justify-content:space-between;
@@ -116,9 +117,9 @@ export const AreaAdress=styled.div`
     display: flex;
     flex-direction:column;
     font-style:italic;
-    background: ${ThemeStyle.bgAppSystem};
+    background:#eee;
     padding:  10px;
-    border-radius:9px;
+    border-radius:3px;
      h4{
         padding: 10px ;
      }

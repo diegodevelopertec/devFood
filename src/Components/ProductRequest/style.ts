@@ -37,11 +37,11 @@ border-radius:5px;
       }
 
       @media screen and (max-width:950px){
-        img{
+        
           img{
-        weight:25px;
-        height: 25px;
-      }
+              width:25px;
+              height: 25px;
+      
         }
       }
   }
