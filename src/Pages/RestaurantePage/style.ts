@@ -10,30 +10,30 @@ export const Container=styled.div`
 `
 
 export const Containercardápio=styled.div`
-display: flex;
-align-items:center;
-flex-direction:column;
+    display: flex;
+    align-items:center;
+    flex-direction:column;
 
-.check{
-        input{
-            margin: 20px;
-            margin-right:5px;
-        }
+    .check{
+            input{
+                margin: 20px;
+                margin-right:5px;
+            }
     }
 
     .cx-img{
-        display:flex;
-        justify-content:center;
-        padding:20px 0;
-        margin:30px 0;
-        img{
-        border-radius:5px;
-        background: #475fa1;
-        img{
-            width: 100%;
-        }
+            display:flex;
+            justify-content:center;
+            padding:20px 0;
+            margin:30px 0;
+              img{
+                border-radius:5px;
+                background: #475fa1;
+                img{
+                    width: 100%;
+                }
+             }
     }
-}
 
 .area-cardapio{
     display: flex;
@@ -47,8 +47,8 @@ flex-direction:column;
         width:30%;
         list-style:inside;
         padding: 20px;
-
     }
+    
     .right-bottom{
         display: flex;
         justify-content:center;

@@ -9,30 +9,27 @@ export const Container=styled.div`
     width: 100%;
     font-size:20px;
     overflow-x:hidden;
-
-  
-  @media screen and   (max-width:950px){
-     padding-bottom:50px;
-   }
+    @media screen and   (max-width:950px){
+      padding-bottom:50px;
+    }
 `
 
 
 export const ContainerBanner=styled.div`
     display:flex;
     justify-content:center;
-  
-  @media screen and (max-width:950px){
-    width: 100vw;
-  }
+       @media screen and (max-width:950px){
+         width: 100vw;
+       }
 `
 export const CategorySectionProducts=styled.div`
     margin: 60px 0 0 ;
-    color:${ThemeStyle.colorTitleCard};
+    padding: 15px;
+    color:${ThemeStyle.colorIngredientsCategory};
     font-weight:bold;
     background-color:${ThemeStyle.bgAppSystem};
     flex-direction:columns;
-    font-size:15px;
-
+    font-size:16px;
 
     .category-title{
        padding-top:15px;
@@ -40,16 +37,16 @@ export const CategorySectionProducts=styled.div`
         span{
             margin-left:10px;
             text-decoration:underline;
-            color: ${ThemeStyle.colorTitleCard};
+            color: ${ThemeStyle.bgTheme};
         }
     }
+
    .cx-btn-icons{
         display: flex;
         margin: 20px 0;
     
-       
-    }
-    padding: 15px;
+     }
+   
    
 
     @media screen and (max-width:950px){

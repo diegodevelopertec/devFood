@@ -8,8 +8,8 @@ export const ThemeStyle={
     colorTitleCard: 'black',
     colorIngredientsCategory:' #aaa',
     colorTextCard: '',
-    bgHoverIcon:'#941c07',
-    bgActiveIconMenu:'#e88420'
+    bgHoverIcon:'#e3b944',
+    bgActiveIconMenu:'#bf7813'
 
 }
 

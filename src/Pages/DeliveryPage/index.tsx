@@ -14,13 +14,9 @@ export const DeliveryPage=()=>{
   const {state,dispatch}=useContextApp()
   const {address,requestsHistory}=useAuthContext()
   const userStorage:UserType=JSON.parse(localStorage.getItem('u') as string)
- 
 
-  
-
-
-const FilterRequestsPending= state.requests.filter(item=>item.state === 'pendente')
-const FilterRequestsDelivered=state.requests.filter(item=>item.state === 'entregue') 
+  const FilterRequestsPending= state.requests.filter(item=>item.state === 'pendente')
+  const FilterRequestsDelivered=state.requests.filter(item=>item.state === 'entregue') 
 
 
 

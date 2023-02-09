@@ -62,7 +62,7 @@ export const Container=styled.div`
     .form{
         width: 100%;
         .erros-form{
-            color: #7a3b41;
+            color: #d43d1c;
             font-size:13px;
         }
         input{
@@ -90,6 +90,7 @@ export const Container=styled.div`
         margin: 25px ;
         a{
             text-decoration:none;
+            color: #6c81ba;
             &:hover{
                 cursor:pointer;
                 text-decoration:underline;

@@ -17,7 +17,6 @@ import { ThemeStyle } from "../../styled"
 import { LoginModal } from "../LoginModal"
 import { useContextApp } from "../../hooks/useContextApp"
 import { BannerPromotions } from "../../Components/BannerPromotions"
-import { useLocation, useNavigate } from "react-router-dom"
 import { useModalLogin } from "../../hooks/useModeLogin"
 import { useAuthContext } from "../../hooks/useContextAuth"
 import  womanBurguer from './../../assets/imgs/banner_main_rf.png'
@@ -44,12 +43,10 @@ export const Showcase=()=>{
  
 
 
-    const clikedOnModal=()=>{ 
-       setModalToCard(true)
-    }
-    const closeModal=()=>{
-        setModalToCard(false)
-    }
+ //   const clikedOnModal=()=>setModalToCard(true)
+    
+ //   const closeModal=()=>setModalToCard(false)
+    
 
 
     const actionDisplayBurguers=()=>{
@@ -80,7 +77,7 @@ export const Showcase=()=>{
     //função de setar dados de cada car para o card modal
     const returnDataClikedProduct=(data:Product)=>{
         setDataProductCliked(data)
-        clikedOnModal()
+        setModalToCard(true)
    
     }
 
@@ -131,7 +128,8 @@ return <S.Container>
       <>
       <p>Selecione uma categoria :</p>
         <div className="cx-btn-icons">
-            <ButtonMenuCategory  bg={ThemeStyle.bgTheme} 
+            <ButtonMenuCategory  
+                 bg={ThemeStyle.bgTheme} 
                  iconActive={displayBurguer ? true : false} 
                  src={LanchesIcon} 
                  marginhorizontal='10' marginvertical='10'  
@@ -180,7 +178,7 @@ return <S.Container>
     </S.ShowcaseProduct>
    
     {stateModalToCard && <S.ContainerModal>
-        <CardCliked   data={dataProductCliked} funcOffModal={closeModal}/>
+        <CardCliked   data={dataProductCliked} funcOffModal={()=>setModalToCard(false)}/>
      </S.ContainerModal>
      }
  { isLogged ? <S.ContainerModal>

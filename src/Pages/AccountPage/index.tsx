@@ -128,17 +128,17 @@ export const AccountPage=()=>{
    
    
     
-    return <S.Container  onSubmit={handleSubmit(SubmitForm)}>
+    return <S.Container onSubmit={handleSubmit(SubmitForm)}>
     
        <div className="cx-title">
                 <p>Aqui você pode editar e alterar dados da sua conta</p>
        </div>
-       <S.dataUser>
+       <S.Form  active={disabledState} >
             <form action="" >
                 <h3>Seus Dados :</h3>
               <div className="cx-input"> 
                  <input  
-                       placeholder='seu Nome' 
+                       placeholder='Digite seu Nome' 
                          {...register('name')} 
                         disabled={disabledState}
                        
@@ -148,31 +148,27 @@ export const AccountPage=()=>{
               <div className="cx-input">
                  <input 
                       
-                        placeholder='seu email' 
+                        placeholder='Digite seu email' 
                         {...register('email')} 
-                        disabled={disabledState}
-                       
+                        disabled={disabledState}     
                 /> 
                  <p className="error-msg">{errors.email?.message}</p>
               </div>
               <div className="cx-input">
                  <input
                        type={'password'}
-                       placeholder='sua senha' 
+                       placeholder='Digite sua senha' 
                        {...register('password')}  
-                       disabled={disabledState}
-                    
+                       disabled={disabledState}  
                 /> 
                  <p className="error-msg">{errors.password?.message}</p>
               </div>
               <div className="cx-input">
                  <input  
                     type={'tel'}
-                     placeholder='seu telefone' 
+                     placeholder='Digite seu telefone' 
                      {...register('telefone')}   
                      disabled={disabledState}
-                    
-                    
                 /> 
                  <p className="error-msg">{errors.telefone?.message}</p>
               </div>
@@ -181,8 +177,6 @@ export const AccountPage=()=>{
                    <div className="data-address">
                         <div className="cx-input">
                             <input  
-                              
-                              
                                 placeholder='Digite  o nome da sua rua'  
                                 {...register('rua')}   
                                 disabled={disabledState}
@@ -229,6 +223,6 @@ export const AccountPage=()=>{
                   {user && disabledState && <button onClick={isLogout} type='button'>Deletar conta<img  height={30} width={30} src={LixeiraIcon} alt="" /></button> }
                </div>
             </form>
-       </S.dataUser>
+       </S.Form>
     </S.Container>
 }

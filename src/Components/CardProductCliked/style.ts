@@ -87,7 +87,7 @@ export const ContainerData=styled.div`
            
         }
         .category{
-            color:${ThemeStyle.bgAppSystem};
+            color:${ThemeStyle.colorIngredientsCategory};
             font-size:13px;
            
         }
