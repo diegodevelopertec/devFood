@@ -20,3 +20,4 @@
     Na sacola ele pode remover,aumentar ou dminuir a quantidade do produto especifico,ao tentar efetuar a compra o sistema verificará se esstá logado ou não,se sim,a compra será feita,senão else será redirecionado
     á pagina de login que por sua vez faz o redirecionamento para a página de cadastro.Na página de cadastro o usuário poderá ser cadastar  e seus dados serão salvos no locaStorage.
 </p>
+<p>Deploy: <a href='https://dev-food.vercel.app/'>https://dev-food.vercel.app/</a></p>
