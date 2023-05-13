@@ -1,4 +1,4 @@
-import { toast } from "react-toastify";
+import {toast} from 'react-toastify';
 import { Product } from "../../Types/Products";
 import { ActionTypeGeral } from "../../Types/TypeAction";
 
@@ -7,6 +7,9 @@ import { ActionTypeGeral } from "../../Types/TypeAction";
 
 
 export const initialStateProductBad=[]
+
+
+
 export const useProductBadReducer=(state:Product[] ,action:ActionTypeGeral)=>{
     
     let listProducts = [...state]

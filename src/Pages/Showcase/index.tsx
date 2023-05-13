@@ -100,7 +100,7 @@ export const Showcase=()=>{
 
   
 return <S.Container>
-          <BannerPromotions />
+         
      
      
     {  <S.ContainerCaseLogged className="cx-logado">

@@ -6,9 +6,13 @@ import { BrowserRouter as RouterApp } from 'react-router-dom'
 import { ContextProvider } from './Context/ContextProvider'
 import { AuthProvider } from './Context/AuthContext'
 import {ModalLoginProvider} from './../src/Context/modaLoginContext'
+import { MenuMobileProvider } from './Context/menuMobileContext'
+
+
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-   <ModalLoginProvider>
+   <MenuMobileProvider>
+      <ModalLoginProvider>
       <ContextProvider>
             <AuthProvider>
                      <RouterApp>
@@ -19,4 +23,5 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
             </AuthProvider>
    </ContextProvider>
  </ModalLoginProvider>
+   </MenuMobileProvider>
 )

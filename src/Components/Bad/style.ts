@@ -23,7 +23,7 @@ export const Container=styled.div<Props>`
     border-top-right-radius:5px;
     margin-top:12px;
     transition:all ease  2;
-    @media screen and (max-width:912px){
+    @media screen and (max-width:950px){
    
          position:${props=>props.displayBad === true ? 'absolute' : 'fixed'};
          height:${props=>props.displayBad === true ? '100vh' : '60px'};
@@ -35,7 +35,7 @@ export const Container=styled.div<Props>`
          margin-bottom:${props=>props.displayBad === true ? '0' : '30vh'};
          top:${props=>props.displayBad === true ? '0' : '70vh'};
          bottom:${props=>props.displayBad === true ? '0' : '0'};
-         right:${props=>props.displayBad === true ? '0' : '8px'};
+         left:${props=>props.displayBad === true ? '0' : '12px'};
          border-radius:${props=>props.displayBad === true ? '0' : '60px'};
          overflow:hidden;
        

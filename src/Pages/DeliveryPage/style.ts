@@ -24,9 +24,7 @@ export const  Container=styled.div`
 
 
     .error-requests{
-       opacity:0.7;
        color:#6d6d6e;
-       // flex:  1;
      margin-top:100px;
         display: flex;
         justify-content:center;

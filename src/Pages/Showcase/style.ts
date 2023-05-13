@@ -25,8 +25,8 @@ export const ContainerBanner=styled.div`
 export const CategorySectionProducts=styled.div`
     margin: 60px 0 0 ;
     padding: 15px;
-    color:${ThemeStyle.colorIngredientsCategory};
-    font-weight:bold;
+    color:${'#171716'};
+    font-weight:700;
     background-color:${ThemeStyle.bgAppSystem};
     flex-direction:columns;
     font-size:16px;
@@ -52,6 +52,7 @@ export const CategorySectionProducts=styled.div`
     @media screen and (max-width:950px){
         justify-content:center;
         text-align:center;
+        margin-top: 160px;
         .cx-btn-icons{
             justify-content:center;
             margin: 0;

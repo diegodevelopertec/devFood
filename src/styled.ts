@@ -3,11 +3,12 @@ import BgImage from '.././src/assets/imgs/bg.jpg'
 
 export const ThemeStyle={
     bgTheme:'orange',
-     bgAppSystem:'#092036',
+     bgAppSystem:'#FFFF',
+     //'#092036',
     bgCardProductBottom:'#2f302f' ,
     colorTitleCard: 'black',
     colorIngredientsCategory:' #aaa',
-    colorTextCard: '',
+    colorTextCard: '#171716',
     bgHoverIcon:'#e3b944',
     bgActiveIconMenu:'#bf7813'
 
@@ -16,7 +17,6 @@ export const ThemeStyle={
 export const Body=styled.div`
     display:flex;
     height:100vh;
-    width: 100vw;
     overflow:hidden;
     background-color:${ThemeStyle.bgAppSystem};
 
@@ -31,6 +31,7 @@ export const LeftContent=styled.div`
     align-items:center;
     @media screen  and (max-width:950px){
      position:fixed;
+     display: none;
      z-index:1;
      bottom:0;
      top: 90;
@@ -54,21 +55,18 @@ export const HeaderApp=styled.header`
 `
 export const CardLoja=styled.div`
     display:flex;
-    justify-content:space-around;
-    align-items:center;
-    background-color: ${ThemeStyle.bgTheme};
+    justify-content:start;
     width: 100%;
     height: 80px;
     margin:30px 15px;
     min-height: 100px;
     border-radius:10px;
-    box-shadow: 0 0 5px #000;
+    color: ${ThemeStyle.bgTheme};
         .logo{
-            font-size:2rem;
-            color: white;
+            font-size:25px;
             display: flex;
-            justify-content:center;
-            align-items:center;
+            justify-content: start;
+            align-items: center;
             img{
                 height: 80px;
                 width: 80px;
@@ -81,6 +79,7 @@ export const CardLoja=styled.div`
     @media screen and (max-width:950px){
         flex-direction:column;
         padding: 10px 0;
+        display: none;
        
       
     }

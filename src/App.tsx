@@ -14,6 +14,7 @@ import { useNavigate } from 'react-router-dom';
 import  useHistory from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import BurguerIcon from './../src/assets/imgs/iconhamburguer.png'
+import { HeaderMobile } from './Components/HeaderMobile';
 
 const App=()=>{
 
@@ -44,10 +45,11 @@ const App=()=>{
         </S.LeftContent>
 
         <S.RightContent>
+          <HeaderMobile />
           <S.HeaderApp>
             <S.CardLoja>
               <div className="logo">
-                   <img src={BurguerIcon} alt="" /> <span>BãoLanche</span>
+                 <span>BãoLanche</span>
               </div>
              
             </S.CardLoja>
