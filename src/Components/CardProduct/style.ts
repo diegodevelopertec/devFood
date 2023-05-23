@@ -9,7 +9,7 @@ export const Container=styled.div`
     border-radius:6px;
     background: ${ThemeStyle.bgCardProductBottom};
     @media screen and (max-width:600px){
-    font-size:10px;
+     font-size:10px;
      
     }
    
@@ -56,18 +56,20 @@ export const DataProduct=styled.div`
             .category--name{
                     color: ${ThemeStyle.colorIngredientsCategory};
                     padding: 5px 0;
-                    font-size:11px;
+                    font-size:18px;
                     text-transform: capitalize;
                 }
                 h4{
-                    font-size:17px;
+                    font-size:22px;
                     color: ${ThemeStyle.colorTitleCard};
                    
                 }
                 p{
                     color: ${ThemeStyle.colorIngredientsCategory};
                     margin: 10px 0;
-                    font-size:1rem;
+                    font-size: 15px;
+                    line-height: normal;
+                    padding: 6px;
                 }
                 .price{
                     color: ${ThemeStyle.bgTheme};
@@ -78,14 +80,12 @@ export const DataProduct=styled.div`
                 }
                 .ingredientes-text{
                     word-break:break-all;
-                    font-size:12px;
                     margin: 6px 0;
-                    height: 20px;
+                    height: max-content;
                     color: ${ThemeStyle.colorIngredientsCategory};
                 }
 
-                @media screen and (max-width:600px){
-                        font-size:1rem;
+                @media screen and (max-width:700px){
                         flex-wrap:wrap;
                         .ingredientes-text{
                             display:none;
@@ -128,14 +128,6 @@ export const DataProduct=styled.div`
         }
                     
             }
-         }
-         @media screen and (max-width:600px){
-              padding:0;
-         }
-    }
-
-    @media screen and (max-width:600px){
-      padding: 0 5px;
-      width: 100%;
-    }
+         
+       
 `

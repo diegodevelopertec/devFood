@@ -24,7 +24,6 @@ display: none;
 export const BoxLeft=styled.div`
 
 h3{
-    font-family: Roboto;
     color: #FFF;
     font-weight: 700;
 }

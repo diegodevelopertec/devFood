@@ -1,19 +1,12 @@
-import React, { useEffect } from 'react';
-import { useState } from 'react'
+import LojaIcon from './assets/imgs/lojaicon.png'
+import MotoIcon from './assets/imgs/moto.png'
+import UserIcon from './assets/imgs/user.png'
+import Inter from './assets/imgs/intericon.png'
 import * as S from './styled'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Routes } from './Routes'
 import { ButtonMenu } from './Components/ButtonMenu'
-import BurguerImage from '.././src/assets/imgs/burguer.png'
-import UserIcon from '.././src/assets/imgs/user.png'
-import LojaIcon from '.././src/assets/imgs/lojaicon.png'
-import MotoIcon from '.././src/assets/imgs/moto.png'
-import LogoIcon from '../src/assets/imgs/logo.png'
-import { useNavigate } from 'react-router-dom';
-import  useHistory from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
-import BurguerIcon from './../src/assets/imgs/iconhamburguer.png'
 import { HeaderMobile } from './Components/HeaderMobile';
 
 const App=()=>{
@@ -30,8 +23,7 @@ const App=()=>{
               <ButtonMenu 
                   link={'/pedidos'}  
                   src={MotoIcon} 
-                
-                  marginhorizontal='10' 
+                    marginhorizontal='10' 
                   marginvertical='10' 
                   text='pedidos'/>
                     
@@ -40,20 +32,19 @@ const App=()=>{
                  link={'/user' }
                  marginhorizontal='10' 
                  marginvertical='10' 
+                 text='conta'
+              />
+                <ButtonMenu  
+                 src={Inter} 
+                 link={'/sobre' }
+                 marginhorizontal='10' 
+                 marginvertical='10' 
                  text='conta'/>
-            </S.Menu>
+           </S.Menu>
         </S.LeftContent>
 
         <S.RightContent>
           <HeaderMobile />
-          <S.HeaderApp>
-            <S.CardLoja>
-              <div className="logo">
-                 <span>BãoLanche</span>
-              </div>
-             
-            </S.CardLoja>
-          </S.HeaderApp>
           <Routes/>
          <ToastContainer />
         </S.RightContent>

@@ -4,7 +4,6 @@ import BgImage from '.././src/assets/imgs/bg.jpg'
 export const ThemeStyle={
     bgTheme:'orange',
      bgAppSystem:'#FFFF',
-     //'#092036',
     bgCardProductBottom:'#2f302f' ,
     colorTitleCard: 'black',
     colorIngredientsCategory:' #aaa',
@@ -19,7 +18,7 @@ export const Body=styled.div`
     height:100vh;
     overflow:hidden;
     background-color:${ThemeStyle.bgAppSystem};
-
+  
 
 `
 
