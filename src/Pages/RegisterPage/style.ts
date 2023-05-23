@@ -7,7 +7,7 @@ export const Box=styled.div`
 display: flex;
 justify-content: center;
 align-items: center;
-height: 100%;
+padding: 100px 0;
 
 @media screen and (max-width:800px) {
     padding: 12px;
@@ -103,4 +103,67 @@ a{
         text-decoration: underline;
     }
 }
+`
+
+export const BoxFile=styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+margin: 100px 0;
+`
+export const  CardInputFile=styled.div`
+width: 300px;
+height: 300px;
+background-color: #FFFF;
+margin-left: 20px;
+border: 2px dashed ${ThemeStyle.bgTheme};
+display: flex;
+justify-content: center;
+align-items: center;
+border-radius: 100%;
+position: relative;
+  overflow: hidden;
+span{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        background-color: #f1f1f1;
+        cursor: pointer;
+       font-family: Poppins;
+        font-style: Medium;
+        font-size: 14px;
+        line-height: 21px;
+        line-height: 150%;
+    }
+
+input{
+    position: absolute;
+    top: 0;
+    left: 0;
+     opacity: 0;
+    width: 100%;
+     height: 100%;
+     cursor: pointer;
+    &:focus{
+        transition: all ease .2s;
+        outline: 2px solid ${ThemeStyle.bgTheme};
+        
+    }
+}
+
+label{
+    margin: 6px;
+    color:#9B9393;
+    display:flex;
+    justify-content:flex-start;
+}
+p{
+    font-size: 15px;
+    color: #C02F2F;
+    text-align: center;
+}
+
+
 `

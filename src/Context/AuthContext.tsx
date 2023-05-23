@@ -4,8 +4,18 @@ import {v4 as uuid} from 'uuid'
 import { useModalLogin } from "../hooks/useModeLogin";
 import { AddressType } from "../Types/AddressType";
 import { RequestType } from "../Types/RequestType";
+import { toast } from "react-toastify";
 
-
+type PaymentType={
+    id:number,
+    titular:string,
+    validateCode:string,
+    dateValidity:string,
+    nameCard:string,
+    numberCard:string,
+    passwordCard:string,
+    type:string,
+}
 
 
 
@@ -18,15 +28,30 @@ type Props={
 type AuthType={
     user:UserType | null,
     address:AddressType | null,
+    addAddress:(data:AddressType)=>void,
+    ClearAddress:()=>void,
     requestsHistory:RequestType | [],
     LoginAuth:(email:string,password:string)=>boolean,
-    registerUser:(name:string,email:string,password:string,telefone:string,photo?:string)=>boolean,
-    Logout:()=>void
+    registerUser:(data:UserType)=>boolean,
+    Logout:()=>void,
+    updateUser:(data:UserType)=>void,
+    payments:PaymentType[],
+    //  setPayment:(payList:PaymentType[])=>void,
+      addPayCard:(data:PaymentType)=>void,
+      removePayCard:(id:number)=>void
 }
 
 export const AuthContext=createContext<AuthType >(null!)
 
 export const AuthProvider=({children}:Props)=>{
+    const {handleStateModal}=useModalLogin()
+    const [user,setUser]=useState<UserType | null>(null)
+    const [address,setAddress]=useState<AddressType | null>(null)
+    const [token,setToken]=useState<string | null>()
+    const [requestsHistory,setRequestHistory]=useState<RequestType >([])
+    const [payments,setPayment]=useState<PaymentType[]>([] as PaymentType[])
+
+
 
     useEffect(()=>{
 
@@ -35,7 +60,8 @@ export const AuthProvider=({children}:Props)=>{
         let tokenStorage=localStorage.getItem('token') as string
         let addressRequests=JSON.parse(localStorage.getItem('addressRequests') as string)
         let requestsHistoryStorage=JSON.parse(localStorage.getItem('requestsHistory') as string)
-    
+       
+
     
     
         //setando dados do localStorage
@@ -55,24 +81,19 @@ export const AuthProvider=({children}:Props)=>{
        
     },[])
 
-    const {handleStateModal}=useModalLogin()
-    const [user,setUser]=useState<UserType | null>(null)
-    const [address,setAddress]=useState<AddressType | null>(null)
-    const [token,setToken]=useState<string | null>()
-    const [requestsHistory,setRequestHistory]=useState<RequestType >([])
- 
+   
 
 
-    const registerUser=(name:string,email:string,password:string,telefone:string)=>{
+    const registerUser=(data:UserType)=>{
 
-        let userdata={name,email,password,telefone}
         
-        if(userdata){
+        
+        if(data){
              const tokenJson=uuid()
-             setUser(userdata)
+             setUser(data)
              setToken(tokenJson)
            
-            localStorage.setItem('u',JSON.stringify(userdata))
+            localStorage.setItem('u',JSON.stringify(data))
             localStorage.setItem('token',JSON.stringify(tokenJson))
             let addressRequests=JSON.parse(localStorage.getItem('addressRequests') as string)
             setAddress(addressRequests)
@@ -99,11 +120,33 @@ export const AuthProvider=({children}:Props)=>{
 
     }
     
+    const  ClearAddress=()=>{
+        setAddress(null)
+    }
+
+    const addAddress=(data:AddressType)=>{
+        setAddress({...data})
+     
+    
+    }
+    const updateUser=()=>{
+
+    }
+
+    const addPayCard=(data:PaymentType)=>{
+        setPayment([data,...payments])
+        toast.success('cartao adicionado')
+    
+    }
+    const removePayCard=(id:number | string)=>{
+        let newList=payments.filter(i=>i.id !== id)
+        setPayment(newList)
+        toast.success('cartao deletado')
+    }
+    
 
 
-
-
-return <AuthContext.Provider value={{requestsHistory, address,LoginAuth,Logout,registerUser,user}}>
+return <AuthContext.Provider value={{addAddress,ClearAddress,addPayCard,removePayCard,payments,updateUser,requestsHistory, address,LoginAuth,Logout,registerUser,user}}>
     {children}
 </AuthContext.Provider>
 

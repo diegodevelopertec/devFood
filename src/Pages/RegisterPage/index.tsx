@@ -6,7 +6,7 @@ import {yupResolver} from '@hookform/resolvers/yup'
 import '../../helpers/msgsYup'
 import { useAuthContext } from '../../hooks/useContextAuth';
 import iconLogo  from './../../assets/imgs/iconhamburguer.png'
-import {Box,BoxBottom,BoxInputs,BoxText,FormBox, FormInputs} from './style'
+import {Box,BoxBottom,BoxInputs,BoxText,FormBox, FormInputs,BoxFile,CardInputFile} from './style'
 
 type InputTypes={
     email:string,
@@ -49,6 +49,13 @@ export const RegisterPage=()=>{
             </BoxText>
 
           <form action="" onClick={handleSubmit(submitForm)}>
+            <BoxFile>
+                <CardInputFile>
+                                <span>Selecione uma foto de perfil</span>
+                                <input type="file" {...register('photo')} />
+                                <p>{errors.photo?.message}</p>
+                </CardInputFile>
+            </BoxFile>
             <FormInputs>
                 <BoxInputs>
                     <input type="text" {...register('name')} placeholder='Digite seu nome'/>
