@@ -4,16 +4,17 @@ import { ThemeStyle } from "../../styled";
 export const  Container=styled.div`
     width: 100%;
      margin:70px 0;
-    height: 100%;
     overflow-y:scroll;
     background:${ThemeStyle.bgAppSystem};
-    padding:0px 10px;
+    padding:0px 30px;
     overflow: auto;
  
     .intro{
        padding: 30px 0;
         h3{
             margin:12px 0;
+            font-size: 25px;
+            text-shadow: 0 0 5px #000;
         }
     }
 
@@ -36,6 +37,7 @@ export const  Container=styled.div`
         margin-bottom:130px;
         width: 100vw;
         height: 100vh;
+        padding:0px 10px
     }
 
 

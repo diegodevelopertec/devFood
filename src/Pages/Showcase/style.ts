@@ -23,6 +23,7 @@ export const ContainerBanner=styled.div`
        }
 `
 export const CategorySectionProducts=styled.div`
+
     margin: 60px 0 0 ;
     padding: 15px;
     color:${'#171716'};
@@ -41,6 +42,11 @@ export const CategorySectionProducts=styled.div`
         }
     }
 
+    .cx-filter-btns{
+        display: flex;
+        justify-content: space-between;
+    }
+
    .cx-btn-icons{
         display: flex;
         margin: 20px 0;
@@ -53,6 +59,12 @@ export const CategorySectionProducts=styled.div`
         justify-content:center;
         text-align:center;
         margin-top: 160px;
+
+        .cx-filter-btns{
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+    }
         .cx-btn-icons{
             justify-content:center;
             margin: 0;

@@ -23,7 +23,7 @@ export const ContainerButtonMenu=styled.a<Props>`
    
     &:hover{
         cursor:pointer;
-        transiton:all ease 0.5s;
+        transition:all ease 0.5s;
         background:${props=>props.bgColorActive === true ? '#d4ae3bc' :  '#e8b376' };
         background:${props=>props.bgColorActive === true ? `${props.bgColorActive}` :  `${ThemeStyle.bgHoverIcon}` };
     }

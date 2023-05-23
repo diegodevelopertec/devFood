@@ -29,9 +29,7 @@ export const Container=styled.div`
 
    @media screen and (max-width:280px){
          *{
-            font-size:12px;
-          
-         }
+            font-size:12px; }
          .area-btn-qdt{
             margin: 10px 0;
          }
@@ -84,7 +82,7 @@ export const ContainerData=styled.div`
             margin-right:5px;
             font-weight:bold;
             font-size:23px;
-           
+
         }
         .category{
             color:${ThemeStyle.colorIngredientsCategory};
@@ -101,16 +99,14 @@ export const ContainerData=styled.div`
     font-style:italic;
    font-size:13px;
    color:${ThemeStyle.colorIngredientsCategory};
-  word-break:break-all;
+   word-break:break-all;
    text-align:justify;
 }
     .cx-price{
         padding: 12px 0;
         color: ${ThemeStyle.bgTheme};
         font-size:2rem;
-     
-        
-            
+      
     }
  }
 

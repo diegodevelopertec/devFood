@@ -58,23 +58,23 @@ export const AuthProvider=({children}:Props)=>{
         //Pegando token e dados do usuario do localstorage
         let userStorage =JSON.parse(localStorage.getItem('u') as string)
         let tokenStorage=localStorage.getItem('token') as string
-        let addressRequests=JSON.parse(localStorage.getItem('addressRequests') as string)
+        let addressStorage=JSON.parse(localStorage.getItem('address') as string)
         let requestsHistoryStorage=JSON.parse(localStorage.getItem('requestsHistory') as string)
        
 
     
     
         //setando dados do localStorage
-        if(userStorage ||  tokenStorage || addressRequests || requestsHistoryStorage){
+        if(userStorage ||  tokenStorage || addressStorage || requestsHistoryStorage){
           setUser(userStorage)
-          setAddress(addressRequests)
+          setAddress(addressStorage)
           setToken(tokenStorage)
           handleStateModal(false)
           setRequestHistory(requestsHistoryStorage)
         }
       
         
-        console.log(requestsHistory);
+        console.log(addressStorage);
         console.log(userStorage);
         console.log(tokenStorage);
        
@@ -122,10 +122,12 @@ export const AuthProvider=({children}:Props)=>{
     
     const  ClearAddress=()=>{
         setAddress(null)
+        localStorage.setItem('address',JSON.stringify(null))
     }
 
     const addAddress=(data:AddressType)=>{
         setAddress({...data})
+        localStorage.setItem('address',JSON.stringify(data))
      
     
     }

@@ -5,7 +5,7 @@ export type UserType={
     email:string,
     password:string,
     photo?:string,
-    phone:string,
+    telefone:string,
     cpf:string
   
 

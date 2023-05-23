@@ -1,5 +1,5 @@
 import * as S from './style'
-import { Link, Navigate } from 'react-router-dom'
+import {  Navigate } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import  useLocation from 'react-router'
 

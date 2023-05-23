@@ -16,7 +16,7 @@ type InputTypes={
     email:string,
     password:string,
     photo?:string,
-    phone:string,
+    telefone:string,
     cpf:string
 
 
@@ -32,7 +32,7 @@ export const FormDataAccount=()=>{
         email:yup.string().email().required(),
         password:yup.string().required().min(6, 'Senha deve ter no mínimo 6 caracteres'),
         name:yup.string().required(),
-        phone:yup.string().required().matches(/^\(?\d{2}\)?[-.\s]?\d{4,5}[-.\s]?\d{4}$/, 'Telefone inválido'),
+        telefone:yup.string().required().matches(/^\(?\d{2}\)?[-.\s]?\d{4,5}[-.\s]?\d{4}$/, 'Telefone inválido'),
         cpf:yup.string().required('CPF inválido').matches(/^\d{3}\.\d{3}\.\d{3}\-\d{2}$/, 'CPF inválido'),
        
     }).required()
@@ -45,7 +45,7 @@ export const FormDataAccount=()=>{
             email:user?.email ? user.email : '',
             password:user?.password ? user.password : '',
             photo:user?.photo ? user.photo : '',
-            phone:user?.phone? user.phone : '',
+            telefone:user?.telefone? user.telefone : '',
             cpf:user?.cpf ? user.cpf : '',
     } })
 
@@ -82,8 +82,8 @@ const LogoutAccount=()=>{
                 </CardInput>
                 <CardInput state>
                     <label htmlFor="">Telefone:</label>
-                    <input type="text" {...register('phone')} disabled={disabled} />
-                    <p>{errors.phone?.message}</p>
+                    <input type="text" {...register('telefone')} disabled={disabled} />
+                    <p>{errors.telefone?.message}</p>
                 </CardInput>
                 <CardInput state>
                     <label htmlFor="">Senha:</label>

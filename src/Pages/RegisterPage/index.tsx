@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import LojaIcon from '../../assets/imgs/logo.png'
 import { useForm, SubmitHandler } from "react-hook-form";
 import * as yup from 'yup'
@@ -7,6 +7,7 @@ import '../../helpers/msgsYup'
 import { useAuthContext } from '../../hooks/useContextAuth';
 import iconLogo  from './../../assets/imgs/iconhamburguer.png'
 import {Box,BoxBottom,BoxInputs,BoxText,FormBox, FormInputs,BoxFile,CardInputFile} from './style'
+import { useGlobalContext } from '../../Context/AuthContext';
 
 type InputTypes={
     email:string,
@@ -14,31 +15,32 @@ type InputTypes={
     name:string,
     photo?:string,
     cpf:string,
-    telefone?:string
+    telefone:string
 
 }
 
 
 export const RegisterPage=()=>{
-   
-
+   const {registerUser}=useGlobalContext()
+    const Navigate=useNavigate()
     const schema=yup.object({
         email:yup.string().email().required(),
         password:yup.string().required(),
         name:yup.string().required(),
-        photo:yup.string(),
         cpf:yup.string().required(),
         telefone:yup.string().required(),
     }).required()
     
     
-    const {register,handleSubmit,formState:{errors}}=useForm<InputTypes>({ resolver:yupResolver(schema) })
-    
+    const {register,handleSubmit,formState:{errors},reset}=useForm<InputTypes>({ resolver:yupResolver(schema) })
+
     
     
     const submitForm=(data:InputTypes)=>{
+     registerUser(data)
+      reset()
+      Navigate('/')
       
-        
     }
      
     return <Box>

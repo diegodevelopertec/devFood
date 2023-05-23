@@ -64,7 +64,8 @@ export const Requests=({dataRequests}:Props)=>{
                    <p><strong>Rua</strong>{address?.rua}</p>
                    <p><strong>Bairro</strong>:{address?.bairro}</p>
                    <p><strong>numero</strong>:{address?.numero}</p>
-                   <p><strong>complemento</strong>:{address?.complemento}</p>
+                   <p><strong>complemento</strong>:{address?.logradouro}</p>
+                   <p><strong>Cidade/Estado</strong>:{address?.cidadeEstado}</p>
               </S.AreaAdress>
               <S.AreaDetails>
                 <h4>Detalhes</h4>

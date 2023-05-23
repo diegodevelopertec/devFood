@@ -27,12 +27,18 @@ export const  RequestHeader=styled.div`
     }
     .cx-btns{
         display: flex;
+
+        .apagar{
+            &:hover{
+                background-color: red;
+            }
+        }
     }
     button{
         text-transform:uppercase;
         padding: 12px ;
         display: flex;
-        background-color:${ThemeStyle.bgTheme};
+        background-color:#1a1919;
         justify-content:center;
         align-items:center;
         color: white;
@@ -51,7 +57,10 @@ export const  RequestHeader=styled.div`
              background: #3cbd4b;
             
         }
+
+
     }
+
 
 
 @media screen and (max-width:700px){

@@ -9,7 +9,7 @@ type Prop={
     bg?:string,
     marginvertical:string,
     marginhorizontal:string,
-  iconActive:boolean;
+    iconActive:boolean;
     onClick?:(e:any)=>void,
     link?:string,
     text?:string,

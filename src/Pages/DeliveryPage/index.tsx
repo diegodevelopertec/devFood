@@ -34,7 +34,7 @@ useEffect(()=>{
     return <S.Container>
        <div className="intro">
                 <h3>Histórico de Pedidos</h3>
-                <p>Bem vindo {userStorage?.name}<br/>Confira aqui os estado dos seus pedidos:</p> 
+                <p>Bem vindo {userStorage?.name}<br/>Confira aqui os estado dos seus pedidos.</p> 
               </div>
          {userStorage !== null && FilterRequestsDelivered.length > 0 ? <>
              

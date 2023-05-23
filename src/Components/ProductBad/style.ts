@@ -37,9 +37,10 @@ border-radius:5px;
       }
 
       @media screen and (max-width:950px){
+        border: none;
         img{
-            height: 60px;
-            width:60px;
+            height: 35px;
+            width:35px;
         }
       }
   }
@@ -82,6 +83,9 @@ border-radius:5px;
 
   @media screen and (max-width:950px){
     align-items:center;
+    border: none;
+    box-shadow: 0 0 5px #FFF;
+    margin: 10px 0;
     *{
       button{
         width: 60px;

@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import {ThemeStyle} from './../../styled'
-import { Context } from "../../Context/Context"
-import { useContext } from "react";
+
 
 type Props={
   displayBad:boolean,
@@ -38,7 +37,8 @@ export const Container=styled.div<Props>`
          left:${props=>props.displayBad === true ? '0' : '12px'};
          border-radius:${props=>props.displayBad === true ? '0' : '60px'};
          overflow:hidden;
-       
+        padding: 15px;
+        
          
         
       
@@ -71,7 +71,7 @@ export const BadHeader=styled.div<Props>`
       margin-right:5px;
   }
 
-    @media screen and (max-width:920px){
+    @media screen and (max-width:950px){
       .header--text span{
         display: ${props=>props.displayBad === true ? 'flex' : 'none'};
       }
@@ -113,7 +113,7 @@ export const BadBody=styled.div<Props>`
         border-radius:3px;
         margin: 5px;
         width: 2px;
-        background: ${ThemeStyle.bgTheme};
+        //background: ${ThemeStyle.bgTheme};
       }
     
     }
@@ -130,8 +130,54 @@ export const BadBody=styled.div<Props>`
       border: 0;
     
     }
-  .area-final-cupom{
-        flex:1;
+
+   
+`
+export const NotificationBad=styled.div<Props>`
+    position: absolute;
+    right:2px;
+    background:red;
+    color:white;
+    height: 20px;
+    border-radius:100%;
+    width: 20px;
+    font-size:12px;
+    display:${props=>props.displayBad ? 'flex' : 'none'};
+    justify-content:center;
+    align-items:center;
+    @media screen and (max-width:920px){
+        top:1px;
+    }
+`
+export const BoxListProducts=styled.div`
+       height: 290px;
+      box-shadow: 0 0 1px #eee;
+      padding: 10px 9px;
+      overflow-y:auto;
+      margin-bottom:12px;
+      ::-webkit-scrollbar{
+        border-radius:3px;
+        margin: 5px;
+        width: 2px;
+        background: ${ThemeStyle.bgTheme};
+      }
+`
+export const BoxAddress=styled.div`
+     font-size:13px;
+      color:black;
+      background-color: #eee;
+      em{
+        display: block;
+      }
+      height: 80px;
+      border-radius:2px;
+      padding: 10px 5px;
+      border: 0;
+
+
+`
+export const BoxBodyBottom=styled.div`
+ flex:1;
         display: flex;
         flex-direction:column;
         padding: 12px 20px;
@@ -162,47 +208,8 @@ export const BadBody=styled.div<Props>`
                   display: flex;
                   justify-content:space-between;
                 }
-  }
- 
 
-  
- //375,360,540,
- @media screen and (max-width:700px){
-  height: 100%;
-  .area-listproduct{
-      height: 80%;
-      padding: 30px 5px;
-     }
-
-     height:100vh;
-     overflow: none;
-     
-    .error-bad{
-      
-      display: flex;
-      justify-content:center;
-      align-items:center;
-      font-size:19px;
-      height:100%;
-  }
-    
- }
-
-
-`
-export const NotificationBad=styled.div<Props>`
-    position: absolute;
-    right:2px;
-    background:red;
-    color:white;
-    height: 20px;
-    border-radius:100%;
-    width: 20px;
-    font-size:12px;
-    display:${props=>props.displayBad ? 'flex' : 'none'};
-    justify-content:center;
-    align-items:center;
-    @media screen and (max-width:920px){
-        top:1px;
-    }
+@media screen and (max-width: 950px){
+  flex: none;
+}
 `

@@ -15,11 +15,11 @@ import { RestaurantePage } from "./../RestaurantePage"
 import { Bad } from "../../Components/Bad"
 import { ThemeStyle } from "../../styled"
 import { useContextApp } from "../../hooks/useContextApp"
-import { BannerPromotions } from "../../Components/BannerPromotions"
 import { useModalLogin } from "../../hooks/useModeLogin"
 import { useAuthContext } from "../../hooks/useContextAuth"
 import  womanBurguer from './../../assets/imgs/banner_main_rf.png'
 import  womanBurguerMain from './../../assets/imgs/banner_main2.png'
+import { Filtered } from "../../Components/Filtered"
 
 export const Showcase=()=>{
    
@@ -126,8 +126,9 @@ return <S.Container>
     <S.CategorySectionProducts>
       <>
       <p>Selecione uma categoria :</p>
-        <div className="cx-btn-icons">
-            <ButtonMenuCategory  
+        <div className="cx-filter-btns">
+           <div className="cx-btn-icons">
+           <ButtonMenuCategory  
                  bg={ThemeStyle.bgTheme} 
                  iconActive={displayBurguer ? true : false} 
                  src={LanchesIcon} 
@@ -150,6 +151,7 @@ return <S.Container>
                 onClick={actionDisplayPizzas} 
                 id='btnHome'
             />
+           </div>
              { /* 
              seção de restaurante á ser implemenetada futuramentee
              <ButtonMenu bg={ThemeStyle.bgTheme} 
@@ -159,7 +161,7 @@ return <S.Container>
                 onClick={actionDisplayRestaurante} 
                 id='btnHome'
 /> */}
-           
+          <Filtered /> 
         </div>
         <p className="category-title">Produtos: <span>{conditionCategoryTitle()}</span> </p>
       </>

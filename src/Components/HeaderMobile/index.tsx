@@ -26,7 +26,6 @@ export const HeaderMobile=()=>{
                 </div>
                 <nav>
                     <Link to={'/'} onClick={()=>setStateMenuMobile(false)}>Inicio</Link>
-                    <Link to={''} onClick={()=>setStateMenuMobile(false)}>Sacola</Link>
                     <Link to={'pedidos'} onClick={()=>setStateMenuMobile(false)}>Compras</Link>
                     <Link to={'/user'} onClick={()=>setStateMenuMobile(false)}>Conta</Link>
                     <Link to={'/sobre'} onClick={()=>setStateMenuMobile(false)}>Sobre</Link>

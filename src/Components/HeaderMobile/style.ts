@@ -15,6 +15,7 @@ display: none;
     right: 0;
     height: 70px;
     width: 100%;
+    z-index: 1;
     background-color: ${ThemeStyle.bgTheme};
     justify-content: space-between;
     align-items: center;

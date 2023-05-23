@@ -1,19 +1,20 @@
 import {  useEffect } from 'react'
-import {   useState } from 'react'
+import {  useState } from 'react'
 import { ProductBad } from '../ProductBad'
 import { useContextApp } from '../../hooks/useContextApp'
 import { Product } from '../../Types/Products'
-import { Navigate, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import * as S from './style'
 import  {v4 as uuid} from 'uuid'
 import BadIcon from '../../assets/imgs/sacola.png'
 import  openBadIcon from '../../assets/imgs/setbaixo.png'
 import CloseBadIcon from '../../assets/imgs/close.png'
 import ErrorIcon from '../../assets/imgs/erroricon.png'
-import { useModalLogin } from '../../hooks/useModeLogin'
 import { useAuthContext } from '../../hooks/useContextAuth'
-import { AddressType } from '../../Types/AddressType'
 import { toast } from 'react-toastify'
+
+
+
 
 type Props={
      onClick:()=>void
@@ -28,7 +29,6 @@ export const Bad=()=>{
     const [displayBad,setDisplayBad]=useState(false)
     const [notification,setNotification]=useState(false)
     const navigate=useNavigate()
-    let {stateModal,handleStateModal}=useModalLogin()
     const {user,address}=useAuthContext()
  
  
@@ -64,19 +64,17 @@ export const Bad=()=>{
     }
 
     if(user === null){
-        //handleStateModal(true)
         toast.error(('Faça Login e/ou crie uma conta'));
-        
         setDisplayBad(false)
         
+    }else if(address === null){
+        toast.error(('Adicione um endereço'));
+        setDisplayBad(false)
     }else{
         dispatch({   
             type:'setDataToRequest',
             payload:{data}
-        })
-       
-    
-        
+        })  
        state.products=[]
        navigate('/pedidos')
     }
@@ -100,12 +98,12 @@ export const Bad=()=>{
 
         <S.BadBody displayBad={displayBad}>
               {products.length > 0  ? <> 
-               <div className="area-listproduct">
+               <S.BoxListProducts>
                   {state.products.length  &&  state.products.map((item,index)=>(
                          <ProductBad key={index} data={item} />)) 
                   }
-               </div>
-                <div className='area-address'>
+               </S.BoxListProducts>
+               <S.BoxAddress>
                     {user  &&  address !== null ?
                        <>
                          <em>Rua {address?.rua} </em>  
@@ -115,8 +113,8 @@ export const Bad=()=>{
                           :'Faça Login/Cadastro para adicionar um endereço'
                     }
                                     
-                </div>
-                <div className="area-final-cupom">
+                </S.BoxAddress>
+                <S.BoxBodyBottom>
                     <input type="text" />
                     <div className="data-compra">
                         <div className="data-item">
@@ -133,12 +131,12 @@ export const Bad=()=>{
                         </div>
                     </div>
                 <button onClick={()=>setDataToRequests()}>finalizar compra</button>
-                </div>
+                </S.BoxBodyBottom>
               </>  : <div className='error-bad'>
                         <h3>Nenhum pedido adicionado ainda </h3>
                         <img  src={ErrorIcon} />
-              </div>
-           }
+              </div>}
+          
             
         </S.BadBody>
         

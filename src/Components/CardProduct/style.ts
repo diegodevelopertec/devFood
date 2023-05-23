@@ -90,6 +90,10 @@ export const DataProduct=styled.div`
                         .ingredientes-text{
                             display:none;
                         }
+
+                        h4{
+                            font-size: 19px;
+                        }
                     
                 }
                 

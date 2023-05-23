@@ -6,42 +6,37 @@ export const Container=styled.div`
 display: flex;
 justify-content:space-between;
 padding:10px 5px;
-font-size:13px;
-width: 100%;
+font-size:15px;
 margin: 5px 0px;
 border: 2px solid ${ThemeStyle.bgTheme};
 border-radius:5px;
     .area--image{
         margin-right:10px;
-        img{
-            width: 100%;
-            
-        }
     }
     .area-left{
     display: flex;
+    font-weight: 700;
       img{
         height:30px;
         width:30px;
       }
       .price{
         color: ${ThemeStyle.bgTheme};
+        font-weight: 700;
       }
       .area-text{
         display: flex;
         flex-direction:column;
         align-content:center;
-            .name{
-                font-weight:bold;
-            }
+        .name{
+          margin-right: 10px;
+        }
       }
 
       @media screen and (max-width:950px){
-        
-          img{
+         img{
               width:25px;
               height: 25px;
-      
         }
       }
   }
@@ -51,7 +46,7 @@ border-radius:5px;
         display: flex;
         
         button{
-            padding: 10px;
+            padding: 14px;
             border: none;
             display:flex;
             justify-content:center;
@@ -87,11 +82,11 @@ border-radius:5px;
     align-items:center;
     *{
       button{
-        width: 60px;
-        height: 50px;
-        display: flex;
-        justify-content:center;
-        align-items:center;
+          width: 60px;
+          height: 50px;
+          display: flex;
+          justify-content:center;
+          align-items:center;
       }
      
     }

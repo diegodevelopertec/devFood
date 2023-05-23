@@ -46,7 +46,7 @@ const {Logout,user}=useGlobalContext()
               <img src={AddressIcon} alt="" />
               <h2>Dados de Endereço</h2>
            </HeaderBoxContext>
-           {user !== null ? <FormDataAccount /> : <NotLogged>
+           {user !== null ? <FormDataAddress /> : <NotLogged>
                 <p>Crie uma conta ou Faça Login<Link to={'/register'}>Clique aqui</Link></p>
                 <hr />
             </NotLogged>
