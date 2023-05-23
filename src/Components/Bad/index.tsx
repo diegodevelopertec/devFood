@@ -13,7 +13,7 @@ import ErrorIcon from '../../assets/imgs/erroricon.png'
 import { useModalLogin } from '../../hooks/useModeLogin'
 import { useAuthContext } from '../../hooks/useContextAuth'
 import { AddressType } from '../../Types/AddressType'
-
+import { toast } from 'react-toastify'
 
 type Props={
      onClick:()=>void
@@ -64,7 +64,9 @@ export const Bad=()=>{
     }
 
     if(user === null){
-        handleStateModal(true)
+        //handleStateModal(true)
+        toast.error(('Faça Login e/ou crie uma conta'));
+        
         setDisplayBad(false)
         
     }else{

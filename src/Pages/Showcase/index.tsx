@@ -14,7 +14,6 @@ import { dataDrinks } from "../../data/Product"
 import { RestaurantePage } from "./../RestaurantePage"
 import { Bad } from "../../Components/Bad"
 import { ThemeStyle } from "../../styled"
-import { LoginModal } from "../LoginModal"
 import { useContextApp } from "../../hooks/useContextApp"
 import { BannerPromotions } from "../../Components/BannerPromotions"
 import { useModalLogin } from "../../hooks/useModeLogin"
@@ -181,12 +180,8 @@ return <S.Container>
         <CardCliked   data={dataProductCliked} funcOffModal={()=>setModalToCard(false)}/>
      </S.ContainerModal>
      }
- { isLogged ? <S.ContainerModal>
-          <LoginModal closeModal={()=>handleStateModal(false)} />
-     </S.ContainerModal> :null
-}
-   
-    
+
+
    
     </S.Container>
      

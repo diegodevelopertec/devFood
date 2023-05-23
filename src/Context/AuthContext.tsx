@@ -1,4 +1,4 @@
-import { ReactNode, useState ,createContext, useEffect } from "react";
+import { ReactNode, useState ,createContext, useEffect, useCallback, useContext } from "react";
 import { UserType } from "../Types/UserType";
 import {v4 as uuid} from 'uuid'
 import { useModalLogin } from "../hooks/useModeLogin";
@@ -15,13 +15,12 @@ type Props={
 }
 
 
-
 type AuthType={
     user:UserType | null,
     address:AddressType | null,
     requestsHistory:RequestType | [],
     LoginAuth:(email:string,password:string)=>boolean,
-    registerUser:(name:string,email:string,password:string,telefone:string)=>boolean,
+    registerUser:(name:string,email:string,password:string,telefone:string,photo?:string)=>boolean,
     Logout:()=>void
 }
 
@@ -109,3 +108,5 @@ return <AuthContext.Provider value={{requestsHistory, address,LoginAuth,Logout,r
 </AuthContext.Provider>
 
 }
+
+export const useGlobalContext=()=>useContext(AuthContext)
