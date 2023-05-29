@@ -27,6 +27,8 @@ type Props={
 
 type AuthType={
     user:UserType | null,
+    filterData:string,
+    setFilter:(filter:string)=>void,
     address:AddressType | null,
     addAddress:(data:AddressType)=>void,
     ClearAddress:()=>void,
@@ -50,7 +52,7 @@ export const AuthProvider=({children}:Props)=>{
     const [token,setToken]=useState<string | null>()
     const [requestsHistory,setRequestHistory]=useState<RequestType >([])
     const [payments,setPayment]=useState<PaymentType[]>([] as PaymentType[])
-
+    const [filterData,setFilter]=useState<string>('')
 
 
     useEffect(()=>{
@@ -148,7 +150,7 @@ export const AuthProvider=({children}:Props)=>{
     
 
 
-return <AuthContext.Provider value={{addAddress,ClearAddress,addPayCard,removePayCard,payments,updateUser,requestsHistory, address,LoginAuth,Logout,registerUser,user}}>
+return <AuthContext.Provider value={{filterData,setFilter,addAddress,ClearAddress,addPayCard,removePayCard,payments,updateUser,requestsHistory, address,LoginAuth,Logout,registerUser,user}}>
     {children}
 </AuthContext.Provider>
 

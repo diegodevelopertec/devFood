@@ -79,8 +79,8 @@ export const CategorySectionProducts=styled.div`
 `
 
 
-export const ShowcaseProduct=styled.div<Props>`
-    display: ${props=>props.stateDisplay === false ? 'grid' : 'block'};
+export const ShowcaseProduct=styled.div`
+    display: grid;
     grid-template-columns:repeat(4,1fr);
     gap:10px;
     transition: all ease 0.2;
