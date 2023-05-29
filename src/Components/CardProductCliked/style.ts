@@ -82,6 +82,7 @@ export const ContainerData=styled.div`
             margin-right:5px;
             font-weight:bold;
             font-size:23px;
+            text-shadow: 0 0 3px #FFF;
 
         }
         .category{

@@ -61,6 +61,7 @@ export const DataProduct=styled.div`
                 }
                 h4{
                     font-size:22px;
+                    text-shadow: 0 0 3px #FFF;
                     color: ${ThemeStyle.colorTitleCard};
                    
                 }
@@ -80,8 +81,9 @@ export const DataProduct=styled.div`
                 }
                 .ingredientes-text{
                     word-break:break-all;
-                    margin: 6px 0;
-                    height: max-content;
+                    margin:0;
+                    height: 56px;
+                    text-align: justify;
                     color: ${ThemeStyle.colorIngredientsCategory};
                 }
 
