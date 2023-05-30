@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react" 
-import * as S from './style'
+import {CategorySectionProducts,Container,ContainerBanner,ContainerModal,ShowcaseProduct} from './style'
 import { CardProduct } from "../../Components/CardProduct"
 import { Product } from "../../Types/Products"
 import BebidasIcon from '../../assets/imgs/iconBebida.png'
@@ -12,10 +12,9 @@ import { ThemeStyle } from "../../styled"
 import { useContextApp } from "../../hooks/useContextApp"
 import { useModalLogin } from "../../hooks/useModeLogin"
 import { useAuthContext } from "../../hooks/useContextAuth"
-import  womanBurguer from './../../assets/imgs/banner_main_rf.png'
-import  womanBurguerMain from './../../assets/imgs/banner_main2.png'
 import { Filtered } from "../../Components/Filtered"
 import { data } from "../../database/data"
+import { ContainerIntroHome } from "../../Components/ContainerIntro"
 
 
 
@@ -27,7 +26,6 @@ export const Showcase=()=>{
     const [stateModalToCard,setModalToCard]=useState(false)
     const [productsList,setProductsList]=useState<Product[] | []>(data)
     const [clickCategory,setClickCategory]=useState('Hamburguers')
-    const[load,setLoad]=useState(false)
     const isLogged=stateModal
     let {user,filterData}=useAuthContext()
   
@@ -41,7 +39,7 @@ export const Showcase=()=>{
 
  useEffect(()=>{
         if(filterData !== ''){
-            let listFilter=data.filter(i=>i.name.includes(`${filterData}`))
+            let listFilter=data.filter(i=>i.name.includes(`${filterData[0].toUpperCase()}`))
             setProductsList(listFilter) 
         }
     
@@ -59,31 +57,10 @@ export const Showcase=()=>{
  
 
   
-return <S.Container>
-         
-         {
-          <S.ContainerCaseLogged className="cx-logado">
-                <div className="area-img">
-                    <img src={user?.name ? womanBurguerMain : womanBurguer} alt="" />
-                </div>
-                <div className="area-text">
-                        <div className="txt">
-                            <h4>Bem vindo {user?.name}</h4>
-                            <p>Aqui com a gente é :</p>
-                        </div>
-                    
-                      <div className="cx-spans">
-                                <span>Pediu</span>
-                                <span>Logou</span>
-                                <span>Chegou</span>  
-                        </div>
-                  
-                       
-                </div>
-            </S.ContainerCaseLogged>
-         }
-
-    <S.CategorySectionProducts>
+return <Container>
+    
+    <ContainerIntroHome />
+    <CategorySectionProducts>
       <>
       <p>Selecione uma categoria :</p>
         <div className="cx-filter-btns">
@@ -116,27 +93,24 @@ return <S.Container>
         </div>
         <p className="category-title">Produtos: <span>{clickCategory}</span> </p>
       </>
-    </S.CategorySectionProducts>
+    </CategorySectionProducts>
         
-    <S.ShowcaseProduct > 
+    <ShowcaseProduct> 
         <>
-            {productsList.map((i,k)=>(
-                    <CardProduct data={i} onClick={returnDataClikedProduct}  key={k} />
-                ))
-              }
-          <Bad />
+            {productsList.map((i,k)=>(  <CardProduct data={i} onClick={returnDataClikedProduct}  key={k} />))}
+            <Bad />
         </>
      
-    </S.ShowcaseProduct>
+    </ShowcaseProduct>
    
-    {stateModalToCard && <S.ContainerModal>
+    {stateModalToCard && <ContainerModal>
         <CardCliked   data={dataProductCliked} funcOffModal={()=>setModalToCard(false)}/>
-     </S.ContainerModal>
+     </ContainerModal>
      }
 
 
    
-    </S.Container>
+    </Container>
      
  
 }
